@@ -14,7 +14,7 @@
 
 from django.conf.urls import url
 
-from neutron_fwaas_dashboard.dashboards.project import views
+from neutron_fwaas_dashboard.dashboards.project.firewalls import views
 
 urlpatterns = [
     url(r'^$', views.IndexView.as_view(), name='index'),

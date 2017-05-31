@@ -17,56 +17,55 @@ from django.core.urlresolvers import reverse_lazy
 from django.utils.translation import ugettext_lazy as _
 
 from horizon import exceptions
-from horizon import forms
-from horizon import tabs
+from horizon import forms as horizon_forms
+from horizon import tabs as horizon_tabs
 from horizon.utils import memoized
-from horizon import workflows
+from horizon import workflows as horizon_workflows
 
 from openstack_dashboard import api
 
 from neutron_fwaas_dashboard.api import fwaas as api_fwaas
-from neutron_fwaas_dashboard.dashboards.project import forms as fw_forms
-from neutron_fwaas_dashboard.dashboards.project import tabs as fw_tabs
-from neutron_fwaas_dashboard.dashboards.project \
-    import workflows as fw_workflows
+from neutron_fwaas_dashboard.dashboards.project.firewalls import forms
+from neutron_fwaas_dashboard.dashboards.project.firewalls import tabs
+from neutron_fwaas_dashboard.dashboards.project.firewalls import workflows
 
-AddRouterToFirewall = fw_forms.AddRouterToFirewall
-InsertRuleToPolicy = fw_forms.InsertRuleToPolicy
-RemoveRouterFromFirewall = fw_forms.RemoveRouterFromFirewall
-RemoveRuleFromPolicy = fw_forms.RemoveRuleFromPolicy
-UpdateFirewall = fw_forms.UpdateFirewall
-UpdatePolicy = fw_forms.UpdatePolicy
-UpdateRule = fw_forms.UpdateRule
+AddRouterToFirewall = forms.AddRouterToFirewall
+InsertRuleToPolicy = forms.InsertRuleToPolicy
+RemoveRouterFromFirewall = forms.RemoveRouterFromFirewall
+RemoveRuleFromPolicy = forms.RemoveRuleFromPolicy
+UpdateFirewall = forms.UpdateFirewall
+UpdatePolicy = forms.UpdatePolicy
+UpdateRule = forms.UpdateRule
 
-FirewallDetailsTabs = fw_tabs.FirewallDetailsTabs
-FirewallTabs = fw_tabs.FirewallTabs
-PolicyDetailsTabs = fw_tabs.PolicyDetailsTabs
-RuleDetailsTabs = fw_tabs.RuleDetailsTabs
+FirewallDetailsTabs = tabs.FirewallDetailsTabs
+FirewallTabs = tabs.FirewallTabs
+PolicyDetailsTabs = tabs.PolicyDetailsTabs
+RuleDetailsTabs = tabs.RuleDetailsTabs
 
-AddFirewall = fw_workflows.AddFirewall
-AddPolicy = fw_workflows.AddPolicy
-AddRule = fw_workflows.AddRule
+AddFirewall = workflows.AddFirewall
+AddPolicy = workflows.AddPolicy
+AddRule = workflows.AddRule
 
 
-class IndexView(tabs.TabbedTableView):
+class IndexView(horizon_tabs.TabbedTableView):
     tab_group_class = FirewallTabs
     template_name = 'project/firewalls/details_tabs.html'
     page_title = _("Firewalls")
 
 
-class AddRuleView(workflows.WorkflowView):
+class AddRuleView(horizon_workflows.WorkflowView):
     workflow_class = AddRule
     template_name = "project/firewalls/addrule.html"
     page_title = _("Add New Rule")
 
 
-class AddPolicyView(workflows.WorkflowView):
+class AddPolicyView(horizon_workflows.WorkflowView):
     workflow_class = AddPolicy
     template_name = "project/firewalls/addpolicy.html"
     page_title = _("Add New Policy")
 
 
-class AddFirewallView(workflows.WorkflowView):
+class AddFirewallView(horizon_workflows.WorkflowView):
     workflow_class = AddFirewall
     template_name = "project/firewalls/addfirewall.html"
     page_title = _("Add New Firewall")
@@ -74,12 +73,12 @@ class AddFirewallView(workflows.WorkflowView):
     def get_workflow(self):
         if api.neutron.is_extension_supported(self.request,
                                               'fwaasrouterinsertion'):
-            AddFirewall.register(fw_workflows.SelectRoutersStep)
+            AddFirewall.register(workflows.SelectRoutersStep)
         workflow = super(AddFirewallView, self).get_workflow()
         return workflow
 
 
-class RuleDetailsView(tabs.TabView):
+class RuleDetailsView(horizon_tabs.TabView):
     tab_group_class = (RuleDetailsTabs)
     template_name = 'horizon/common/_detail.html'
     page_title = "{{ rule.name|default:rule.id }}"
@@ -88,7 +87,7 @@ class RuleDetailsView(tabs.TabView):
     def get_context_data(self, **kwargs):
         context = super(RuleDetailsView, self).get_context_data(**kwargs)
         rule = self.get_data()
-        table = fw_tabs.RulesTable(self.request)
+        table = tabs.RulesTable(self.request)
         breadcrumb = [
             (_("Rules"), reverse_lazy('horizon:project:firewalls:rules'))]
         context["custom_breadcrumb"] = breadcrumb
@@ -113,7 +112,7 @@ class RuleDetailsView(tabs.TabView):
         return self.tab_group_class(request, rule=rule, **kwargs)
 
 
-class PolicyDetailsView(tabs.TabView):
+class PolicyDetailsView(horizon_tabs.TabView):
     tab_group_class = (PolicyDetailsTabs)
     template_name = 'horizon/common/_detail.html'
     page_title = "{{ policy.name|default:policy.id }}"
@@ -122,7 +121,7 @@ class PolicyDetailsView(tabs.TabView):
     def get_context_data(self, **kwargs):
         context = super(PolicyDetailsView, self).get_context_data(**kwargs)
         policy = self.get_data()
-        table = fw_tabs.PoliciesTable(self.request)
+        table = tabs.PoliciesTable(self.request)
         breadcrumb = [
             (_("Policies"),
              reverse_lazy('horizon:project:firewalls:policies'))]
@@ -148,7 +147,7 @@ class PolicyDetailsView(tabs.TabView):
         return self.tab_group_class(request, policy=policy, **kwargs)
 
 
-class FirewallDetailsView(tabs.TabView):
+class FirewallDetailsView(horizon_tabs.TabView):
     tab_group_class = (FirewallDetailsTabs)
     template_name = 'horizon/common/_detail.html'
     page_title = "{{ firewall.name|default:firewall.id }}"
@@ -158,7 +157,7 @@ class FirewallDetailsView(tabs.TabView):
         context = super(FirewallDetailsView, self).get_context_data(**kwargs)
         firewall = self.get_data()
         routers = self.get_routers_data(firewall)
-        table = fw_tabs.FirewallsTable(self.request)
+        table = tabs.FirewallsTable(self.request)
         context["firewall"] = firewall
         context["routers"] = routers
         context["url"] = self.failure_url
@@ -198,7 +197,7 @@ class FirewallDetailsView(tabs.TabView):
         return self.tab_group_class(request, firewall=firewall, **kwargs)
 
 
-class UpdateRuleView(forms.ModalFormView):
+class UpdateRuleView(horizon_forms.ModalFormView):
     form_class = UpdateRule
     form_id = "update_rule_form"
     template_name = "project/firewalls/updaterule.html"
@@ -238,7 +237,7 @@ class UpdateRuleView(forms.ModalFormView):
         return initial
 
 
-class UpdatePolicyView(forms.ModalFormView):
+class UpdatePolicyView(horizon_forms.ModalFormView):
     form_class = UpdatePolicy
     form_id = "update_policy_form"
     template_name = "project/firewalls/updatepolicy.html"
@@ -275,7 +274,7 @@ class UpdatePolicyView(forms.ModalFormView):
         return initial
 
 
-class UpdateFirewallView(forms.ModalFormView):
+class UpdateFirewallView(horizon_forms.ModalFormView):
     form_class = UpdateFirewall
     form_id = "update_firewall_form"
     template_name = "project/firewalls/updatefirewall.html"
@@ -313,7 +312,7 @@ class UpdateFirewallView(forms.ModalFormView):
         return initial
 
 
-class InsertRuleToPolicyView(forms.ModalFormView):
+class InsertRuleToPolicyView(horizon_forms.ModalFormView):
     form_class = InsertRuleToPolicy
     form_id = "update_policy_form"
     template_name = "project/firewalls/insert_rule_to_policy.html"
@@ -352,7 +351,7 @@ class InsertRuleToPolicyView(forms.ModalFormView):
         return initial
 
 
-class RemoveRuleFromPolicyView(forms.ModalFormView):
+class RemoveRuleFromPolicyView(horizon_forms.ModalFormView):
     form_class = RemoveRuleFromPolicy
     form_id = "update_policy_form"
     template_name = "project/firewalls/remove_rule_from_policy.html"
@@ -391,7 +390,7 @@ class RemoveRuleFromPolicyView(forms.ModalFormView):
         return initial
 
 
-class RouterCommonView(forms.ModalFormView):
+class RouterCommonView(horizon_forms.ModalFormView):
     form_id = "update_firewall_form"
     context_object_name = 'firewall'
     submit_label = _("Save Changes")

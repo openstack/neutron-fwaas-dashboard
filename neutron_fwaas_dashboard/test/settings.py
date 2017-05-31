@@ -44,7 +44,7 @@ INSTALLED_APPS = list(set(INSTALLED_APPS))
 # 'method' is required. 'return_value' and 'side_effect'
 # are optional and passed to mock.patch().
 TEST_GLOBAL_MOCKS_ON_PANELS['firewalls'] = {
-    'method': ('neutron_fwaas_dashboard.dashboards.project.panel.'
+    'method': ('neutron_fwaas_dashboard.dashboards.project.firewalls.panel.'
                'Firewall.can_access'),
     'return_value': True,
 }

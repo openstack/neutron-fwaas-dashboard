@@ -6,4 +6,5 @@ PANEL_DASHBOARD = 'project'
 PANEL_GROUP = 'network'
 
 # Python panel class of the PANEL to be added.
-ADD_PANEL = 'neutron_fwaas_dashboard.dashboards.project.panel.Firewall'
+ADD_PANEL = ('neutron_fwaas_dashboard.dashboards.'
+             'project.firewalls.panel.Firewall')

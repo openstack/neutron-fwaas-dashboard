@@ -20,7 +20,7 @@ from horizon import tabs
 from openstack_dashboard import api
 
 from neutron_fwaas_dashboard.api import fwaas as api_fwaas
-from neutron_fwaas_dashboard.dashboards.project import tables
+from neutron_fwaas_dashboard.dashboards.project.firewalls import tables
 
 FirewallsTable = tables.FirewallsTable
 PoliciesTable = tables.PoliciesTable
