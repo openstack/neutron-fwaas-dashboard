@@ -10,21 +10,13 @@
 #    License for the specific language governing permissions and limitations
 #    under the License.
 
-from openstack_dashboard.test.test_data import utils
+# The slug of the panel to be added to HORIZON_CONFIG. Required.
+PANEL = 'firewalls'
+# The slug of the dashboard the PANEL associated with. Required.
+PANEL_DASHBOARD = 'project'
+# The slug of the panel group the PANEL is associated with.
+PANEL_GROUP = 'network'
 
-
-def load_data(load_onto=None):
-    from neutron_fwaas_dashboard.test.test_data import fwaas_data
-    from neutron_fwaas_dashboard.test.test_data import fwaas_v2_data
-
-    # The order of these loaders matters, some depend on others.
-    loaders = (
-        fwaas_data.data,
-        fwaas_v2_data.data,
-    )
-    if load_onto:
-        for data_func in loaders:
-            data_func(load_onto)
-        return load_onto
-    else:
-        return utils.TestData(*loaders)
+# Python panel class of the PANEL to be added.
+ADD_PANEL = ('neutron_fwaas_dashboard.dashboards.'
+             'project.firewalls.panel.Firewall')

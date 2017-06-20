@@ -1,0 +1,10 @@
+{% extends "horizon/common/_modal_form.html" %}
+{% load i18n %}
+
+{% block modal-body-right %}
+  <h3>{% trans "Description:" %}</h3>
+  <p>{% blocktrans trimmed %}
+    You may update policy details here.
+    Use 'Insert Rule' or 'Remove Rule' links instead to insert or remove a rule.
+    {% endblocktrans %}</p>
+{% endblock %}

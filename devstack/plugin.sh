@@ -9,9 +9,7 @@ function install_neutron_fwaas_dashboard {
 }
 
 function configure_neutron_fwaas_dashboard {
-    if is_service_enabled neutron-fwaas-v1-dashboard; then
-        cp -a $FWAAS_ENABLED_DIR/_7010_project_firewalls_panel.py $HORIZON_ENABLED_DIR
-    fi
+    cp -a $FWAAS_ENABLED_DIR/_[0-9]*.py $HORIZON_ENABLED_DIR
     # NOTE: If locale directory does not exist, compilemessages will fail,
     # so check for an existence of locale directory is required.
     if [ -d $FWAAS_DASHBOARD_DIR/neutron_fwaas_dashboard/locale ]; then
@@ -53,7 +51,7 @@ function _set_policy_file {
 }
 
 # check for service enabled
-if is_service_enabled neutron-fwaas-v1-dashboard neutron-fwaas-v2-dashboard; then
+if is_service_enabled neutron-fwaas-dashboard; then
 
     if [[ "$1" == "stack" && "$2" == "pre-install"  ]]; then
         # Set up system services

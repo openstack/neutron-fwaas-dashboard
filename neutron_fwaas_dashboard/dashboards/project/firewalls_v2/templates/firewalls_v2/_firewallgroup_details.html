@@ -1,0 +1,37 @@
+{% load i18n sizeformat parse_date %}
+
+<div class="detail">
+  <dl class="dl-horizontal">
+    <dt>{% trans "Name" %}</dt>
+    <dd>{{ firewall_group.name|default:_("-") }}</dd>
+
+    <dt>{% trans "Description" %}</dt>
+    <dd>{{ firewall_group.description|default:_("-") }}</dd>
+
+    <dt>{% trans "ID" %}</dt>
+    <dd>{{ firewall_group.id }} </dd>
+
+    <dt>{% trans "Project ID" %}</dt>
+    <dd>{{ firewall_group.tenant_id }}</dd>
+
+    <dt>{% trans "Ingress Policy ID" %}</dt>
+    <dd>
+      {% url 'horizon:project:firewalls_v2:policydetails' firewall_group.ingress_firewall_policy_id as policy_url %}
+      <a href="{{ policy_url }}">{{firewall_group.ingress_policy.name|default:firewall_group.ingress_firewall_policy_id }}</a>
+    </dd>
+    <dt>{% trans "Egress Policy ID" %}</dt>
+    <dd>
+      {% url 'horizon:project:firewalls_v2:policydetails' firewall_group.egress_firewall_policy_id as policy_url %}
+      <a href="{{ policy_url }}">{{firewall_group.egress_policy.name|default:firewall_group.egress_firewall_policy_id }}</a>
+    </dd>
+
+    <dt>{% trans "Status" %}</dt>
+    <dd>{{ firewall_group.status }}</dd>
+
+    <dt>{% trans "Admin State Up" %}</dt>
+        <dd>{{ firewall_group.admin_state_up}}</dd>
+
+    <dt>{% trans "Shared" %}</dt>
+    <dd>{{ firewall_group.shared|yesno|capfirst }}</dd>
+  </dl>
+</div>

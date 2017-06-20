@@ -1,0 +1,7 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% block title %}{% trans "Edit Firewall Group" %}{% endblock %}
+
+{% block main %}
+  {% include 'project/firewalls_v2/_updatefirewall.html' %}
+{% endblock %}

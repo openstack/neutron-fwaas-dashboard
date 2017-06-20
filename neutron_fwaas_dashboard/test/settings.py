@@ -49,3 +49,8 @@ TEST_GLOBAL_MOCKS_ON_PANELS['firewalls'] = {
                'Firewall.can_access'),
     'return_value': True,
 }
+TEST_GLOBAL_MOCKS_ON_PANELS['firewalls_v2'] = {
+    'method': ('neutron_fwaas_dashboard.dashboards.project.firewalls_v2.panel.'
+               'Firewall_V2.can_access'),
+    'return_value': True,
+}
