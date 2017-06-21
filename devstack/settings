@@ -1,0 +1,8 @@
+# settings file for neutron-fwaas-dashboard plugin
+if is_service_enabled q-fwaas q-fwaas-v1; then
+    enable_service neutron-fwaas-v1-dashboard
+elif is_service_enabled q-fwaas-v2; then
+    enable_service neutron-fwaas-v2-dashboard
+else
+    enable_service neutron-fwaas-v1-dashboard
+fi
