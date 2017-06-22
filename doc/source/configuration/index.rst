@@ -14,33 +14,15 @@
       License for the specific language governing permissions and limitations
       under the License.
 
-================================
-Neutron FWaaS Dashboard Project
-================================
+=============
+Configuration
+=============
 
-Neutron FWaaS Dashboard is a horizon plugin for Neutron FWaaS.
+Neutron FWaaS dashboard has no configuration option.
+It checks if Neutron FWaaS service is enabled in your neutron server
+and the FWaaS panel is displayed if enabled.
 
-User Documentation
-------------------
-
-.. toctree::
-   :maxdepth: 1
-
-   install/index
-   configuration/index
-
-Contributor Guide
------------------
-
-.. toctree::
-   :maxdepth: 2
-
-   contributor/index
-
-Release Notes
--------------
-
-.. toctree::
-   :maxdepth: 1
-
-   Release Notes <releasenotes/index>
+For more configurations, see
+`Deployment & Configuration
+<https://docs.openstack.org/developer/horizon/install/index.html>`__
+in the Horizon documentation.

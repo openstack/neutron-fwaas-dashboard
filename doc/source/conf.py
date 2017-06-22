@@ -24,12 +24,13 @@
 
 from __future__ import print_function
 
-import django
 import os
-import subprocess
 import sys
-import warnings
 
+import django
+import openstackdocstheme
+
+PROJECT = 'neutron-fwaas-dashboard'
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.abspath(os.path.join(BASE_DIR, "..", ".."))
 
@@ -62,7 +63,7 @@ extensions = [
     'sphinx.ext.todo',
     'sphinx.ext.coverage',
     'sphinx.ext.viewcode',
-    'oslosphinx',
+    'reno.sphinxext',
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -134,7 +135,7 @@ nitpicky = False
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 # html_theme_path = ['.']
-# html_theme = '_theme'
+html_theme = 'openstackdocs'
 
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
@@ -144,7 +145,7 @@ html_theme_options = {
 }
 
 # Add any paths that contain custom themes here, relative to this directory.
-# html_theme_path = []
+html_theme_path = [openstackdocstheme.get_html_theme_path()]
 
 # The name for this set of Sphinx documents.  If None, it defaults to
 # "<project> v<release> documentation".
@@ -170,14 +171,18 @@ html_static_path = []
 # If not '', a 'Last updated on:' timestamp is inserted at every page bottom,
 # using the given strftime format.
 # html_last_updated_fmt = '%b %d, %Y'
-git_cmd = ["git", "log", "--pretty=format:'%ad, commit %h'", "--date=local",
-           "-n1"]
-try:
-    html_last_updated_fmt = subprocess.Popen(
-        git_cmd, stdout=subprocess.PIPE).communicate()[0]
-except Exception:
-    warnings.warn('Cannot get last updated time from git repository. '
-                  'Not setting "html_last_updated_fmt".')
+
+gitsha = os.popen("/usr/bin/git rev-parse HEAD").read()
+giturl = ('https://git.openstack.org/cgit/openstack/%s/tree/doc/source'
+          % PROJECT)
+html_context = {
+    'gitsha': gitsha,
+    'giturl': giturl,
+    'bug_project': PROJECT,
+    'bug_tag': 'doc',
+}
+html_last_updated_fmt = os.popen("git log --pretty=format:'%ad' "
+                                 "--date=format:'%Y-%m-%d %H:%M' -n1").read()
 
 # If true, SmartyPants will be used to convert quotes and dashes to
 # typographically correct entities.
