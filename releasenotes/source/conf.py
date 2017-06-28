@@ -29,12 +29,6 @@
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 # sys.path.insert(0, os.path.abspath('.'))
 
-import os
-
-import openstackdocstheme
-
-PROJECT = 'neutron-fwaas-dashboard'
-
 # -- General configuration ------------------------------------------------
 
 # If your documentation needs a minimal Sphinx version, state it here.
@@ -45,7 +39,14 @@ PROJECT = 'neutron-fwaas-dashboard'
 # ones.
 extensions = [
     'reno.sphinxext',
+    'openstackdocstheme',
 ]
+
+# openstackdocstheme options
+repository_name = 'openstack/neutron-fwaas-dashboard'
+bug_project = 'neutron-fwaas-dashboard'
+bug_tag = 'doc'
+html_last_updated_fmt = '%Y-%m-%d %H:%M'
 
 # Add any paths that contain templates here, relative to this directory.
 # templates_path = ['_templates']
@@ -125,7 +126,7 @@ html_theme = 'openstackdocs'
 # html_theme_options = {}
 
 # Add any paths that contain custom themes here, relative to this directory.
-html_theme_path = [openstackdocstheme.get_html_theme_path()]
+# html_theme_path = []
 
 # The name for this set of Sphinx documents.  If None, it defaults to
 # "<project> v<release> documentation".
@@ -196,18 +197,6 @@ html_static_path = []
 
 # Output file base name for HTML help builder.
 htmlhelp_basename = 'neutronfwaasdashboardReleaseNotesdoc'
-
-gitsha = os.popen("/usr/bin/git rev-parse HEAD").read()
-giturl = ('https://git.openstack.org/cgit/openstack/%s/tree/doc/source'
-          % PROJECT)
-html_context = {
-    'gitsha': gitsha,
-    'giturl': giturl,
-    'bug_project': PROJECT,
-    'bug_tag': 'doc',
-}
-html_last_updated_fmt = os.popen("git log --pretty=format:'%ad' "
-                                 "--date=format:'%Y-%m-%d %H:%M' -n1").read()
 
 # -- Options for Internationalization output ------------------------------
 locale_dirs = ['locale/']
