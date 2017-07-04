@@ -1,13 +1,13 @@
 # Akihiro Motoki <amotoki@gmail.com>, 2017. #zanata
 msgid ""
 msgstr ""
-"Project-Id-Version: neutron-fwaas-dashboard 0.0.1.dev11\n"
+"Project-Id-Version: neutron-fwaas-dashboard 0.0.1.dev14\n"
 "Report-Msgid-Bugs-To: https://bugs.launchpad.net/openstack-i18n/\n"
-"POT-Creation-Date: 2017-06-29 05:40+0000\n"
+"POT-Creation-Date: 2017-07-03 16:12+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2017-06-28 02:48+0000\n"
+"PO-Revision-Date: 2017-06-30 09:11+0000\n"
 "Last-Translator: Akihiro Motoki <amotoki@gmail.com>\n"
 "Language-Team: Japanese\n"
 "Language: ja\n"
@@ -20,6 +20,9 @@ msgstr "ALLOW"
 msgctxt "Action Name of a Firewall Rule"
 msgid "ALLOW"
 msgstr "ALLOW"
+
+msgid "ANY"
+msgstr "ANY"
 
 msgid "Action"
 msgstr "アクション"
@@ -78,6 +81,9 @@ msgstr "ルール \"%s\" を追加しました。"
 
 msgid "Admin State"
 msgstr "管理状態"
+
+msgid "After"
+msgstr "後に挿入"
 
 msgid "Associated Routers"
 msgstr "適用先ルーター"
