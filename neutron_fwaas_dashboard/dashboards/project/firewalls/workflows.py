@@ -20,6 +20,8 @@ from horizon import forms
 from horizon.utils import validators
 from horizon import workflows
 
+from openstack_dashboard import policy
+
 from neutron_fwaas_dashboard.api import fwaas as api_fwaas
 
 port_validator = validators.validate_port_or_colon_separated_port_range
@@ -89,6 +91,17 @@ class AddRuleAction(workflows.Action):
 
     def __init__(self, request, *args, **kwargs):
         super(AddRuleAction, self).__init__(request, *args, **kwargs)
+        # Only admin user can update the 'shared' attribute
+        self.ignore_shared = False
+        if not policy.check((("neutron-fwaas",
+                              "create_firewall_rule:shared"),),
+                            request):
+            self.fields['shared'].widget = forms.CheckboxInput(
+                attrs={'readonly': 'readonly', 'disabled': 'disabled'})
+            self.fields['shared'].help_text = _(
+                'Non admin users are not allowed to set the shared property '
+                'of the rule.')
+            self.ignore_shared = True
 
     def _check_ip_addr_and_ip_version(self, cleaned_data):
         ip_version = int(str(cleaned_data.get('ip_version')))

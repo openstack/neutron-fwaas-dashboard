@@ -23,6 +23,7 @@ from horizon import messages
 from horizon.utils import validators
 
 from openstack_dashboard import api
+from openstack_dashboard import policy
 
 from neutron_fwaas_dashboard.api import fwaas as api_fwaas
 
@@ -78,6 +79,20 @@ class UpdateRule(forms.SelfHandlingForm):
 
     failure_url = 'horizon:project:firewalls:index'
 
+    def __init__(self, request, *args, **kwargs):
+        super(UpdateRule, self).__init__(request, *args, **kwargs)
+        # Only admin user can update the 'shared' attribute
+        self.ignore_shared = False
+        if not policy.check((("neutron-fwaas",
+                              "update_firewall_rule:shared"),),
+                            request):
+            self.fields['shared'].widget = forms.CheckboxInput(
+                attrs={'readonly': 'readonly', 'disabled': 'disabled'})
+            self.fields['shared'].help_text = _(
+                'Non admin users are not allowed to set the shared property '
+                'of the rule.')
+            self.ignore_shared = True
+
     def handle(self, request, context):
         rule_id = self.initial['rule_id']
         name_or_id = context.get('name') or rule_id
@@ -87,6 +102,12 @@ class UpdateRule(forms.SelfHandlingForm):
                   'source_port', 'destination_port']:
             if not context[f]:
                 context[f] = None
+
+        # Remove 'shared' from the context if the user is not allowed to
+        # change this field
+        if self.ignore_shared and 'shared' in context:
+            del context['shared']
+
         try:
             rule = api_fwaas.rule_update(request, rule_id, **context)
             msg = _('Rule %s was successfully updated.') % name_or_id
