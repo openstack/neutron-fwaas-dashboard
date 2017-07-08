@@ -36,7 +36,7 @@ class AddRuleLink(tables.LinkAction):
     url = "horizon:project:firewalls:addrule"
     classes = ("ajax-modal",)
     icon = "plus"
-    policy_rules = (("network", "create_firewall_rule"),)
+    policy_rules = (("neutron-fwaas", "create_firewall_rule"),)
 
 
 class AddPolicyLink(tables.LinkAction):
@@ -45,7 +45,7 @@ class AddPolicyLink(tables.LinkAction):
     url = "horizon:project:firewalls:addpolicy"
     classes = ("ajax-modal", "btn-addpolicy",)
     icon = "plus"
-    policy_rules = (("network", "create_firewall_policy"),)
+    policy_rules = (("neutron-fwaas", "create_firewall_policy"),)
 
 
 class AddFirewallLink(tables.LinkAction):
@@ -54,12 +54,12 @@ class AddFirewallLink(tables.LinkAction):
     url = "horizon:project:firewalls:addfirewall"
     classes = ("ajax-modal",)
     icon = "plus"
-    policy_rules = (("network", "create_firewall"),)
+    policy_rules = (("neutron-fwaas", "create_firewall"),)
 
 
 class DeleteRuleLink(policy.PolicyTargetMixin, tables.DeleteAction):
     name = "deleterule"
-    policy_rules = (("network", "delete_firewall_rule"),)
+    policy_rules = (("neutron-fwaas", "delete_firewall_rule"),)
 
     @staticmethod
     def action_present(count):
@@ -91,7 +91,7 @@ class DeleteRuleLink(policy.PolicyTargetMixin, tables.DeleteAction):
 
 class DeletePolicyLink(policy.PolicyTargetMixin, tables.DeleteAction):
     name = "deletepolicy"
-    policy_rules = (("network", "delete_firewall_policy"),)
+    policy_rules = (("neutron-fwaas", "delete_firewall_policy"),)
 
     @staticmethod
     def action_present(count):
@@ -119,7 +119,7 @@ class DeletePolicyLink(policy.PolicyTargetMixin, tables.DeleteAction):
 class DeleteFirewallLink(policy.PolicyTargetMixin,
                          tables.DeleteAction):
     name = "deletefirewall"
-    policy_rules = (("network", "delete_firewall"),)
+    policy_rules = (("neutron-fwaas", "delete_firewall"),)
 
     @staticmethod
     def action_present(count):
@@ -148,7 +148,7 @@ class UpdateRuleLink(policy.PolicyTargetMixin, tables.LinkAction):
     name = "updaterule"
     verbose_name = _("Edit Rule")
     classes = ("ajax-modal", "btn-update",)
-    policy_rules = (("network", "update_firewall_rule"),)
+    policy_rules = (("neutron-fwaas", "update_firewall_rule"),)
 
     def get_link_url(self, rule):
         base_url = reverse("horizon:project:firewalls:updaterule",
@@ -160,7 +160,7 @@ class UpdatePolicyLink(policy.PolicyTargetMixin, tables.LinkAction):
     name = "updatepolicy"
     verbose_name = _("Edit Policy")
     classes = ("ajax-modal", "btn-update",)
-    policy_rules = (("network", "update_firewall_policy"),)
+    policy_rules = (("neutron-fwaas", "update_firewall_policy"),)
 
     def get_link_url(self, policy):
         base_url = reverse("horizon:project:firewalls:updatepolicy",
@@ -172,7 +172,7 @@ class UpdateFirewallLink(policy.PolicyTargetMixin, tables.LinkAction):
     name = "updatefirewall"
     verbose_name = _("Edit Firewall")
     classes = ("ajax-modal", "btn-update",)
-    policy_rules = (("network", "update_firewall"),)
+    policy_rules = (("neutron-fwaas", "update_firewall"),)
 
     def get_link_url(self, firewall):
         base_url = reverse("horizon:project:firewalls:updatefirewall",
@@ -192,8 +192,8 @@ class InsertRuleToPolicyLink(policy.PolicyTargetMixin,
     name = "insertrule"
     verbose_name = _("Insert Rule")
     classes = ("ajax-modal", "btn-update",)
-    policy_rules = (("network", "get_firewall_policy"),
-                    ("network", "insert_rule"),)
+    policy_rules = (("neutron-fwaas", "get_firewall_policy"),
+                    ("neutron-fwaas", "insert_rule"),)
 
     def get_link_url(self, policy):
         base_url = reverse("horizon:project:firewalls:insertrule",
@@ -206,8 +206,8 @@ class RemoveRuleFromPolicyLink(policy.PolicyTargetMixin,
     name = "removerule"
     verbose_name = _("Remove Rule")
     classes = ("ajax-modal",)
-    policy_rules = (("network", "get_firewall_policy"),
-                    ("network", "remove_rule"),)
+    policy_rules = (("neutron-fwaas", "get_firewall_policy"),
+                    ("neutron-fwaas", "remove_rule"),)
     action_type = "danger"
 
     def get_link_url(self, policy):
@@ -226,8 +226,8 @@ class AddRouterToFirewallLink(policy.PolicyTargetMixin,
     name = "addrouter"
     verbose_name = _("Add Router")
     classes = ("ajax-modal", "btn-update",)
-    policy_rules = (("network", "get_firewall"),
-                    ("network", "add_router"),)
+    policy_rules = (("neutron-fwaas", "get_firewall"),
+                    ("neutron-fwaas", "add_router"),)
 
     def get_link_url(self, firewall):
         base_url = reverse("horizon:project:firewalls:addrouter",
@@ -249,8 +249,8 @@ class RemoveRouterFromFirewallLink(policy.PolicyTargetMixin,
     name = "removerouter"
     verbose_name = _("Remove Router")
     classes = ("ajax-modal", "btn-update",)
-    policy_rules = (("network", "get_firewall"),
-                    ("network", "remove_router"),)
+    policy_rules = (("neutron-fwaas", "get_firewall"),
+                    ("neutron-fwaas", "remove_router"),)
 
     def get_link_url(self, firewall):
         base_url = reverse("horizon:project:firewalls:removerouter",
