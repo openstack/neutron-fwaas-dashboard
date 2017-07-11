@@ -292,6 +292,18 @@ class AddPolicyAction(workflows.Action):
     def __init__(self, request, *args, **kwargs):
         super(AddPolicyAction, self).__init__(request, *args, **kwargs)
 
+        # Only admin user can update the 'shared' attribute
+        self.ignore_shared = False
+        if not policy.check((("neutron-fwaas",
+                              "create_firewall_policy:shared"),),
+                            request):
+            self.fields['shared'].widget = forms.CheckboxInput(
+                attrs={'readonly': 'readonly', 'disabled': 'disabled'})
+            self.fields['shared'].help_text = _(
+                'Non admin users are not allowed to set the shared property '
+                'of the policy.')
+            self.ignore_shared = True
+
     class Meta(object):
         name = _("Policy")
         permissions = ('openstack.services.network',)

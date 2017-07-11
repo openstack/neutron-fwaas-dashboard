@@ -131,9 +131,29 @@ class UpdatePolicy(forms.SelfHandlingForm):
 
     failure_url = 'horizon:project:firewalls:index'
 
+    def __init__(self, request, *args, **kwargs):
+        super(UpdatePolicy, self).__init__(request, *args, **kwargs)
+        # Only admin user can update the 'shared' attribute
+        self.ignore_shared = False
+        if not policy.check((("neutron-fwaas",
+                              "update_firewall_policy:shared"),),
+                            request):
+            self.fields['shared'].widget = forms.CheckboxInput(
+                attrs={'readonly': 'readonly', 'disabled': 'disabled'})
+            self.fields['shared'].help_text = _(
+                'Non admin users are not allowed to set the shared property '
+                'of the policy.')
+            self.ignore_shared = True
+
     def handle(self, request, context):
         policy_id = self.initial['policy_id']
         name_or_id = context.get('name') or policy_id
+
+        # Remove 'shared' from the context if the user is not allowed to
+        # change this field
+        if self.ignore_shared and 'shared' in context:
+            del context['shared']
+
         try:
             policy = api_fwaas.policy_update(request, policy_id, **context)
             msg = _('Policy %s was successfully updated.') % name_or_id
