@@ -78,7 +78,7 @@ across distributions or deployments.
    from horizon, what you need is to uncomment ``POLICY_FILES`` (which contains
    the default values).
 
-Compile the message catalogs of Neutron VPNaaS dashboard.
+Compile the message catalogs of Neutron FWaaS dashboard.
 
 .. code-block:: console
 
