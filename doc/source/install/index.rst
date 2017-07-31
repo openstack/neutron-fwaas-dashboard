@@ -57,7 +57,7 @@ Enable the horizon plugin.
 
    For more detail of the horizon plugin settings,
    see `Pluggable Settings
-   <https://docs.openstack.org/developer/horizon/install/settings.html#pluggable-settings>`__
+   <https://docs.openstack.org/horizon/latest/configuration/pluggable_panels.html>`__
    in the horizon documentation.
 
 Configure the policy file for Neutron FWaaS dashboard
