@@ -23,6 +23,6 @@ It checks if Neutron FWaaS service is enabled in your neutron server
 and the FWaaS panel is displayed if enabled.
 
 For more configurations, see
-`Deployment & Configuration
-<https://docs.openstack.org/developer/horizon/install/index.html>`__
+`Settings Reference
+<https://docs.openstack.org/horizon/latest/configuration/settings.html>`__
 in the Horizon documentation.

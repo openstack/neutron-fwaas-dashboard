@@ -5,7 +5,7 @@ DevStack plugin for neutron-fwaas-dashboard
 This is setup as a DevStack plugin.
 For more information on DevStack plugins,
 see the `DevStack Plugins documentation
-<https://docs.openstack.org/developer/devstack/plugins.html>`__.
+<https://docs.openstack.org/devstack/latest/plugins.html>`__.
 
 How to enable FWaaS v1 dsashboard
 ---------------------------------

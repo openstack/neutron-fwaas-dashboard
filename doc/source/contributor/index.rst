@@ -20,8 +20,8 @@ Contributor Guide
 
 There is no topic specific to neutron-fwaas-dashboard now.
 
-See `Horizon Developer Documents
-<https://docs.openstack.org/developer/horizon/index.html#developer-docs>`__
+See `Horizon Contributor Documentation
+<https://docs.openstack.org/horizon/latest/contributor/>`__
 for general topic on developing a dashboard on horizon.
 
 ----
