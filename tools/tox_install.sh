@@ -71,6 +71,7 @@ while [ $# -gt 0 ] ; do
     os:*)
         declare -a pkg_spec
         IFS=: pkg_spec=($1)
+        unset IFS
         install_from_git "${pkg_spec[1]}" "${pkg_spec[2]}"
     ;;
     # Otherwise just pass the other deps through to the constrained pip install
