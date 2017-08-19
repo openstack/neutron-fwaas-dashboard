@@ -10,7 +10,7 @@ function install_neutron_fwaas_dashboard {
 
 function configure_neutron_fwaas_dashboard {
     if is_service_enabled neutron-fwaas-v1-dashboard; then
-        cp -a $FWAAS_ENABLED_DIR/_1460_project_firewalls_panel.py $HORIZON_ENABLED_DIR
+        cp -a $FWAAS_ENABLED_DIR/_7010_project_firewalls_panel.py $HORIZON_ENABLED_DIR
     fi
     # The following is to make fwaas dashboard work with
     # the master horizon with neutron fwaas support.
