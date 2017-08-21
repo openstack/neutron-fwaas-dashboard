@@ -20,27 +20,10 @@ Neutron FWaaS Dashboard Project
 
 Neutron FWaaS Dashboard is a horizon plugin for Neutron FWaaS.
 
-User Documentation
-------------------
-
 .. toctree::
    :maxdepth: 1
 
    install/index
    configuration/index
-
-Contributor Guide
------------------
-
-.. toctree::
-   :maxdepth: 2
-
    contributor/index
-
-Release Notes
--------------
-
-.. toctree::
-   :maxdepth: 1
-
-   Release Notes <releasenotes/index>
+   Release Notes <https://docs.openstack.org/releasenotes/neutron-fwaas-dashboard/>
