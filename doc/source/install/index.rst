@@ -38,8 +38,8 @@ Enable the horizon plugin.
 
 .. code-block:: console
 
-   $ cp neutron_fwaas_dashboard/enabled/_1460_project_firewalls_panel.py \
-         /opt/stack/horizon/openstack_dashboard/local/enabled/_1460_project_firewalls_panel.py
+   $ cp neutron_fwaas_dashboard/enabled/_7010_project_firewalls_panel.py \
+         /opt/stack/horizon/openstack_dashboard/local/enabled/_7010_project_firewalls_panel.py
 
 .. note::
 
