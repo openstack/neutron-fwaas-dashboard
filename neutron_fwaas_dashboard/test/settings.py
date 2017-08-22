@@ -20,9 +20,10 @@ HORIZON_CONFIG.pop('dashboards', None)
 HORIZON_CONFIG.pop('default_dashboard', None)
 
 # Update the dashboards with neutron_fwaas_dashboard
-import neutron_fwaas_dashboard.enabled
 import openstack_dashboard.enabled
 from openstack_dashboard.utils import settings
+
+import neutron_fwaas_dashboard.enabled
 
 settings.update_dashboards(
     [
