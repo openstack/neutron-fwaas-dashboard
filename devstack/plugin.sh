@@ -12,12 +12,6 @@ function configure_neutron_fwaas_dashboard {
     if is_service_enabled neutron-fwaas-v1-dashboard; then
         cp -a $FWAAS_ENABLED_DIR/_1460_project_firewalls_panel.py $HORIZON_ENABLED_DIR
     fi
-    # The following is to make fwaas dashboard work with
-    # the master horizon with neutron fwaas support.
-    # At now it seems overriding enabled file does not work.
-    # (horizon bug 1700325)
-    rm -f $DEST/horizon/openstack_dashboard/enabled/_1460_project_firewalls_panel.py*
-    rm -f $DEST/horizon/openstack_dashboard/enabled/__pycache__/_1460_project_firewalls_panel.*
     # NOTE: If locale directory does not exist, compilemessages will fail,
     # so check for an existence of locale directory is required.
     if [ -d $FWAAS_DASHBOARD_DIR/neutron_fwaas_dashboard/locale ]; then
