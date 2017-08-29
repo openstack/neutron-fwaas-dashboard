@@ -72,8 +72,8 @@ class DeleteRuleLink(policy.PolicyTargetMixin, tables.DeleteAction):
     @staticmethod
     def action_past(count):
         return ungettext_lazy(
-            u"Scheduled deletion of Rule",
-            u"Scheduled deletion of Rules",
+            u"Scheduled deletion of rule",
+            u"Scheduled deletion of rules",
             count
         )
 
@@ -104,8 +104,8 @@ class DeletePolicyLink(policy.PolicyTargetMixin, tables.DeleteAction):
     @staticmethod
     def action_past(count):
         return ungettext_lazy(
-            u"Scheduled deletion of Policy",
-            u"Scheduled deletion of Policies",
+            u"Scheduled deletion of policy",
+            u"Scheduled deletion of policies",
             count
         )
 
@@ -132,8 +132,8 @@ class DeleteFirewallLink(policy.PolicyTargetMixin,
     @staticmethod
     def action_past(count):
         return ungettext_lazy(
-            u"Scheduled deletion of Firewall",
-            u"Scheduled deletion of Firewalls",
+            u"Scheduled deletion of firewall",
+            u"Scheduled deletion of firewalls",
             count
         )
 
@@ -285,9 +285,9 @@ def get_policy_link(datum):
 
 class RulesTable(tables.DataTable):
     ACTION_DISPLAY_CHOICES = (
-        ("Allow", pgettext_lazy("Action Name of a Firewall Rule", u"ALLOW")),
-        ("Deny", pgettext_lazy("Action Name of a Firewall Rule", u"DENY")),
-        ("Reject", pgettext_lazy("Action Name of a Firewall Rule", u"REJECT")),
+        ("Allow", pgettext_lazy("Action name of a firewall rule", u"ALLOW")),
+        ("Deny", pgettext_lazy("Action name of a firewall rule", u"DENY")),
+        ("Reject", pgettext_lazy("Action name of a firewall rule", u"REJECT")),
     )
     name = tables.Column("name_or_id",
                          verbose_name=_("Name"),
@@ -359,26 +359,26 @@ class PoliciesTable(tables.DataTable):
 
 class FirewallsTable(tables.DataTable):
     STATUS_DISPLAY_CHOICES = (
-        ("Active", pgettext_lazy("Current status of a Firewall",
+        ("Active", pgettext_lazy("Current status of a firewall",
                                  u"Active")),
-        ("Down", pgettext_lazy("Current status of a Firewall",
+        ("Down", pgettext_lazy("Current status of a firewall",
                                u"Down")),
-        ("Error", pgettext_lazy("Current status of a Firewall",
+        ("Error", pgettext_lazy("Current status of a firewall",
                                 u"Error")),
-        ("Created", pgettext_lazy("Current status of a Firewall",
+        ("Created", pgettext_lazy("Current status of a firewall",
                                   u"Created")),
-        ("Pending_Create", pgettext_lazy("Current status of a Firewall",
+        ("Pending_Create", pgettext_lazy("Current status of a firewall",
                                          u"Pending Create")),
-        ("Pending_Update", pgettext_lazy("Current status of a Firewall",
+        ("Pending_Update", pgettext_lazy("Current status of a firewall",
                                          u"Pending Update")),
-        ("Pending_Delete", pgettext_lazy("Current status of a Firewall",
+        ("Pending_Delete", pgettext_lazy("Current status of a firewall",
                                          u"Pending Delete")),
-        ("Inactive", pgettext_lazy("Current status of a Firewall",
+        ("Inactive", pgettext_lazy("Current status of a firewall",
                                    u"Inactive")),
     )
     ADMIN_STATE_DISPLAY_CHOICES = (
-        ("UP", pgettext_lazy("Admin state of a Firewall", u"UP")),
-        ("DOWN", pgettext_lazy("Admin state of a Firewall", u"DOWN")),
+        ("UP", pgettext_lazy("Admin state of a firewall", u"UP")),
+        ("DOWN", pgettext_lazy("Admin state of a firewall", u"DOWN")),
     )
 
     name = tables.Column("name_or_id",

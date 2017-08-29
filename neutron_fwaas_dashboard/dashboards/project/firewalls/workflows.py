@@ -125,7 +125,7 @@ class AddRuleAction(workflows.Action):
         name = _("Rule")
         permissions = ('openstack.services.network',)
         help_text = _("Create a firewall rule.\n\n"
-                      "A Firewall rule is an association of the following "
+                      "A firewall rule is an association of the following "
                       "attributes:\n\n"
                       "<li>IP Addresses: The addresses from/to which the "
                       "traffic filtration needs to be applied.</li>"
@@ -165,8 +165,8 @@ class AddRule(workflows.Workflow):
     slug = "addrule"
     name = _("Add Rule")
     finalize_button_name = _("Add")
-    success_message = _('Added Rule "%s".')
-    failure_message = _('Unable to add Rule "%s".')
+    success_message = _('Added rule "%s".')
+    failure_message = _('Unable to add rule "%s".')
     success_url = "horizon:project:firewalls:index"
     # fwaas is designed to support a wide range of vendor
     # firewalls. Considering the multitude of vendor firewall
@@ -342,8 +342,8 @@ class AddPolicy(workflows.Workflow):
     slug = "addpolicy"
     name = _("Add Policy")
     finalize_button_name = _("Add")
-    success_message = _('Added Policy "%s".')
-    failure_message = _('Unable to add Policy "%s".')
+    success_message = _('Added policy "%s".')
+    failure_message = _('Unable to add policy "%s".')
     success_url = "horizon:project:firewalls:index"
     default_steps = (AddPolicyStep, SelectRulesStep)
 
@@ -375,7 +375,7 @@ class AddFirewallAction(workflows.Action):
     def __init__(self, request, *args, **kwargs):
         super(AddFirewallAction, self).__init__(request, *args, **kwargs)
 
-        firewall_policy_id_choices = [('', _("Select a Policy"))]
+        firewall_policy_id_choices = [('', _("Select a policy"))]
         try:
             tenant_id = self.request.user.tenant_id
             policies = api_fwaas.policy_list_for_tenant(request, tenant_id)
@@ -410,8 +410,8 @@ class AddFirewall(workflows.Workflow):
     slug = "addfirewall"
     name = _("Add Firewall")
     finalize_button_name = _("Add")
-    success_message = _('Added Firewall "%s".')
-    failure_message = _('Unable to add Firewall "%s".')
+    success_message = _('Added firewall "%s".')
+    failure_message = _('Unable to add firewall "%s".')
     success_url = "horizon:project:firewalls:index"
     # fwaas is designed to support a wide range of vendor
     # firewalls. Considering the multitude of vendor firewall
