@@ -1,0 +1,37 @@
+# Akihiro Motoki <amotoki@gmail.com>, 2017. #zanata
+msgid ""
+msgstr ""
+"Project-Id-Version: Neutron FWaaS Dashboard Release Notes 1.0.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-08-24 14:25+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2017-08-21 10:10+0000\n"
+"Last-Translator: Akihiro Motoki <amotoki@gmail.com>\n"
+"Language-Team: Japanese\n"
+"Language: ja\n"
+"X-Generator: Zanata 3.9.6\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+
+msgid "0.1.0"
+msgstr "0.1.0"
+
+msgid "Bug Fixes"
+msgstr "バグ修正"
+
+msgid "Current Series Release Notes"
+msgstr "開発中バージョンのリリースノート"
+
+msgid "Neutron FWaaS Dashboard Release Notes"
+msgstr "Neutron FWaaS Dashboard リリースノート"
+
+msgid ""
+"Neutron FWaaS support in the OpenStack Dashboard is now split out into a "
+"separate python package."
+msgstr ""
+"OpenStack Dashboard の Neutron FWaaS 対応は、別の Python パッケージに分離され"
+"ました。"
+
+msgid "New Features"
+msgstr "新機能"
