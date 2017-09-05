@@ -94,7 +94,7 @@ class UpdateRule(forms.SelfHandlingForm):
             self.ignore_shared = True
 
     def handle(self, request, context):
-        rule_id = self.initial['rule_id']
+        rule_id = self.initial['id']
         name_or_id = context.get('name') or rule_id
         if context['protocol'] == 'any':
             context['protocol'] = None
@@ -146,7 +146,7 @@ class UpdatePolicy(forms.SelfHandlingForm):
             self.ignore_shared = True
 
     def handle(self, request, context):
-        policy_id = self.initial['policy_id']
+        policy_id = self.initial['id']
         name_or_id = context.get('name') or policy_id
 
         # Remove 'shared' from the context if the user is not allowed to
@@ -203,7 +203,7 @@ class UpdateFirewall(forms.SelfHandlingForm):
         self.fields['firewall_policy_id'].choices = firewall_policy_id_choices
 
     def handle(self, request, context):
-        firewall_id = self.initial['firewall_id']
+        firewall_id = self.initial['id']
         name_or_id = context.get('name') or firewall_id
         try:
             firewall = api_fwaas.firewall_update(request, firewall_id,
@@ -259,7 +259,7 @@ class InsertRuleToPolicy(forms.SelfHandlingForm):
         self.fields['insert_after'].choices = [('', '')] + current_choices
 
     def handle(self, request, context):
-        policy_id = self.initial['policy_id']
+        policy_id = self.initial['id']
         policy_name_or_id = self.initial['name'] or policy_id
         try:
             insert_rule_id = context['firewall_rule_id']
@@ -314,7 +314,7 @@ class RemoveRuleFromPolicy(forms.SelfHandlingForm):
         self.fields['firewall_rule_id'].choices = current_choices
 
     def handle(self, request, context):
-        policy_id = self.initial['policy_id']
+        policy_id = self.initial['id']
         policy_name_or_id = self.initial['name'] or policy_id
         try:
             remove_rule_id = context['firewall_rule_id']
@@ -368,7 +368,7 @@ class AddRouterToFirewall(forms.SelfHandlingForm):
         return add_router_ids + existing_router_ids
 
     def handle(self, request, context):
-        firewall_id = self.initial['firewall_id']
+        firewall_id = self.initial['id']
         firewall_name_or_id = self.initial['name'] or firewall_id
         try:
             body = {'router_ids': self.get_new_router_ids(context)}
@@ -425,7 +425,7 @@ class RemoveRouterFromFirewall(forms.SelfHandlingForm):
         return context['router_ids']
 
     def handle(self, request, context):
-        firewall_id = self.initial['firewall_id']
+        firewall_id = self.initial['id']
         firewall_name_or_id = self.initial['name'] or firewall_id
         try:
             body = {'router_ids': self.get_new_router_ids(context)}

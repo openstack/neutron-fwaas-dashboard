@@ -82,9 +82,8 @@ class FirewallsTab(tabs.TableTab):
                 routers = api.neutron.router_list(request, tenant_id=tenant_id)
 
                 for fw in firewalls:
-                    router_list = [r for r in routers
-                                   if r['id'] in fw['router_ids']]
-                    fw.get_dict()['routers'] = router_list
+                    fw.routers = [r for r in routers
+                                  if r['id'] in fw['router_ids']]
 
         except Exception:
             firewalls = []

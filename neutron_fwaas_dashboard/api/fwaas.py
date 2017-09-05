@@ -27,19 +27,9 @@ neutronclient = neutron.neutronclient
 class Rule(neutron.NeutronAPIDictWrapper):
     """Wrapper for neutron firewall rule."""
 
-    def get_dict(self):
-        rule_dict = self._apidict
-        rule_dict['rule_id'] = rule_dict['id']
-        return rule_dict
-
 
 class Policy(neutron.NeutronAPIDictWrapper):
     """Wrapper for neutron firewall policy."""
-
-    def get_dict(self):
-        policy_dict = self._apidict
-        policy_dict['policy_id'] = policy_dict['id']
-        return policy_dict
 
 
 class Firewall(neutron.NeutronAPIDictWrapper):
@@ -49,11 +39,6 @@ class Firewall(neutron.NeutronAPIDictWrapper):
         apiresource['admin_state'] = \
             'UP' if apiresource['admin_state_up'] else 'DOWN'
         super(Firewall, self).__init__(apiresource)
-
-    def get_dict(self):
-        firewall_dict = self._apidict
-        firewall_dict['firewall_id'] = firewall_dict['id']
-        return firewall_dict
 
 
 def rule_create(request, **kwargs):

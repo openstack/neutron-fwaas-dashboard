@@ -211,7 +211,7 @@ class UpdateRuleView(horizon_forms.ModalFormView):
 
     def get_initial(self):
         rule = self._get_object()
-        initial = rule.get_dict()
+        initial = rule.to_dict()
         if not initial['protocol']:
             initial['protocol'] = 'any'
         return initial
@@ -250,7 +250,7 @@ class UpdatePolicyView(horizon_forms.ModalFormView):
 
     def get_initial(self):
         policy = self._get_object()
-        initial = policy.get_dict()
+        initial = policy.to_dict()
         return initial
 
 
@@ -288,7 +288,7 @@ class UpdateFirewallView(horizon_forms.ModalFormView):
 
     def get_initial(self):
         firewall = self._get_object()
-        initial = firewall.get_dict()
+        initial = firewall.to_dict()
         return initial
 
 
@@ -326,8 +326,7 @@ class InsertRuleToPolicyView(horizon_forms.ModalFormView):
 
     def get_initial(self):
         policy = self._get_object()
-        initial = policy.get_dict()
-        initial['policy_id'] = initial['id']
+        initial = policy.to_dict()
         return initial
 
 
@@ -365,8 +364,7 @@ class RemoveRuleFromPolicyView(horizon_forms.ModalFormView):
 
     def get_initial(self):
         policy = self._get_object()
-        initial = policy.get_dict()
-        initial['policy_id'] = initial['id']
+        initial = policy.to_dict()
         return initial
 
 
@@ -400,7 +398,7 @@ class RouterCommonView(horizon_forms.ModalFormView):
 
     def get_initial(self):
         firewall = self._get_object()
-        initial = firewall.get_dict()
+        initial = firewall.to_dict()
         return initial
 
 
