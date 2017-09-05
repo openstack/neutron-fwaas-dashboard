@@ -39,13 +39,13 @@ class UpdateRule(forms.SelfHandlingForm):
         max_length=80, label=_("Description"))
     protocol = forms.ThemableChoiceField(
         label=_("Protocol"), required=False,
-        choices=[('TCP', _('TCP')), ('UDP', _('UDP')), ('ICMP', _('ICMP')),
-                 ('ANY', _('ANY'))],
+        choices=[('tcp', _('TCP')), ('udp', _('UDP')), ('icmp', _('ICMP')),
+                 ('any', _('ANY'))],
         help_text=_('Protocol for the firewall rule'))
     action = forms.ThemableChoiceField(
         label=_("Action"), required=False,
-        choices=[('ALLOW', _('ALLOW')), ('DENY', _('DENY')),
-                 ('REJECT', _('REJECT'))],
+        choices=[('allow', _('ALLOW')), ('deny', _('DENY')),
+                 ('reject', _('REJECT'))],
         help_text=_('Action for the firewall rule'))
     source_ip_address = forms.IPField(
         label=_("Source IP Address/Subnet"),
@@ -96,7 +96,7 @@ class UpdateRule(forms.SelfHandlingForm):
     def handle(self, request, context):
         rule_id = self.initial['rule_id']
         name_or_id = context.get('name') or rule_id
-        if context['protocol'] == 'ANY':
+        if context['protocol'] == 'any':
             context['protocol'] = None
         for f in ['source_ip_address', 'destination_ip_address',
                   'source_port', 'destination_port']:
