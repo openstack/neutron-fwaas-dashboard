@@ -12,7 +12,10 @@
 #    License for the specific language governing permissions and limitations
 #    under the License.
 
+from django import http
+from mox3 import mox
 from neutronclient.v2_0.client import Client as neutronclient
+from openstack_dashboard.api import neutron as api_neutron
 
 from neutron_fwaas_dashboard.api import fwaas as api_fwaas
 from neutron_fwaas_dashboard.test import helpers as test
@@ -381,7 +384,9 @@ class FwaasApiTests(test.APITestCase):
             self._assert_firewall_return_value(v, d)
 
     @test.create_stubs({neutronclient: ('show_firewall',
-                                        'show_firewall_policy')})
+                                        'show_firewall_policy'),
+                        api_neutron: ('is_extension_supported',
+                                      'router_list')})
     def test_firewall_get(self):
         exp_firewall = self.firewalls.first()
         ret_dict = {'firewall': self.api_firewalls.first()}
@@ -390,10 +395,20 @@ class FwaasApiTests(test.APITestCase):
         neutronclient.show_firewall(exp_firewall.id).AndReturn(ret_dict)
         neutronclient.show_firewall_policy(
             exp_firewall.firewall_policy_id).AndReturn(policy_dict)
+        api_neutron.is_extension_supported(
+            mox.IsA(http.HttpRequest), 'fwaasrouterinsertion').AndReturn(True)
+        api_neutron.router_list(
+            mox.IsA(http.HttpRequest),
+            id=exp_firewall.router_ids).AndReturn(exp_firewall.routers)
         self.mox.ReplayAll()
 
         ret_val = api_fwaas.firewall_get(self.request, exp_firewall.id)
         self._assert_firewall_return_value(ret_val, exp_firewall)
+        self.assertEqual(exp_firewall.router_ids, ret_val.router_ids)
+        self.assertEqual(exp_firewall.router_ids,
+                         [r.id for r in ret_val.routers])
+        self.assertEqual([r.name for r in exp_firewall.routers],
+                         [r.name for r in ret_val.routers])
 
     @test.create_stubs({neutronclient: ('update_firewall',)})
     def test_firewall_update(self):

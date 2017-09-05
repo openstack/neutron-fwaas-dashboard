@@ -283,10 +283,11 @@ def _firewall_list(request, expand_policy, **kwargs):
 
 @profiler.trace
 def firewall_get(request, firewall_id):
-    return _firewall_get(request, firewall_id, expand_policy=True)
+    return _firewall_get(request, firewall_id)
 
 
-def _firewall_get(request, firewall_id, expand_policy):
+def _firewall_get(request, firewall_id,
+                  expand_policy=True, expand_router=True):
     firewall = neutronclient(request).show_firewall(
         firewall_id).get('firewall')
     if expand_policy:
@@ -296,6 +297,16 @@ def _firewall_get(request, firewall_id, expand_policy):
                                              expand_rule=False)
         else:
             firewall['policy'] = None
+    if expand_router:
+        if neutron.is_extension_supported(request, 'fwaasrouterinsertion'):
+            router_ids = firewall['router_ids']
+            if router_ids:
+                firewall['routers'] = neutron.router_list(request,
+                                                          id=router_ids)
+            else:
+                firewall['routers'] = []
+        else:
+            firewall['routers'] = []
     return Firewall(firewall)
 
 
