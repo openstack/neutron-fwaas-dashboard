@@ -480,8 +480,8 @@ class FirewallTests(test.TestCase):
 
         data = {'name': 'new name',
                 'description': 'new desc',
-                'protocol': 'ICMP',
-                'action': 'ALLOW',
+                'protocol': 'icmp',
+                'action': 'allow',
                 'shared': False,
                 'enabled': True,
                 'ip_version': rule.ip_version,
@@ -515,8 +515,8 @@ class FirewallTests(test.TestCase):
 
         data = {'name': 'new name',
                 'description': 'new desc',
-                'protocol': 'ICMP',
-                'action': 'ALLOW',
+                'protocol': 'icmp',
+                'action': 'allow',
                 'shared': False,
                 'enabled': True,
                 'ip_version': rule.ip_version,
@@ -542,7 +542,7 @@ class FirewallTests(test.TestCase):
         self.assertRedirectsNoFollow(res, str(self.INDEX_URL))
 
     @test.create_stubs({api_fwaas: ('rule_get', 'rule_update')})
-    def test_update_rule_protocol_to_ANY_post(self):
+    def test_update_rule_protocol_to_any_post(self):
         rule = self.fw_rules.first()
 
         api_fwaas.rule_get(IsA(http.HttpRequest), rule.id).AndReturn(rule)
@@ -550,7 +550,7 @@ class FirewallTests(test.TestCase):
         data = {'name': 'new name',
                 'description': 'new desc',
                 'protocol': None,
-                'action': 'ALLOW',
+                'action': 'allow',
                 'shared': False,
                 'enabled': True,
                 'ip_version': rule.ip_version,
@@ -567,7 +567,7 @@ class FirewallTests(test.TestCase):
         form_data = data.copy()
         form_data['destination_ip_address'] = ''
         form_data['source_port'] = ''
-        form_data['protocol'] = 'ANY'
+        form_data['protocol'] = 'any'
 
         res = self.client.post(
             reverse(self.UPDATERULE_PATH, args=(rule.id,)), form_data)
