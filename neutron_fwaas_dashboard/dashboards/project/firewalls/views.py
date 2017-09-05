@@ -156,10 +156,8 @@ class FirewallDetailsView(horizon_tabs.TabView):
     def get_context_data(self, **kwargs):
         context = super(FirewallDetailsView, self).get_context_data(**kwargs)
         firewall = self.get_data()
-        routers = self.get_routers_data(firewall)
         table = tabs.FirewallsTable(self.request)
         context["firewall"] = firewall
-        context["routers"] = routers
         context["url"] = self.failure_url
         context["actions"] = table.render_row_actions(firewall)
         return context
@@ -174,23 +172,6 @@ class FirewallDetailsView(horizon_tabs.TabView):
                               _('Unable to retrieve firewall details.'),
                               redirect=self.failure_url)
         return firewall
-
-    @memoized.memoized_method
-    def get_routers_data(self, firewall):
-        routers = []
-        try:
-            if api.neutron.is_extension_supported(self.request,
-                                                  'fwaasrouterinsertion'):
-                tenant_id = self.request.user.tenant_id
-                tenant_routers = api.neutron.router_list(self.request,
-                                                         tenant_id=tenant_id)
-                router_ids = firewall.get_dict()['router_ids']
-                routers = [r for r in tenant_routers
-                           if r['id'] in router_ids]
-        except Exception:
-            exceptions.handle(self.request,
-                              _('Unable to retrieve list of routers.'), )
-        return routers
 
     def get_tabs(self, request, *args, **kwargs):
         firewall = self.get_data()
