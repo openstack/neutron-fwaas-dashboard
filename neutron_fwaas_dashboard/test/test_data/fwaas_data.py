@@ -160,4 +160,5 @@ def data(TEST):
 
     fw2 = fwaas.Firewall(copy.deepcopy(fw2_dict))
     fw2._apidict['policy'] = policy1
+    fw2._apidict['routers'] = []
     TEST.firewalls.add(fw2)
