@@ -32,6 +32,9 @@
     <dt>{% trans "Destination Port"%}</dt>
     <dd>{{ rule.destination_port|default:_("ANY") }}</dd>
 
+    <dt>{% trans "IP Version" %}</dt>
+    <dd>{{ rule.ip_version }}</dd>
+
     <dt>{% trans "Used in Policy" %}</dt>
     <dd>
       {% if rule.policy %}

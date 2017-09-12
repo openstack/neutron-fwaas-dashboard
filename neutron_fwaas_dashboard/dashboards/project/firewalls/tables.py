@@ -297,6 +297,8 @@ class RulesTable(tables.DataTable):
                              filters=(lambda v: filters.default(v, _("ANY")),
                                       filters.upper,),
                              verbose_name=_("Protocol"))
+    ip_version = tables.Column("ip_version",
+                               verbose_name=_("IP Version"))
     source_ip_address = tables.Column("source_ip_address",
                                       verbose_name=_("Source IP"))
     source_port = tables.Column("source_port",
