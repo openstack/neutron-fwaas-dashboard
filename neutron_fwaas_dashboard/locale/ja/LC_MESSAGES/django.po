@@ -1,9 +1,9 @@
 # Akihiro Motoki <amotoki@gmail.com>, 2017. #zanata
 msgid ""
 msgstr ""
-"Project-Id-Version: neutron-fwaas-dashboard 1.0.1.dev22\n"
+"Project-Id-Version: neutron-fwaas-dashboard 1.0.1.dev24\n"
 "Report-Msgid-Bugs-To: https://bugs.launchpad.net/openstack-i18n/\n"
-"POT-Creation-Date: 2017-10-04 13:59+0000\n"
+"POT-Creation-Date: 2017-10-13 17:26+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -14,6 +14,10 @@ msgstr ""
 "X-Generator: Zanata 3.9.6\n"
 "Plural-Forms: nplurals=1; plural=0\n"
 
+msgid "ALLOW"
+msgstr "ALLOW"
+
+msgctxt "Action Name of a Firewall Rule"
 msgid "ALLOW"
 msgstr "ALLOW"
 
@@ -58,6 +62,14 @@ msgstr "ルールの追加"
 
 msgid "Add selected router(s) to the firewall."
 msgstr "選択したルーターをファイアウォールに追加します。"
+
+#, python-format
+msgid "Added Policy \"%s\"."
+msgstr "ポリシー \"%s\" を追加しました。"
+
+#, python-format
+msgid "Added Rule \"%s\"."
+msgstr "ルール \"%s\" を追加しました。"
 
 msgid "Admin State"
 msgstr "管理状態"
@@ -125,12 +137,39 @@ msgstr ""
 "名前のフィールドは入力する必要があり、その他のフィールドはすべて省略可能で"
 "す。"
 
+msgid ""
+"Create a firewall rule.\n"
+"\n"
+"A Firewall rule is an association of the following attributes:\n"
+"\n"
+"<li>IP Addresses: The addresses from/to which the traffic filtration needs "
+"to be applied.</li><li>IP Version: The type of IP packets (IP V4/V6) that "
+"needs to be filtered.</li><li>Protocol: Type of packets (UDP, ICMP, TCP, "
+"Any) that needs to be checked.</li><li>Action: Action is the type of "
+"filtration required, it can be Reject/Deny/Allow data packets.</li>\n"
+"The protocol and action fields are required, all others are optional."
+msgstr ""
+"ファイアウォールルールを作成します。\n"
+"\n"
+"ファイアウォールルールは、以下の属性の組み合わせです。\n"
+"\n"
+"<li>IP アドレス: トラフィックフィルターを適用する必要があるアドレス (送信元/"
+"送信先) です。</li><li>IP バージョン: フィルタリングする必要がある IP パケッ"
+"トの種別 (IP V4/V6) です。</li><li>プロトコル: チェックされる必要があるパケッ"
+"トの種別 (UDP、ICMP、TCP、Any) です。</li><li>アクション: アクションは必要な"
+"フィルターの種別で、データパケットを REJECT/DENY/ALLOW できます。</li>\n"
+"プロトコルとアクションは必須項目であり、他のフィールドはすべて省略可能です。"
+
 msgid "Create a firewall with selected routers."
 msgstr "適用するルーターを指定してファイアウォールを作成します。"
 
 msgid "Create a policy with selected rules."
 msgstr "ルールを選択してポリシーを作成します。"
 
+msgid "DENY"
+msgstr "DENY"
+
+msgctxt "Action Name of a Firewall Rule"
 msgid "DENY"
 msgstr "DENY"
 
@@ -304,6 +343,10 @@ msgstr "ファイアウォールルールのプロトコル"
 msgid "REJECT"
 msgstr "REJECT"
 
+msgctxt "Action Name of a Firewall Rule"
+msgid "REJECT"
+msgstr "REJECT"
+
 msgid "Remove Router"
 msgstr "ルーターの削除"
 
@@ -348,6 +391,17 @@ msgstr "ルール"
 msgid "Save Changes"
 msgstr "変更の保存"
 
+msgid "Scheduled deletion of Policy"
+msgid_plural "Scheduled deletion of Policies"
+msgstr[0] "ポリシーの削除を予約しました"
+
+msgid "Scheduled deletion of Rule"
+msgid_plural "Scheduled deletion of Rules"
+msgstr[0] "ルールの削除を予約しました"
+
+msgid "Select a Policy"
+msgstr "ポリシーを選択してください"
+
 msgid "Select routers for your firewall."
 msgstr "ファイアウォールを適用するルーターを選択してください。"
 
@@ -390,6 +444,14 @@ msgstr "TCP"
 
 msgid "UDP"
 msgstr "UDP"
+
+#, python-format
+msgid "Unable to add Policy \"%s\"."
+msgstr "ポリシー \"%s\" を追加できません。"
+
+#, python-format
+msgid "Unable to add Rule \"%s\"."
+msgstr "ルール \"%s\" を追加できません。"
 
 #, python-format
 msgid "Unable to delete firewall. %s"
