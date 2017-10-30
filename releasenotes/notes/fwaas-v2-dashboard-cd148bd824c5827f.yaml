@@ -1,0 +1,7 @@
+---
+features:
+  - |
+    A panel for FWaaS v2 is newly added. There is no specific installation
+    process. After installing the new release of neutron-fwaas-dashboard,
+    if FWaaS v2 API is available on your neutron deployment, the panel for
+    FWaaS v2 will be displayed.
