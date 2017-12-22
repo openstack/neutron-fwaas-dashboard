@@ -17,8 +17,6 @@ from django.utils.translation import ugettext_lazy as _
 from horizon import exceptions
 from horizon import tabs
 
-from openstack_dashboard import api
-
 from neutron_fwaas_dashboard.api import fwaas as api_fwaas
 from neutron_fwaas_dashboard.dashboards.project.firewalls import tables
 
@@ -76,20 +74,10 @@ class FirewallsTab(tabs.TableTab):
             tenant_id = self.request.user.tenant_id
             request = self.tab_group.request
             firewalls = api_fwaas.firewall_list_for_tenant(request, tenant_id)
-
-            if api.neutron.is_extension_supported(request,
-                                                  'fwaasrouterinsertion'):
-                routers = api.neutron.router_list(request, tenant_id=tenant_id)
-
-                for fw in firewalls:
-                    fw.routers = [r for r in routers
-                                  if r['id'] in fw['router_ids']]
-
         except Exception:
             firewalls = []
             exceptions.handle(self.tab_group.request,
                               _('Unable to retrieve firewall list.'))
-
         return firewalls
 
 

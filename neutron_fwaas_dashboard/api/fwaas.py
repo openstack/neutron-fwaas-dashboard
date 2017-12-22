@@ -231,7 +231,8 @@ def firewall_create(request, **kwargs):
 
 @profiler.trace
 def firewall_list(request, **kwargs):
-    return _firewall_list(request, expand_policy=True, **kwargs)
+    return _firewall_list(request, expand_policy=True, expand_router=True,
+                          **kwargs)
 
 
 @profiler.trace
@@ -250,14 +251,37 @@ def firewall_list_for_tenant(request, tenant_id, **kwargs):
     return firewall_list(request, tenant_id=tenant_id, **kwargs)
 
 
-def _firewall_list(request, expand_policy, **kwargs):
+def _firewall_list(request, expand_policy, expand_router, **kwargs):
     firewalls = neutronclient(request).list_firewalls(
         **kwargs).get('firewalls')
+
     if expand_policy and firewalls:
         policies = _policy_list(request, expand_rule=False)
         policy_dict = OrderedDict((p.id, p) for p in policies)
         for fw in firewalls:
             fw['policy'] = policy_dict.get(fw['firewall_policy_id'])
+
+    if expand_router and firewalls:
+        if neutron.is_extension_supported(request, 'fwaasrouterinsertion'):
+            filter_params = {}
+            if 'tenant_id' in kwargs:
+                filter_params['tenant_id'] = kwargs['tenant_id']
+            routers = neutron.router_list(request, **filter_params)
+            router_dict = dict((r.id, r) for r in routers)
+
+            def _get_router(router_id):
+                try:
+                    return router_dict[router_id]
+                except KeyError:
+                    return neutron.Router({'id': router_id, 'name': ''})
+
+            for fw in firewalls:
+                fw['routers'] = [_get_router(router_id)
+                                 for router_id in fw['router_ids']]
+        else:
+            for fw in firewalls:
+                fw['routers'] = fw['router_ids']
+
     return [Firewall(f) for f in firewalls]
 
 

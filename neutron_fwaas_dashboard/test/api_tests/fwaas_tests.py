@@ -352,7 +352,9 @@ class FwaasApiTests(test.APITestCase):
     #                  add router to firewall and remove router from fw.
 
     @test.create_stubs({neutronclient: ('list_firewalls',
-                                        'list_firewall_policies')})
+                                        'list_firewall_policies'),
+                        api_neutron: ('is_extension_supported',
+                                      'router_list')})
     def test_firewall_list(self):
         exp_firewalls = self.firewalls.list()
         firewalls_dict = {'firewalls': self.api_firewalls.list()}
@@ -360,6 +362,10 @@ class FwaasApiTests(test.APITestCase):
 
         neutronclient.list_firewalls().AndReturn(firewalls_dict)
         neutronclient.list_firewall_policies().AndReturn(policies_dict)
+        api_neutron.is_extension_supported(
+            mox.IsA(http.HttpRequest), 'fwaasrouterinsertion').AndReturn(True)
+        api_neutron.router_list(mox.IsA(http.HttpRequest)) \
+            .AndReturn(self.routers.list())
         self.mox.ReplayAll()
 
         ret_val = api_fwaas.firewall_list(self.request)
@@ -367,7 +373,9 @@ class FwaasApiTests(test.APITestCase):
             self._assert_firewall_return_value(v, d)
 
     @test.create_stubs({neutronclient: ('list_firewalls',
-                                        'list_firewall_policies')})
+                                        'list_firewall_policies'),
+                        api_neutron: ('is_extension_supported',
+                                      'router_list')})
     def test_firewall_list_for_tenant(self):
         tenant_id = self.request.user.project_id
         exp_firewalls = self.firewalls.list()
@@ -377,6 +385,11 @@ class FwaasApiTests(test.APITestCase):
         neutronclient.list_firewalls(tenant_id=tenant_id) \
             .AndReturn(firewalls_dict)
         neutronclient.list_firewall_policies().AndReturn(policies_dict)
+        api_neutron.is_extension_supported(
+            mox.IsA(http.HttpRequest), 'fwaasrouterinsertion').AndReturn(True)
+        api_neutron.router_list(mox.IsA(http.HttpRequest),
+                                tenant_id=self.request.user.project_id) \
+            .AndReturn(self.routers.list())
         self.mox.ReplayAll()
 
         ret_val = api_fwaas.firewall_list_for_tenant(self.request, tenant_id)
