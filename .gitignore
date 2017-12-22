@@ -8,3 +8,7 @@ cover/
 dist/
 AUTHORS
 ChangeLog
+
+# Translation catalogs
+*.mo
+*.pot
