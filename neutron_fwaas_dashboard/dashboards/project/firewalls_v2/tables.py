@@ -249,81 +249,12 @@ class RemovePortFromFirewallGroupLink(policy.PolicyTargetMixin,
             "PENDING_DELETE")
 
 
-class AddEgressPolicyToFirewallLink(policy.PolicyTargetMixin,
-                                    tables.LinkAction):
-    name = "addegresspolicy"
-    verbose_name = _("Add Egress Policy")
-    classes = ("ajax-modal",)
-    policy_rules = (("neutron-fwaas", "show_fwaas_firewall_policy"),
-                    ("neutron-fwaas", "firewall_policy_remove_rule"),)
-    action_type = "danger"
-
-    def get_link_url(self, policy):
-        return reverse("horizon:project:firewalls_v2:removerule",
-                       kwargs={'policy_id': policy.id})
-
-
-class RemoveEgressPolicyToFirewallLink(policy.PolicyTargetMixin,
-                                       tables.LinkAction):
-    name = "removeegresspolicy"
-    verbose_name = _("Remove Egress Policy")
-    classes = ("ajax-modal",)
-    policy_rules = (("neutron-fwaas", "show_fwaas_firewall_policy"),
-                    ("neutron-fwaas", "firewall_policy_remove_rule"),)
-    action_type = "danger"
-
-    def get_link_url(self, policy):
-        return reverse("horizon:project:firewalls_v2:removerule",
-                       kwargs={'policy_id': policy.id})
-
-
-class AddIngressPolicyToFirewallLink(policy.PolicyTargetMixin,
-                                     tables.LinkAction):
-    name = "addingresspolicy"
-    verbose_name = _("Add Ingress Policy")
-    classes = ("ajax-modal",)
-    policy_rules = (("neutron-fwaas", "show_fwaas_firewall_policy"),
-                    ("neutron-fwaas", "firewall_policy_remove_rule"),)
-    action_type = "danger"
-
-    def get_link_url(self, policy):
-        return reverse("horizon:project:firewalls_v2:removerule",
-                       kwargs={'policy_id': policy.id})
-
-
-class RemoveIngressPolicyToFirewallLink(policy.PolicyTargetMixin,
-                                        tables.LinkAction):
-    name = "removeingresspolicy"
-    verbose_name = _("Remove Ingress Policy")
-    classes = ("ajax-modal",)
-    policy_rules = (("neutron-fwaas", "show_fwaas_firewall_policy"),
-                    ("neutron-fwaas", "firewall_policy_remove_rule"),)
-    action_type = "danger"
-
-    def get_link_url(self, policy):
-        return reverse("horizon:project:firewalls_v2:removerule",
-                       kwargs={'policy_id': policy.id})
-
-
 def get_rules_name(datum):
-    return ', '.join([rule.name or rule.id[:13]
-                      for rule in datum.rules])
+    return ', '.join([rule.name_or_id for rule in datum.rules])
 
 
 def get_ports_name(datum):
-    return ', '.join([port[:13]
-                      for port in datum.ports])
-
-
-def get_policy_name(datum):
-    if datum.policy:
-        return datum.policy.name or datum.policy.id
-
-
-def get_policy_link(datum):
-    if datum.policy:
-        return reverse('horizon:project:firewalls_v2:policydetails',
-                       kwargs={'policy_id': datum.policy.id})
+    return ', '.join([port.name_or_id for port in datum.ports])
 
 
 def get_ingress_policy_link(datum):
@@ -472,8 +403,3 @@ class FirewallGroupsTable(tables.DataTable):
             DeleteFirewallGroupLink,
             AddPortToFirewallGroupLink,
             RemovePortFromFirewallGroupLink)
-
-    def __init__(self, request, data=None, needs_form_wrapper=None, **kwargs):
-        super(FirewallGroupsTable, self).__init__(
-            request, data=data,
-            needs_form_wrapper=needs_form_wrapper, **kwargs)
