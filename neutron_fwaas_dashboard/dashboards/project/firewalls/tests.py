@@ -420,16 +420,13 @@ class FirewallTests(test.TestCase):
     def test_add_firewall_post(self):
         self._test_add_firewall_post()
 
-    # @test.create_stubs({api_fwaas: ('firewall_create',
-    #                                'policy_list_for_tenant',
-    #                                'firewall_list_for_tenant',),
-    #                    api.neutron: ('is_extension_supported',
-    #                                  'router_list'), })
-    # def test_add_firewall_post_with_router_extension(self):
-    #    self._test_add_firewall_post(router_extension=True)
-    # TODO(absubram): Fix test_add_firewall_post_with_router_extension
-    #                 It currently fails because views.py is not
-    #                 initializing the AddRouter workflow?
+    @test.create_stubs({api_fwaas: ('firewall_create',
+                                    'policy_list_for_tenant',
+                                    'firewall_list_for_tenant',),
+                        api.neutron: ('is_extension_supported',
+                                      'router_list'), })
+    def test_add_firewall_post_with_router_extension(self):
+        self._test_add_firewall_post(router_extension=True)
 
     @test.create_stubs({api_fwaas: ('firewall_create',
                                     'policy_list_for_tenant',),
