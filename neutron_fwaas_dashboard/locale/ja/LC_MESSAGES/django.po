@@ -1,14 +1,15 @@
 # Akihiro Motoki <amotoki@gmail.com>, 2017. #zanata
+# Akihiro Motoki <amotoki@gmail.com>, 2018. #zanata
 msgid ""
 msgstr ""
 "Project-Id-Version: neutron-fwaas-dashboard VERSION\n"
 "Report-Msgid-Bugs-To: https://bugs.launchpad.net/openstack-i18n/\n"
-"POT-Creation-Date: 2018-01-26 05:18+0000\n"
+"POT-Creation-Date: 2018-01-29 08:32+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2017-10-14 10:28+0000\n"
-"Last-Translator: \n"
+"PO-Revision-Date: 2018-02-02 05:43+0000\n"
+"Last-Translator: Akihiro Motoki <amotoki@gmail.com>\n"
 "Language-Team: Japanese\n"
 "Language: ja\n"
 "X-Generator: Zanata 3.9.6\n"
@@ -36,6 +37,10 @@ msgstr "アクション"
 
 msgid "Action for the firewall rule"
 msgstr "ファイアウォールルールのアクション"
+
+msgctxt "Current status of a Firewall Group"
+msgid "Active"
+msgstr "稼働中"
 
 msgctxt "Current status of a firewall"
 msgid "Active"
@@ -251,6 +256,10 @@ msgctxt "Current status of a Firewall Group"
 msgid "Created"
 msgstr "作成済み"
 
+msgctxt "Current status of a firewall"
+msgid "Created"
+msgstr "作成済み"
+
 msgid "DENY"
 msgstr "DENY"
 
@@ -261,6 +270,14 @@ msgstr "DENY"
 msgctxt "Action name of a firewall rule"
 msgid "DENY"
 msgstr "DENY"
+
+msgctxt "Admin state of a Firewall Group"
+msgid "DOWN"
+msgstr "DOWN"
+
+msgctxt "Admin state of a firewall"
+msgid "DOWN"
+msgstr "DOWN"
 
 msgid "Delete Firewall"
 msgid_plural "Delete Firewalls"
@@ -298,6 +315,10 @@ msgstr "宛先ポート/ポートの範囲"
 
 msgid "Destination port (integer in [1, 65535] or range in a:b)"
 msgstr "宛先ポート ([1, 65535] の整数か a:b 形式の範囲)"
+
+msgctxt "Current status of a Firewall Group"
+msgid "Down"
+msgstr "停止中"
 
 msgctxt "Current status of a firewall"
 msgid "Down"
@@ -645,6 +666,14 @@ msgstr "TCP"
 
 msgid "UDP"
 msgstr "UDP"
+
+msgctxt "Admin state of a Firewall Group"
+msgid "UP"
+msgstr "UP"
+
+msgctxt "Admin state of a firewall"
+msgid "UP"
+msgstr "UP"
 
 #, python-format
 msgid "Unable to add Firewall Group \"%s\"."
