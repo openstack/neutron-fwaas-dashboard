@@ -17,3 +17,4 @@ FEATURE = 'neutron-fwaas-dashboard'
 
 ADD_INSTALLED_APPS = ['neutron_fwaas_dashboard']
 AUTO_DISCOVER_STATIC_FILES = True
+ADD_SCSS_FILES = ['neutron_fwaas_dashboard/scss/firewalls.scss']
