@@ -254,7 +254,7 @@ def get_rules_name(datum):
 
 
 def get_ports_name(datum):
-    return ', '.join([port.name_or_id for port in datum.ports])
+    return len(datum.ports)
 
 
 def get_ingress_policy_link(datum):
