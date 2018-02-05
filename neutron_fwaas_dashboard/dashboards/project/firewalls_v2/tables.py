@@ -22,6 +22,8 @@ from django.utils.translation import ungettext_lazy
 
 from horizon import exceptions
 from horizon import tables
+from openstack_dashboard.dashboards.project.networks.ports \
+    import tables as port_tables
 from openstack_dashboard import policy
 
 from neutron_fwaas_dashboard.api import fwaas_v2 as api_fwaas_v2
@@ -257,6 +259,12 @@ def get_ports_name(datum):
     return len(datum.ports)
 
 
+def get_ports_link(datum):
+    url = reverse("horizon:project:firewalls_v2:firewallgroupdetails",
+                  args=(datum.id,))
+    return '%s?tab=%s__%s' % (url, 'firewallgrouptabs', 'ports_tab')
+
+
 def get_ingress_policy_link(datum):
     if datum.ingress_firewall_policy_id:
         return reverse('horizon:project:firewalls_v2:policydetails',
@@ -381,6 +389,7 @@ class FirewallGroupsTable(tables.DataTable):
                                               link=get_egress_policy_link,
                                               verbose_name=_("Egress Policy"))
     ports = tables.Column(get_ports_name,
+                          link=get_ports_link,
                           verbose_name=_("Ports"))
 
     status = tables.Column("status",
@@ -403,3 +412,12 @@ class FirewallGroupsTable(tables.DataTable):
             DeleteFirewallGroupLink,
             AddPortToFirewallGroupLink,
             RemovePortFromFirewallGroupLink)
+
+
+class FirewallGroupPortsTable(port_tables.PortsTable):
+
+    class Meta(object):
+        name = 'ports'
+        verbose_name = _('Ports')
+        table_actions = []
+        row_actions = []
