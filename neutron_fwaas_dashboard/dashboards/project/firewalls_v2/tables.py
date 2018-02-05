@@ -289,6 +289,7 @@ class RulesTable(tables.DataTable):
                          verbose_name=_("Name"),
                          link="horizon:project:firewalls_v2:ruledetails")
     description = tables.Column('description', verbose_name=_('Description'))
+    ip_version = tables.Column('ip_version', verbose_name=('IP Version'))
     protocol = tables.Column("protocol",
                              filters=(lambda v: filters.default(v, _("ANY")),
                                       filters.upper,),
