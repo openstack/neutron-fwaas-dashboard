@@ -17,10 +17,12 @@
     <dt>{% trans "Rules" %}</dt>
     <dd>
       {% if policy.rules %}
+      <ol>
       {% for rule in policy.rules %}
       {% url 'horizon:project:firewalls_v2:ruledetails' rule.id as rule_url %}
-      {{ rule.position }} : <a href="{{ rule_url }}">{{ rule.name|default:rule.id }}</a><br>
+      <li><a href="{{ rule_url }}">{{ rule.name|default:rule.id }}</a></li>
       {% endfor %}
+      </ol>
       {% else %}
       {% trans "-" %}
       {% endif %}
