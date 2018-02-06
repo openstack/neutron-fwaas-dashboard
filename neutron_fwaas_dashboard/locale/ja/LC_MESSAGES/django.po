@@ -4,11 +4,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: neutron-fwaas-dashboard VERSION\n"
 "Report-Msgid-Bugs-To: https://bugs.launchpad.net/openstack-i18n/\n"
-"POT-Creation-Date: 2018-01-29 08:32+0000\n"
+"POT-Creation-Date: 2018-02-05 18:59+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2018-02-02 05:43+0000\n"
+"PO-Revision-Date: 2018-02-06 01:26+0000\n"
 "Last-Translator: Akihiro Motoki <amotoki@gmail.com>\n"
 "Language-Team: Japanese\n"
 "Language: ja\n"
@@ -73,6 +73,9 @@ msgstr "ポリシーの追加"
 msgid "Add Port"
 msgstr "ポートの追加"
 
+msgid "Add Port to Firewall Group"
+msgstr "ファイアウォールグループへのポートの追加"
+
 msgid "Add Router"
 msgstr "ルーターの追加"
 
@@ -118,6 +121,9 @@ msgstr "ルール \"%s\" を追加しました。"
 msgid "Admin State"
 msgstr "管理状態"
 
+msgid "Admin State Up"
+msgstr "管理状態有効"
+
 msgid "After"
 msgstr "後に挿入"
 
@@ -127,8 +133,50 @@ msgstr "適用先ルーター"
 msgid "Audited"
 msgstr "監査対象 (Audited)"
 
+msgid "Available Ports"
+msgstr "利用可能なポート"
+
+msgid "Available Routers"
+msgstr "利用可能なルーター"
+
+msgid "Available Rules"
+msgstr "利用可能なルール"
+
 msgid "Before"
 msgstr "前に挿入"
+
+msgid "Choose port(s) from Available Ports. "
+msgstr "以下の利用可能なポートからポートを選択してください。"
+
+msgid ""
+"Choose router(s) from Available Routers to Selected Routers by push button "
+"or drag and drop. "
+msgstr ""
+"ボタンを押すかドラッグアンドドロップで、「利用可能なルーター」から「選択済み"
+"ルーター」にルーターを移動します。"
+
+msgid ""
+"Choose rule(s) from Available Rules to Selected Rule by push button or drag "
+"and drop, you may change their order by drag and drop as well."
+msgstr ""
+"利用可能なルールから選択済みルールに、ボタンを押すかドラッグアンドドロップす"
+"ることでルールを選択します。ドラッグアンドドロップでルールの順番を変更するこ"
+"ともできます。"
+
+msgid "Choose the router(s) you want to add."
+msgstr "追加するルーターを選択してください。"
+
+msgid ""
+"Choose the rule you want to insert. Specify either the rule you want to "
+"insert immediately before, or the rule to insert immediately after. If both "
+"are specified, the prior takes precedence."
+msgstr ""
+"挿入するルールを選択してください。ルールをどのルールの直前、または直後に挿入"
+"するかを指定してください。両方指定した場合は指定したルールの直前に挿入されま"
+"す。"
+
+msgid "Choose the rule you want to remove."
+msgstr "削除するルールを選択してください。"
 
 msgid "Create Firewall"
 msgstr "ファイアウォールの作成"
@@ -298,7 +346,13 @@ msgstr[0] "ルールの削除"
 msgid "Description"
 msgstr "説明"
 
+msgid "Description:"
+msgstr "説明:"
+
 msgid "Destination IP"
+msgstr "宛先 IP アドレス"
+
+msgid "Destination IP Address"
 msgstr "宛先 IP アドレス"
 
 msgid "Destination IP Address/Subnet"
@@ -350,6 +404,9 @@ msgstr "ルール {{ name }} の編集"
 
 msgid "Egress Policy"
 msgstr "送信ポリシー"
+
+msgid "Egress Policy ID"
+msgstr "送信ポリシー ID"
 
 msgid "Enable Admin State"
 msgstr "管理状態有効"
@@ -448,6 +505,9 @@ msgstr "ファイアウォール"
 msgid "ICMP"
 msgstr "ICMP"
 
+msgid "ID"
+msgstr "ID"
+
 msgid "IP Version"
 msgstr "IP バージョン"
 
@@ -467,6 +527,9 @@ msgstr "非稼働"
 
 msgid "Ingress Policy"
 msgstr "受信ポリシー"
+
+msgid "Ingress Policy ID"
+msgstr "受信ポリシー ID"
 
 msgid "Insert Rule"
 msgstr "ルールの挿入"
@@ -524,6 +587,12 @@ msgstr "ポリシー %s が正常に更新されました。"
 msgid "Ports"
 msgstr "ポート"
 
+msgid "Position in Policy"
+msgstr "ポリシー内の位置"
+
+msgid "Project ID"
+msgstr "プロジェクト ID"
+
 msgid "Protocol"
 msgstr "プロトコル"
 
@@ -543,6 +612,9 @@ msgstr "REJECT"
 
 msgid "Remove Port"
 msgstr "ポートの削除"
+
+msgid "Remove Port from Firewall Group"
+msgstr "ファイアウォールグループからのポートの削除"
 
 msgid "Remove Router"
 msgstr "ルーターの削除"
@@ -630,11 +702,20 @@ msgstr "ファイアウォールを適用するルーターを選択してくだ
 msgid "Select rules for your policy."
 msgstr "ポリシーに追加するルールの選択"
 
+msgid "Selected Routers"
+msgstr "選択されたルーター"
+
+msgid "Selected Rules"
+msgstr "選択済みのルール"
+
 msgid "Shared"
 msgstr "共有"
 
 msgid "Source IP"
 msgstr "送信元 IP"
+
+msgid "Source IP Address"
+msgstr "送信元 IP アドレス"
 
 msgid "Source IP Address/Subnet"
 msgstr "送信元 IP アドレス/サブネット"
@@ -764,3 +845,38 @@ msgstr "ルール一覧を取得できません。"
 
 msgid "Unselect the router(s) to be removed from firewall."
 msgstr "ファイアウォールの適用を解除するルーターの選択を外してください。"
+
+msgid "Unselect the routers you want to disassociate from the firewall."
+msgstr "ファイアウォールの適用を解除するルーターの選択を外してください。"
+
+msgid "Used in Policy"
+msgstr "利用中のポリシー"
+
+msgid "You may add ports to firewall group here."
+msgstr "ファイアウォールグループにポートを追加できます。"
+
+msgid "You may remove ports from firewall group here."
+msgstr "ファイアウォールグループからポートを削除できます。"
+
+msgid "You may update firewall details here."
+msgstr "ファイアウォールの詳細をここから更新できます。"
+
+msgid "You may update firewall group details here."
+msgstr "ファイアウォールグループの詳細をここから更新できます。"
+
+msgid ""
+"You may update policy details here. Use 'Insert Rule' or 'Remove Rule' links "
+"instead to insert or remove a rule"
+msgstr ""
+"ポリシーの詳細をここから更新できます。ルールの挿入、削除はここではなく「ルー"
+"ルの挿入」「ルールの削除」を使ってください。"
+
+msgid ""
+"You may update policy details here. Use 'Insert Rule' or 'Remove Rule' links "
+"instead to insert or remove a rule."
+msgstr ""
+"ポリシーの詳細をここから更新できます。ルールの挿入、削除はここではなく「ルー"
+"ルの挿入」「ルールの削除」を使ってください。"
+
+msgid "You may update rule details here."
+msgstr "ルールの詳細をここから更新できます。"
