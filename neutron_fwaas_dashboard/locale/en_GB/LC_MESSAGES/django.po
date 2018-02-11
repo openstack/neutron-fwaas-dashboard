@@ -1,13 +1,14 @@
 # Andi Chandler <andi@gowling.com>, 2017. #zanata
+# Andi Chandler <andi@gowling.com>, 2018. #zanata
 msgid ""
 msgstr ""
-"Project-Id-Version: neutron-fwaas-dashboard 1.0.1.dev26\n"
+"Project-Id-Version: neutron-fwaas-dashboard VERSION\n"
 "Report-Msgid-Bugs-To: https://bugs.launchpad.net/openstack-i18n/\n"
-"POT-Creation-Date: 2017-10-15 12:01+0000\n"
+"POT-Creation-Date: 2018-02-07 19:21+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2017-10-17 07:09+0000\n"
+"PO-Revision-Date: 2018-02-06 12:08+0000\n"
 "Last-Translator: Andi Chandler <andi@gowling.com>\n"
 "Language-Team: English (United Kingdom)\n"
 "Language: en-GB\n"
@@ -48,17 +49,11 @@ msgstr "Active"
 msgid "Add"
 msgstr "Add"
 
-msgid "Add Egress Policy"
-msgstr "Add Egress Policy"
-
 msgid "Add Firewall"
 msgstr "Add Firewall"
 
 msgid "Add Firewall Group"
 msgstr "Add Firewall Group"
-
-msgid "Add Ingress Policy"
-msgstr "Add Ingress Policy"
 
 msgid "Add New Firewall"
 msgstr "Add New Firewall"
@@ -77,6 +72,9 @@ msgstr "Add Policy"
 
 msgid "Add Port"
 msgstr "Add Port"
+
+msgid "Add Port to Firewall Group"
+msgstr "Add Port to Firewall Group"
 
 msgid "Add Router"
 msgstr "Add Router"
@@ -123,6 +121,9 @@ msgstr "Added rule \"%s\"."
 msgid "Admin State"
 msgstr "Admin State"
 
+msgid "Admin State Up"
+msgstr "Admin State Up"
+
 msgid "After"
 msgstr "After"
 
@@ -132,8 +133,49 @@ msgstr "Associated Routers"
 msgid "Audited"
 msgstr "Audited"
 
+msgid "Available Ports"
+msgstr "Available Ports"
+
+msgid "Available Routers"
+msgstr "Available Routers"
+
+msgid "Available Rules"
+msgstr "Available Rules"
+
 msgid "Before"
 msgstr "Before"
+
+msgid "Choose port(s) from Available Ports. "
+msgstr "Choose port(s) from Available Ports. "
+
+msgid ""
+"Choose router(s) from Available Routers to Selected Routers by push button "
+"or drag and drop. "
+msgstr ""
+"Choose router(s) from Available Routers to Selected Routers by push button "
+"or drag and drop. "
+
+msgid ""
+"Choose rule(s) from Available Rules to Selected Rule by push button or drag "
+"and drop, you may change their order by drag and drop as well."
+msgstr ""
+"Choose rule(s) from Available Rules to Selected Rule by push button or drag "
+"and drop, you may change their order by drag and drop as well."
+
+msgid "Choose the router(s) you want to add."
+msgstr "Choose the router(s) you want to add."
+
+msgid ""
+"Choose the rule you want to insert. Specify either the rule you want to "
+"insert immediately before, or the rule to insert immediately after. If both "
+"are specified, the prior takes precedence."
+msgstr ""
+"Choose the rule you want to insert. Specify either the rule you want to "
+"insert immediately before, or the rule to insert immediately after. If both "
+"are specified, the prior takes precedence."
+
+msgid "Choose the rule you want to remove."
+msgstr "Choose the rule you want to remove."
 
 msgid "Create Firewall"
 msgstr "Create Firewall"
@@ -305,8 +347,14 @@ msgstr[1] "Delete Rules"
 msgid "Description"
 msgstr "Description"
 
+msgid "Description:"
+msgstr "Description:"
+
 msgid "Destination IP"
 msgstr "Destination IP"
+
+msgid "Destination IP Address"
+msgstr "Destination IP Address"
 
 msgid "Destination IP Address/Subnet"
 msgstr "Destination IP Address/Subnet"
@@ -357,6 +405,9 @@ msgstr "Edit Rule {{ name }}"
 
 msgid "Egress Policy"
 msgstr "Egress Policy"
+
+msgid "Egress Policy ID"
+msgstr "Egress Policy ID"
 
 msgid "Enable Admin State"
 msgstr "Enable Admin State"
@@ -453,6 +504,9 @@ msgstr "Firewalls"
 msgid "ICMP"
 msgstr "ICMP"
 
+msgid "ID"
+msgstr "ID"
+
 msgid "IP Version"
 msgstr "IP Version"
 
@@ -472,6 +526,9 @@ msgstr "Inactive"
 
 msgid "Ingress Policy"
 msgstr "Ingress Policy"
+
+msgid "Ingress Policy ID"
+msgstr "Ingress Policy ID"
 
 msgid "Insert Rule"
 msgstr "Insert Rule"
@@ -531,6 +588,12 @@ msgstr "Policy %s was successfully updated."
 msgid "Ports"
 msgstr "Ports"
 
+msgid "Position in Policy"
+msgstr "Position in Policy"
+
+msgid "Project ID"
+msgstr "Project ID"
+
 msgid "Protocol"
 msgstr "Protocol"
 
@@ -548,14 +611,11 @@ msgctxt "Action name of a firewall rule"
 msgid "REJECT"
 msgstr "REJECT"
 
-msgid "Remove Egress Policy"
-msgstr "Remove Egress Policy"
-
-msgid "Remove Ingress Policy"
-msgstr "Remove Ingress Policy"
-
 msgid "Remove Port"
 msgstr "Remove Port"
+
+msgid "Remove Port from Firewall Group"
+msgstr "Remove Port from Firewall Group"
 
 msgid "Remove Router"
 msgstr "Remove Router"
@@ -649,11 +709,20 @@ msgstr "Select routers for your firewall."
 msgid "Select rules for your policy."
 msgstr "Select rules for your policy."
 
+msgid "Selected Routers"
+msgstr "Selected Routers"
+
+msgid "Selected Rules"
+msgstr "Selected Rules"
+
 msgid "Shared"
 msgstr "Shared"
 
 msgid "Source IP"
 msgstr "Source IP"
+
+msgid "Source IP Address"
+msgstr "Source IP Address"
 
 msgid "Source IP Address/Subnet"
 msgstr "Source IP Address/Subnet"
@@ -783,3 +852,38 @@ msgstr "Unable to retrieve rules list."
 
 msgid "Unselect the router(s) to be removed from firewall."
 msgstr "Unselect the router(s) to be removed from firewall."
+
+msgid "Unselect the routers you want to disassociate from the firewall."
+msgstr "Unselect the routers you want to disassociate from the firewall."
+
+msgid "Used in Policy"
+msgstr "Used in Policy"
+
+msgid "You may add ports to firewall group here."
+msgstr "You may add ports to firewall group here."
+
+msgid "You may remove ports from firewall group here."
+msgstr "You may remove ports from firewall group here."
+
+msgid "You may update firewall details here."
+msgstr "You may update firewall details here."
+
+msgid "You may update firewall group details here."
+msgstr "You may update firewall group details here."
+
+msgid ""
+"You may update policy details here. Use 'Insert Rule' or 'Remove Rule' links "
+"instead to insert or remove a rule"
+msgstr ""
+"You may update policy details here. Use 'Insert Rule' or 'Remove Rule' links "
+"instead to insert or remove a rule"
+
+msgid ""
+"You may update policy details here. Use 'Insert Rule' or 'Remove Rule' links "
+"instead to insert or remove a rule."
+msgstr ""
+"You may update policy details here. Use 'Insert Rule' or 'Remove Rule' links "
+"instead to insert or remove a rule."
+
+msgid "You may update rule details here."
+msgstr "You may update rule details here."
