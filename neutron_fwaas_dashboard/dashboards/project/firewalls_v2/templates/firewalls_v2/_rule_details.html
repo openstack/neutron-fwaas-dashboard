@@ -17,6 +17,9 @@
     <dt>{% trans "Action" %}</dt>
     <dd>{{ rule.action|upper }}</dd>
 
+    <dt>{% trans "IP Version" %}</dt>
+    <dd>{{ rule.ip_version }}</dd>
+
     <dt>{% trans "Protocol" %}</dt>
     <dd>{{ rule.protocol|default:_("ANY")|upper }}</dd>
 
