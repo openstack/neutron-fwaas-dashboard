@@ -16,6 +16,7 @@ from django.utils.translation import ugettext_lazy as _
 
 from horizon import exceptions
 from horizon import tabs
+from openstack_dashboard.api import neutron as api_neutron
 
 from neutron_fwaas_dashboard.api import fwaas_v2 as api_fwaas_v2
 from neutron_fwaas_dashboard.dashboards.project.firewalls_v2 import tables
@@ -123,6 +124,26 @@ class FirewallGroupDetailsTab(tabs.Tab):
         return {"firewall_group": self.tab_group.kwargs['firewallgroup']}
 
 
+class FirewallGroupPortsTab(tabs.TableTab):
+    name = _("Ports")
+    slug = "ports_tab"
+    table_classes = (tables.FirewallGroupPortsTable,)
+    template_name = ("horizon/common/_detail_table.html")
+    preload = False
+
+    def get_ports_data(self):
+        port_ids = self.tab_group.kwargs['firewallgroup']['ports']
+        if not port_ids:
+            return []
+        try:
+            ports = api_neutron.port_list(self.request, id=port_ids)
+        except Exception:
+            ports = []
+            msg = _('Failed to retrieve port list of the firewall group.')
+            exceptions.handle(self.request, msg)
+        return ports
+
+
 class FirewallGroupTabs(tabs.TabGroup):
     slug = "fwtabs"
     tabs = (FirewallGroupsTab, PoliciesTab, RulesTab)
@@ -141,4 +162,4 @@ class PolicyDetailsTabs(tabs.TabGroup):
 
 class FirewallGroupDetailsTabs(tabs.TabGroup):
     slug = "firewallgrouptabs"
-    tabs = (FirewallGroupDetailsTab,)
+    tabs = (FirewallGroupDetailsTab, FirewallGroupPortsTab)
