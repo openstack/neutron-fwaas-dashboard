@@ -1,0 +1,7 @@
+@import "/dashboard/scss/components/resource_topology";
+
+.sort-container {
+  #selected_port {
+    @include common_box_list_selected("port");
+  }
+}
