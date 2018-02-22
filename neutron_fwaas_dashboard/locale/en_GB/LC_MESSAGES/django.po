@@ -4,11 +4,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: neutron-fwaas-dashboard VERSION\n"
 "Report-Msgid-Bugs-To: https://bugs.launchpad.net/openstack-i18n/\n"
-"POT-Creation-Date: 2018-02-07 04:59+0000\n"
+"POT-Creation-Date: 2018-02-20 22:11+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2018-02-06 12:08+0000\n"
+"PO-Revision-Date: 2018-02-21 01:51+0000\n"
 "Last-Translator: Andi Chandler <andi@gowling.com>\n"
 "Language-Team: English (United Kingdom)\n"
 "Language: en-GB\n"
@@ -455,6 +455,9 @@ msgstr "Failed to retrieve current routers in firewall %(name)s: %(reason)s"
 msgid "Failed to retrieve current rules in policy %(name)s: %(reason)s"
 msgstr "Failed to retrieve current rules in policy %(name)s: %(reason)s"
 
+msgid "Failed to retrieve port list of the firewall group."
+msgstr "Failed to retrieve port list of the firewall group."
+
 #, python-format
 msgid "Failed to update firewall %(name)s: %(reason)s"
 msgstr "Failed to update firewall %(name)s: %(reason)s"
@@ -708,6 +711,9 @@ msgstr "Select routers for your firewall."
 
 msgid "Select rules for your policy."
 msgstr "Select rules for your policy."
+
+msgid "Selected Ports"
+msgstr "Selected Ports"
 
 msgid "Selected Routers"
 msgstr "Selected Routers"
