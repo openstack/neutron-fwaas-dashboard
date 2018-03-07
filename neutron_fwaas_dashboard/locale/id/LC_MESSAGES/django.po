@@ -1,11 +1,8 @@
-# Frank Kloeker <eumel@arcor.de>, 2016. #zanata
-# Robert Simai <robert.simai@suse.com>, 2016. #zanata
-# Andreas Jaeger <jaegerandi@gmail.com>, 2017. #zanata
-# Eugen Block <eblock@nde.ag>, 2017. #zanata
-# Frank Kloeker <eumel@arcor.de>, 2017. #zanata
-# Robert Simai <robert.simai@suse.com>, 2017. #zanata
-# Andreas Jaeger <jaegerandi@gmail.com>, 2018. #zanata
-# Reik Keutterling <spielkind@gmail.com>, 2018. #zanata
+# OpenStack Infra <zanata@openstack.org>, 2015. #zanata
+# Andreas Jaeger <jaegerandi@gmail.com>, 2016. #zanata
+# suhartono <cloudsuhartono@gmail.com>, 2016. #zanata
+# suhartono <cloudsuhartono@gmail.com>, 2017. #zanata
+# suhartono <cloudsuhartono@gmail.com>, 2018. #zanata
 msgid ""
 msgstr ""
 "Project-Id-Version: neutron-fwaas-dashboard VERSION\n"
@@ -14,136 +11,136 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2018-02-21 07:55+0000\n"
-"Last-Translator: Reik Keutterling <spielkind@gmail.com>\n"
-"Language-Team: German\n"
-"Language: de\n"
+"PO-Revision-Date: 2018-02-21 03:59+0000\n"
+"Last-Translator: suhartono <cloudsuhartono@gmail.com>\n"
+"Language-Team: Indonesian\n"
+"Language: id\n"
 "X-Generator: Zanata 4.3.3\n"
-"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"Plural-Forms: nplurals=1; plural=0\n"
 
 msgid "-"
 msgstr "-"
 
 msgid "ALLOW"
-msgstr "Erlauben"
+msgstr "ALLOW"
 
 msgctxt "Action Name of a Firewall Rule"
 msgid "ALLOW"
-msgstr "Erlauben"
+msgstr "ALLOW (mengizinkan)"
 
 msgctxt "Action name of a firewall rule"
 msgid "ALLOW"
-msgstr "Erlauben"
+msgstr "ALLOW"
 
 msgid "ANY"
-msgstr "ALLE"
+msgstr "ANY"
 
 msgid "Action"
-msgstr "Aktion"
+msgstr "Action"
 
 msgid "Action for the firewall rule"
-msgstr "Aktion für die Firewallregel"
+msgstr "Aksi aturan firewall"
 
 msgctxt "Current status of a Firewall Group"
 msgid "Active"
-msgstr "Aktiv"
+msgstr "Active"
 
 msgctxt "Current status of a firewall"
 msgid "Active"
-msgstr "Aktiv"
+msgstr "Active"
 
 msgid "Add"
-msgstr "Hinzufügen"
+msgstr "Menambahkan"
 
 msgid "Add Firewall"
-msgstr "Firewall hinzufügen"
+msgstr "Add Firewall (tambahkan firewall)"
 
 msgid "Add Firewall Group"
-msgstr "Firewall-Gruppe hinzufügen"
+msgstr "Menambahkan Firewall Group"
 
 msgid "Add New Firewall"
-msgstr "Neue Firewall hinzufügen"
+msgstr "Menambah Firewall baru"
 
 msgid "Add New Firewall Group"
-msgstr "Neue Firewall-Gruppe hinzufügen"
+msgstr "Add New Firewall Group"
 
 msgid "Add New Policy"
-msgstr "Neue Richtlinie hinzufügen"
+msgstr "Menambah kebijakan baru"
 
 msgid "Add New Rule"
-msgstr "Neue Regel hinzufügen"
+msgstr "Menambah aturan baru"
 
 msgid "Add Policy"
-msgstr "Richtlinie hinzufügen"
+msgstr "Add Policy (tambahkan kebiijakan)"
 
 msgid "Add Port"
-msgstr "Port hinzufügen"
+msgstr "Add Port"
 
 msgid "Add Router"
-msgstr "Router hinzufügen"
+msgstr "Add Router (tambah router)"
 
 msgid "Add Router to Firewall"
-msgstr "Router zur Firewall hinzufügen"
+msgstr "Tambah router ke firewall "
 
 msgid "Add Routers"
-msgstr "Router hinzufügen"
+msgstr "Add Routers (tambahkan router)"
 
 msgid "Add Rule"
-msgstr "Regel hinzufügen"
+msgstr "Tambahkan Aturan"
 
 msgid "Add port to FirewallGroup {{ name }}"
-msgstr "Port zur Firewall-Gruppe hinzufügen {{ name }}"
+msgstr "Tambahkan port ke FirewallGroup {{ name }}"
 
 msgid "Add selected router(s) to the firewall."
-msgstr "Ausgewählte Router zur Firewall hinzufügen."
+msgstr "Tambahkan router yang dipilih ke firewall."
 
 #, python-format
 msgid "Added Firewall Group\"%s\"."
-msgstr "Firewall-Gruppe \"%s\" hinzugefügt."
+msgstr "Ditambahkan Firewall Group\"%s\"."
 
 #, python-format
 msgid "Added Policy \"%s\"."
-msgstr "Richtlinie \"%s\" hinzugefügt."
+msgstr "Kebijakan ditambahkan \"%s\"."
 
 #, python-format
 msgid "Added Rule \"%s\"."
-msgstr "Regel \"%s\" wurde hinzugefügt."
+msgstr "Aturan ditambahkan \"%s\"."
 
 #, python-format
 msgid "Added firewall \"%s\"."
-msgstr "Firewall \"%s\" hinzugefügt."
+msgstr "Ditambahkan firewall \"%s\"."
 
 #, python-format
 msgid "Added policy \"%s\"."
-msgstr "Richtlinie \"%s\" hinzugefügt."
+msgstr "Ditambahkan kebijakan \"%s\"."
 
 #, python-format
 msgid "Added rule \"%s\"."
-msgstr "Regel \"%s\" wurde hinzugefügt."
+msgstr "Aturan yang ditambahkan \"%s\"."
 
 msgid "Admin State"
-msgstr "Adminstatus"
+msgstr "Admin State"
 
 msgid "After"
-msgstr "Nachher"
+msgstr "After (sesudah)"
 
 msgid "Associated Routers"
-msgstr "Zugewiesene Router"
+msgstr "Associated Routers (router terkait)"
 
 msgid "Audited"
-msgstr "Geprüft"
+msgstr "Audited"
 
 msgid "Before"
-msgstr "Vorher"
+msgstr "Before (sebelum)"
 
 msgid "Create Firewall"
-msgstr "Firewall erstellen"
+msgstr "Create Firewall (buat firewall)"
 
 msgid "Create Firewall Group"
-msgstr "Firewall-Gruppe erstellen"
+msgstr "Membuat Firewall Group"
 
 msgid "Create a Firewall Group with selected ports."
-msgstr "Erstellen einer Firewall-Gruppe mit den ausgewählten Ports."
+msgstr "Buat Firewall Group dengan port yang dipilih."
 
 msgid ""
 "Create a firewall based on a policy.\n"
@@ -152,11 +149,11 @@ msgid ""
 "instantiate and manage. A firewall must be associated with one policy, all "
 "other fields are optional."
 msgstr ""
-"Erzeugen einer Firewall auf Basis einer Richtlinie\n"
+"Buat firewall berdasarkan kebijakan.\n"
 "\n"
-"Eine Firewall repräsentiert eine logische Firewall-Ressource, die ein "
-"Mandant instanzieren und verwalten kann. Eine Firewall muss mit einer "
-"Richtlinie verbunden werden, all anderen Felder sind optional."
+"Firewall merupakan sumber daya firewall logis dimana penyewa (tenant) dapat "
+"instantiate (mencontoh) dan mengelola. Firewall harus dikaitkan dengan satu "
+"kebijakan, semua kolom (field) lain adalah opsional."
 
 msgid ""
 "Create a firewall group based on a policy.\n"
@@ -165,11 +162,11 @@ msgid ""
 "instantiate and manage. A firewall must be associated with one policy, all "
 "other fields are optional."
 msgstr ""
-"Erzeugen einer Firewall-Gruppe auf Basis einer Richtlinie\n"
+"Buat grup firewall berdasarkan kebijakan.\n"
 "\n"
-"Eine Firewall repräsentiert eine logische Firewall-Ressource, die ein "
-"Mandant instanzieren und verwalten kann. Eine Firewall muss mit einer "
-"Richtlinie verbunden werden, all anderen Felder sind optional."
+"Firewall mewakili sumber daya firewall logis yang dapat diberikan oleh "
+"penyewa (tenant) dan pengelolaan. Firewall harus dikaitkan dengan satu "
+"kebijakan, semua bidang lainnya bersifat opsional."
 
 msgid ""
 "Create a firewall policy with an ordered list of firewall rules.\n"
@@ -188,22 +185,24 @@ msgid ""
 "through an update operation.</li>\n"
 "The name field is required, all others are optional."
 msgstr ""
-"Erzeugen einer Firewall-Richtlinie mit einer geordneten Liste von Regeln.\n"
+"Membuat kebijakan firewall dengan daftar aturan firewall tersusun "
+"berurutan.\n"
 "\n"
-"Eine Firewall-Richtlinie ist eine geordnete Sammlung von Firewall-Regeln. "
-"Sobald eine Regel auf den Datenverkehr zutrifft, werden die weiteren Regeln "
-"nicht mehr ausgeführt. Solange die Regeln nicht zutreffen, werden weitere "
-"Regeln ausgeführt. Eine Firewall-Richtlinie hat die folgenden Attribute:\n"
+"Sebuah kebijakan firewall adalah koleksi aturan firewall berurutan. Jadi "
+"jika lalu lintas sesuai dengan aturan pertama, maka aturan lain tidak "
+"dieksekusi. Jika lalu lintas tidak sesuai dengan aturan saat ini, maka "
+"aturan berikutnya dieksekusi. Sebuah kebijakan firewall memiliki atribut "
+"sebagai berikut:\n"
 "\n"
-"<li>Geteilt/Shared: eine Firewall-Richtlinie kann mit mehreren Mandanten "
-"geteilt werden. Dadurch kann sie auch als Teil eines Audit-Workflows "
-"verwendet werden, um von einer berechtigten Einheit/Organisation/Person "
-"geprüft zu werden.</li><li>Auditiert/Audited: wenn dies auf wahr/true "
-"gesetzt ist, zeigt es an, dass die Richtlinie geprüft wurde. Jedes Mal, wenn "
-"eine Richtlinie oder eine der Regeln darin geändert wird, wird der Indikator "
-"wieder auf falsch/false gesetzt und muss durch eine Update-Operation "
-"explizit wieder auf wahr/true gesetzt werden.</li>\n"
-"Das Namensfeld ist erforderlich, alle anderen sind optional."
+"<li>Shared: Sebuah kebijakan firewall dapat digunakan bersama seluruh "
+"penyewa (tenant). Dengan demikian kebijakan itu dapat juga menjadi bagian "
+"dari alur kerja pemeriksaan dimana kebijakan firewall dapat diaudit oleh "
+"entitas terkait yang berwenang.</li><li>Audited: Ketika diaudit diatur ke "
+"True, ini menunjukkan bahwa kebijakan firewall telah diaudit. Setiap kali "
+"kebijakan firewall atau aturan firewall yang terkait berubah, atribut ini "
+"akan diatur ke False dan harus secara eksplisit diatur ke True melalui "
+"operasi update.</li>\n"
+"Kolom (field) nama diperlukan, semua yang lain adalah opsional."
 
 msgid ""
 "Create a firewall rule.\n"
@@ -217,16 +216,17 @@ msgid ""
 "filtration required, it can be Reject/Deny/Allow data packets.</li>\n"
 "The protocol and action fields are required, all others are optional."
 msgstr ""
-"Firewall-Regel anlegen\n"
+"Buat aturan firewall\n"
 "\n"
-"Eine Firewall-Regel bezieht sich auf die folgenden Attribute:\n"
+"Aturan firewall adalah sebuah asosiasi atribut berikut:\n"
 "\n"
-"<li>IP-Adresse: die Adresse, auf zu/von der der Datenverkehr gefiltert wird."
-"</li><li>IP-Version: der IP Pakettyp (IPV4/6) der gefiltert wird.</"
-"li><li>Protokoll: der Pakettyp (UDP, ICMP, TCP, Any) der kontrolliert wird.</"
-"li><li>Aktion: die vorhergesehene Filteraktion, möglich ist Abweisen/"
-"Verweigern/Erlauben für Datenpakete.</li>\n"
-"Die Protokoll- und Aktionsfelder sind erforderlich, andere optional."
+"<li>IP Addresses: Alamat dari/ke dimana filtrasi lalu lintas perlu "
+"diterapkan.</li><li>IP Version: Tipe paket IP (IP V4/V6) yang perlu disaring."
+"</li><li>Protocol: Tipe paket (UDP, ICMP, TCP, lainnya) yang perlu diperiksa."
+"</li><li>Action: Action adalah tipe filtrasi diperlukan, dapat Reject/Deny/"
+"Allow paket data.</li>\n"
+"Protokol dan action field (kolom aksi) yang diperlukan, semua yang lain "
+"adalah opsional."
 
 msgid ""
 "Create a firewall rule.\n"
@@ -240,227 +240,217 @@ msgid ""
 "filtration required, it can be Reject/Deny/Allow data packets.</li>\n"
 "The protocol and action fields are required, all others are optional."
 msgstr ""
-"Firewall-Regel anlegen\n"
+"Buat aturan firewall\n"
 "\n"
-"Eine Firewall-Regel bezieht sich auf die folgenden Attribute:\n"
+"Aturan firewall adalah asosiasi dari atribut berikut:\n"
 "\n"
-"<li>IP-Adresse: die Adresse, auf zu/von der der Datenverkehr gefiltert wird."
-"</li><li>IP-Version: der IP Pakettyp (IPV4/6) der gefiltert wird.</"
-"li><li>Protokoll: der Pakettyp (UDP, ICMP, TCP, Any) der kontrolliert wird.</"
-"li><li>Aktion: die vorhergesehene Filteraktion, möglich ist Abweisen/"
-"Verweigern/Erlauben für Datenpakete.</li>\n"
-"Die Protokoll- und Aktionsfelder sind erforderlich, andere optional."
+"<li>IP Addresses: Alamat dari/ke mana filtrasi lalu lintas perlu diterapkan."
+"</li><li>IP Version: Jenis paket IP (IP V4/V6) yang perlu disaring.</"
+"li><li>Protocol: Jenis paket (UDP, ICMP, TCP, Any) yang perlu dicek. </"
+"li><li>Action: Action adalah jenis filtrasi yang dibutuhkan, bisa jadi "
+"Reject/Deny/Allow data packets.</li>\n"
+"Field protocol dan action diperlukan, yang lainnya bersifat opsional."
 
 msgid "Create a firewall with selected routers."
-msgstr "Erstellen einer Firewall mit den ausgewählten Routern."
+msgstr "Buat firewall dengan router yang dipilih."
 
 msgid "Create a policy with selected rules."
-msgstr "Richtlinie mit ausgewählten Regeln erstellen."
+msgstr "Membuat kebijakan dengan aturan yang dipilih."
 
 msgctxt "Current status of a Firewall Group"
 msgid "Created"
-msgstr "Erstellt"
+msgstr "Created"
 
 msgctxt "Current status of a firewall"
 msgid "Created"
-msgstr "Erstellt"
+msgstr "Created"
 
 msgid "DENY"
-msgstr "Verweigern"
+msgstr "DENY (menyangkal)"
 
 msgctxt "Action Name of a Firewall Rule"
 msgid "DENY"
-msgstr "Verweigern"
+msgstr "DENY (menyangkal)"
 
 msgctxt "Action name of a firewall rule"
 msgid "DENY"
-msgstr "Verweigern"
+msgstr "DENY"
 
 msgctxt "Admin state of a Firewall Group"
 msgid "DOWN"
-msgstr "INAKTIV"
+msgstr "DOWN"
 
 msgctxt "Admin state of a firewall"
 msgid "DOWN"
-msgstr "INAKTIV"
+msgstr "DOWN"
 
 msgid "Delete Firewall"
 msgid_plural "Delete Firewalls"
-msgstr[0] "Firewall löschen"
-msgstr[1] "Firewalls löschen"
+msgstr[0] "Delete Firewall"
 
 msgid "Delete Firewall Group"
 msgid_plural "Delete Firewall Groups"
-msgstr[0] "Firewall-Gruppe löschen"
-msgstr[1] "Firewall-Gruppen löschen"
+msgstr[0] "Delete Firewall Group"
 
 msgid "Delete Policy"
 msgid_plural "Delete Policies"
-msgstr[0] "Richtlinie löschen"
-msgstr[1] "Richtlinien löschen"
+msgstr[0] "Delete Policy"
 
 msgid "Delete Rule"
 msgid_plural "Delete Rules"
-msgstr[0] "Regel löschen"
-msgstr[1] "Regeln löschen"
+msgstr[0] "Delete Rule"
 
 msgid "Description"
-msgstr "Beschreibung"
+msgstr "Deskripsi"
 
 msgid "Destination IP"
-msgstr "Ziel-IP"
+msgstr "IP Tujuan"
 
 msgid "Destination IP Address/Subnet"
-msgstr "Ziel-IP-Adresse oder Subnetz"
+msgstr "Tujuan  subnet/alamat IP"
 
 msgid "Destination IP address or subnet"
-msgstr "Ziel-IP-Adresse oder Subnetz"
+msgstr "Tujuan subnet atau alamat IP"
 
 msgid "Destination Port"
-msgstr "Ziel-Port"
+msgstr "Port Tujuan"
 
 msgid "Destination Port/Port Range"
-msgstr "Ziel-Port/-Portbereich"
+msgstr "Destination Port/Port Range (tujuan port/ kisaran port)"
 
 msgid "Destination port (integer in [1, 65535] or range in a:b)"
-msgstr "Ziel-Port (Ganzzahl aus [1, 65535] oder Bereich als a:b)"
+msgstr ""
+"Destination (tujuan) port (integer dalam [1, 65535] atau dalam kisaran a:b)"
 
 msgctxt "Current status of a Firewall Group"
 msgid "Down"
-msgstr "Inaktiv"
+msgstr "Down"
 
 msgctxt "Current status of a firewall"
 msgid "Down"
-msgstr "Inaktiv"
+msgstr "Down"
 
 msgid "Edit Firewall"
-msgstr "Firewall bearbeiten"
+msgstr "Ubah Firewall"
 
 msgid "Edit Firewall Group"
-msgstr "Firewall-Gruppe bearbeiten"
+msgstr "Edit Firewall Group"
 
 msgid "Edit Firewall {{ name }}"
-msgstr "Firewall bearbeiten {{ name }}"
+msgstr "Edit Firewall {{ name }}"
 
 msgid "Edit FirewallGroup {{ name }}"
-msgstr "Firewall-Gruppe bearbeiten {{ name }}"
+msgstr "Edit FirewallGroup {{ name }}"
 
 msgid "Edit Policy"
-msgstr "Richtlinie bearbeiten"
+msgstr "Ubah Kebijakan"
 
 msgid "Edit Policy {{ name }}"
-msgstr "Richtlinie bearbeiten {{ name }}"
+msgstr "Edit Policy {{ name }}"
 
 msgid "Edit Rule"
-msgstr "Regel bearbeiten"
+msgstr "Ubah Aturan"
 
 msgid "Edit Rule {{ name }}"
-msgstr "Regel bearbeiten {{ name }}"
+msgstr "Edit Rule {{ name }}"
 
 msgid "Egress Policy"
-msgstr "Austrittsrichtlinie"
+msgstr "Egress Policy"
 
 msgid "Enable Admin State"
-msgstr "Adminstatus aktivieren"
+msgstr "Enable Admin State"
 
 msgid "Enabled"
-msgstr "Aktiviert"
+msgstr "Enabled (aktif)"
 
 msgctxt "Current status of a Firewall Group"
 msgid "Error"
-msgstr "Fehler"
+msgstr "Error"
 
 msgctxt "Current status of a firewall"
 msgid "Error"
-msgstr "Fehler"
+msgstr "Error"
 
 #, python-format
 msgid "Failed to add router(s) to firewall %(name)s: %(reason)s"
-msgstr ""
-"Fehler beim Hinzufügen des Routers / der Router zur Firewall %(name)s: "
-"%(reason)s"
+msgstr "Gagal menambah router untuk firewall %(name)s: %(reason)s"
 
 #, python-format
 msgid "Failed to insert rule to policy %(name)s: %(reason)s"
-msgstr "Regel konnte nicht eingefügt werden in Richtlinie %(name)s: %(reason)s"
+msgstr "Gagal untuk memasukkan aturan kebijakan %(name)s: %(reason)s"
 
 #, python-format
 msgid "Failed to remove router(s) from firewall %(name)s: %(reason)s"
-msgstr ""
-"Fehler beim Entfernen des Routers / der Router von der Firewall %(name)s: "
-"%(reason)s"
+msgstr "Gagal menghapus router dari firewall %(name)s: %(reason)s"
 
 #, python-format
 msgid "Failed to remove rule from policy %(name)s: %(reason)s"
-msgstr "Entfernen der Regel von Richtlinie %(name)s fehlgeschlagen: %(reason)s"
+msgstr "Gagal menghapus aturan dari kebijakan %(name)s: %(reason)s"
 
 #, python-format
 msgid "Failed to retrieve available routers: %s"
-msgstr "Verfügbare Router konnten nicht gefunden werden: %s"
+msgstr "Gagal mengambil router yang tersedia: %s"
 
 #, python-format
 msgid "Failed to retrieve available rules: %s"
-msgstr "Verfügbare Regeln konnten nicht abgerufen werden: %s"
+msgstr "Gagal mengambil aturan yang tersedia: %s"
 
 #, python-format
 msgid "Failed to retrieve current routers in firewall %(name)s: %(reason)s"
-msgstr ""
-"Fehler beim Abruf der aktuellen Router in der Firewall %(name)s: %(reason)s"
+msgstr "Gagal mengambil router saat ini di firewall %(name)s: %(reason)s"
 
 #, python-format
 msgid "Failed to retrieve current rules in policy %(name)s: %(reason)s"
-msgstr ""
-"Aktuelle Regeln in Richtline %(name)s konnten nicht abgerufen werden: "
-"%(reason)s"
+msgstr "Gagal mengambil aturan saat ini dalam kebijakan %(name)s: %(reason)s"
 
 msgid "Failed to retrieve port list of the firewall group."
-msgstr "Abruf der Portliste der Firewall-Gruppe ist fehlgeschlagen."
+msgstr "Gagal mengambil daftar port dari grup firewall."
 
 #, python-format
 msgid "Failed to update firewall %(name)s: %(reason)s"
-msgstr "Firewall %(name)s konnte nicht aktualisiert werden: %(reason)s"
+msgstr "Gagal memperbarui firewall %(name)s: %(reason)s"
 
 #, python-format
 msgid "Failed to update firewallgroup %(name)s: %(reason)s"
-msgstr "Firewall-Gruppe %(name)s konnte nicht aktualisiert werden: %(reason)s"
+msgstr "Gagal memperbarui firewallgroup %(name)s: %(reason)s"
 
 #, python-format
 msgid "Failed to update policy %(name)s: %(reason)s"
-msgstr "Fehler beim Aktualisieren der Richtlinie %(name)s: %(reason)s"
+msgstr "Gagal memperbarui kebijakan %(name)s: %(reason)s"
 
 #, python-format
 msgid "Failed to update rule %(name)s: %(reason)s"
-msgstr "Regel %(name)s konnte nicht aktualisiert werden: %(reason)s"
+msgstr "Gagal memperbarui aturan %(name)s: %(reason)s"
 
 #, python-format
 msgid "Failed to verify extension support %s"
-msgstr "Fehler bei der Überprüfung der Erweiterungsunterstützung %s"
+msgstr "Gagal memverifikasi dukungan ekstensi %s"
 
 msgid "Firewall"
 msgstr "Firewall"
 
 #, python-format
 msgid "Firewall %s was successfully updated."
-msgstr "Firewall %s wurde wurde erfolgreich aktualisiert."
+msgstr "Firewall %s telah berhasil diperbarui."
 
 msgid "Firewall Groups"
-msgstr "Firewall-Gruppe"
+msgstr "Firewall Groups"
 
 msgid "Firewall Policies"
-msgstr "Firewallrichtlinien"
+msgstr "Firewall Policies (kebijakan firewall)"
 
 msgid "Firewall Rules"
-msgstr "Firewallregeln"
+msgstr " Firewall Rules (aturan firewall)"
 
 msgid "FirewallGroup"
-msgstr "Firewall-Gruppe"
+msgstr "FirewallGroup"
 
 #, python-format
 msgid "FirewallGroup %s was successfully updated."
-msgstr "Firewall-Gruppe %s wurde erfolgreich aktualisiert."
+msgstr "FirewallGroup %s berhasil diupdate"
 
 msgid "Firewalls"
-msgstr "Firewalls"
+msgstr "Firewall"
 
 msgid "ICMP"
 msgstr "ICMP"
@@ -469,27 +459,27 @@ msgid "IP Version"
 msgstr "IP Version"
 
 msgid "IP Version for Firewall Rule"
-msgstr "IP-Version der Firewall-Regel"
+msgstr "IP Version untuk Firewall Rule"
 
 msgid "In Policy"
-msgstr "In Richtlinie"
+msgstr "In Policy"
 
 msgctxt "Current status of a Firewall Group"
 msgid "Inactive"
-msgstr "Inaktiv"
+msgstr "Inactive"
 
 msgctxt "Current status of a firewall"
 msgid "Inactive"
-msgstr "Inaktiv"
+msgstr "Inactive"
 
 msgid "Ingress Policy"
-msgstr "Eingangsrichtlinie"
+msgstr "Ingress Policy"
 
 msgid "Insert Rule"
-msgstr "Regel einfügen"
+msgstr "Insert Rule (menyisipkan aturan)"
 
 msgid "Insert Rule to Policy"
-msgstr "Regel in Richtlinie hinzufügen"
+msgstr "Sisipkan aturan ke kebijakan"
 
 msgid "Name"
 msgstr "Name"
@@ -497,193 +487,184 @@ msgstr "Name"
 msgid ""
 "Non admin users are not allowed to set the shared property of the policy."
 msgstr ""
-"Benutzer ohne Administratorrechte dürfen die Eigenschaft für eine gemeinsame "
-"Nutzung der Richtlinie nicht setzen."
+"Pengguna non admin tidak diizinkan menyetel properti bersama dari polis."
 
 msgid "Non admin users are not allowed to set the shared property of the rule."
-msgstr ""
-"Benutzer ohne Administratorrechte dürfen die Eigenschaft für eine gemeinsame "
-"Nutzung der Regel nicht setzen."
+msgstr "Pengguna non admin tidak diizinkan menyetel properti bersama aturan."
 
 msgid "None"
-msgstr "Keine"
+msgstr "None"
 
 msgctxt "Current status of a Firewall Group"
 msgid "Pending Create"
-msgstr "Geplante Erstellung"
+msgstr "Pending Create"
 
 msgctxt "Current status of a firewall"
 msgid "Pending Create"
-msgstr "Geplante Erstellung"
+msgstr "Pending Create"
 
 msgctxt "Current status of a Firewall Group"
 msgid "Pending Delete"
-msgstr "Geplante Löschung"
+msgstr "Pending Delete"
 
 msgctxt "Current status of a firewall"
 msgid "Pending Delete"
-msgstr "Geplante Löschung"
+msgstr "Pending Delete"
 
 msgctxt "Current status of a Firewall Group"
 msgid "Pending Update"
-msgstr "Geplante Aktualisierung"
+msgstr "Pending Update"
 
 msgctxt "Current status of a firewall"
 msgid "Pending Update"
-msgstr "Geplante Aktualisierung"
+msgstr "Pending Update"
 
 msgid "Policies"
-msgstr "Richtlinien"
+msgstr "Kebijakan"
 
 msgid "Policy"
-msgstr "Richtlinie"
+msgstr "Policy (kebijakan)"
 
 #, python-format
 msgid "Policy %s was successfully updated."
-msgstr "Richtlinie %s wurde wurde erfolgreich aktualisiert."
+msgstr "Kebijakan %s telah berhasil diperbarui."
 
 msgid "Ports"
 msgstr "Ports"
 
 msgid "Protocol"
-msgstr "Protokoll"
+msgstr "Protocol"
 
 msgid "Protocol for the firewall rule"
-msgstr "Protokoll für die Firewallregel"
+msgstr "Protokol untuk aturan firewall"
 
 msgid "REJECT"
-msgstr "Abweisen"
+msgstr "REJECT (menolak)"
 
 msgctxt "Action Name of a Firewall Rule"
 msgid "REJECT"
-msgstr "Abweisen"
+msgstr "REJECT (menolak)"
 
 msgctxt "Action name of a firewall rule"
 msgid "REJECT"
-msgstr "Abweisen"
+msgstr "REJECT"
 
 msgid "Remove Port"
-msgstr "Port entfernen"
+msgstr "Remove Port"
 
 msgid "Remove Router"
-msgstr "Router entfernen"
+msgstr "Remove Router"
 
 msgid "Remove Router from Firewall"
-msgstr "Router von Firewall entfernen"
+msgstr "Hapus router dari firewall "
 
 msgid "Remove Rule"
-msgstr "Regel entfernen"
+msgstr "Remove Rule (hapus aturan)"
 
 msgid "Remove Rule from Policy"
-msgstr "Regel aus Richtlinie entfernen"
+msgstr "Buang aturan dari kebijakan"
 
 msgid "Remove port from FirewallGroup {{ name }}"
-msgstr "Port aus Firewall-Gruppe entfernen {{ name }}"
+msgstr "Hapus port dari FirewallGroup {{ name }}"
 
 #, python-format
 msgid "Router(s)  was successfully removed from firewall %(firewall)s."
-msgstr "Router wurde(n) erfolgreich von der Firewall %(firewall)s entfernt."
+msgstr "Router berhasil dihapus dari firewalll %(firewall)s."
 
 #, python-format
 msgid "Router(s) was/were successfully added to firewall %(firewall)s."
-msgstr "Router wurde(n) erfolgreich der Firewall %(firewall)s hinzugefügt."
+msgstr "Router berhasil ditambahkan ke firewall %(firewall)s."
 
 msgid "Routers"
-msgstr "Router"
+msgstr "Routers"
 
 msgid "Rule"
-msgstr "Regel"
+msgstr "Aturan"
 
 #, python-format
 msgid "Rule %(rule)s was successfully inserted to policy %(policy)s."
-msgstr "Regel %(rule)s wurde erfolgreich in Richtlinie %(policy)s eingefügt ."
+msgstr "Aturan %(rule)s berhasil dimasukkan ke kebijakan %(policy)s."
 
 #, python-format
 msgid "Rule %(rule)s was successfully removed from policy %(policy)s."
-msgstr "Regel %(rule)s wurde erfolgreich aus Richtlinie %(policy)s entfernt."
+msgstr "Aturan %(rule)s berhasil dihapus dari kebijakan %(policy)s."
 
 #, python-format
 msgid "Rule %s was successfully updated."
-msgstr "Regel %s wurde erfolgreich aktualisiert."
+msgstr "Aturan %s telah berhasil diperbarui."
 
 msgid "Rules"
-msgstr "Regeln"
+msgstr "Aturan"
 
 msgid "Save Changes"
-msgstr "Änderungen speichern"
+msgstr "Simpan perubahan"
 
 msgid "Scheduled deletion of Firewall Group"
 msgid_plural "Scheduled deletion of Firewall Groups"
-msgstr[0] "Geplante Löschung der Firewall-Gruppe"
-msgstr[1] "Geplante Löschung der Firewall-Gruppen"
+msgstr[0] "Scheduled deletion of Firewall Group"
 
 msgid "Scheduled deletion of Policy"
 msgid_plural "Scheduled deletion of Policies"
-msgstr[0] "Geplante Löschung der Richtlinie"
-msgstr[1] "Geplante Löschung von Richtlinien"
+msgstr[0] "Scheduled deletion of Policy"
 
 msgid "Scheduled deletion of Rule"
 msgid_plural "Scheduled deletion of Rules"
-msgstr[0] "Geplante Löschung der Regel"
-msgstr[1] "Geplante Löschung von Regeln"
+msgstr[0] "Scheduled deletion of Rule"
 
 msgid "Scheduled deletion of firewall"
 msgid_plural "Scheduled deletion of firewalls"
-msgstr[0] "Geplante Löschung der Firewall"
-msgstr[1] "Geplante Löschung von Firewalls"
+msgstr[0] "Scheduled deletion of firewall"
 
 msgid "Scheduled deletion of policy"
 msgid_plural "Scheduled deletion of policies"
-msgstr[0] "Geplante Löschung der Richtlinie"
-msgstr[1] "Geplante Löschung von Richtlinien"
+msgstr[0] "Scheduled deletion of policy"
 
 msgid "Scheduled deletion of rule"
 msgid_plural "Scheduled deletion of rules"
-msgstr[0] "Geplante Löschung der Regel"
-msgstr[1] "Geplante Löschung von Regeln"
+msgstr[0] "Scheduled deletion of rule"
 
 msgid "Select a Policy"
-msgstr "Richtlinie auswählen"
+msgstr "Pilih kebijakan "
 
 msgid "Select a policy"
-msgstr "Richtlinie auswählen"
+msgstr "Pilih sebuah kebijakan"
 
 msgid "Select ports for your firewall group."
-msgstr "Wählen Sie Ports für Ihre Firewall-Gruppe."
+msgstr "Pilih port untuk grup firewall Anda."
 
 msgid "Select routers for your firewall."
-msgstr "Wählen Sie Router für Ihre Firewall."
+msgstr "Pilih router untuk firewall Anda."
 
 msgid "Select rules for your policy."
-msgstr "Regeln für Richtlinie auswählen."
+msgstr "Pilih aturan untuk kebijakan Anda."
 
 msgid "Shared"
-msgstr "Geteilt"
+msgstr "Shared"
 
 msgid "Source IP"
-msgstr "Quell-IP"
+msgstr "Source IP (IP sumber)"
 
 msgid "Source IP Address/Subnet"
-msgstr "Quell-IP-Adresse oder Subnetz"
+msgstr "Source (asal) subnet/alamat IP"
 
 msgid "Source IP address or subnet"
-msgstr "Quell-IP-Adresse oder Subnetz"
+msgstr "Source (asal) subnet atau alamat IP"
 
 msgid "Source Port"
-msgstr "Quell-Port"
+msgstr "Port Sumber"
 
 msgid "Source Port/Port Range"
-msgstr "Quell-Port/-Portbereich"
+msgstr "Source Port/Port Range (asal port/ kisaran port)"
 
 msgid "Source port (integer in [1, 65535] or range in a:b)"
-msgstr "Quell-Port (Ganzzahl aus [1, 65535] oder Bereich als a:b)"
+msgstr "Source (asal) port (integer dalam [1, 65535] atau dalam kisaran a:b)"
 
 msgid ""
 "Source/Destination Network Address and IP version are inconsistent. Please "
 "make them consistent."
 msgstr ""
-"Quelle/Ziel Netzwekadresse und IP-Version sind nicht konsistent. Bitte "
-"ändern Sie dies."
+"Sumber/tujuan alamat jaringan dan IP versi tidak konsisten. Harap membuat "
+"mereka konsisten."
 
 msgid "Status"
 msgstr "Status"
@@ -696,98 +677,98 @@ msgstr "UDP"
 
 msgctxt "Admin state of a Firewall Group"
 msgid "UP"
-msgstr "AKTIV"
+msgstr "UP"
 
 msgctxt "Admin state of a firewall"
 msgid "UP"
-msgstr "AKTIV"
+msgstr "UP"
 
 #, python-format
 msgid "Unable to add Firewall Group \"%s\"."
-msgstr "Firewall-Gruppe \"%s\" konnte nicht hinzugefügt werden."
+msgstr "Tidak dapat menambahkan Firewall Group \"%s\"."
 
 #, python-format
 msgid "Unable to add Policy \"%s\"."
-msgstr "Richtlinie \"%s\" konnte nicht hinzugefügt werden."
+msgstr "Tidak dapat menambahkan kebijakan \"%s\"."
 
 #, python-format
 msgid "Unable to add Rule \"%s\"."
-msgstr "Regel \"%s\" kann nicht hinzugefügt werden"
+msgstr "Tidak dapat menambahkan Aturan \"%s\"."
 
 #, python-format
 msgid "Unable to add firewall \"%s\"."
-msgstr "Firewall \"%s\" konnte nicht hinzugefügt werden."
+msgstr "Tidak dapat menambahkan firewall \"%s\"."
 
 #, python-format
 msgid "Unable to add policy \"%s\"."
-msgstr "Richtlinie \"%s\" konnte nicht hinzugefügt werden."
+msgstr "Tidak dapat menambahkan kebijakan \"%s\"."
 
 #, python-format
 msgid "Unable to add rule \"%s\"."
-msgstr "Regel \"%s\" kann nicht hinzugefügt werden"
+msgstr "Tidak dapat menambahkan aturan \"%s\"."
 
 #, python-format
 msgid "Unable to delete firewall. %s"
-msgstr "Firewall %s kann nicht gelöscht werden."
+msgstr "Tidak dapat menghapus firewall. %s"
 
 #, python-format
 msgid "Unable to delete policy. %s"
-msgstr "Richtlinie %s konnte nicht gelöscht werden."
+msgstr "Tidak dapat menghapus kebijakan. %s"
 
 #, python-format
 msgid "Unable to delete rule. %s"
-msgstr "Regel %s kann nicht gelöscht werden."
+msgstr "Tidak dapat menghapus aturan. %s"
 
 msgid "Unable to retrieve firewall details."
-msgstr "Firewalldetails können nicht abgerufen werden."
+msgstr "Tidak dapat mengambil rincian firewall."
 
 msgid "Unable to retrieve firewall list."
-msgstr "Firewallliste kann nicht abgerufen werden."
+msgstr "Tidak dapat mengambil daftar firewall."
 
 msgid "Unable to retrieve firewallgroup details."
-msgstr "Konnte Firewall-Gruppendetails nicht abrufen."
+msgstr "Tidak dapat mengambil rincian firewallgroup."
 
 msgid "Unable to retrieve policies list."
-msgstr "Liste der Richtlinien kann nicht abgerufen werden."
+msgstr "Tidak dapat mengambil daftar kebijakan."
 
 msgid "Unable to retrieve policy details."
-msgstr "Richtliniendetails können nicht abgerufen werden."
+msgstr "Tidak dapat mengambil rincian kebijakan."
 
 #, python-format
 msgid "Unable to retrieve policy list (%(error)s)."
-msgstr "Liste der Richtlinien kann nicht abgerufen werden (%(error)s)."
+msgstr "Tidak dapat mengambil daftar kebijakan  (%(error)s)."
 
 #, python-format
 msgid "Unable to retrieve policy list (%s)."
-msgstr "Richtlinienliste kann nicht abgerufen werden (%s)."
+msgstr "Tidak dapat mengambil daftar kebijakan (%s)."
 
 msgid "Unable to retrieve policy list."
-msgstr "Liste der Richtlinien kann nicht abgerufen werden."
+msgstr "Tidak dapat mengambil daftar kebijakan."
 
 msgid "Unable to retrieve port list."
-msgstr "Portliste kann nicht abgerufen werden."
+msgstr "Tidak dapat mengambil daftar port."
 
 #, python-format
 msgid "Unable to retrieve ports (%s)."
-msgstr "Ports können nicht abgerufen werden (%s)."
+msgstr "Tidak dapat mengambil port (%s)."
 
 #, python-format
 msgid "Unable to retrieve routers (%(error)s)."
-msgstr "Router können nicht abgerufen werden (%(error)s)."
+msgstr "Tidak dapat mengambil router (%(error)s)."
 
 msgid "Unable to retrieve rule details."
-msgstr "Details der Regeln können nicht abgerufen werden. "
+msgstr "Tidak dapat mengambil rincian aturan."
 
 #, python-format
 msgid "Unable to retrieve rules (%(error)s)."
-msgstr "Regeln können nicht abgerufen werden: (%(error)s)."
+msgstr "Tidak dapat mengambil aturan (%(error)s)."
 
 #, python-format
 msgid "Unable to retrieve rules (%s)."
-msgstr "Regeln können nicht abgerufen werden (%s)."
+msgstr "Tidak dapat mengambil peraturan (%s)."
 
 msgid "Unable to retrieve rules list."
-msgstr "Liste der Regeln kann nicht abgerufen werden."
+msgstr "Tidak dapat mengambil daftar aturan."
 
 msgid "Unselect the router(s) to be removed from firewall."
-msgstr "Abwählen der von der Firewall zu entfernenden Router."
+msgstr "Batalkan router untuk dihapus dari firewall."
