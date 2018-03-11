@@ -12,14 +12,20 @@
 #    License for the specific language governing permissions and limitations
 #    under the License.
 
+import mock
 from neutronclient.v2_0.client import Client as neutronclient
+
+from openstack_dashboard.test import helpers
 
 from neutron_fwaas_dashboard.api import fwaas_v2 as api_fwaas_v2
 from neutron_fwaas_dashboard.test import helpers as test
 
 
 class FwaasV2ApiTests(test.APITestCase):
-    @test.create_stubs({neutronclient: ('create_fwaas_firewall_rule',)})
+
+    use_mox = False
+
+    @helpers.create_mocks({neutronclient: ('create_fwaas_firewall_rule',)})
     def test_rule_create(self):
         rule1 = self.fw_rules_v2.first()
         rule1_dict = self.api_fw_rules_v2.first()
@@ -36,58 +42,64 @@ class FwaasV2ApiTests(test.APITestCase):
                      }
         form_dict = {'firewall_rule': form_data}
         ret_dict = {'firewall_rule': rule1_dict}
-        neutronclient.create_fwaas_firewall_rule(form_dict).AndReturn(ret_dict)
-        self.mox.ReplayAll()
+        self.mock_create_fwaas_firewall_rule.return_value = ret_dict
 
         ret_val = api_fwaas_v2.rule_create(self.request, **form_data)
         self._assert_rule_return_value(ret_val, rule1)
+
+        self.mock_create_fwaas_firewall_rule.assert_called_once_with(form_dict)
 
     def _assert_rule_return_value(self, ret_val, exp_rule):
         self.assertIsInstance(ret_val, api_fwaas_v2.Rule)
         self.assertEqual(exp_rule.name, ret_val.name)
         self.assertTrue(ret_val.id)
 
-    @test.create_stubs({neutronclient: ('list_fwaas_firewall_rules',)})
+    @helpers.create_mocks({neutronclient: ('list_fwaas_firewall_rules',)})
     def test_rule_list(self):
         exp_rules = self.fw_rules_v2.list()
         api_rules = {'firewall_rules': self.api_fw_rules_v2.list()}
 
-        neutronclient.list_fwaas_firewall_rules().AndReturn(api_rules)
-        self.mox.ReplayAll()
+        self.mock_list_fwaas_firewall_rules.return_value = api_rules
 
         ret_val = api_fwaas_v2.rule_list(self.request)
         for (v, d) in zip(ret_val, exp_rules):
             self._assert_rule_return_value(v, d)
+        self.mock_list_fwaas_firewall_rules.assert_called_once_with()
 
-    @test.create_stubs({neutronclient: ('list_fwaas_firewall_rules',)})
+    @helpers.create_mocks({neutronclient: ('list_fwaas_firewall_rules',)})
     def test_rule_list_for_tenant(self):
         tenant_id = self.request.user.project_id
         exp_rules = self.fw_rules_v2.list()
         api_rules = {'firewall_rules': self.api_fw_rules_v2.list()}
 
-        neutronclient.list_fwaas_firewall_rules(
-            tenant_id=tenant_id,
-            shared=False).AndReturn({'firewall_rules': []})
-        neutronclient.list_fwaas_firewall_rules(shared=True) \
-            .AndReturn(api_rules)
-        self.mox.ReplayAll()
+        self.mock_list_fwaas_firewall_rules.side_effect = [
+            {'firewall_rules': []},
+            api_rules,
+        ]
 
         ret_val = api_fwaas_v2.rule_list_for_tenant(self.request, tenant_id)
         for (v, d) in zip(ret_val, exp_rules):
             self._assert_rule_return_value(v, d)
 
-    @test.create_stubs({neutronclient: ('show_fwaas_firewall_rule',)})
+        self.assertEqual(2, self.mock_list_fwaas_firewall_rules.call_count)
+        self.mock_list_fwaas_firewall_rules.assert_has_calls([
+            mock.call(tenant_id=tenant_id, shared=False),
+            mock.call(shared=True),
+        ])
+
+    @helpers.create_mocks({neutronclient: ('show_fwaas_firewall_rule',)})
     def test_rule_get(self):
         exp_rule = self.fw_rules_v2.first()
         ret_dict = {'firewall_rule': self.api_fw_rules_v2.first()}
 
-        neutronclient.show_fwaas_firewall_rule(exp_rule.id).AndReturn(ret_dict)
-        self.mox.ReplayAll()
+        self.mock_show_fwaas_firewall_rule.return_value = ret_dict
 
         ret_val = api_fwaas_v2.rule_get(self.request, exp_rule.id)
         self._assert_rule_return_value(ret_val, exp_rule)
 
-    @test.create_stubs({neutronclient: ('update_fwaas_firewall_rule',)})
+        self.mock_show_fwaas_firewall_rule.assert_called_once_with(exp_rule.id)
+
+    @helpers.create_mocks({neutronclient: ('update_fwaas_firewall_rule',)})
     def test_rule_update(self):
         rule = self.fw_rules_v2.first()
         rule_dict = self.api_fw_rules_v2.first()
@@ -116,15 +128,16 @@ class FwaasV2ApiTests(test.APITestCase):
         form_dict = {'firewall_rule': form_data}
         ret_dict = {'firewall_rule': rule_dict}
 
-        neutronclient.update_fwaas_firewall_rule(
-            rule.id, form_dict).AndReturn(ret_dict)
-        self.mox.ReplayAll()
+        self.mock_update_fwaas_firewall_rule.return_value = ret_dict
 
         ret_val = api_fwaas_v2.rule_update(self.request,
                                            rule.id, **form_data)
         self._assert_rule_return_value(ret_val, rule)
 
-    @test.create_stubs({neutronclient: ('create_fwaas_firewall_policy', )})
+        self.mock_update_fwaas_firewall_rule.assert_called_once_with(
+            rule.id, form_dict)
+
+    @helpers.create_mocks({neutronclient: ('create_fwaas_firewall_policy', )})
     def test_policy_create(self):
         policy1 = self.fw_policies_v2.first()
         policy1_dict = self.api_fw_policies_v2.first()
@@ -138,14 +151,15 @@ class FwaasV2ApiTests(test.APITestCase):
         form_dict = {'firewall_policy': form_data}
         ret_dict = {'firewall_policy': policy1_dict}
 
-        neutronclient.create_fwaas_firewall_policy(form_dict).\
-            AndReturn(ret_dict)
-        self.mox.ReplayAll()
+        self.mock_create_fwaas_firewall_policy.return_value = ret_dict
 
         ret_val = api_fwaas_v2.policy_create(self.request, **form_data)
         self.assertIsInstance(ret_val, api_fwaas_v2.Policy)
         self.assertEqual(policy1.name, ret_val.name)
         self.assertTrue(ret_val.id)
+
+        self.mock_create_fwaas_firewall_policy.assert_called_once_with(
+            form_dict)
 
     def _assert_policy_return_value(self, ret_val, exp_policy):
         self.assertIsInstance(ret_val, api_fwaas_v2.Policy)
@@ -157,43 +171,50 @@ class FwaasV2ApiTests(test.APITestCase):
         for (r, exp_r) in zip(ret_val.rules, exp_policy.rules):
             self.assertEqual(exp_r.id, r.id)
 
-    @test.create_stubs({neutronclient: ('list_fwaas_firewall_policies',
-                                        'list_fwaas_firewall_rules')})
+    @helpers.create_mocks({neutronclient: ('list_fwaas_firewall_policies',
+                                           'list_fwaas_firewall_rules')})
     def test_policy_list(self):
         exp_policies = self.fw_policies_v2.list()
         policies_dict = {'firewall_policies': self.api_fw_policies_v2.list()}
         rules_dict = {'firewall_rules': self.api_fw_rules_v2.list()}
 
-        neutronclient.list_fwaas_firewall_policies().AndReturn(policies_dict)
-        neutronclient.list_fwaas_firewall_rules().AndReturn(rules_dict)
-        self.mox.ReplayAll()
+        self.mock_list_fwaas_firewall_policies.return_value = policies_dict
+        self.mock_list_fwaas_firewall_rules.return_value = rules_dict
 
         ret_val = api_fwaas_v2.policy_list(self.request)
         for (v, d) in zip(ret_val, exp_policies):
             self._assert_policy_return_value(v, d)
 
-    @test.create_stubs({neutronclient: ('list_fwaas_firewall_policies',
-                                        'list_fwaas_firewall_rules')})
+        self.mock_list_fwaas_firewall_policies.assert_called_once_with()
+        self.mock_list_fwaas_firewall_rules.assert_called_once_with()
+
+    @helpers.create_mocks({neutronclient: ('list_fwaas_firewall_policies',
+                                           'list_fwaas_firewall_rules')})
     def test_policy_list_for_tenant(self):
         tenant_id = self.request.user.project_id
         exp_policies = self.fw_policies_v2.list()
         policies_dict = {'firewall_policies': self.api_fw_policies_v2.list()}
         rules_dict = {'firewall_rules': self.api_fw_rules_v2.list()}
 
-        neutronclient.list_fwaas_firewall_policies(
-            tenant_id=tenant_id,
-            shared=False).AndReturn({'firewall_policies': []})
-        neutronclient.list_fwaas_firewall_policies(
-            shared=True).AndReturn(policies_dict)
-        neutronclient.list_fwaas_firewall_rules().AndReturn(rules_dict)
-        self.mox.ReplayAll()
+        self.mock_list_fwaas_firewall_policies.side_effect = [
+            {'firewall_policies': []},
+            policies_dict,
+        ]
+        self.mock_list_fwaas_firewall_rules.return_value = rules_dict
 
         ret_val = api_fwaas_v2.policy_list_for_tenant(self.request, tenant_id)
         for (v, d) in zip(ret_val, exp_policies):
             self._assert_policy_return_value(v, d)
 
-    @test.create_stubs({neutronclient: ('show_fwaas_firewall_policy',
-                                        'list_fwaas_firewall_rules')})
+        self.assertEqual(2, self.mock_list_fwaas_firewall_policies.call_count)
+        self.mock_list_fwaas_firewall_policies.assert_has_calls([
+            mock.call(tenant_id=tenant_id, shared=False),
+            mock.call(shared=True),
+        ])
+        self.mock_list_fwaas_firewall_rules.assert_called_once_with()
+
+    @helpers.create_mocks({neutronclient: ('show_fwaas_firewall_policy',
+                                           'list_fwaas_firewall_rules')})
     def test_policy_get(self):
         exp_policy = self.fw_policies_v2.first()
         policy_dict = self.api_fw_policies_v2.first()
@@ -201,26 +222,27 @@ class FwaasV2ApiTests(test.APITestCase):
         api_rules = self.api_fw_rules_v2.list()[:2]
 
         ret_dict = {'firewall_policy': policy_dict}
-        neutronclient.show_fwaas_firewall_policy(
-            exp_policy.id).AndReturn(ret_dict)
+        self.mock_show_fwaas_firewall_policy.return_value = ret_dict
         filters = {'firewall_policy_id': exp_policy.id}
         ret_dict = {'firewall_rules': api_rules}
-        neutronclient.list_fwaas_firewall_rules(**filters).AndReturn(ret_dict)
-        self.mox.ReplayAll()
+
+        self.mock_list_fwaas_firewall_rules.return_value = ret_dict
 
         ret_val = api_fwaas_v2.policy_get(self.request, exp_policy.id)
         self._assert_policy_return_value(ret_val, exp_policy)
 
-    @test.create_stubs({neutronclient: ('show_fwaas_firewall_policy',)})
+        self.mock_show_fwaas_firewall_policy.assert_called_once_with(
+            exp_policy.id)
+        self.mock_list_fwaas_firewall_rules.assert_called_once_with(**filters)
+
+    @helpers.create_mocks({neutronclient: ('show_fwaas_firewall_policy',)})
     def test_policy_get_no_rule(self):
         # 2nd policy is not associated with any rules.
         exp_policy = self.fw_policies_v2.list()[1]
         policy_dict = self.api_fw_policies_v2.list()[1]
 
         ret_dict = {'firewall_policy': policy_dict}
-        neutronclient.show_fwaas_firewall_policy(
-            exp_policy.id).AndReturn(ret_dict)
-        self.mox.ReplayAll()
+        self.mock_show_fwaas_firewall_policy.return_value = ret_dict
 
         ret_val = api_fwaas_v2.policy_get(self.request, exp_policy.id)
         self.assertIsInstance(ret_val, api_fwaas_v2.Policy)
@@ -228,7 +250,10 @@ class FwaasV2ApiTests(test.APITestCase):
         self.assertTrue(ret_val.id)
         self.assertFalse(len(ret_val.rules))
 
-    @test.create_stubs({neutronclient: ('update_fwaas_firewall_policy',)})
+        self.mock_show_fwaas_firewall_policy.assert_called_once_with(
+            exp_policy.id)
+
+    @helpers.create_mocks({neutronclient: ('update_fwaas_firewall_policy',)})
     def test_policy_update(self):
         policy = self.fw_policies_v2.first()
         policy_dict = self.api_fw_policies_v2.first()
@@ -252,9 +277,7 @@ class FwaasV2ApiTests(test.APITestCase):
         form_dict = {'firewall_policy': form_data}
         ret_dict = {'firewall_policy': policy_dict}
 
-        neutronclient.update_fwaas_firewall_policy(
-            policy.id, form_dict).AndReturn(ret_dict)
-        self.mox.ReplayAll()
+        self.mock_update_fwaas_firewall_policy.return_value = ret_dict
 
         ret_val = api_fwaas_v2.policy_update(self.request,
                                              policy.id, **form_data)
@@ -262,7 +285,11 @@ class FwaasV2ApiTests(test.APITestCase):
         self.assertEqual(policy.name, ret_val.name)
         self.assertTrue(ret_val.id)
 
-    @test.create_stubs({neutronclient: ('insert_rule_fwaas_firewall_policy',)})
+        self.mock_update_fwaas_firewall_policy.assert_called_once_with(
+            policy.id, form_dict)
+
+    @helpers.create_mocks(
+        {neutronclient: ('insert_rule_fwaas_firewall_policy',)})
     def test_policy_insert_rule(self):
         policy = self.fw_policies_v2.first()
         policy_dict = self.api_fw_policies_v2.first()
@@ -275,15 +302,16 @@ class FwaasV2ApiTests(test.APITestCase):
                 'insert_before': policy.firewall_rules[1],
                 'insert_after': policy.firewall_rules[0]}
 
-        neutronclient.insert_rule_fwaas_firewall_policy(
-            policy.id, body).AndReturn(policy_dict)
-        self.mox.ReplayAll()
+        self.mock_insert_rule_fwaas_firewall_policy.return_value = policy_dict
 
         ret_val = api_fwaas_v2.policy_insert_rule(self.request,
                                                   policy.id, **body)
         self.assertIn(new_rule_id, ret_val.firewall_rules)
+        self.mock_insert_rule_fwaas_firewall_policy.assert_called_once_with(
+            policy.id, body)
 
-    @test.create_stubs({neutronclient: ('remove_rule_fwaas_firewall_policy',)})
+    @helpers.create_mocks(
+        {neutronclient: ('remove_rule_fwaas_firewall_policy',)})
     def test_policy_remove_rule(self):
         policy = self.fw_policies_v2.first()
         policy_dict = self.api_fw_policies_v2.first()
@@ -293,15 +321,15 @@ class FwaasV2ApiTests(test.APITestCase):
 
         body = {'firewall_rule_id': remove_rule_id}
 
-        neutronclient.remove_rule_fwaas_firewall_policy(
-            policy.id, body).AndReturn(policy_dict)
-        self.mox.ReplayAll()
+        self.mock_remove_rule_fwaas_firewall_policy.return_value = policy_dict
 
         ret_val = api_fwaas_v2.policy_remove_rule(self.request,
                                                   policy.id, **body)
         self.assertNotIn(remove_rule_id, ret_val.firewall_rules)
+        self.mock_remove_rule_fwaas_firewall_policy.assert_called_once_with(
+            policy.id, body)
 
-    @test.create_stubs({neutronclient: ('create_fwaas_firewall_group', )})
+    @helpers.create_mocks({neutronclient: ('create_fwaas_firewall_group', )})
     def test_firewall_group_create(self):
         firewall_group = self.firewall_groups_v2.first()
         firewall_group_dict = self.api_firewall_groups_v2.first()
@@ -318,14 +346,15 @@ class FwaasV2ApiTests(test.APITestCase):
 
         form_dict = {'firewall_group': form_data}
         ret_dict = {'firewall_group': firewall_group_dict}
-        neutronclient.create_fwaas_firewall_group(
-            form_dict).AndReturn(ret_dict)
-        self.mox.ReplayAll()
+        self.mock_create_fwaas_firewall_group.return_value = ret_dict
 
         ret_val = api_fwaas_v2.firewall_group_create(self.request, **form_data)
         self.assertIsInstance(ret_val, api_fwaas_v2.FirewallGroup)
         self.assertEqual(firewall_group.name, ret_val.name)
         self.assertEqual(firewall_group.id, ret_val.id)
+
+        self.mock_create_fwaas_firewall_group.assert_called_once_with(
+            form_dict)
 
     def _assert_firewall_return_value(self, ret_val, exp_firewall,
                                       expand_policy=True):
@@ -353,40 +382,46 @@ class FwaasV2ApiTests(test.APITestCase):
     # TODO(Sarath Mekala) : Add API tests for firewall_group_create with ports,
     #                  add port to firewall and remove port from fw.
 
-    @test.create_stubs({neutronclient: ('list_fwaas_firewall_groups',
-                                        'list_fwaas_firewall_policies')})
+    @helpers.create_mocks({neutronclient: ('list_fwaas_firewall_groups',
+                                           'list_fwaas_firewall_policies')})
     def test_firewall_list(self):
         exp_firewalls = self.firewall_groups_v2.list()
         firewalls_dict = {
             'firewall_groups': self.api_firewall_groups_v2.list()}
 
-        neutronclient.list_fwaas_firewall_groups().AndReturn(firewalls_dict)
-        self.mox.ReplayAll()
+        self.mock_list_fwaas_firewall_groups.return_value = firewalls_dict
 
         ret_val = api_fwaas_v2.firewall_list(self.request)
         for (v, d) in zip(ret_val, exp_firewalls):
             self._assert_firewall_return_value(v, d, expand_policy=False)
+        self.mock_list_fwaas_firewall_groups.assert_called_once_with()
 
-    @test.create_stubs({neutronclient: ('list_fwaas_firewall_groups',
-                                        'list_fwaas_firewall_policies')})
+    @helpers.create_mocks({neutronclient: ('list_fwaas_firewall_groups',
+                                           'list_fwaas_firewall_policies')})
     def test_firewall_list_for_tenant(self):
         tenant_id = self.request.user.project_id
         exp_firewalls = self.firewall_groups_v2.list()
         firewalls_dict = {
             'firewall_groups': self.api_firewall_groups_v2.list()}
 
-        neutronclient.list_fwaas_firewall_groups(shared=False, tenant_id=tenant_id) \
-            .AndReturn(firewalls_dict)
-        neutronclient.list_fwaas_firewall_groups(shared=True) \
-            .AndReturn(firewalls_dict)
-        self.mox.ReplayAll()
+        self.mock_list_fwaas_firewall_groups.side_effect = [
+            firewalls_dict,
+            firewalls_dict,
+        ]
+
         ret_val = api_fwaas_v2.firewall_list_for_tenant(
             self.request, tenant_id)
         for (v, d) in zip(ret_val, exp_firewalls):
             self._assert_firewall_return_value(v, d, expand_policy=False)
 
-    @test.create_stubs({neutronclient: ('list_ports',
-                                        'list_fwaas_firewall_groups')})
+        self.assertEqual(2, self.mock_list_fwaas_firewall_groups.call_count)
+        self.mock_list_fwaas_firewall_groups.assert_has_calls([
+            mock.call(shared=False, tenant_id=tenant_id),
+            mock.call(shared=True),
+        ])
+
+    @helpers.create_mocks({neutronclient: ('list_ports',
+                                           'list_fwaas_firewall_groups')})
     def test_fwg_port_list_for_tenant(self):
         tenant_id = self.request.user.project_id
         router_port = {
@@ -422,17 +457,21 @@ class FwaasV2ApiTests(test.APITestCase):
             dhcp_port,
         ]}
 
-        neutronclient.list_ports(tenant_id=tenant_id).AndReturn(dummy_ports)
-        neutronclient.list_fwaas_firewall_groups(
-            tenant_id=tenant_id).AndReturn({'firewall_groups': []})
-        self.mox.ReplayAll()
+        self.mock_list_ports.return_value = dummy_ports
+        self.mock_list_fwaas_firewall_groups.return_value = \
+            {'firewall_groups': []}
+
         ports = api_fwaas_v2.fwg_port_list_for_tenant(self.request, tenant_id)
         self.assertEqual(router_port['id'], ports[0]['id'])
         self.assertEqual(vm_port1['id'], ports[1]['id'])
         self.assertEqual(vm_port2['id'], ports[2]['id'])
 
-    @test.create_stubs({neutronclient: ('list_ports',
-                                        'list_fwaas_firewall_groups')})
+        self.mock_list_ports.assert_called_once_with(tenant_id=tenant_id)
+        self.mock_list_fwaas_firewall_groups.assert_called_once_with(
+            tenant_id=tenant_id)
+
+    @helpers.create_mocks({neutronclient: ('list_ports',
+                                           'list_fwaas_firewall_groups')})
     def test_fwg_port_list_for_tenant_with_used_port(self):
         tenant_id = self.request.user.project_id
         router_port = {
@@ -464,41 +503,53 @@ class FwaasV2ApiTests(test.APITestCase):
 
         used_ports = {'firewall_groups': [{'ports': [router_port['id']]}]}
 
-        neutronclient.list_ports(tenant_id=tenant_id).AndReturn(dummy_ports)
-        neutronclient.list_fwaas_firewall_groups(
-            tenant_id=tenant_id).AndReturn(used_ports)
-        self.mox.ReplayAll()
+        self.mock_list_ports.return_value = dummy_ports
+        self.mock_list_fwaas_firewall_groups.return_value = used_ports
+
         ports = api_fwaas_v2.fwg_port_list_for_tenant(self.request, tenant_id)
         self.assertEqual(vm_port1['id'], ports[0]['id'])
 
-    @test.create_stubs({neutronclient: ('list_ports',
-                                        'list_fwaas_firewall_groups')})
+        self.mock_list_ports.assert_called_once_with(tenant_id=tenant_id)
+        self.mock_list_fwaas_firewall_groups.assert_called_once_with(
+            tenant_id=tenant_id)
+
+    @helpers.create_mocks({neutronclient: ('list_ports',
+                                           'list_fwaas_firewall_groups')})
     def test_fwg_port_list_for_tenant_no_match(self):
         tenant_id = self.request.user.project_id
         dummy_ports = {'ports': [
             {'name': 'port-3', 'device_owner': 'network:router_gateway'},
             {'name': 'port-4', 'device_owner': 'network:dhcp'},
         ]}
-        neutronclient.list_ports(tenant_id=tenant_id).AndReturn(dummy_ports)
-        neutronclient.list_fwaas_firewall_groups(
-            tenant_id=tenant_id).AndReturn({'firewall_groups': []})
-        self.mox.ReplayAll()
+
+        self.mock_list_ports.return_value = dummy_ports
+        self.mock_list_fwaas_firewall_groups.return_value = \
+            {'firewall_groups': []}
+
         ports = api_fwaas_v2.fwg_port_list_for_tenant(self.request, tenant_id)
         self.assertEqual([], ports)
 
-    @test.create_stubs({neutronclient: ('list_ports',
-                                        'list_fwaas_firewall_groups')})
+        self.mock_list_ports.assert_called_once_with(tenant_id=tenant_id)
+        self.mock_list_fwaas_firewall_groups.assert_called_once_with(
+            tenant_id=tenant_id)
+
+    @helpers.create_mocks({neutronclient: ('list_ports',
+                                           'list_fwaas_firewall_groups')})
     def test_fwg_port_list_for_tenant_no_ports(self):
         tenant_id = self.request.user.project_id
-        neutronclient.list_ports(tenant_id=tenant_id).AndReturn({'ports': []})
-        neutronclient.list_fwaas_firewall_groups(
-            tenant_id=tenant_id).AndReturn({'firewall_groups': []})
-        self.mox.ReplayAll()
+        self.mock_list_ports.return_value = {'ports': []}
+        self.mock_list_fwaas_firewall_groups.return_value = \
+            {'firewall_groups': []}
+
         ports = api_fwaas_v2.fwg_port_list_for_tenant(self.request, tenant_id)
         self.assertEqual([], ports)
 
-    @test.create_stubs({neutronclient: ('show_fwaas_firewall_group',
-                                        'show_fwaas_firewall_policy')})
+        self.mock_list_ports.assert_called_once_with(tenant_id=tenant_id)
+        self.mock_list_fwaas_firewall_groups.assert_called_once_with(
+            tenant_id=tenant_id)
+
+    @helpers.create_mocks({neutronclient: ('show_fwaas_firewall_group',
+                                           'show_fwaas_firewall_policy')})
     def test_firewall_get(self):
         exp_firewall = self.firewall_groups_v2.first()
         ret_dict = {'firewall_group': self.api_firewall_groups_v2.first()}
@@ -511,18 +562,24 @@ class FwaasV2ApiTests(test.APITestCase):
         egress_policy = [p for p in self.api_fw_policies_v2.list()
                          if p['id'] == egress_policy_id][0]
 
-        neutronclient.show_fwaas_firewall_group(
-            exp_firewall.id).AndReturn(ret_dict)
-        neutronclient.show_fwaas_firewall_policy(ingress_policy_id)\
-            .AndReturn({'firewall_policy': ingress_policy})
-        neutronclient.show_fwaas_firewall_policy(egress_policy_id)\
-            .AndReturn({'firewall_policy': egress_policy})
-        self.mox.ReplayAll()
+        self.mock_show_fwaas_firewall_group.return_value = ret_dict
+        self.mock_show_fwaas_firewall_policy.side_effect = [
+            {'firewall_policy': ingress_policy},
+            {'firewall_policy': egress_policy}
+        ]
 
         ret_val = api_fwaas_v2.firewall_get(self.request, exp_firewall.id)
         self._assert_firewall_return_value(ret_val, exp_firewall)
 
-    @test.create_stubs({neutronclient: ('update_fwaas_firewall_group',)})
+        self.mock_show_fwaas_firewall_group.assert_called_once_with(
+            exp_firewall.id)
+        self.assertEqual(2, self.mock_show_fwaas_firewall_policy.call_count)
+        self.mock_show_fwaas_firewall_policy.assert_has_calls([
+            mock.call(ingress_policy_id),
+            mock.call(egress_policy_id),
+        ])
+
+    @helpers.create_mocks({neutronclient: ('update_fwaas_firewall_group',)})
     def test_firewall_update(self):
         firewall = self.firewall_groups_v2.first()
         firewall_dict = self.api_firewall_groups_v2.first()
@@ -543,12 +600,13 @@ class FwaasV2ApiTests(test.APITestCase):
         form_dict = {'firewall_group': form_data}
         ret_dict = {'firewall_group': firewall_dict}
 
-        neutronclient.update_fwaas_firewall_group(
-            firewall.id, form_dict).AndReturn(ret_dict)
-        self.mox.ReplayAll()
+        self.mock_update_fwaas_firewall_group.return_value = ret_dict
 
         ret_val = api_fwaas_v2.firewall_update(self.request,
                                                firewall.id, **form_data)
         self.assertIsInstance(ret_val, api_fwaas_v2.FirewallGroup)
         self.assertEqual(firewall.name, ret_val.name)
         self.assertTrue(ret_val.id)
+
+        self.mock_update_fwaas_firewall_group.assert_called_once_with(
+            firewall.id, form_dict)
