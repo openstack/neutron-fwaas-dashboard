@@ -262,8 +262,7 @@ class SelectRoutersAction(workflows.Action):
 class SelectRoutersStep(workflows.Step):
     action_class = SelectRoutersAction
     template_name = "project/firewalls/_update_routers.html"
-    contributes = ("router_ids", "all_routers_selected",
-                   "Select No Routers")
+    contributes = ("router_ids",)
 
     def contribute(self, data, context):
         if data:
