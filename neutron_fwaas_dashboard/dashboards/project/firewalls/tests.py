@@ -14,7 +14,7 @@
 
 import mock
 
-from django.core.urlresolvers import reverse
+from django.urls import reverse
 
 from openstack_dashboard import api
 from openstack_dashboard.test import helpers
