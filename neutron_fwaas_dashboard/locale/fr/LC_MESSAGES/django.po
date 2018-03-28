@@ -1,0 +1,781 @@
+# Adrien Cunin <adrien@adriencunin.fr>, 2016. #zanata
+# Gérald LONLAS <g.lonlas@gmail.com>, 2016. #zanata
+# Sylvie Chesneau <sissicdf@fr.ibm.com>, 2016. #zanata
+# Cédric Savignan <liced@liced.fr>, 2017. #zanata
+# JF Taltavull <jftalta@gmail.com>, 2017. #zanata
+# Loic Nicolle <loic.nicolle@orange.com>, 2017. #zanata
+# Pascal Larivée <pascal@larivee.photo>, 2017. #zanata
+# Loic Nicolle <loic.nicolle@orange.com>, 2018. #zanata
+msgid ""
+msgstr ""
+"Project-Id-Version: neutron-fwaas-dashboard VERSION\n"
+"Report-Msgid-Bugs-To: https://bugs.launchpad.net/openstack-i18n/\n"
+"POT-Creation-Date: 2018-03-28 00:10+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2018-03-27 03:11+0000\n"
+"Last-Translator: Loic Nicolle <loic.nicolle@orange.com>\n"
+"Language-Team: French\n"
+"Language: fr\n"
+"X-Generator: Zanata 4.3.3\n"
+"Plural-Forms: nplurals=2; plural=(n > 1)\n"
+
+msgid "-"
+msgstr "-"
+
+msgid "ALLOW"
+msgstr "AUTORISER"
+
+msgctxt "Action Name of a Firewall Rule"
+msgid "ALLOW"
+msgstr "AUTORISER"
+
+msgctxt "Action name of a firewall rule"
+msgid "ALLOW"
+msgstr "AUTORISER"
+
+msgid "ANY"
+msgstr "TOUT"
+
+msgid "Action"
+msgstr "Action"
+
+msgid "Action for the firewall rule"
+msgstr "Action pour la règle de pare-feu"
+
+msgctxt "Current status of a Firewall Group"
+msgid "Active"
+msgstr "Actif"
+
+msgctxt "Current status of a firewall"
+msgid "Active"
+msgstr "Actif"
+
+msgid "Add"
+msgstr "Ajouter"
+
+msgid "Add Firewall"
+msgstr "Ajouter un pare-feu"
+
+msgid "Add Firewall Group"
+msgstr "Ajouter un groupe de pare-feux"
+
+msgid "Add New Firewall"
+msgstr "Ajouter un nouveau pare-feu"
+
+msgid "Add New Policy"
+msgstr "Ajouter une nouvelle stratégie"
+
+msgid "Add New Rule"
+msgstr "Ajouter une nouvelle règle"
+
+msgid "Add Policy"
+msgstr "Ajouter une stratégie"
+
+msgid "Add Router"
+msgstr "Ajouter un routeur"
+
+msgid "Add Router to Firewall"
+msgstr "Ajouter un routeur au pare-feu"
+
+msgid "Add Routers"
+msgstr "Ajouter des routeurs"
+
+msgid "Add Rule"
+msgstr "Ajouter une règle"
+
+msgid "Add selected router(s) to the firewall."
+msgstr "Ajouter le ou les routeurs sélectionnés au pare-feu."
+
+#, python-format
+msgid "Added Policy \"%s\"."
+msgstr "Stratégie \"%s\" ajoutée."
+
+#, python-format
+msgid "Added Rule \"%s\"."
+msgstr "Règle \"%s\" ajoutée."
+
+#, python-format
+msgid "Added firewall \"%s\"."
+msgstr "Pare-feu \"%s\" ajouté."
+
+#, python-format
+msgid "Added policy \"%s\"."
+msgstr "Stratégie \"%s\" ajoutée."
+
+#, python-format
+msgid "Added rule \"%s\"."
+msgstr "Règle \"%s\" ajoutée."
+
+msgid "Admin State"
+msgstr "État Administateur"
+
+msgid "Admin State Up"
+msgstr "Etat Admin activé"
+
+msgid "After"
+msgstr "Après"
+
+msgid "Associated Routers"
+msgstr "Routeurs associés"
+
+msgid "Audited"
+msgstr "Audité"
+
+msgid "Available Ports"
+msgstr "Ports disponibles"
+
+msgid "Available Routers"
+msgstr "Routeurs disponibles"
+
+msgid "Available Rules"
+msgstr "Règles disponibles"
+
+msgid "Before"
+msgstr "Avant"
+
+msgid ""
+"Choose router(s) from Available Routers to Selected Routers by push button "
+"or drag and drop. "
+msgstr ""
+"Choisir les routeur(s) en les déplaçant de Routeurs Disponibles vers les "
+"Routeurs Sélectionnés en cliquant sur le bouton ou par glisser-déposer."
+
+msgid ""
+"Choose rule(s) from Available Rules to Selected Rule by push button or drag "
+"and drop, you may change their order by drag and drop as well."
+msgstr ""
+"Choisissez une ou plusieurs règles en les faisant passer des règles "
+"disponibles aux règles sélectionnées en cliquant sur le bouton ou par "
+"glisser-déposer. Vous pouvez aussi changer l'ordre des règles par glisser-"
+"déposer."
+
+msgid "Choose the router(s) you want to add."
+msgstr "Choisir le(s) routeur(s) que vous voulez ajouter."
+
+msgid ""
+"Choose the rule you want to insert. Specify either the rule you want to "
+"insert immediately before, or the rule to insert immediately after. If both "
+"are specified, the prior takes precedence."
+msgstr ""
+"Choisissez la règle que vous souhaitez insérer. Spécifiez la règle qui doit "
+"précéder immédiatement votre nouvelle règle, ou la règle qui doit suivre "
+"immédiatement votre nouvelle règle. Si vous spécifiez les deux, le premier "
+"critère est prioritaire."
+
+msgid "Choose the rule you want to remove."
+msgstr "Choisissez la règle que vous voulez enlever."
+
+msgid "Create Firewall"
+msgstr "Créer un pare-feu"
+
+msgid "Create a Firewall Group with selected ports."
+msgstr "Créer un groupe de pare-feux avec les ports sélectionnés."
+
+msgid ""
+"Create a firewall based on a policy.\n"
+"\n"
+"A firewall represents a logical firewall resource that a tenant can "
+"instantiate and manage. A firewall must be associated with one policy, all "
+"other fields are optional."
+msgstr ""
+"Créer un pare-feu basé sur une stratégie.\n"
+"\n"
+"Un pare-feu représente une ressource de pare-feu logique pouvant être "
+"instanciée et gérée par un locataire. Un pare-feu doit être associé à une "
+"stratégie, toutes les autres zones  sont facultatives."
+
+msgid ""
+"Create a firewall policy with an ordered list of firewall rules.\n"
+"\n"
+"A firewall policy is an ordered collection of firewall rules. So if the "
+"traffic matches the first rule, the other rules are not executed. If the "
+"traffic does not match the current rule, then the next rule is executed. A "
+"firewall policy has the following attributes:\n"
+"\n"
+"<li>Shared: A firewall policy can be shared across tenants. Thus it can also "
+"be made part of an audit workflow wherein the firewall policy can be audited "
+"by the relevant entity that is authorized.</li><li>Audited: When audited is "
+"set to True, it indicates that the firewall policy has been audited. Each "
+"time the firewall policy or the associated firewall rules are changed, this "
+"attribute will be set to False and will have to be explicitly set to True "
+"through an update operation.</li>\n"
+"The name field is required, all others are optional."
+msgstr ""
+"Créer une stratégie de pare-feu avec une liste ordonnée de règles de pare-"
+"feu.\n"
+"\n"
+"Une stratégie de pare-feu est un ensemble ordonné de règles de pare-feu. Si "
+"le trafic correspond à la première règle, les autres règles ne sont pas "
+"exécutées. Si le trafic ne correspond pas à la règle en cours, la règle "
+"suivante est exécutée.  Une stratégie de pare-feu comporte les attributs "
+"suivants :\n"
+"\n"
+"<li>Partagé (shared)  : Une stratégie de pare-feu peut être partagée entre "
+"locataires. Elle peut ainsi faire partie d'un flux de travaux d'audit au "
+"sein duquel la stratégie de pare-feu peut être auditée par l'entité "
+"appropriée autorisée.</li><li>Audité (audited)  : Lorsque l'attribut est "
+"défini sur True, la stratégie de pare-feu a été auditée. Chaque fois qu'une "
+"stratégie de pare-feu ou les règles de pare-feu associées sont modifiées, "
+"cet attribut est défini sur False et devra être explicitement défini avec la "
+"valeur True via une opération de mise à jour.</li>\n"
+"La zone de nom est obligatoire, toutes les autres sont facultatives."
+
+msgid ""
+"Create a firewall rule.\n"
+"\n"
+"A Firewall rule is an association of the following attributes:\n"
+"\n"
+"<li>IP Addresses: The addresses from/to which the traffic filtration needs "
+"to be applied.</li><li>IP Version: The type of IP packets (IP V4/V6) that "
+"needs to be filtered.</li><li>Protocol: Type of packets (UDP, ICMP, TCP, "
+"Any) that needs to be checked.</li><li>Action: Action is the type of "
+"filtration required, it can be Reject/Deny/Allow data packets.</li>\n"
+"The protocol and action fields are required, all others are optional."
+msgstr ""
+"Créer une règle de pare-feu.\n"
+"\n"
+"Une règle de pare-feu est une association des attributs suivants :\n"
+"\n"
+"<li>Adresses IP : Adresses depuis/vers lesquelles le filtrage du trafic doit "
+"s'appliquer.</li><li>Version d'IP : Type des paquets IP (IP V4/V6) à filtrer."
+"</li><li>Protocole : Type des paquets (UDP, ICMP, TCP, Tout) à vérifier.</"
+"li><li>Action : Type de filtrage requis ; Il peut s'agir de Rejeter/Refuser/"
+"Autoriser les paquets de données.</li>\n"
+"Les zones de protocole et d'action sont obligatoires, toutes les autres sont "
+"facultatives."
+
+msgid ""
+"Create a firewall rule.\n"
+"\n"
+"A firewall rule is an association of the following attributes:\n"
+"\n"
+"<li>IP Addresses: The addresses from/to which the traffic filtration needs "
+"to be applied.</li><li>IP Version: The type of IP packets (IP V4/V6) that "
+"needs to be filtered.</li><li>Protocol: Type of packets (UDP, ICMP, TCP, "
+"Any) that needs to be checked.</li><li>Action: Action is the type of "
+"filtration required, it can be Reject/Deny/Allow data packets.</li>\n"
+"The protocol and action fields are required, all others are optional."
+msgstr ""
+"Créer une règle de pare-feu.\n"
+"\n"
+"Une règle de pare-feu est une association des attributs suivants :\n"
+"\n"
+"<li>Adresses IP : Adresses depuis/vers lesquelles le filtrage du trafic doit "
+"s'appliquer.</li><li>Version d'IP : Type des paquets IP (IP V4/V6) à filtrer."
+"</li><li>Protocole : Type des paquets (UDP, ICMP, TCP, Tout) à vérifier.</"
+"li><li>Action : Type de filtrage requis ; Il peut s'agir de Rejeter/Refuser/"
+"Autoriser les paquets de données.</li>\n"
+"Les zones de protocole et d'action sont obligatoires, toutes les autres sont "
+"facultatives."
+
+msgid "Create a firewall with selected routers."
+msgstr "Créer un pare-feu avec les routeurs sélectionnés."
+
+msgid "Create a policy with selected rules."
+msgstr "Créer une stratégie avec les règles sélectionnées."
+
+msgctxt "Current status of a Firewall Group"
+msgid "Created"
+msgstr "Créé"
+
+msgctxt "Current status of a firewall"
+msgid "Created"
+msgstr "Créé"
+
+msgid "DENY"
+msgstr "REFUSER"
+
+msgctxt "Action Name of a Firewall Rule"
+msgid "DENY"
+msgstr "REFUSER"
+
+msgctxt "Action name of a firewall rule"
+msgid "DENY"
+msgstr "REFUSER"
+
+msgctxt "Admin state of a Firewall Group"
+msgid "DOWN"
+msgstr "INACTIF"
+
+msgctxt "Admin state of a firewall"
+msgid "DOWN"
+msgstr "INACTIF"
+
+msgid "Delete Firewall"
+msgid_plural "Delete Firewalls"
+msgstr[0] "Supprimer le pare-feu"
+msgstr[1] "Supprimer les pare-feux"
+
+msgid "Delete Policy"
+msgid_plural "Delete Policies"
+msgstr[0] "Supprimer la stratégie"
+msgstr[1] "Supprimer les stratégies"
+
+msgid "Delete Rule"
+msgid_plural "Delete Rules"
+msgstr[0] "Supprimer la règle"
+msgstr[1] "Supprimer les règles"
+
+msgid "Description"
+msgstr "Description"
+
+msgid "Description:"
+msgstr "Description:"
+
+msgid "Destination IP"
+msgstr "IP de destination"
+
+msgid "Destination IP Address"
+msgstr "Adresse IP de destination"
+
+msgid "Destination IP Address/Subnet"
+msgstr "Adresse IP/Sous-réseau de destination"
+
+msgid "Destination IP address or subnet"
+msgstr "Adresse IP ou sous-réseau de destination"
+
+msgid "Destination Port"
+msgstr "Port de destination"
+
+msgid "Destination Port/Port Range"
+msgstr "Port/Plage de ports de destination"
+
+msgid "Destination port (integer in [1, 65535] or range in a:b)"
+msgstr "Port de destination (entier compris dans  [1, 65535] ou plage a:b)"
+
+msgctxt "Current status of a Firewall Group"
+msgid "Down"
+msgstr "Inactif"
+
+msgctxt "Current status of a firewall"
+msgid "Down"
+msgstr "Inactif"
+
+msgid "Edit Firewall"
+msgstr "Éditer le pare-feu"
+
+msgid "Edit Firewall {{ name }}"
+msgstr "Editer le pare-feu {{ name }}"
+
+msgid "Edit Policy"
+msgstr "Editer la stratégie"
+
+msgid "Edit Policy {{ name }}"
+msgstr "Editer la stratégie {{ name }}"
+
+msgid "Edit Rule"
+msgstr "Éditer la règle"
+
+msgid "Edit Rule {{ name }}"
+msgstr "Editer la règle {{ name }}"
+
+msgid "Egress Policy"
+msgstr "Stratégie sortante"
+
+msgid "Enable Admin State"
+msgstr "État Administratif Actif"
+
+msgid "Enabled"
+msgstr "Activé"
+
+msgctxt "Current status of a Firewall Group"
+msgid "Error"
+msgstr "Erreur"
+
+msgctxt "Current status of a firewall"
+msgid "Error"
+msgstr "Erreur"
+
+#, python-format
+msgid "Failed to add router(s) to firewall %(name)s: %(reason)s"
+msgstr "Echec d'ajout du ou des routeurs au pare-feu %(name)s : %(reason)s"
+
+#, python-format
+msgid "Failed to insert rule to policy %(name)s: %(reason)s"
+msgstr "Echec d'insertion de la règle dans la stratégie %(name)s : %(reason)s"
+
+#, python-format
+msgid "Failed to remove router(s) from firewall %(name)s: %(reason)s"
+msgstr "Échec à retirer routeur(s) du pare-feu %(name)s: %(reason)s"
+
+#, python-format
+msgid "Failed to remove rule from policy %(name)s: %(reason)s"
+msgstr "Echec de retrait de la règle de la stratégie %(name)s : %(reason)s"
+
+#, python-format
+msgid "Failed to retrieve available routers: %s"
+msgstr "Échec de la récupération des routeurs disponibles: %s"
+
+#, python-format
+msgid "Failed to retrieve available rules: %s"
+msgstr "Impossible de récupérer les règles disponibles : %s"
+
+#, python-format
+msgid "Failed to retrieve current routers in firewall %(name)s: %(reason)s"
+msgstr ""
+"Échec de la récupération des routeurs dans le pare-feu %(name)s: %(reason)s"
+
+#, python-format
+msgid "Failed to retrieve current rules in policy %(name)s: %(reason)s"
+msgstr ""
+"Échec de la récupération des règles courantes de la stratégie %(name)s : "
+"%(reason)s"
+
+#, python-format
+msgid "Failed to update firewall %(name)s: %(reason)s"
+msgstr "Échec de la mise à jour du pare-feu %(name)s : %(reason)s"
+
+#, python-format
+msgid "Failed to update policy %(name)s: %(reason)s"
+msgstr "Echec de mise à jour de la stratégie %(name)s : %(reason)s"
+
+#, python-format
+msgid "Failed to update rule %(name)s: %(reason)s"
+msgstr "Échec de la mise à jour de la règle %(name)s : %(reason)s"
+
+msgid "Firewall"
+msgstr "Pare-feu"
+
+#, python-format
+msgid "Firewall %s was successfully updated."
+msgstr "Le pare-feu %s a été mis à jour."
+
+msgid "Firewall Policies"
+msgstr "Stratégies de pare-feu"
+
+msgid "Firewall Rules"
+msgstr "Règles de pare-feu"
+
+msgid "Firewalls"
+msgstr "Pare-feux"
+
+msgid "ICMP"
+msgstr "ICMP"
+
+msgid "ID"
+msgstr "ID"
+
+msgid "IP Version"
+msgstr "Version d'IP"
+
+msgid "IP Version for Firewall Rule"
+msgstr "Version d'IP pour la règle de pare-feu"
+
+msgid "In Policy"
+msgstr "Stratégies associées"
+
+msgctxt "Current status of a Firewall Group"
+msgid "Inactive"
+msgstr "Inactif"
+
+msgctxt "Current status of a firewall"
+msgid "Inactive"
+msgstr "Inactif"
+
+msgid "Ingress Policy"
+msgstr "Stratégie entrante"
+
+msgid "Insert Rule"
+msgstr "Insérer une règle"
+
+msgid "Insert Rule to Policy"
+msgstr "Insérer une règle dans la stratégie"
+
+msgid "Name"
+msgstr "Nom"
+
+msgid "None"
+msgstr "Aucun"
+
+msgctxt "Current status of a Firewall Group"
+msgid "Pending Create"
+msgstr "Création en attente"
+
+msgctxt "Current status of a firewall"
+msgid "Pending Create"
+msgstr "Création en attente"
+
+msgctxt "Current status of a Firewall Group"
+msgid "Pending Delete"
+msgstr "Suppression en attente"
+
+msgctxt "Current status of a firewall"
+msgid "Pending Delete"
+msgstr "Suppression en attente"
+
+msgctxt "Current status of a Firewall Group"
+msgid "Pending Update"
+msgstr "Mise à jour en attente"
+
+msgctxt "Current status of a firewall"
+msgid "Pending Update"
+msgstr "Mise à jour en attente"
+
+msgid "Policies"
+msgstr "Stratégies"
+
+msgid "Policy"
+msgstr "Stratégie"
+
+#, python-format
+msgid "Policy %s was successfully updated."
+msgstr "La stratégie %s a été mise à jour."
+
+msgid "Ports"
+msgstr "Ports"
+
+msgid "Position in Policy"
+msgstr "Position dans la stratégie"
+
+msgid "Project ID"
+msgstr "Project ID"
+
+msgid "Protocol"
+msgstr "Protocole"
+
+msgid "Protocol for the firewall rule"
+msgstr "Protocole pour la règle de pare-feu"
+
+msgid "REJECT"
+msgstr "REJETER"
+
+msgctxt "Action Name of a Firewall Rule"
+msgid "REJECT"
+msgstr "REJETER"
+
+msgctxt "Action name of a firewall rule"
+msgid "REJECT"
+msgstr "REJETER"
+
+msgid "Remove Port"
+msgstr "Supprimer le port"
+
+msgid "Remove Router"
+msgstr "Supprimer le routeur"
+
+msgid "Remove Router from Firewall"
+msgstr "Retirer un routeur du pare-feu"
+
+msgid "Remove Rule"
+msgstr "Retirer la règle"
+
+msgid "Remove Rule from Policy"
+msgstr "Retirer une règle de la stratégie"
+
+#, python-format
+msgid "Router(s)  was successfully removed from firewall %(firewall)s."
+msgstr "Le ou les routeurs ont été retirés du pare-feu %(firewall)s."
+
+#, python-format
+msgid "Router(s) was/were successfully added to firewall %(firewall)s."
+msgstr "Le ou les routeurs ont été ajoutés au pare-feu %(firewall)s."
+
+msgid "Routers"
+msgstr "Routeurs"
+
+msgid "Rule"
+msgstr "Règle"
+
+#, python-format
+msgid "Rule %(rule)s was successfully inserted to policy %(policy)s."
+msgstr "La règle %(rule)s a été insérée dans la stratégie %(policy)s."
+
+#, python-format
+msgid "Rule %(rule)s was successfully removed from policy %(policy)s."
+msgstr "La règle %(rule)s a été retirée de la stratégie %(policy)s."
+
+#, python-format
+msgid "Rule %s was successfully updated."
+msgstr "La règle %s a été mise à jour."
+
+msgid "Rules"
+msgstr "Règles"
+
+msgid "Save Changes"
+msgstr "Enregistrer les changements"
+
+msgid "Scheduled deletion of Policy"
+msgid_plural "Scheduled deletion of Policies"
+msgstr[0] "Suppression planifiée de la stratégie"
+msgstr[1] "Suppression planifiée des stratégies"
+
+msgid "Scheduled deletion of Rule"
+msgid_plural "Scheduled deletion of Rules"
+msgstr[0] "Suppression planifiée de la règle"
+msgstr[1] "Suppression planifiée des règles"
+
+#, fuzzy
+msgid "Scheduled deletion of rule"
+msgid_plural "Scheduled deletion of rules"
+msgstr[0] "Suppression planifiée de la règle"
+msgstr[1] ""
+
+msgid "Select a Policy"
+msgstr "Sélectionner une stratégie"
+
+msgid "Select a policy"
+msgstr "Sélectionner une stratégie"
+
+msgid "Select routers for your firewall."
+msgstr "Sélectionnez des routeurs pour votre pare-feu."
+
+msgid "Select rules for your policy."
+msgstr "Sélectionnez des règles pour votre stratégie."
+
+msgid "Selected Routers"
+msgstr "Routeurs sélectionnés"
+
+msgid "Selected Rules"
+msgstr "Règles sélectionnées"
+
+msgid "Shared"
+msgstr "Partagé"
+
+msgid "Source IP"
+msgstr "IP source"
+
+msgid "Source IP Address"
+msgstr "Adresse IP source"
+
+msgid "Source IP Address/Subnet"
+msgstr "Adresse IP/Sous-réseau source"
+
+msgid "Source IP address or subnet"
+msgstr "Adresse IP ou sous-réseau source"
+
+msgid "Source Port"
+msgstr "Port source"
+
+msgid "Source Port/Port Range"
+msgstr "Port/plage de ports source"
+
+msgid "Source port (integer in [1, 65535] or range in a:b)"
+msgstr "Port source  (entier compris dans [1,65535] ou plage a:b)"
+
+msgid ""
+"Source/Destination Network Address and IP version are inconsistent. Please "
+"make them consistent."
+msgstr ""
+"La version d'IP et l'adresse réseau source/de destination ne sont pas "
+"cohérentes. Corrigez-les en conséquence."
+
+msgid "Status"
+msgstr "Statut"
+
+msgid "TCP"
+msgstr "TCP"
+
+msgid "UDP"
+msgstr "UDP"
+
+msgctxt "Admin state of a Firewall Group"
+msgid "UP"
+msgstr "ACTIF"
+
+msgctxt "Admin state of a firewall"
+msgid "UP"
+msgstr "ACTIF"
+
+#, python-format
+msgid "Unable to add Policy \"%s\"."
+msgstr "Impossible d'ajouter la stratégie \"%s\"."
+
+#, python-format
+msgid "Unable to add Rule \"%s\"."
+msgstr "Impossible d'ajouter la règle \"%s\"."
+
+#, python-format
+msgid "Unable to add firewall \"%s\"."
+msgstr "Impossible d'ajouter le pare-feu \"%s\"."
+
+#, python-format
+msgid "Unable to add policy \"%s\"."
+msgstr "Impossible d'ajouter la stratégie \"%s\"."
+
+#, python-format
+msgid "Unable to add rule \"%s\"."
+msgstr "Impossible d'ajouter la règle \"%s\"."
+
+#, python-format
+msgid "Unable to delete firewall. %s"
+msgstr "Impossible de supprimer le pare-feu %s"
+
+#, python-format
+msgid "Unable to delete policy. %s"
+msgstr "Impossible de supprimer la stratégie. %s"
+
+#, python-format
+msgid "Unable to delete rule. %s"
+msgstr "Impossible de supprimer la règle %s"
+
+msgid "Unable to retrieve firewall details."
+msgstr "Impossible de récupérer les détails du pare-feu."
+
+msgid "Unable to retrieve firewall list."
+msgstr "Impossible de récupérer la liste des pare-feux."
+
+msgid "Unable to retrieve policies list."
+msgstr "Impossible de récupérer la liste des stratégies."
+
+msgid "Unable to retrieve policy details."
+msgstr "Impossible de récupérer les détails de la stratégie."
+
+#, python-format
+msgid "Unable to retrieve policy list (%(error)s)."
+msgstr "Impossible de récupérer la liste des stratégies (%(error)s)."
+
+#, python-format
+msgid "Unable to retrieve policy list (%s)."
+msgstr "Impossible de récupérer la liste des stratégies (%s)."
+
+msgid "Unable to retrieve policy list."
+msgstr "Impossible de récupérer la liste des stratégies."
+
+msgid "Unable to retrieve port list."
+msgstr "Impossible de récupérer la liste des ports."
+
+#, python-format
+msgid "Unable to retrieve ports (%s)."
+msgstr "Impossible de récupérer les ports (%s)."
+
+#, python-format
+msgid "Unable to retrieve routers (%(error)s)."
+msgstr "Impossible de récupérer les routeurs (%(error)s)."
+
+msgid "Unable to retrieve rule details."
+msgstr "Impossible de récupérer les détails de la règle."
+
+#, python-format
+msgid "Unable to retrieve rules (%(error)s)."
+msgstr "Impossible de récupérer les règles (%(error)s)."
+
+#, python-format
+msgid "Unable to retrieve rules (%s)."
+msgstr "Impossible de récupérer les règles (%s)."
+
+msgid "Unable to retrieve rules list."
+msgstr "Impossible de récupérer la liste des règles."
+
+msgid "Unselect the router(s) to be removed from firewall."
+msgstr "Désélectionner le ou les routeurs à retirer du pare-feu."
+
+msgid "Unselect the routers you want to disassociate from the firewall."
+msgstr "Désélectionner les routeurs que vous voulez dissocier du pare-feu."
+
+msgid "Used in Policy"
+msgstr "Utilisée dans la stratégie"
+
+msgid "You may update firewall details here."
+msgstr "Ici, vous pouvez mettre à jour les détails du pare-feu."
+
+msgid ""
+"You may update policy details here. Use 'Insert Rule' or 'Remove Rule' links "
+"instead to insert or remove a rule"
+msgstr ""
+"Mettez à jour les détails de la stratégie ici. Utilisez les liens 'Insérer "
+"une règle' ou 'Enlever une règle' pour insérer ou enlever une règle."
+
+msgid "You may update rule details here."
+msgstr "Ici, vous pouvez mettre à jour les détails de la règle."
