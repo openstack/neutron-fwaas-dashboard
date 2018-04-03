@@ -63,7 +63,7 @@ Enable the horizon plugin.
 Configure the policy file for Neutron FWaaS dashboard
 in OpenStack Dashboard ``local_settings.py``.
 ``<fwaas-dashboard-config-dir>`` is a directory which contains
-configurations for Neutron FWaaS dashboard and the locaiton varies
+configurations for Neutron FWaaS dashboard and the location varies
 across distributions or deployments.
 
 .. code-block:: python
