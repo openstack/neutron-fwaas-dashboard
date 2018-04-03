@@ -13,9 +13,9 @@ cryptography==2.1
 debtcollector==1.2.0
 decorator==3.4.0
 deprecation==1.0
-Django==1.8
+Django==1.11
 django-appconf==1.0.2
-django-babel==0.5.1
+django-babel==0.6.2
 django-compressor==2.0
 django-nose==1.4.4
 django-pyscss==2.0.2
@@ -47,7 +47,6 @@ MarkupSafe==1.0
 mccabe==0.2.1
 mock==2.0.0
 monotonic==0.6
-mox3==0.20.0
 msgpack-python==0.4.0
 munch==2.1.0
 netaddr==0.7.18
@@ -112,7 +111,7 @@ semantic-version==2.3.1
 simplejson==3.5.1
 six==1.10.0
 snowballstemmer==1.2.1
-Sphinx==1.6.5
+Sphinx==1.6.2
 sphinxcontrib-websupport==1.0.1
 statsd==3.2.1
 stevedore==1.20.0

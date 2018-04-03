@@ -15,9 +15,6 @@ from openstack_dashboard.test import helpers
 from neutron_fwaas_dashboard.test.test_data import utils
 
 
-create_stubs = helpers.create_stubs
-
-
 class TestDataLoaderMixin(object):
     def _setup_test_data(self):
         super(TestDataLoaderMixin, self)._setup_test_data()
