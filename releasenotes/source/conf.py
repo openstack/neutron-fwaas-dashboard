@@ -24,6 +24,8 @@
 # All configuration values have a default; values that are commented out
 # serve to show the default.
 
+from neutron_fwaas_dashboard.version import version_info
+
 # If extensions (or modules to document with autodoc) are in another directory,
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
@@ -68,7 +70,6 @@ copyright = u'2017, OpenStack Foundation'
 # |version| and |release|, also used in various other places throughout the
 # built documents.
 #
-from neutron_fwaas_dashboard.version import version_info
 # The short X.Y version.
 # The full version, including alpha/beta/rc tags.
 release = version_info.version_string_with_vcs()

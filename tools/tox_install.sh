@@ -61,5 +61,7 @@ shift
 
 install_project horizon
 
-$install_cmd -U $*
+if [ $# -ge 1 ]; then
+    $install_cmd -U $*
+fi
 exit $?
