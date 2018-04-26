@@ -375,8 +375,8 @@ class FwaasV2ApiTests(test.APITestCase):
         firewalls_dict = {
             'firewall_groups': self.api_firewall_groups_v2.list()}
 
-        neutronclient.list_fwaas_firewall_groups(shared=False, tenant_id=tenant_id) \
-            .AndReturn(firewalls_dict)
+        neutronclient.list_fwaas_firewall_groups(
+            shared=False, tenant_id=tenant_id).AndReturn(firewalls_dict)
         neutronclient.list_fwaas_firewall_groups(shared=True) \
             .AndReturn(firewalls_dict)
         self.mox.ReplayAll()

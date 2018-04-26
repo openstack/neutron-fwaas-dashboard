@@ -675,7 +675,8 @@ class FirewallTests(test.TestCase):
             IsA(http.HttpRequest), tenant_id).AndReturn(rules)
         api_fwaas_v2.rule_get(
             IsA(http.HttpRequest), remove_rule_id).AndReturn(rules[0])
-        api_fwaas_v2.policy_remove_rule(IsA(http.HttpRequest), policy.id, **data)\
+        api_fwaas_v2.policy_remove_rule(
+            IsA(http.HttpRequest), policy.id, **data)\
             .AndReturn(after_remove_policy)
 
         self.mox.ReplayAll()
