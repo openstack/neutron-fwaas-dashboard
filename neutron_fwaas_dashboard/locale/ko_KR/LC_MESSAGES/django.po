@@ -8,18 +8,19 @@
 # Ian Y. Choi <ianyrchoi@gmail.com>, 2017. #zanata
 # Sungjin Kang <gang.sungjin@gmail.com>, 2017. #zanata
 # minwook-shin <minwook0106@gmail.com>, 2017. #zanata
+# ByungYeol Woo <wby1089@gmail.com>, 2018. #zanata
 # Ian Y. Choi <ianyrchoi@gmail.com>, 2018. #zanata
 # Sungjin Kang <gang.sungjin@gmail.com>, 2018. #zanata
 msgid ""
 msgstr ""
 "Project-Id-Version: neutron-fwaas-dashboard VERSION\n"
 "Report-Msgid-Bugs-To: https://bugs.launchpad.net/openstack-i18n/\n"
-"POT-Creation-Date: 2018-02-22 06:53+0000\n"
+"POT-Creation-Date: 2018-03-21 23:33+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2018-02-12 10:17+0000\n"
-"Last-Translator: Ian Y. Choi <ianyrchoi@gmail.com>\n"
+"PO-Revision-Date: 2018-04-25 10:51+0000\n"
+"Last-Translator: ByungYeol Woo <wby1089@gmail.com>\n"
 "Language-Team: Korean (South Korea)\n"
 "Language: ko_KR\n"
 "X-Generator: Zanata 4.3.3\n"
@@ -106,6 +107,10 @@ msgid "Add selected router(s) to the firewall."
 msgstr "방화벽에서 라우터를 선택하여 추가합니다."
 
 #, python-format
+msgid "Added Firewall Group\"%s\"."
+msgstr "방화벽 그룹 \"%s\"를 추가하였습니다."
+
+#, python-format
 msgid "Added Policy \"%s\"."
 msgstr "정책 \"%s\"를 추가하였습니다.:"
 
@@ -142,6 +147,12 @@ msgstr "이전"
 
 msgid "Create Firewall"
 msgstr "방화벽 생성"
+
+msgid "Create Firewall Group"
+msgstr "방화벽 그룹 생성"
+
+msgid "Create a Firewall Group with selected ports."
+msgstr "선택한 포트와 함께 방화벽 그룹을 생성합니다."
 
 msgid ""
 "Create a firewall based on a policy.\n"
@@ -289,6 +300,10 @@ msgid "Delete Firewall"
 msgid_plural "Delete Firewalls"
 msgstr[0] "방화벽 삭제"
 
+msgid "Delete Firewall Group"
+msgid_plural "Delete Firewall Groups"
+msgstr[0] "방화벽 그룹 삭제"
+
 msgid "Delete Policy"
 msgid_plural "Delete Policies"
 msgstr[0] "정책 삭제"
@@ -331,6 +346,9 @@ msgstr "Down"
 msgid "Edit Firewall"
 msgstr "방화벽 편집"
 
+msgid "Edit Firewall Group"
+msgstr "방화벽 그룹 편집"
+
 msgid "Edit Firewall {{ name }}"
 msgstr "방화벽 {{ name }} 편집"
 
@@ -348,6 +366,9 @@ msgstr "규칙 편집"
 
 msgid "Edit Rule {{ name }}"
 msgstr "{{ name }} 규칙 편집"
+
+msgid "Egress Policy"
+msgstr "Egress 정책"
 
 msgid "Enable Admin State"
 msgstr "관리 상태 활성화"
@@ -397,9 +418,16 @@ msgstr "방화벽 %(name)s 에 있는 현재 라우터를 찾지 못 하였습�
 msgid "Failed to retrieve current rules in policy %(name)s: %(reason)s"
 msgstr "%(name)s 정책에서 현재 규칙을 찾지 못하였습니다.: %(reason)s"
 
+msgid "Failed to retrieve port list of the firewall group."
+msgstr "방화벽 그룹에 대한 포트 목록을 가져올 수 없습니다."
+
 #, python-format
 msgid "Failed to update firewall %(name)s: %(reason)s"
 msgstr "방화벽 %(name)s 를 업데이트 하지 못하였습니다.: %(reason)s"
+
+#, python-format
+msgid "Failed to update firewallgroup %(name)s: %(reason)s"
+msgstr "방화벽그룹 %(name)s 을(를) 업데이트하지 못하였습니다.: %(reason)s"
 
 #, python-format
 msgid "Failed to update policy %(name)s: %(reason)s"
@@ -420,6 +448,9 @@ msgstr "방화벽"
 msgid "Firewall %s was successfully updated."
 msgstr "방화벽 %s를 성공적으로 업데이트하지 못하였습니다."
 
+msgid "Firewall Groups"
+msgstr "방화벽 그룹"
+
 msgid "Firewall Policies"
 msgstr "방화벽 정책"
 
@@ -428,6 +459,10 @@ msgstr "방화벽 규칙"
 
 msgid "FirewallGroup"
 msgstr "FirewallGroup"
+
+#, python-format
+msgid "FirewallGroup %s was successfully updated."
+msgstr "방화벽그룹 %s 을(를) 성공적으로 업데이트 하였습니다."
 
 msgid "Firewalls"
 msgstr "방화벽"
@@ -454,6 +489,9 @@ msgstr "Inactive"
 msgctxt "Current status of a firewall"
 msgid "Inactive"
 msgstr "Inactive"
+
+msgid "Ingress Policy"
+msgstr "Ingress 정책"
 
 msgid "Insert Rule"
 msgstr "규칙 추가"
@@ -551,6 +589,9 @@ msgstr "규칙 삭제"
 msgid "Remove Rule from Policy"
 msgstr "정책에서 규칙 제거"
 
+msgid "Remove port from FirewallGroup {{ name }}"
+msgstr "방화벽 그룹 {{ name }} 에서 포트 제거"
+
 #, python-format
 msgid "Router(s)  was successfully removed from firewall %(firewall)s."
 msgstr "라우터를 %(firewall)s 방화벽에서 성공적으로 제거했습니다."
@@ -583,6 +624,10 @@ msgstr "규칙"
 msgid "Save Changes"
 msgstr "변경사항 저장"
 
+msgid "Scheduled deletion of Firewall Group"
+msgid_plural "Scheduled deletion of Firewall Groups"
+msgstr[0] "방화벽 그룹에 대한 예약된 삭제"
+
 msgid "Scheduled deletion of Policy"
 msgid_plural "Scheduled deletion of Policies"
 msgstr[0] "정책 예약 삭제"
@@ -608,6 +653,9 @@ msgstr "정책 선택합니다."
 
 msgid "Select a policy"
 msgstr "정책 선택"
+
+msgid "Select ports for your firewall group."
+msgstr "방화벽 그룹에 대한 포트를 선택합니다."
 
 msgid "Select routers for your firewall."
 msgstr "방화벽에 대한 라우터를 선택합니다."
@@ -663,6 +711,10 @@ msgid "UP"
 msgstr "UP"
 
 #, python-format
+msgid "Unable to add Firewall Group \"%s\"."
+msgstr "방화벽 그룹 \"%s\"를 추가할 수 없습니다."
+
+#, python-format
 msgid "Unable to add Policy \"%s\"."
 msgstr "정책 \"%s\"를 추가할 수 없습니다."
 
@@ -700,6 +752,9 @@ msgstr "방화벽 세부 정보를 찾지 못 했습니다."
 msgid "Unable to retrieve firewall list."
 msgstr "방화벽 목록을 찾지 못 했습니다."
 
+msgid "Unable to retrieve firewallgroup details."
+msgstr "방화벽 그룹 세부 사항을 가져올 수 없습니다."
+
 msgid "Unable to retrieve policies list."
 msgstr "정책 목록을 찾지 못 했습니다."
 
@@ -710,8 +765,19 @@ msgstr "정책 세부 정보를 찾지 못 했습니다."
 msgid "Unable to retrieve policy list (%(error)s)."
 msgstr "정책 목록 (%(error)s)를 찾지 못 했습니다."
 
+#, python-format
+msgid "Unable to retrieve policy list (%s)."
+msgstr "정책 목록 (%s) 을(를) 가져올 수 없습니다."
+
 msgid "Unable to retrieve policy list."
 msgstr "정책 목록을 찾지 못 했습니다."
+
+msgid "Unable to retrieve port list."
+msgstr "포트 목록을 가져올 수 없습니다."
+
+#, python-format
+msgid "Unable to retrieve ports (%s)."
+msgstr "포트 (%s) 을(를) 가져올 수 없습니다."
 
 #, python-format
 msgid "Unable to retrieve routers (%(error)s)."
@@ -723,6 +789,10 @@ msgstr "규칙 세부 정보를 찾지 못 했습니다."
 #, python-format
 msgid "Unable to retrieve rules (%(error)s)."
 msgstr "규칙을 찾지 못했습니다 (%(error)s). "
+
+#, python-format
+msgid "Unable to retrieve rules (%s)."
+msgstr "규칙 (%s) 을(를) 가져올 수 없습니다."
 
 msgid "Unable to retrieve rules list."
 msgstr "규칙 목록을 찾지 못 했습니다."
