@@ -86,7 +86,7 @@ class UpdateRule(forms.SelfHandlingForm):
         return body
 
     def handle(self, request, context):
-        rule_id = self.initial['rule_id']
+        rule_id = self.initial['id']
         name_or_id = context.get('name') or rule_id
         body = self._convert_req_body(_get_request_body(context, self.initial))
         try:
@@ -111,7 +111,7 @@ class UpdatePolicy(forms.SelfHandlingForm):
     failure_url = 'horizon:project:firewalls_v2:index'
 
     def handle(self, request, context):
-        policy_id = self.initial['policy_id']
+        policy_id = self.initial['id']
         name_or_id = context.get('name') or policy_id
         body = _get_request_body(context, self.initial)
         try:
@@ -189,7 +189,7 @@ class UpdateFirewall(forms.SelfHandlingForm):
         return body
 
     def handle(self, request, context):
-        firewallgroup_id = self.initial['firewallgroup_id']
+        firewallgroup_id = self.initial['id']
         name_or_id = context.get('name') or firewallgroup_id
         body = self._convert_req_body(_get_request_body(context, self.initial))
         try:
@@ -228,7 +228,7 @@ class AddPort(forms.SelfHandlingForm):
         self.fields['port_id'].choices = current_choices
 
     def handle(self, request, context):
-        firewallgroup_id = self.initial['firewallgroup_id']
+        firewallgroup_id = self.initial['id']
         name_or_id = context.get('name') or firewallgroup_id
         body = _get_request_body(context, self.initial)
         add_port = context['port_id']
@@ -267,7 +267,7 @@ class RemovePort(forms.SelfHandlingForm):
         self.fields['port_id'].choices = current_choices
 
     def handle(self, request, context):
-        firewallgroup_id = self.initial['firewallgroup_id']
+        firewallgroup_id = self.initial['id']
         name_or_id = context.get('name') or firewallgroup_id
         body = _get_request_body(context, self.initial)
         remove_port = context['port_id']
@@ -325,7 +325,7 @@ class InsertRuleToPolicy(forms.SelfHandlingForm):
         self.fields['insert_after'].choices = [('', _('-'))] + current_choices
 
     def handle(self, request, context):
-        policy_id = self.initial['policy_id']
+        policy_id = self.initial['id']
         policy_name_or_id = self.initial['name'] or policy_id
         try:
             insert_rule_id = context['firewall_rule_id']
@@ -376,7 +376,7 @@ class RemoveRuleFromPolicy(forms.SelfHandlingForm):
         self.fields['firewall_rule_id'].choices = current_choices
 
     def handle(self, request, context):
-        policy_id = self.initial['policy_id']
+        policy_id = self.initial['id']
         policy_name_or_id = self.initial['name'] or policy_id
         try:
             remove_rule_id = context['firewall_rule_id']

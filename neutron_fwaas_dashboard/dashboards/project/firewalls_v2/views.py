@@ -209,7 +209,7 @@ class UpdateRuleView(forms.ModalFormView):
 
     def get_initial(self):
         rule = self._get_object()
-        initial = rule.get_dict()
+        initial = rule.to_dict()
         protocol = initial['protocol']
         initial['protocol'] = protocol.upper() if protocol else 'ANY'
         initial['action'] = initial['action'].upper()
@@ -249,7 +249,7 @@ class UpdatePolicyView(forms.ModalFormView):
 
     def get_initial(self):
         policy = self._get_object()
-        initial = policy.get_dict()
+        initial = policy.to_dict()
         return initial
 
 
@@ -287,7 +287,7 @@ class UpdateFirewallView(forms.ModalFormView):
 
     def get_initial(self):
         firewall = self._get_object()
-        initial = firewall.get_dict()
+        initial = firewall.to_dict()
         return initial
 
 
@@ -325,7 +325,7 @@ class AddPortView(forms.ModalFormView):
 
     def get_initial(self):
         firewallgroup = self._get_object()
-        initial = firewallgroup.get_dict()
+        initial = firewallgroup.to_dict()
         return initial
 
 
@@ -363,7 +363,7 @@ class RemovePortView(forms.ModalFormView):
 
     def get_initial(self):
         firewallgroup = self._get_object()
-        initial = firewallgroup.get_dict()
+        initial = firewallgroup.to_dict()
         return initial
 
 
@@ -401,7 +401,7 @@ class InsertRuleToPolicyView(forms.ModalFormView):
 
     def get_initial(self):
         policy = self._get_object()
-        initial = policy.get_dict()
+        initial = policy.to_dict()
         initial['policy_id'] = initial['id']
         return initial
 
@@ -440,40 +440,6 @@ class RemoveRuleFromPolicyView(forms.ModalFormView):
 
     def get_initial(self):
         policy = self._get_object()
-        initial = policy.get_dict()
+        initial = policy.to_dict()
         initial['policy_id'] = initial['id']
-        return initial
-
-
-class RouterCommonView(forms.ModalFormView):
-    form_id = "update_firewall_form"
-    context_object_name = 'firewall'
-    submit_label = _("Save Changes")
-    success_url = reverse_lazy("horizon:project:firewalls_v2:index")
-
-    def get_context_data(self, **kwargs):
-        context = super(RouterCommonView,
-                        self).get_context_data(**kwargs)
-        context["firewall_id"] = self.kwargs['firewall_id']
-        args = (self.kwargs['firewall_id'],)
-        context['submit_url'] = reverse(self.submit_url, args=args)
-        obj = self._get_object()
-        if obj:
-            context['name'] = obj.name_or_id
-        return context
-
-    @memoized.memoized_method
-    def _get_object(self, *args, **kwargs):
-        firewall_id = self.kwargs['firewall_id']
-        try:
-            firewall = api_fwaas_v2.firewall_get(self.request, firewall_id)
-            return firewall
-        except Exception:
-            redirect = self.success_url
-            msg = _('Unable to retrieve firewall details.')
-            exceptions.handle(self.request, msg, redirect=redirect)
-
-    def get_initial(self):
-        firewall = self._get_object()
-        initial = firewall.get_dict()
         return initial
