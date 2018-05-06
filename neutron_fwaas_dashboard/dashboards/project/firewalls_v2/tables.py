@@ -141,9 +141,10 @@ class DeleteFirewallGroupLink(policy.PolicyTargetMixin,
 
     def delete(self, request, obj_id):
         try:
-            api_fwaas_v2.firewall_delete(request, obj_id)
+            api_fwaas_v2.firewall_group_delete(request, obj_id)
         except Exception as e:
-            exceptions.handle(request, _('Unable to delete firewall. %s') % e)
+            exceptions.handle(request,
+                              _('Unable to delete firewall group. %s') % e)
 
 
 class UpdateRuleLink(policy.PolicyTargetMixin, tables.LinkAction):

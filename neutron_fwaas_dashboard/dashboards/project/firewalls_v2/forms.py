@@ -193,13 +193,14 @@ class UpdateFirewall(forms.SelfHandlingForm):
         name_or_id = context.get('name') or firewallgroup_id
         body = self._convert_req_body(_get_request_body(context, self.initial))
         try:
-            firewall = api_fwaas_v2.firewall_update(request, firewallgroup_id,
-                                                    **body)
-            msg = _('Firewall %s was successfully updated.') % name_or_id
+            fwg = api_fwaas_v2.firewall_group_update(request,
+                                                     firewallgroup_id,
+                                                     **body)
+            msg = _('Firewall group %s was successfully updated.') % name_or_id
             messages.success(request, msg)
-            return firewall
+            return fwg
         except Exception as e:
-            msg = (_('Failed to update firewall %(name)s: %(reason)s') %
+            msg = (_('Failed to update firewall group %(name)s: %(reason)s') %
                    {'name': name_or_id, 'reason': e})
             redirect = reverse(self.failure_url)
             exceptions.handle(request, msg, redirect=redirect)
@@ -237,13 +238,15 @@ class AddPort(forms.SelfHandlingForm):
             ports.append(add_port)
             body['ports'] = ports
         try:
-            firewallgroup = api_fwaas_v2.firewall_update(
+            firewallgroup = api_fwaas_v2.firewall_group_update(
                 request, firewallgroup_id, **body)
-            msg = _('FirewallGroup %s was successfully updated.') % name_or_id
+            msg = (_('Added the port(s) to the firewall group %s '
+                     'successfully.') % name_or_id)
             messages.success(request, msg)
             return firewallgroup
         except Exception as e:
-            msg = (_('Failed to update firewallgroup %(name)s: %(reason)s') %
+            msg = (_('Failed to add the port(s) to the firewall group '
+                     '%(name)s: %(reason)s') %
                    {'name': name_or_id, 'reason': e})
             redirect = reverse(self.failure_url)
             exceptions.handle(request, msg, redirect=redirect)
@@ -276,13 +279,15 @@ class RemovePort(forms.SelfHandlingForm):
             ports.remove(remove_port)
             body['ports'] = ports
         try:
-            firewallgroup = api_fwaas_v2.firewall_update(
+            firewallgroup = api_fwaas_v2.firewall_group_update(
                 request, firewallgroup_id, **body)
-            msg = _('FirewallGroup %s was successfully updated.') % name_or_id
+            msg = _('Removed the port(s) from the firewall group %s '
+                    'successfully.') % name_or_id
             messages.success(request, msg)
             return firewallgroup
         except Exception as e:
-            msg = (_('Failed to update firewallgroup %(name)s: %(reason)s') %
+            msg = (_('Failed to remove the port(s) from the firewall group '
+                     '%(name)s: %(reason)s') %
                    {'name': name_or_id, 'reason': e})
             redirect = reverse(self.failure_url)
             exceptions.handle(request, msg, redirect=redirect)

@@ -36,7 +36,7 @@ class Firewall_V2(horizon.Panel):
         except Exception:
             LOG.error("Call to list enabled services failed. This is likely "
                       "due to a problem communicating with the Neutron "
-                      "endpoint. Firewalls panel will not be displayed.")
+                      "endpoint. Firewall Groups panel will not be displayed.")
             return False
         if not super(Firewall_V2, self).allowed(context):
             return False
