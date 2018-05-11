@@ -7,11 +7,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: neutron-fwaas-dashboard VERSION\n"
 "Report-Msgid-Bugs-To: https://bugs.launchpad.net/openstack-i18n/\n"
-"POT-Creation-Date: 2018-03-01 11:01+0000\n"
+"POT-Creation-Date: 2018-05-10 14:05+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2018-02-21 03:59+0000\n"
+"PO-Revision-Date: 2018-05-10 01:48+0000\n"
 "Last-Translator: suhartono <cloudsuhartono@gmail.com>\n"
 "Language-Team: Indonesian\n"
 "Language: id\n"
@@ -76,6 +76,9 @@ msgstr "Add Policy (tambahkan kebiijakan)"
 msgid "Add Port"
 msgstr "Add Port"
 
+msgid "Add Port to Firewall Group"
+msgstr "Tambahkan Port ke Firewall Group"
+
 msgid "Add Router"
 msgstr "Add Router (tambah router)"
 
@@ -121,6 +124,9 @@ msgstr "Aturan yang ditambahkan \"%s\"."
 msgid "Admin State"
 msgstr "Admin State"
 
+msgid "Admin State Up"
+msgstr "Admin State Up"
+
 msgid "After"
 msgstr "After (sesudah)"
 
@@ -130,8 +136,50 @@ msgstr "Associated Routers (router terkait)"
 msgid "Audited"
 msgstr "Audited"
 
+msgid "Available Ports"
+msgstr "Available Ports"
+
+msgid "Available Routers"
+msgstr "Available Routers"
+
+msgid "Available Rules"
+msgstr "Available Rules"
+
 msgid "Before"
 msgstr "Before (sebelum)"
+
+msgid "Choose port(s) from Available Ports. "
+msgstr "Pilih port dari Available Ports. "
+
+msgid ""
+"Choose router(s) from Available Routers to Selected Routers by push button "
+"or drag and drop. "
+msgstr ""
+"Pilih router dari Available Routers ke Selected Routers dengan menekan "
+"tombol atau seret dan lepas (drag and drop)."
+
+msgid ""
+"Choose rule(s) from Available Rules to Selected Rule by push button or drag "
+"and drop, you may change their order by drag and drop as well."
+msgstr ""
+"Pilih aturan dari Available Rules ke Selected Rule dengan menekan tombol "
+"atau seret dan lepaskan, Anda dapat mengubah pesanan mereka dengan drag dan "
+"drop juga."
+
+msgid "Choose the router(s) you want to add."
+msgstr "Pilih router yang ingin Anda tambahkan."
+
+msgid ""
+"Choose the rule you want to insert. Specify either the rule you want to "
+"insert immediately before, or the rule to insert immediately after. If both "
+"are specified, the prior takes precedence."
+msgstr ""
+"Pilih aturan yang ingin Anda sisipkan. Tentukan baik aturan yang ingin Anda "
+"masukkan segera sebelumnya, atau aturan untuk memasukkan segera setelahnya. "
+"Jika keduanya ditentukan, sebelumnya diutamakan."
+
+msgid "Choose the rule you want to remove."
+msgstr "Pilih aturan yang ingin Anda hapus."
 
 msgid "Create Firewall"
 msgstr "Create Firewall (buat firewall)"
@@ -303,8 +351,14 @@ msgstr[0] "Delete Rule"
 msgid "Description"
 msgstr "Deskripsi"
 
+msgid "Description:"
+msgstr "Deskripsi:"
+
 msgid "Destination IP"
 msgstr "IP Tujuan"
+
+msgid "Destination IP Address"
+msgstr "Destination IP Address"
 
 msgid "Destination IP Address/Subnet"
 msgstr "Tujuan  subnet/alamat IP"
@@ -356,6 +410,9 @@ msgstr "Edit Rule {{ name }}"
 
 msgid "Egress Policy"
 msgstr "Egress Policy"
+
+msgid "Egress Policy ID"
+msgstr "Egress Policy ID"
 
 msgid "Enable Admin State"
 msgstr "Enable Admin State"
@@ -455,6 +512,9 @@ msgstr "Firewall"
 msgid "ICMP"
 msgstr "ICMP"
 
+msgid "ID"
+msgstr "ID"
+
 msgid "IP Version"
 msgstr "IP Version"
 
@@ -474,6 +534,9 @@ msgstr "Inactive"
 
 msgid "Ingress Policy"
 msgstr "Ingress Policy"
+
+msgid "Ingress Policy ID"
+msgstr "Ingress Policy ID"
 
 msgid "Insert Rule"
 msgstr "Insert Rule (menyisipkan aturan)"
@@ -532,6 +595,12 @@ msgstr "Kebijakan %s telah berhasil diperbarui."
 msgid "Ports"
 msgstr "Ports"
 
+msgid "Position in Policy"
+msgstr "Position in Policy"
+
+msgid "Project ID"
+msgstr "Project ID"
+
 msgid "Protocol"
 msgstr "Protocol"
 
@@ -551,6 +620,9 @@ msgstr "REJECT"
 
 msgid "Remove Port"
 msgstr "Remove Port"
+
+msgid "Remove Port from Firewall Group"
+msgstr "Hapus Port dari Firewall Group"
 
 msgid "Remove Router"
 msgstr "Remove Router"
@@ -638,11 +710,23 @@ msgstr "Pilih router untuk firewall Anda."
 msgid "Select rules for your policy."
 msgstr "Pilih aturan untuk kebijakan Anda."
 
+msgid "Selected Ports"
+msgstr "Selected Ports"
+
+msgid "Selected Routers"
+msgstr "Selected Routers"
+
+msgid "Selected Rules"
+msgstr "Selected Rules"
+
 msgid "Shared"
 msgstr "Shared"
 
 msgid "Source IP"
 msgstr "Source IP (IP sumber)"
+
+msgid "Source IP Address"
+msgstr "Source IP Address"
 
 msgid "Source IP Address/Subnet"
 msgstr "Source (asal) subnet/alamat IP"
@@ -772,3 +856,40 @@ msgstr "Tidak dapat mengambil daftar aturan."
 
 msgid "Unselect the router(s) to be removed from firewall."
 msgstr "Batalkan router untuk dihapus dari firewall."
+
+msgid "Unselect the routers you want to disassociate from the firewall."
+msgstr "Batalkan pilihan router yang ingin Anda pisahkan dari firewall."
+
+msgid "Used in Policy"
+msgstr "Used in Policy"
+
+msgid "You may add ports to firewall group here."
+msgstr "Anda dapat menambahkan port ke grup firewall di sini."
+
+msgid "You may remove ports from firewall group here."
+msgstr "Anda dapat menghapus port dari grup firewall di sini."
+
+msgid "You may update firewall details here."
+msgstr "Anda dapat memperbarui detail firewall di sini."
+
+msgid "You may update firewall group details here."
+msgstr "Anda dapat memperbarui rincian grup firewall di sini."
+
+msgid ""
+"You may update policy details here. Use 'Insert Rule' or 'Remove Rule' links "
+"instead to insert or remove a rule"
+msgstr ""
+"Anda dapat memperbarui rincian kebijakan di sini. Gunakan tautan 'Insert "
+"Rule' atau 'Remove Rule' sebagai gantinya untuk memasukkan atau menghapus "
+"aturan."
+
+msgid ""
+"You may update policy details here. Use 'Insert Rule' or 'Remove Rule' links "
+"instead to insert or remove a rule."
+msgstr ""
+"Anda dapat memperbarui rincian kebijakan di sini. Gunakan tautan 'Insert "
+"Rule' atau 'Remove Rule' sebagai gantinya untuk memasukkan atau menghapus "
+"aturan."
+
+msgid "You may update rule details here."
+msgstr "Anda dapat memperbarui detail aturan di sini."
