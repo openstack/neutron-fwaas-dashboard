@@ -23,8 +23,6 @@ from neutron_fwaas_dashboard.test import helpers as test
 
 class FwaasApiTests(test.APITestCase):
 
-    use_mox = False
-
     @helpers.create_mocks({neutronclient: ('create_firewall_rule',)})
     def test_rule_create(self):
         rule1 = self.fw_rules.first()

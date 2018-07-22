@@ -25,8 +25,6 @@ from neutron_fwaas_dashboard.test import helpers as test
 
 class FirewallTests(test.TestCase):
 
-    use_mox = False
-
     DASHBOARD = 'project'
     INDEX_URL = reverse('horizon:%s:firewalls:index' % DASHBOARD)
 

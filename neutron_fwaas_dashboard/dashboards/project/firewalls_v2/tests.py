@@ -23,8 +23,6 @@ from neutron_fwaas_dashboard.test import helpers as test
 
 class FirewallTests(test.TestCase):
 
-    use_mox = False
-
     INDEX_URL = reverse('horizon:project:firewalls_v2:index')
 
     ADDRULE_PATH = 'horizon:project:firewalls_v2:addrule'
