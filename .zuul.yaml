@@ -1,19 +1,14 @@
 - project:
     templates:
       - check-requirements
-      - publish-openstack-docs-pti
+      - openstack-lower-constraints-jobs-horizon
       - openstack-python-jobs-horizon
       - openstack-python35-jobs-horizon
+      - publish-openstack-docs-pti
       - release-notes-jobs-python3
     check:
       jobs:
-        - openstack-tox-lower-constraints:
-            required-projects:
-              - openstack/horizon
         - horizon-openstack-tox-python3-django111
     gate:
       jobs:
-        - openstack-tox-lower-constraints:
-            required-projects:
-              - openstack/horizon
         - horizon-openstack-tox-python3-django111
