@@ -4,6 +4,7 @@
       - openstack-lower-constraints-jobs-horizon
       - openstack-python-jobs-horizon
       - openstack-python35-jobs-horizon
+      - openstack-cover-jobs-horizon
       - publish-openstack-docs-pti
       - release-notes-jobs-python3
     check:
