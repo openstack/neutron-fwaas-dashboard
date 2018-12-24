@@ -14,12 +14,10 @@ from openstack_dashboard.test.test_data import utils
 
 
 def load_data(load_onto=None):
-    from neutron_fwaas_dashboard.test.test_data import fwaas_data
     from neutron_fwaas_dashboard.test.test_data import fwaas_v2_data
 
     # The order of these loaders matters, some depend on others.
     loaders = (
-        fwaas_data.data,
         fwaas_v2_data.data,
     )
     if load_onto:

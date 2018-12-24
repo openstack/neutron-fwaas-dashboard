@@ -1,16 +1,11 @@
 @import "/dashboard/scss/components/resource_topology";
 
 .sort-container {
-  /* FWaaS v2 and v1 */
   #selected_port {
     @include common_box_list_selected("rule");
   }
   /* FWaaS v2 */
   #selected_port {
     @include common_box_list_selected("port");
-  }
-  /* FWaaS v1 */
-  #selected_port {
-    @include common_box_list_selected("router");
   }
 }
