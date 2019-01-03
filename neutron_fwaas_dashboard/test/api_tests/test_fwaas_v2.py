@@ -14,6 +14,7 @@
 
 import mock
 from neutronclient.v2_0.client import Client as neutronclient
+import openstack_dashboard.api.nova as nova
 
 from openstack_dashboard.test import helpers
 
@@ -22,6 +23,142 @@ from neutron_fwaas_dashboard.test import helpers as test
 
 
 class FwaasV2ApiTests(test.APITestCase):
+
+    @helpers.create_mocks({nova: ('server_list',)})
+    def test_get_servers(self):
+        fields = ['id', 'name']
+
+        mock_servers = {
+            '916562da-fa95-4ae1-8bea-0b45f2f8297a': self._mock_server(
+                id='916562da-fa95-4ae1-8bea-0b45f2f8297a',
+                name='mock-server-1'
+            ),
+            '7038e456-3067-493a-8f2b-69bc26acbccf': self._mock_server(
+                id='7038e456-3067-493a-8f2b-69bc26acbccf',
+                name='mock-server-2'
+            ),
+            '23f683e5-8536-4e5a-806b-0382b02743dc': self._mock_server(
+                id='23f683e5-8536-4e5a-806b-0382b02743dc',
+                name='mock-server-3'
+            )
+        }
+
+        mock_server_ids = sorted(mock_servers.keys())
+
+        self.mock_server_list.return_value = [list(mock_servers.values())]
+
+        servers = api_fwaas_v2.get_servers(self.request)
+
+        server_ids = sorted(servers.keys())
+
+        self.assertEqual(server_ids, mock_server_ids)
+        for key in mock_server_ids:
+            expected_server = mock_servers[key]
+            server = servers[key]
+            self._assert_subobject(expected_server, server, fields)
+
+    def _assert_subobject(self, child, parent, fields):
+        for field in fields:
+            self.assertEqual(
+                getattr(child, field),
+                getattr(parent, field)
+            )
+
+    def _mock_server(self, **kwargs):
+        server = nova.Server({}, self.request)
+        for key, val in kwargs.items():
+            setattr(server, key, val)
+        return server
+
+    @helpers.create_mocks({neutronclient: ('list_networks',)})
+    def test_get_networks(self):
+        fields = ['name', 'id']
+
+        mock_networks = {
+            '64e8c993-1c99-40fb-a8bc-42d3fd487a97': {
+                'name': 'mock-network-1',
+                'id': '64e8c993-1c99-40fb-a8bc-42d3fd487a97'
+            },
+            'f1bd4bb5-2bf3-4e0e-9c8d-9a1a500eaece': {
+                'name': 'mock-network-2',
+                'id': 'f1bd4bb5-2bf3-4e0e-9c8d-9a1a500eaece'
+            },
+            '74173cf1-461e-4fd0-881e-2a0cc4a94e14': {
+                'name': 'mock-network-3',
+                'id': '74173cf1-461e-4fd0-881e-2a0cc4a94e14'
+            }
+        }
+        mock_network_ids = sorted(mock_networks.keys())
+
+        self.mock_list_networks.return_value = {
+            'networks': list(mock_networks.values())
+        }
+
+        network_names = api_fwaas_v2.get_network_names(self.request)
+
+        self.mock_list_networks.assert_called_once_with(fields=fields)
+
+        network_ids = sorted(network_names.keys())
+
+        self.assertEqual(network_ids, mock_network_ids)
+
+        for key in mock_network_ids:
+            self._assert_api_dict(
+                network_names[key]._apidict,
+                mock_networks[key],
+                fields
+            )
+
+    @helpers.create_mocks({neutronclient: ('list_routers',)})
+    def test_get_router_names(self):
+        fields = ['name', 'id']
+
+        mock_routers = {
+            '9d143b82-bd74-4ccf-81ba-9b7e02f3f7b2': {
+                'name': 'mock-router-1',
+                'id': '9d143b82-bd74-4ccf-81ba-9b7e02f3f7b2'
+            },
+            '84d72522-1c26-4d28-83ed-b8653ac5d38c': {
+                'name': 'mock-router-2',
+                'id': '84d72522-1c26-4d28-83ed-b8653ac5d38c'
+            },
+            '2149de19-840a-4b41-8a44-4755ce8a881b': {
+                'name': 'mock-router-3',
+                'id': '2149de19-840a-4b41-8a44-4755ce8a881b'
+            }
+        }
+        mock_router_ids = sorted(mock_routers.keys())
+
+        # Mock API call
+        self.mock_list_routers.return_value = {
+            'routers': list(mock_routers.values())
+        }
+        # call results
+        router_names = api_fwaas_v2.get_router_names(self.request)
+
+        # Check that the correct filters were applied for the API call
+        self.mock_list_routers.assert_called_once_with(fields=fields)
+        # Ensure that exactly the expected mock data ids have been retrieved
+        router_ids = sorted(router_names.keys())
+        self.assertEqual(router_ids, mock_router_ids)
+
+        # Check that the returned values correspond to the (mocked) API data
+        for key in mock_router_ids:
+            # Note that _apidict is being checked
+            self._assert_api_dict(
+                router_names[key]._apidict,
+                mock_routers[key],
+                fields
+            )
+
+    def _assert_api_dict(self, actual, expected, fields):
+        # Ensure exactly the required fields have been retrieved
+        actual_fields = sorted(actual.keys())
+        self.assertEqual(actual_fields, sorted(fields))
+
+        # Ensure expected datum was returned in each field
+        for field in fields:
+            self.assertEqual(actual[field], expected[field])
 
     @helpers.create_mocks({neutronclient: ('create_fwaas_firewall_rule',)})
     def test_rule_create(self):
@@ -417,6 +554,26 @@ class FwaasV2ApiTests(test.APITestCase):
             mock.call(shared=False, tenant_id=tenant_id),
             mock.call(shared=True),
         ])
+
+    @helpers.create_mocks({neutronclient: ('list_fwaas_firewall_groups', )})
+    def test_fwg_port_list(self):
+        mock_port_id_1 = '62b974c5-48fb-4fd1-946f-5ace1d970dd4'
+        mock_port_id_2 = 'da012bb6-c350-4a72-b6c9-69c4f2008aa4'
+        mock_port_id_3 = 'c2a2ce11-71dd-49a5-84ec-2407ecb42106'
+
+        mock_groups = [
+            {'ports': [mock_port_id_1, mock_port_id_2]},
+            {'ports': []},
+            {'ports': [mock_port_id_3]}
+        ]
+        self.mock_list_fwaas_firewall_groups.return_value = {
+            'firewall_groups': mock_groups
+        }
+
+        expected_set = {mock_port_id_1, mock_port_id_2, mock_port_id_3}
+        retrieved_set = api_fwaas_v2.fwg_port_list(self.request)
+
+        self.assertEqual(expected_set, retrieved_set)
 
     @helpers.create_mocks({neutronclient: ('list_ports',
                                            'list_fwaas_firewall_groups')})

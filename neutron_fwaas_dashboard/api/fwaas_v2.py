@@ -1,4 +1,3 @@
-#
 #    Licensed under the Apache License, Version 2.0 (the "License"); you may
 #    not use this file except in compliance with the License. You may obtain
 #    a copy of the License at
@@ -14,7 +13,9 @@
 import collections
 
 from openstack_dashboard.api import neutron
+import openstack_dashboard.api.nova as nova
 from openstack_dashboard.contrib.developer.profiler import api as profiler
+
 
 neutronclient = neutron.neutronclient
 
@@ -58,8 +59,53 @@ def rule_create(request, **kwargs):
 
 
 @profiler.trace
+def get_network_names(request):
+    networks = neutronclient(request).list_networks(fields=["name", "id"])\
+        .get('networks', [])
+    mapped = {n['id']: neutron.Network(n) for n in networks}
+    return mapped
+
+
+@profiler.trace
+def get_router_names(request):
+    routers = neutronclient(request).list_routers(fields=["name", "id"])\
+        .get('routers', [])
+    mapped = {r['id']: neutron.Router(r) for r in routers}
+    return mapped
+
+
+@profiler.trace
+def get_servers(request):
+    servers = nova.server_list(request)[0]
+    mapped = {s.id: s for s in servers}
+    return mapped
+
+
+@profiler.trace
 def rule_list(request, **kwargs):
     return _rule_list(request, **kwargs)
+
+
+@profiler.trace
+def port_list(request, tenant_id, **kwargs):
+    kwargs['tenant_id'] = tenant_id
+    ports = neutronclient(request).list_ports(**kwargs).get('ports')
+
+    return {
+        p['id']: Port(p) for p in ports if _is_target(p)
+    }
+
+
+# Gets ids of all ports assigned to firewall groups
+@profiler.trace
+def fwg_port_list(request, **kwargs):
+    fwgs = neutronclient(request).list_fwaas_firewall_groups(
+        **kwargs).get('firewall_groups')
+    ports = set()
+    for fwg in fwgs:
+        if fwg['ports']:
+            ports.update(fwg['ports'])
+    return ports
 
 
 @profiler.trace
