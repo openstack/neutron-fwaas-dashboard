@@ -16,13 +16,21 @@
 
     <dt>{% trans "Ingress Policy ID" %}</dt>
     <dd>
+      {% if firewall_group.ingress_firewall_policy_id %}
       {% url 'horizon:project:firewalls_v2:policydetails' firewall_group.ingress_firewall_policy_id as policy_url %}
       <a href="{{ policy_url }}">{{firewall_group.ingress_policy.name|default:firewall_group.ingress_firewall_policy_id }}</a>
+      {% else %}
+      {% trans "-" %}
+      {% endif %}
     </dd>
     <dt>{% trans "Egress Policy ID" %}</dt>
     <dd>
+      {% if firewall_group.egress_firewall_policy_id %}
       {% url 'horizon:project:firewalls_v2:policydetails' firewall_group.egress_firewall_policy_id as policy_url %}
       <a href="{{ policy_url }}">{{firewall_group.egress_policy.name|default:firewall_group.egress_firewall_policy_id }}</a>
+      {% else %}
+      {% trans "-" %}
+      {% endif %}
     </dd>
 
     <dt>{% trans "Status" %}</dt>
