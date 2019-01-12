@@ -2,7 +2,8 @@
 
 FWAAS_DASHBOARD_DIR=$(cd $(dirname $BASH_SOURCE)/.. && pwd)
 FWAAS_ENABLED_DIR=$FWAAS_DASHBOARD_DIR/neutron_fwaas_dashboard/enabled
-HORIZON_ENABLED_DIR=$DEST/horizon/openstack_dashboard/local/enabled
+OPENSTACK_DASHBOARD_DIR=$DEST/horizon/openstack_dashboard
+HORIZON_ENABLED_DIR=$OPENSTACK_DASHBOARD_DIR/local/enabled
 
 function install_neutron_fwaas_dashboard {
     setup_develop $FWAAS_DASHBOARD_DIR
@@ -17,37 +18,9 @@ function configure_neutron_fwaas_dashboard {
          DJANGO_SETTINGS_MODULE=openstack_dashboard.settings ../manage.py compilemessages)
     fi
     # Add policy file for FWaaS
-    _set_policy_file $DEST/horizon/openstack_dashboard/local/local_settings.py \
-        neutron-fwaas $FWAAS_DASHBOARD_DIR/etc/neutron-fwaas-policy.json
-}
-
-function _ensure_policy_file {
-    local file=$1
-
-    # Look for POLICY_FILES dict.
-    start=$(grep -nE '^\s*POLICY_FILES\s*=\s*' $file | cut -d : -f 1)
-    if [ ! -n "$start" ]; then
-        # If POLICY_FILES is not found, define it.
-        cat <<EOF >> $file
-POLICY_FILES = {
-    'identity': 'keystone_policy.json',
-    'compute': 'nova_policy.json',
-    'volume': 'cinder_policy.json',
-    'image': 'glance_policy.json',
-    'orchestration': 'heat_policy.json',
-    'network': 'neutron_policy.json',
-}
-EOF
-    fi
-}
-
-function _set_policy_file {
-    local file=$1
-    local policy_name=$2
-    local policy_file=$3
-
-    _ensure_policy_file $file
-    echo "POLICY_FILES['$policy_name'] = '$policy_file'" >> $file
+    cp $FWAAS_DASHBOARD_DIR/etc/neutron-fwaas-policy.json $OPENSTACK_DASHBOARD_DIR/conf/
+    cp $FWAAS_DASHBOARD_DIR/neutron_fwaas_dashboard/local_settings.d/_7000_neutron_fwaas.py \
+        $OPENSTACK_DASHBOARD_DIR/local/local_settings.d/
 }
 
 # check for service enabled
@@ -85,7 +58,7 @@ if is_service_enabled neutron-fwaas-dashboard; then
     if [[ "$1" == "clean"  ]]; then
         # Remove state and transient data
         # Remember clean.sh first calls unstack.sh
-        # no-op
-        :
+        rm -f $OPENSTACK_DASHBOARD_DIR/local/local_settings.d/_7000_neutron_fwaas.py*
+        rm -f $OPENSTACK_DASHBOARD_DIR/conf/neutron-fwaas-policy.json
     fi
 fi
