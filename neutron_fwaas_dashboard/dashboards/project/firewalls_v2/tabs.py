@@ -150,16 +150,16 @@ class FirewallGroupTabs(tabs.TabGroup):
     sticky = True
 
 
-class RuleDetailsTabs(tabs.TabGroup):
+class RuleDetailsTabs(tabs.DetailTabsGroup):
     slug = "ruletabs"
     tabs = (RuleDetailsTab,)
 
 
-class PolicyDetailsTabs(tabs.TabGroup):
+class PolicyDetailsTabs(tabs.DetailTabsGroup):
     slug = "policytabs"
     tabs = (PolicyDetailsTab,)
 
 
-class FirewallGroupDetailsTabs(tabs.TabGroup):
+class FirewallGroupDetailsTabs(tabs.DetailTabsGroup):
     slug = "firewallgrouptabs"
     tabs = (FirewallGroupDetailsTab, FirewallGroupPortsTab)
