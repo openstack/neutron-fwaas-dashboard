@@ -23,6 +23,7 @@ from horizon import messages
 from horizon.utils import validators
 
 from neutron_fwaas_dashboard.api import fwaas_v2 as api_fwaas_v2
+from neutron_fwaas_dashboard.dashboards.project.firewalls_v2 import widgets
 
 port_validator = validators.validate_port_or_colon_separated_port_range
 
@@ -206,27 +207,72 @@ class UpdateFirewall(forms.SelfHandlingForm):
             exceptions.handle(request, msg, redirect=redirect)
 
 
-class AddPort(forms.SelfHandlingForm):
-    failure_url = 'horizon:project:firewalls_v2:index'
-    port_id = forms.ThemableChoiceField(
-        label=_("Ports"), required=False)
+class PortSelectionForm(forms.SelfHandlingForm):
+    port_id = forms.ThemableDynamicChoiceField(
+        label=_("Ports"),
+        required=False,
+        widget=widgets.TableSelectWidget(
+            columns=['Port', 'Network', 'Owner', 'Device'],
+            alternate_xs=True
+        )
+    )
+
+    networks = {}
+    routers = {}
+    servers = {}
+    ports = {}
 
     def __init__(self, request, *args, **kwargs):
-        super(AddPort, self).__init__(request, *args, **kwargs)
+        super(PortSelectionForm, self).__init__(request, *args, **kwargs)
 
-        try:
-            tenant_id = self.request.user.tenant_id
-            ports = api_fwaas_v2.fwg_port_list_for_tenant(request, tenant_id)
-            initial_ports = self.initial['ports']
-            filtered_ports = [port for port in ports
-                              if port.id not in initial_ports]
-            filtered_ports = sorted(filtered_ports, key=attrgetter('name'))
-        except Exception:
-            exceptions.handle(request, _('Unable to retrieve port list.'))
-            ports = []
+        tenant_id = self.request.user.tenant_id
 
-        current_choices = [(p.id, p.name_or_id) for p in filtered_ports]
-        self.fields['port_id'].choices = current_choices
+        self.ports = api_fwaas_v2.port_list(request, tenant_id, **kwargs)
+        self.networks = api_fwaas_v2.get_network_names(request)
+        self.routers = api_fwaas_v2.get_router_names(request)
+        self.servers = api_fwaas_v2.get_servers(request)
+
+        self.fields['port_id'].widget.build_columns = self._build_col
+        self.fields['port_id'].choices = self.get_ports(request)
+
+    def get_ports(self, request):
+        return []
+
+    def _build_col(self, option):
+        port = self.ports[option[0]]
+        columns = self._build_option(port)
+        return columns
+
+    def _build_option(self, port):
+        network = self.networks.get(port.network_id)
+
+        network_label = network.name_or_id if network else port.network_id
+        owner_label = ''
+        device_label = ''
+
+        if port.device_owner.startswith('network'):
+            owner_label = 'network'
+            router = self.routers.get(port.device_id, None)
+            device_label = router.name_or_id if router else port.device_id
+        elif port.device_owner.startswith('compute'):
+            owner_label = 'compute'
+            server = self.servers.get(port.device_id, None)
+            device_label = server.name_or_id if server else port.device_id
+
+        columns = (port.name_or_id, network_label, owner_label, device_label)
+
+        # The return value works off of the original themeable select widget
+        # This needs to be maintained for the original javascript to work
+        return columns
+
+
+class AddPort(PortSelectionForm):
+    failure_url = 'horizon:project:firewalls_v2:index'
+
+    def get_ports(self, request):
+        used_ports = api_fwaas_v2.fwg_port_list(request)
+        ports = self.ports.values()
+        return [(p.id, p.id) for p in ports if p.id not in used_ports]
 
     def handle(self, request, context):
         firewallgroup_id = self.initial['id']
@@ -252,22 +298,12 @@ class AddPort(forms.SelfHandlingForm):
             exceptions.handle(request, msg, redirect=redirect)
 
 
-class RemovePort(forms.SelfHandlingForm):
+class RemovePort(PortSelectionForm):
     failure_url = 'horizon:project:firewalls_v2:index'
-    port_id = forms.ThemableChoiceField(
-        label=_("Ports"), required=False)
 
-    def __init__(self, request, *args, **kwargs):
-        super(RemovePort, self).__init__(request, *args, **kwargs)
-
-        try:
-            ports = self.initial['ports']
-        except Exception:
-            exceptions.handle(request, _('Unable to retrieve port list.'))
-            ports = []
-
-        current_choices = [(p, p) for p in ports]
-        self.fields['port_id'].choices = current_choices
+    def get_ports(self, request):
+        ports = self.initial['ports']
+        return [(p, p) for p in ports]
 
     def handle(self, request, context):
         firewallgroup_id = self.initial['id']

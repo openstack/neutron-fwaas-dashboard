@@ -1,0 +1,94 @@
+{% load horizon %}
+
+{% minifyspace %}
+  <div class="themable-select dropdown {% if not stand_alone %} form-control{% endif %}"
+       xmlns="http://www.w3.org/1999/html">
+    <button type="button" class="btn btn-default dropdown-toggle"
+            data-toggle="dropdown"
+            {% if value %} title="{{ value }}" {% endif %}
+            aria-expanded="false"
+            {% if options|length < 1 %}
+            disabled="true"
+            {% endif %}
+    >
+      <span class="dropdown-title">
+        {% if options|length < 1 %}
+          {{ empty_text }}
+        {% elif initial_value %}
+          {{ initial_value.1 }}
+        {% endif %}
+      </span>
+      <span class="fa fa-caret-down"></span>
+    </button>
+    <ul class="dropdown-menu container-fluid dropdown-table">
+      <li class="row dropdown-thead">
+        <div class="col-xs-12">
+          <div class="row dropdown-tr ">
+            {% if alternate_xs %}
+              <div class="visible-xs-block col-xs-12 dropdown-th">{{ summarized_headers }}</div>
+              {% for column in columns %}
+                  <div class="hidden-xs col-sm-{{ column_size }} dropdown-th">{{ column }}</div>
+              {% endfor %}
+            {% else %}
+              {% for column in columns %}
+                  <div class="col-xs-{{ column_size }} dropdown-th">{{ column }}</div>
+              {% endfor %}
+            {% endif %}
+          </div>
+        </div>
+      </li>
+        {% for option in options %}
+          <li data-original-index="{{ forloop.counter0 }}"
+              class="row dropdown-tr"
+              data-toggle="tooltip"
+              data-placement="top"
+          >
+            <a data-select-value="{{ option.0 }}"
+               class="col-xs-12"
+               href="#"
+            >
+              <div class="row">
+                {% if alternate_xs %}
+                  <div class="visible-xs-block col-xs-12 dropdown-td">
+                    {{ option.1 }}
+                  </div>
+                  {% for column in option.2 %}
+                    <div class="hidden-xs col-sm-{{ column_size }} dropdown-td">{{ column }}</div>
+                  {% endfor %}
+                {% else %}
+                  {% for column in option.2 %}
+                    <div class="col-xs-{{ column_size }} dropdown-td">{{ column }}</div>
+                  {% endfor %}
+                {% endif %}
+              </div>
+            </a>
+          </li>
+        {% endfor %}
+    </ul>
+
+    <select
+            {% if id %}
+              id="{{ id }}"{% endif %}
+            {% if name %}
+              name="{{ name }}"
+            {% endif %}
+    {% for k,v in select_attrs.items %}
+      {% if k != 'class' or 'switch' in v %}
+        {{ k|safe }}="{{ v }}"
+      {% endif %}
+    {% endfor %}
+    >
+    {% for option in options %}
+      <option value="{{ option.0 }}"
+              {% if option.0 == value %}
+              selected="selected"
+              {% endif %}
+              {% if option.3 %}
+                {{ option.3|safe }}
+              {% endif %}>
+        {{ option.1 }}
+      </option>
+    {% endfor %}
+    </select>
+  </div>
+{% endminifyspace %}
