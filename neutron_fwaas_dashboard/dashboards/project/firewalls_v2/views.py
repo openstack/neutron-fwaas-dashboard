@@ -162,11 +162,11 @@ class FirewallGroupDetailsView(tabs.TabView):
     def get_data(self):
         try:
             firewallgroup_id = self.kwargs['firewallgroup_id']
-            firewall_group = api_fwaas_v2.firewall_get(self.request,
-                                                       firewallgroup_id)
+            firewall_group = api_fwaas_v2.firewall_group_get(self.request,
+                                                             firewallgroup_id)
         except Exception:
             exceptions.handle(self.request,
-                              _('Unable to retrieve firewall details.'),
+                              _('Unable to retrieve firewall group details.'),
                               redirect=self.failure_url)
         return firewall_group
 
@@ -275,19 +275,18 @@ class UpdateFirewallView(forms.ModalFormView):
 
     @memoized.memoized_method
     def _get_object(self, *args, **kwargs):
-        firewall_id = self.kwargs['firewall_id']
+        fwg_id = self.kwargs['firewall_id']
         try:
-            firewall = api_fwaas_v2.firewall_get(self.request,
-                                                 firewall_id)
-            return firewall
+            fwg = api_fwaas_v2.firewall_group_get(self.request, fwg_id)
+            return fwg
         except Exception:
             redirect = self.success_url
-            msg = _('Unable to retrieve firewall details.')
+            msg = _('Unable to retrieve firewall group details.')
             exceptions.handle(self.request, msg, redirect=redirect)
 
     def get_initial(self):
-        firewall = self._get_object()
-        initial = firewall.to_dict()
+        fwg = self._get_object()
+        initial = fwg.to_dict()
         return initial
 
 
@@ -299,7 +298,7 @@ class AddPortView(forms.ModalFormView):
     submit_label = _("Save Changes")
     submit_url = "horizon:project:firewalls_v2:addport"
     success_url = reverse_lazy("horizon:project:firewalls_v2:index")
-    page_title = _("Add port to FirewallGroup {{ name }}")
+    page_title = _("Add port to Firewall Group {{ name }}")
 
     def get_context_data(self, **kwargs):
         context = super(AddPortView, self).get_context_data(**kwargs)
@@ -315,8 +314,8 @@ class AddPortView(forms.ModalFormView):
     def _get_object(self, *args, **kwargs):
         firewallgroup_id = self.kwargs['firewallgroup_id']
         try:
-            firewallgroup = api_fwaas_v2.firewall_get(self.request,
-                                                      firewallgroup_id)
+            firewallgroup = api_fwaas_v2.firewall_group_get(self.request,
+                                                            firewallgroup_id)
             return firewallgroup
         except Exception:
             redirect = self.success_url
@@ -353,12 +352,12 @@ class RemovePortView(forms.ModalFormView):
     def _get_object(self, *args, **kwargs):
         firewallgroup_id = self.kwargs['firewallgroup_id']
         try:
-            firewallgroup = api_fwaas_v2.firewall_get(self.request,
-                                                      firewallgroup_id)
+            firewallgroup = api_fwaas_v2.firewall_group_get(self.request,
+                                                            firewallgroup_id)
             return firewallgroup
         except Exception:
             redirect = self.success_url
-            msg = _('Unable to retrieve firewallgroup details.')
+            msg = _('Unable to retrieve firewall group details.')
             exceptions.handle(self.request, msg, redirect=redirect)
 
     def get_initial(self):

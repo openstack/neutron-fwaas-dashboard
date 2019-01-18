@@ -348,10 +348,10 @@ class AddFirewallGroupAction(workflows.Action):
         name = _("FirewallGroup")
         permissions = ('openstack.services.network',)
         help_text = _("Create a firewall group based on a policy.\n\n"
-                      "A firewall represents a logical firewall resource that "
-                      "a tenant can instantiate and manage. A firewall must "
-                      "be associated with one policy, all other fields are "
-                      "optional.")
+                      "A firewall group represents a logical firewall "
+                      "resource that a tenant can instantiate and manage. "
+                      "A firewall group must be associated with one policy, "
+                      "all other fields are optional.")
 
 
 class AddFirewallGroupStep(workflows.Step):

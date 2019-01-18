@@ -77,8 +77,8 @@ class FirewallGroupsTab(tabs.TableTab):
         try:
             tenant_id = self.request.user.tenant_id
             request = self.tab_group.request
-            fw_groups = api_fwaas_v2.firewall_list_for_tenant(request,
-                                                              tenant_id)
+            fw_groups = api_fwaas_v2.firewall_group_list_for_tenant(request,
+                                                                    tenant_id)
             tenant_policies = api_fwaas_v2.policy_list_for_tenant(
                 request, tenant_id)
             policy_dict = self.get_policy_dict(policies=tenant_policies)
@@ -92,7 +92,7 @@ class FirewallGroupsTab(tabs.TableTab):
         except Exception:
             fw_groups = []
             exceptions.handle(self.tab_group.request,
-                              _('Unable to retrieve firewall list.'))
+                              _('Unable to retrieve firewall group list.'))
 
         return fw_groups
 

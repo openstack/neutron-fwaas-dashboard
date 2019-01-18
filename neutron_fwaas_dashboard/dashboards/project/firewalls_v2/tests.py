@@ -46,7 +46,7 @@ class FirewallTests(test.TestCase):
 
     def setup_mocks(self):
         firewallgroups = self.firewall_groups_v2.list()
-        self.mock_firewall_list_for_tenant.return_value = firewallgroups
+        self.mock_firewall_group_list_for_tenant.return_value = firewallgroups
         policies = self.fw_policies_v2.list()
         self.mock_policy_list_for_tenant.return_value = policies
         self.mock_rule_list_for_tenant.return_value = self.fw_rules_v2.list()
@@ -54,7 +54,7 @@ class FirewallTests(test.TestCase):
     def check_mocks(self):
         tenant_id = self.tenant.id
 
-        self.mock_firewall_list_for_tenant.assert_called_once_with(
+        self.mock_firewall_group_list_for_tenant.assert_called_once_with(
             helpers.IsHttpRequest(), tenant_id)
         # TODO(amotoki): get_firewallgroupstable_data() also calls
         # policy_list_for_tenant(). This needs to be clean up.
@@ -67,7 +67,7 @@ class FirewallTests(test.TestCase):
     def setup_mocks_with_exception(self):
         self.mock_rule_list_for_tenant.side_effect = self.exceptions.neutron
         self.mock_policy_list_for_tenant.side_effect = self.exceptions.neutron
-        self.mock_firewall_list_for_tenant.side_effect = \
+        self.mock_firewall_group_list_for_tenant.side_effect = \
             self.exceptions.neutron
 
     def check_mocks_with_exception(self):
@@ -76,10 +76,10 @@ class FirewallTests(test.TestCase):
             helpers.IsHttpRequest(), tenant_id)
         self.mock_policy_list_for_tenant.assert_called_once_with(
             helpers.IsHttpRequest(), tenant_id)
-        self.mock_firewall_list_for_tenant.assert_called_once_with(
+        self.mock_firewall_group_list_for_tenant.assert_called_once_with(
             helpers.IsHttpRequest(), tenant_id)
 
-    @helpers.create_mocks({api_fwaas_v2: ('firewall_list_for_tenant',
+    @helpers.create_mocks({api_fwaas_v2: ('firewall_group_list_for_tenant',
                                           'policy_list_for_tenant',
                                           'rule_list_for_tenant',)})
     def test_index_firewallgroups(self):
@@ -95,7 +95,7 @@ class FirewallTests(test.TestCase):
                          len(self.firewall_groups_v2.list()))
         self.check_mocks()
 
-    @helpers.create_mocks({api_fwaas_v2: ('firewall_list_for_tenant',
+    @helpers.create_mocks({api_fwaas_v2: ('firewall_group_list_for_tenant',
                                           'policy_list_for_tenant',
                                           'rule_list_for_tenant',)})
     def test_index_policies(self):
@@ -112,7 +112,7 @@ class FirewallTests(test.TestCase):
                          len(self.fw_policies_v2.list()))
         self.check_mocks()
 
-    @helpers.create_mocks({api_fwaas_v2: ('firewall_list_for_tenant',
+    @helpers.create_mocks({api_fwaas_v2: ('firewall_group_list_for_tenant',
                                           'policy_list_for_tenant',
                                           'rule_list_for_tenant',)})
     def test_index_rules(self):
@@ -129,7 +129,7 @@ class FirewallTests(test.TestCase):
                          len(self.fw_rules_v2.list()))
         self.check_mocks()
 
-    @helpers.create_mocks({api_fwaas_v2: ('firewall_list_for_tenant',
+    @helpers.create_mocks({api_fwaas_v2: ('firewall_group_list_for_tenant',
                                           'policy_list_for_tenant',
                                           'rule_list_for_tenant')})
     def test_index_exception_firewallgroups(self):
@@ -145,7 +145,7 @@ class FirewallTests(test.TestCase):
 
         self.check_mocks_with_exception()
 
-    @helpers.create_mocks({api_fwaas_v2: ('firewall_list_for_tenant',
+    @helpers.create_mocks({api_fwaas_v2: ('firewall_group_list_for_tenant',
                                           'policy_list_for_tenant',
                                           'rule_list_for_tenant')})
     def test_index_exception_policies(self):
@@ -163,7 +163,7 @@ class FirewallTests(test.TestCase):
 
         self.check_mocks_with_exception()
 
-    @helpers.create_mocks({api_fwaas_v2: ('firewall_list_for_tenant',
+    @helpers.create_mocks({api_fwaas_v2: ('firewall_group_list_for_tenant',
                                           'policy_list_for_tenant',
                                           'rule_list_for_tenant')})
     def test_index_exception_rules(self):
@@ -588,7 +588,7 @@ class FirewallTests(test.TestCase):
         self.mock_policy_update.assert_called_once_with(
             helpers.IsHttpRequest(), policy.id, **expected_put_data)
 
-    @helpers.create_mocks({api_fwaas_v2: ('firewall_get',
+    @helpers.create_mocks({api_fwaas_v2: ('firewall_group_get',
                                           'policy_list_for_tenant')})
     def test_update_firewall_group_get(self):
         firewall_group = self.firewall_groups_v2.first()
@@ -596,7 +596,7 @@ class FirewallTests(test.TestCase):
         tenant_id = self.tenant.id
 
         self.mock_policy_list_for_tenant.return_value = policies
-        self.mock_firewall_get.return_value = firewall_group
+        self.mock_firewall_group_get.return_value = firewall_group
 
         res = self.client.get(
             reverse(self.UPDATEFIREWALLGROUP_PATH, args=(firewall_group.id,)))
@@ -606,12 +606,12 @@ class FirewallTests(test.TestCase):
 
         self.mock_policy_list_for_tenant.assert_called_once_with(
             helpers.IsHttpRequest(), tenant_id)
-        self.mock_firewall_get.assert_called_once_with(
+        self.mock_firewall_group_get.assert_called_once_with(
             helpers.IsHttpRequest(), firewall_group.id)
 
-    @helpers.create_mocks({api_fwaas_v2: ('firewall_get',
+    @helpers.create_mocks({api_fwaas_v2: ('firewall_group_get',
                                           'policy_list_for_tenant',
-                                          'firewall_update')})
+                                          'firewall_group_update')})
     def test_update_firewall_post(self):
         fwg = self.firewall_groups_v2.first()
         tenant_id = self.tenant.id
@@ -633,9 +633,9 @@ class FirewallTests(test.TestCase):
             'admin_state_up': False,
         }
 
-        self.mock_firewall_get.return_value = fwg
+        self.mock_firewall_group_get.return_value = fwg
         self.mock_policy_list_for_tenant.return_value = policies
-        self.mock_firewall_update.return_value = fwg
+        self.mock_firewall_group_update.return_value = fwg
 
         res = self.client.post(
             reverse(
@@ -648,11 +648,11 @@ class FirewallTests(test.TestCase):
         self.assertNoFormErrors(res)
         self.assertRedirectsNoFollow(res, str(self.INDEX_URL))
 
-        self.mock_firewall_get.assert_called_once_with(
+        self.mock_firewall_group_get.assert_called_once_with(
             helpers.IsHttpRequest(), fwg.id)
         self.mock_policy_list_for_tenant.assert_called_once_with(
             helpers.IsHttpRequest(), tenant_id)
-        self.mock_firewall_update.assert_called_once_with(
+        self.mock_firewall_group_update.assert_called_once_with(
             helpers.IsHttpRequest(), fwg.id, **expected_put_data)
 
     @helpers.create_mocks({api_fwaas_v2: ('policy_get', 'policy_insert_rule',
@@ -771,16 +771,16 @@ class FirewallTests(test.TestCase):
         self.mock_policy_delete.assert_called_once_with(
             helpers.IsHttpRequest(), policy.id)
 
-    @helpers.create_mocks({api_fwaas_v2: ('firewall_list_for_tenant',
+    @helpers.create_mocks({api_fwaas_v2: ('firewall_group_list_for_tenant',
                                           'policy_list_for_tenant',
-                                          'firewall_delete',)})
+                                          'firewall_group_delete',)})
     def test_delete_firewall_group(self):
         fwl = self.firewall_groups_v2.first()
 
-        self.mock_firewall_list_for_tenant.return_value = [fwl]
+        self.mock_firewall_group_list_for_tenant.return_value = [fwl]
         self.mock_policy_list_for_tenant.return_value = \
             self.fw_policies_v2.list()
-        self.mock_firewall_delete.return_value = None
+        self.mock_firewall_group_delete.return_value = None
 
         form_data = {
             "action": "FirewallGroupsTable__deletefirewallgroup__%s" %
@@ -789,9 +789,9 @@ class FirewallTests(test.TestCase):
 
         self.assertNoFormErrors(res)
 
-        self.mock_firewall_list_for_tenant.assert_called_once_with(
+        self.mock_firewall_group_list_for_tenant.assert_called_once_with(
             helpers.IsHttpRequest(), self.tenant.id)
         self.mock_policy_list_for_tenant.assert_called_once_with(
             helpers.IsHttpRequest(), self.tenant.id)
-        self.mock_firewall_delete.assert_called_once_with(
+        self.mock_firewall_group_delete.assert_called_once_with(
             helpers.IsHttpRequest(), fwl.id)

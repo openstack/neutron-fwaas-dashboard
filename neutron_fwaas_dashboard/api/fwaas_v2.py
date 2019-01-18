@@ -223,15 +223,15 @@ def policy_remove_rule(request, policy_id, **kwargs):
 
 @profiler.trace
 def firewall_group_create(request, **kwargs):
-    """Create a firewall for specified policy
+    """Create a firewall group for specified policy
 
     :param request: request context
-    :param name: name for firewall
-    :param description: description for firewall
-    :param firewall_policy_id: policy id used by firewall
+    :param name: name for firewall group
+    :param description: description for firewall group
+    :param firewall_policy_id: policy id used by firewall group
     :param shared: boolean (default false)
     :param admin_state_up: boolean (default true)
-    :return: Firewall object
+    :return: Firewall group object
     """
     body = {'firewall_group': kwargs}
     firewall_group = neutronclient(request).create_fwaas_firewall_group(body)
@@ -239,37 +239,37 @@ def firewall_group_create(request, **kwargs):
 
 
 @profiler.trace
-def firewall_list(request, **kwargs):
-    return _firewall_list(request, **kwargs)
+def firewall_group_list(request, **kwargs):
+    return _firewall_group_list(request, **kwargs)
 
 
 @profiler.trace
-def firewall_list_for_tenant(request, tenant_id, **kwargs):
-    """Return a firewall list available for the tenant.
+def firewall_group_list_for_tenant(request, tenant_id, **kwargs):
+    """Return a firewall group list available for the tenant.
 
-    The list contains firewalls owned by the tenant and shared firewalls.
-    This is required because Neutron returns all resources including
+    The list contains firewall groups owned by the tenant and shared firewall
+    groups. This is required because Neutron returns all resources including
     all tenants if a user has admin role.
     """
-    fwg = firewall_list(request, tenant_id=tenant_id,
-                        shared=False, **kwargs)
-    shared_fwg = firewall_list(request, shared=True, **kwargs)
+    fwg = firewall_group_list(request, tenant_id=tenant_id,
+                              shared=False, **kwargs)
+    shared_fwg = firewall_group_list(request, shared=True, **kwargs)
     return fwg + shared_fwg
 
 
-# TODO(SarathMekala): Support expand_policy for _firewall_list
-def _firewall_list(request, **kwargs):
+# TODO(SarathMekala): Support expand_policy for _firewall_group_list
+def _firewall_group_list(request, **kwargs):
     firewall_groups = neutronclient(request).list_fwaas_firewall_groups(
         **kwargs).get('firewall_groups')
     return [FirewallGroup(f) for f in firewall_groups]
 
 
 @profiler.trace
-def firewall_get(request, firewall_id):
-    return _firewall_get(request, firewall_id, expand_policy=True)
+def firewall_group_get(request, firewallgroup_id):
+    return _firewall_group_get(request, firewallgroup_id, expand_policy=True)
 
 
-def _firewall_get(request, firewallgroup_id, expand_policy):
+def _firewall_group_get(request, firewallgroup_id, expand_policy):
     firewall_group = neutronclient(request).show_fwaas_firewall_group(
         firewallgroup_id).get('firewall_group')
     if expand_policy:
@@ -290,12 +290,12 @@ def _firewall_get(request, firewallgroup_id, expand_policy):
 
 
 @profiler.trace
-def firewall_delete(request, firewallgroup_id):
+def firewall_group_delete(request, firewallgroup_id):
     neutronclient(request).delete_fwaas_firewall_group(firewallgroup_id)
 
 
 @profiler.trace
-def firewall_update(request, firewallgroup_id, **kwargs):
+def firewall_group_update(request, firewallgroup_id, **kwargs):
     body = {'firewall_group': kwargs}
     firewall_group = neutronclient(request).update_fwaas_firewall_group(
         firewallgroup_id, body).get('firewall_group')
