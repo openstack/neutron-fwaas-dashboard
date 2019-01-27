@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: neutron-fwaas-dashboard VERSION\n"
 "Report-Msgid-Bugs-To: https://bugs.launchpad.net/openstack-i18n/\n"
-"POT-Creation-Date: 2018-09-12 21:06+0000\n"
+"POT-Creation-Date: 2019-01-18 03:31+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -95,9 +95,6 @@ msgstr "Router hinzufügen"
 
 msgid "Add Rule"
 msgstr "Regel hinzufügen"
-
-msgid "Add port to FirewallGroup {{ name }}"
-msgstr "Port zur Firewall-Gruppe hinzufügen {{ name }}"
 
 msgid "Add selected router(s) to the firewall."
 msgstr "Ausgewählte Router zur Firewall hinzufügen."
@@ -204,19 +201,6 @@ msgid ""
 "other fields are optional."
 msgstr ""
 "Erzeugen einer Firewall auf Basis einer Richtlinie\n"
-"\n"
-"Eine Firewall repräsentiert eine logische Firewall-Ressource, die ein "
-"Mandant instanzieren und verwalten kann. Eine Firewall muss mit einer "
-"Richtlinie verbunden werden, all anderen Felder sind optional."
-
-msgid ""
-"Create a firewall group based on a policy.\n"
-"\n"
-"A firewall represents a logical firewall resource that a tenant can "
-"instantiate and manage. A firewall must be associated with one policy, all "
-"other fields are optional."
-msgstr ""
-"Erzeugen einer Firewall-Gruppe auf Basis einer Richtlinie\n"
 "\n"
 "Eine Firewall repräsentiert eine logische Firewall-Ressource, die ein "
 "Mandant instanzieren und verwalten kann. Eine Firewall muss mit einer "
@@ -481,10 +465,6 @@ msgid "Failed to update firewall %(name)s: %(reason)s"
 msgstr "Firewall %(name)s konnte nicht aktualisiert werden: %(reason)s"
 
 #, python-format
-msgid "Failed to update firewallgroup %(name)s: %(reason)s"
-msgstr "Firewall-Gruppe %(name)s konnte nicht aktualisiert werden: %(reason)s"
-
-#, python-format
 msgid "Failed to update policy %(name)s: %(reason)s"
 msgstr "Fehler beim Aktualisieren der Richtlinie %(name)s: %(reason)s"
 
@@ -514,10 +494,6 @@ msgstr "Firewallregeln"
 
 msgid "FirewallGroup"
 msgstr "Firewall-Gruppe"
-
-#, python-format
-msgid "FirewallGroup %s was successfully updated."
-msgstr "Firewall-Gruppe %s wurde erfolgreich aktualisiert."
 
 msgid "Firewalls"
 msgstr "Firewalls"
@@ -850,9 +826,6 @@ msgstr "Richtlinienliste kann nicht abgerufen werden (%s)."
 
 msgid "Unable to retrieve policy list."
 msgstr "Liste der Richtlinien kann nicht abgerufen werden."
-
-msgid "Unable to retrieve port list."
-msgstr "Portliste kann nicht abgerufen werden."
 
 #, python-format
 msgid "Unable to retrieve ports (%s)."

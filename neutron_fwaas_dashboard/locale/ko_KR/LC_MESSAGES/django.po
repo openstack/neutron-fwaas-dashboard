@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: neutron-fwaas-dashboard VERSION\n"
 "Report-Msgid-Bugs-To: https://bugs.launchpad.net/openstack-i18n/\n"
-"POT-Creation-Date: 2018-03-07 18:31+0000\n"
+"POT-Creation-Date: 2019-01-18 03:31+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -101,9 +101,6 @@ msgstr "라우터 추가"
 
 msgid "Add Rule"
 msgstr "규칙 추가"
-
-msgid "Add port to FirewallGroup {{ name }}"
-msgstr "포트를 FirewallGroup {{ name }}에 추가"
 
 msgid "Add selected router(s) to the firewall."
 msgstr "방화벽에서 라우터를 선택하여 추가합니다."
@@ -220,19 +217,6 @@ msgstr ""
 "방화벽은 tenant 단위로 인스턴스로 생성하여 관리할 수 있는 논리적인 방화벽 리"
 "소스를 나타냅니다. 방화벽은 하나의 정책과 연결되어야 하며, 그 외는 선택 항목"
 "입니다."
-
-msgid ""
-"Create a firewall group based on a policy.\n"
-"\n"
-"A firewall represents a logical firewall resource that a tenant can "
-"instantiate and manage. A firewall must be associated with one policy, all "
-"other fields are optional."
-msgstr ""
-"정책에 기반하여 방화벽 그룹을 생성합니다.\n"
-"\n"
-"방화벽은 tenant 단위로 인스턴스로 생성하여 관리할 수 있는 논리적인 방화벽 자"
-"원을 나타냅니다. 방화벽은 정책 하나와 반드시 연관을 지어야 하며, 그 외 다른 "
-"필드들은 선택 사항입니다."
 
 msgid ""
 "Create a firewall policy with an ordered list of firewall rules.\n"
@@ -491,10 +475,6 @@ msgid "Failed to update firewall %(name)s: %(reason)s"
 msgstr "방화벽 %(name)s 를 업데이트 하지 못하였습니다.: %(reason)s"
 
 #, python-format
-msgid "Failed to update firewallgroup %(name)s: %(reason)s"
-msgstr "firewallgroup %(name)s 을(를) 업데이트하지 못하였습니다.: %(reason)s"
-
-#, python-format
 msgid "Failed to update policy %(name)s: %(reason)s"
 msgstr "정책 %(name)s를 업데이트하지 못하였습니다.: %(reason)s"
 
@@ -524,10 +504,6 @@ msgstr "방화벽 규칙"
 
 msgid "FirewallGroup"
 msgstr "FirewallGroup"
-
-#, python-format
-msgid "FirewallGroup %s was successfully updated."
-msgstr "FirewallGroup %s 을(를) 성공적으로 업데이트 하였습니다."
 
 msgid "Firewalls"
 msgstr "방화벽"
@@ -869,9 +845,6 @@ msgstr "정책 목록 (%s) 을(를) 가져올 수 없습니다."
 
 msgid "Unable to retrieve policy list."
 msgstr "정책 목록을 찾지 못 했습니다."
-
-msgid "Unable to retrieve port list."
-msgstr "포트 목록을 가져올 수 없습니다."
 
 #, python-format
 msgid "Unable to retrieve ports (%s)."

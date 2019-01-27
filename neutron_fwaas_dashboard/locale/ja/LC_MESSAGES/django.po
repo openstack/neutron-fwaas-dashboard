@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: neutron-fwaas-dashboard VERSION\n"
 "Report-Msgid-Bugs-To: https://bugs.launchpad.net/openstack-i18n/\n"
-"POT-Creation-Date: 2018-08-07 07:09+0000\n"
+"POT-Creation-Date: 2019-01-18 03:31+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -87,9 +87,6 @@ msgstr "ルーターの追加"
 
 msgid "Add Rule"
 msgstr "ルールの追加"
-
-msgid "Add port to FirewallGroup {{ name }}"
-msgstr "ファイアウォールグループ {{ name }} へのポートの追加"
 
 msgid "Add selected router(s) to the firewall."
 msgstr "選択したルーターをファイアウォールに追加します。"
@@ -195,19 +192,6 @@ msgid ""
 "other fields are optional."
 msgstr ""
 "ポリシーに基づいてファイアウォールを作成します。\n"
-"\n"
-"ファイアウォールは、テナントがインスタンス化して管理することができる論理的な"
-"ファイアウォールリソースを表します。1 つのファイアウォールは 1 つのポリシーと"
-"関連付けられる必要があり、他のフィールドはすべて省略可能です。"
-
-msgid ""
-"Create a firewall group based on a policy.\n"
-"\n"
-"A firewall represents a logical firewall resource that a tenant can "
-"instantiate and manage. A firewall must be associated with one policy, all "
-"other fields are optional."
-msgstr ""
-"ポリシーに基づいてファイアウォールグループを作成します。\n"
 "\n"
 "ファイアウォールは、テナントがインスタンス化して管理することができる論理的な"
 "ファイアウォールリソースを表します。1 つのファイアウォールは 1 つのポリシーと"
@@ -465,10 +449,6 @@ msgid "Failed to update firewall %(name)s: %(reason)s"
 msgstr "ファイアウォール %(name)s の更新に失敗しました: %(reason)s"
 
 #, python-format
-msgid "Failed to update firewallgroup %(name)s: %(reason)s"
-msgstr "ファイアウォールグループ %(name)s の更新に失敗しました: %(reason)s"
-
-#, python-format
 msgid "Failed to update policy %(name)s: %(reason)s"
 msgstr "ポリシー %(name)s の更新に失敗しました: %(reason)s"
 
@@ -498,10 +478,6 @@ msgstr "ファイアウォールルール"
 
 msgid "FirewallGroup"
 msgstr "ファイアウォールグループ"
-
-#, python-format
-msgid "FirewallGroup %s was successfully updated."
-msgstr "ファイアウォールグループ %s が正常に更新されました。"
 
 msgid "Firewalls"
 msgstr "ファイアウォール"
@@ -824,9 +800,6 @@ msgstr "ポリシー覧を取得できません (%s)"
 
 msgid "Unable to retrieve policy list."
 msgstr "ポリシー一覧を取得できません。"
-
-msgid "Unable to retrieve port list."
-msgstr "ポートの一覧を取得できません。"
 
 #, python-format
 msgid "Unable to retrieve ports (%s)."

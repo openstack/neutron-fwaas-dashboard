@@ -1,14 +1,15 @@
 # Andi Chandler <andi@gowling.com>, 2017. #zanata
 # Andi Chandler <andi@gowling.com>, 2018. #zanata
+# Andi Chandler <andi@gowling.com>, 2019. #zanata
 msgid ""
 msgstr ""
 "Project-Id-Version: neutron-fwaas-dashboard VERSION\n"
 "Report-Msgid-Bugs-To: https://bugs.launchpad.net/openstack-i18n/\n"
-"POT-Creation-Date: 2018-02-22 06:54+0000\n"
+"POT-Creation-Date: 2019-01-18 03:31+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2018-02-21 01:51+0000\n"
+"PO-Revision-Date: 2019-01-26 03:30+0000\n"
 "Last-Translator: Andi Chandler <andi@gowling.com>\n"
 "Language-Team: English (United Kingdom)\n"
 "Language: en_GB\n"
@@ -88,8 +89,8 @@ msgstr "Add Routers"
 msgid "Add Rule"
 msgstr "Add Rule"
 
-msgid "Add port to FirewallGroup {{ name }}"
-msgstr "Add port to FirewallGroup {{ name }}"
+msgid "Add port to Firewall Group {{ name }}"
+msgstr "Add port to Firewall Group {{ name }}"
 
 msgid "Add selected router(s) to the firewall."
 msgstr "Add selected router(s) to the firewall."
@@ -117,6 +118,10 @@ msgstr "Added policy \"%s\"."
 #, python-format
 msgid "Added rule \"%s\"."
 msgstr "Added rule \"%s\"."
+
+#, python-format
+msgid "Added the port(s) to the firewall group %s successfully."
+msgstr "Added the port(s) to the firewall group %s successfully."
 
 msgid "Admin State"
 msgstr "Admin State"
@@ -202,15 +207,15 @@ msgstr ""
 msgid ""
 "Create a firewall group based on a policy.\n"
 "\n"
-"A firewall represents a logical firewall resource that a tenant can "
-"instantiate and manage. A firewall must be associated with one policy, all "
-"other fields are optional."
+"A firewall group represents a logical firewall resource that a tenant can "
+"instantiate and manage. A firewall group must be associated with one policy, "
+"all other fields are optional."
 msgstr ""
 "Create a firewall group based on a policy.\n"
 "\n"
-"A firewall represents a logical firewall resource that a tenant can "
-"instantiate and manage. A firewall must be associated with one policy, all "
-"other fields are optional."
+"A firewall group represents a logical firewall resource that a tenant can "
+"instantiate and manage. A firewall group must be associated with one policy, "
+"all other fields are optional."
 
 msgid ""
 "Create a firewall policy with an ordered list of firewall rules.\n"
@@ -428,6 +433,10 @@ msgid "Failed to add router(s) to firewall %(name)s: %(reason)s"
 msgstr "Failed to add router(s) to firewall %(name)s: %(reason)s"
 
 #, python-format
+msgid "Failed to add the port(s) to the firewall group %(name)s: %(reason)s"
+msgstr "Failed to add the port(s) to the firewall group %(name)s: %(reason)s"
+
+#, python-format
 msgid "Failed to insert rule to policy %(name)s: %(reason)s"
 msgstr "Failed to insert rule to policy %(name)s: %(reason)s"
 
@@ -438,6 +447,12 @@ msgstr "Failed to remove router(s) from firewall %(name)s: %(reason)s"
 #, python-format
 msgid "Failed to remove rule from policy %(name)s: %(reason)s"
 msgstr "Failed to remove rule from policy %(name)s: %(reason)s"
+
+#, python-format
+msgid ""
+"Failed to remove the port(s) from the firewall group %(name)s: %(reason)s"
+msgstr ""
+"Failed to remove the port(s) from the firewall group %(name)s: %(reason)s"
 
 #, python-format
 msgid "Failed to retrieve available routers: %s"
@@ -463,8 +478,8 @@ msgid "Failed to update firewall %(name)s: %(reason)s"
 msgstr "Failed to update firewall %(name)s: %(reason)s"
 
 #, python-format
-msgid "Failed to update firewallgroup %(name)s: %(reason)s"
-msgstr "Failed to update firewallgroup %(name)s: %(reason)s"
+msgid "Failed to update firewall group %(name)s: %(reason)s"
+msgstr "Failed to update firewall group %(name)s: %(reason)s"
 
 #, python-format
 msgid "Failed to update policy %(name)s: %(reason)s"
@@ -494,12 +509,12 @@ msgstr "Firewall Policies"
 msgid "Firewall Rules"
 msgstr "Firewall Rules"
 
+#, python-format
+msgid "Firewall group %s was successfully updated."
+msgstr "Firewall group %s was successfully updated."
+
 msgid "FirewallGroup"
 msgstr "FirewallGroup"
-
-#, python-format
-msgid "FirewallGroup %s was successfully updated."
-msgstr "FirewallGroup %s was successfully updated."
 
 msgid "Firewalls"
 msgstr "Firewalls"
@@ -539,8 +554,14 @@ msgstr "Insert Rule"
 msgid "Insert Rule to Policy"
 msgstr "Insert Rule to Policy"
 
+msgid "Label"
+msgstr "Label"
+
 msgid "Name"
 msgstr "Name"
+
+msgid "No options available"
+msgstr "No options available"
 
 msgid ""
 "Non admin users are not allowed to set the shared property of the policy."
@@ -634,6 +655,10 @@ msgstr "Remove Rule from Policy"
 
 msgid "Remove port from FirewallGroup {{ name }}"
 msgstr "Remove port from FirewallGroup {{ name }}"
+
+#, python-format
+msgid "Removed the port(s) from the firewall group %s successfully."
+msgstr "Removed the port(s) from the firewall group %s successfully."
 
 #, python-format
 msgid "Router(s)  was successfully removed from firewall %(firewall)s."
@@ -794,6 +819,10 @@ msgid "Unable to add rule \"%s\"."
 msgstr "Unable to add rule \"%s\"."
 
 #, python-format
+msgid "Unable to delete firewall group. %s"
+msgstr "Unable to delete firewall group. %s"
+
+#, python-format
 msgid "Unable to delete firewall. %s"
 msgstr "Unable to delete firewall. %s"
 
@@ -807,6 +836,12 @@ msgstr "Unable to delete rule. %s"
 
 msgid "Unable to retrieve firewall details."
 msgstr "Unable to retrieve firewall details."
+
+msgid "Unable to retrieve firewall group details."
+msgstr "Unable to retrieve firewall group details."
+
+msgid "Unable to retrieve firewall group list."
+msgstr "Unable to retrieve firewall group list."
 
 msgid "Unable to retrieve firewall list."
 msgstr "Unable to retrieve firewall list."
@@ -830,9 +865,6 @@ msgstr "Unable to retrieve policy list (%s)."
 
 msgid "Unable to retrieve policy list."
 msgstr "Unable to retrieve policy list."
-
-msgid "Unable to retrieve port list."
-msgstr "Unable to retrieve port list."
 
 #, python-format
 msgid "Unable to retrieve ports (%s)."
@@ -864,6 +896,9 @@ msgstr "Unselect the routers you want to disassociate from the firewall."
 
 msgid "Used in Policy"
 msgstr "Used in Policy"
+
+msgid "Value"
+msgstr "Value"
 
 msgid "You may add ports to firewall group here."
 msgstr "You may add ports to firewall group here."

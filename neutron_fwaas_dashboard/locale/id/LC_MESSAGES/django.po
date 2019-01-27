@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: neutron-fwaas-dashboard VERSION\n"
 "Report-Msgid-Bugs-To: https://bugs.launchpad.net/openstack-i18n/\n"
-"POT-Creation-Date: 2018-05-10 14:05+0000\n"
+"POT-Creation-Date: 2019-01-18 03:31+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -90,9 +90,6 @@ msgstr "Add Routers (tambahkan router)"
 
 msgid "Add Rule"
 msgstr "Tambahkan Aturan"
-
-msgid "Add port to FirewallGroup {{ name }}"
-msgstr "Tambahkan port ke FirewallGroup {{ name }}"
 
 msgid "Add selected router(s) to the firewall."
 msgstr "Tambahkan router yang dipilih ke firewall."
@@ -202,19 +199,6 @@ msgstr ""
 "Firewall merupakan sumber daya firewall logis dimana penyewa (tenant) dapat "
 "instantiate (mencontoh) dan mengelola. Firewall harus dikaitkan dengan satu "
 "kebijakan, semua kolom (field) lain adalah opsional."
-
-msgid ""
-"Create a firewall group based on a policy.\n"
-"\n"
-"A firewall represents a logical firewall resource that a tenant can "
-"instantiate and manage. A firewall must be associated with one policy, all "
-"other fields are optional."
-msgstr ""
-"Buat grup firewall berdasarkan kebijakan.\n"
-"\n"
-"Firewall mewakili sumber daya firewall logis yang dapat diberikan oleh "
-"penyewa (tenant) dan pengelolaan. Firewall harus dikaitkan dengan satu "
-"kebijakan, semua bidang lainnya bersifat opsional."
 
 msgid ""
 "Create a firewall policy with an ordered list of firewall rules.\n"
@@ -468,10 +452,6 @@ msgid "Failed to update firewall %(name)s: %(reason)s"
 msgstr "Gagal memperbarui firewall %(name)s: %(reason)s"
 
 #, python-format
-msgid "Failed to update firewallgroup %(name)s: %(reason)s"
-msgstr "Gagal memperbarui firewallgroup %(name)s: %(reason)s"
-
-#, python-format
 msgid "Failed to update policy %(name)s: %(reason)s"
 msgstr "Gagal memperbarui kebijakan %(name)s: %(reason)s"
 
@@ -501,10 +481,6 @@ msgstr " Firewall Rules (aturan firewall)"
 
 msgid "FirewallGroup"
 msgstr "FirewallGroup"
-
-#, python-format
-msgid "FirewallGroup %s was successfully updated."
-msgstr "FirewallGroup %s berhasil diupdate"
 
 msgid "Firewalls"
 msgstr "Firewall"
@@ -828,9 +804,6 @@ msgstr "Tidak dapat mengambil daftar kebijakan (%s)."
 
 msgid "Unable to retrieve policy list."
 msgstr "Tidak dapat mengambil daftar kebijakan."
-
-msgid "Unable to retrieve port list."
-msgstr "Tidak dapat mengambil daftar port."
 
 #, python-format
 msgid "Unable to retrieve ports (%s)."
