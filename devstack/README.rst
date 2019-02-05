@@ -7,9 +7,6 @@ For more information on DevStack plugins,
 see the `DevStack Plugins documentation
 <https://docs.openstack.org/developer/devstack/plugins.html>`__.
 
-Common to FWaaS v1 and v2 dashboard
------------------------------------
-
 If neutron-fwaas-dashboard DevStack plugin is enabled,
 Neutron FWaaS dashboard is automatically enabled and
 the appropriate version of FWaaS panel is displayed based on
@@ -17,26 +14,12 @@ the FWaaS version enabled in your neutron server.
 You do not need to specify FWaaS API version in the DevStack plugin
 configuration.
 
-How to enable FWaaS v2 dashboard
---------------------------------
-
-Add the following to the localrc section of your local.conf.
+To enable FWaaS dashboard, add the following to the localrc section
+of your local.conf.
 
 .. code-block:: none
 
    [[local|localrc]]
    enable_plugin neutron-fwaas https://git.openstack.org/openstack/neutron-fwaas master
    enable_service q-fwaas-v2
-   enable_plugin neutron-fwaas-dashboard https://git.openstack.org/openstack/neutron-fwaas-dashboard master
-
-How to enable FWaaS v1 dashboard
---------------------------------
-
-Add the following to the localrc section of your local.conf.
-
-.. code-block:: none
-
-   [[local|localrc]]
-   enable_plugin neutron-fwaas https://git.openstack.org/openstack/neutron-fwaas master
-   enable_service q-fwaas-v1
    enable_plugin neutron-fwaas-dashboard https://git.openstack.org/openstack/neutron-fwaas-dashboard master
