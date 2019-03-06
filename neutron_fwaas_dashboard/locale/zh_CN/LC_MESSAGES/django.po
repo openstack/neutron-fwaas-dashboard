@@ -1,10 +1,8 @@
 # BillXiang <m13250816269@163.com>, 2016. #zanata
-# Carl <cai.hui@zte.com.cn>, 2016. #zanata
 # Linda <duleish@cn.ibm.com>, 2016. #zanata
 # Tony <tfu@redhat.com>, 2016. #zanata
 # liuyanfu <lyf219@163.com>, 2016. #zanata
 # sunanchen <KF.sunanchen@h3c.com>, 2016. #zanata
-# Bin <liubin@glab.cn>, 2017. #zanata
 # TigerFang <tigerfun@126.com>, 2017. #zanata
 # Tony <tfu@redhat.com>, 2017. #zanata
 # blkart <blkart.org@gmail.com>, 2017. #zanata
@@ -15,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: neutron-fwaas-dashboard VERSION\n"
 "Report-Msgid-Bugs-To: https://bugs.launchpad.net/openstack-i18n/\n"
-"POT-Creation-Date: 2019-01-18 03:31+0000\n"
+"POT-Creation-Date: 2019-02-19 16:16+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -36,10 +34,6 @@ msgctxt "Action Name of a Firewall Rule"
 msgid "ALLOW"
 msgstr "允许"
 
-msgctxt "Action name of a firewall rule"
-msgid "ALLOW"
-msgstr "允许"
-
 msgid "ANY"
 msgstr "任意选项"
 
@@ -53,21 +47,11 @@ msgctxt "Current status of a Firewall Group"
 msgid "Active"
 msgstr "运行中"
 
-msgctxt "Current status of a firewall"
-msgid "Active"
-msgstr "运行中"
-
 msgid "Add"
 msgstr "添加"
 
-msgid "Add Firewall"
-msgstr "添加防火墙"
-
 msgid "Add Firewall Group"
 msgstr "添加防火墙组"
-
-msgid "Add New Firewall"
-msgstr "添加新的防火墙"
 
 msgid "Add New Firewall Group"
 msgstr "添加新的防火墙组"
@@ -87,20 +71,8 @@ msgstr "添加端口"
 msgid "Add Port to Firewall Group"
 msgstr "为防火墙组添加端口"
 
-msgid "Add Router"
-msgstr "添加路由器"
-
-msgid "Add Router to Firewall"
-msgstr "将路由器添加至防火墙"
-
-msgid "Add Routers"
-msgstr "添加路由器"
-
 msgid "Add Rule"
 msgstr "增加规则"
-
-msgid "Add selected router(s) to the firewall."
-msgstr "将所选路由器添加至防火墙。"
 
 #, python-format
 msgid "Added Firewall Group\"%s\"."
@@ -114,18 +86,6 @@ msgstr "添加策略 “%s”。"
 msgid "Added Rule \"%s\"."
 msgstr "已添加规则 “%s”。"
 
-#, python-format
-msgid "Added firewall \"%s\"."
-msgstr "防火墙 \"%s\" 已添加。"
-
-#, python-format
-msgid "Added policy \"%s\"."
-msgstr "已添加策略 “%s”。"
-
-#, python-format
-msgid "Added rule \"%s\"."
-msgstr "已添加的规则 \"%s\"。"
-
 msgid "Admin State"
 msgstr "管理员状态"
 
@@ -135,17 +95,11 @@ msgstr "管理状态为启动"
 msgid "After"
 msgstr "晚于"
 
-msgid "Associated Routers"
-msgstr "已关联路由器"
-
 msgid "Audited"
 msgstr "已审计"
 
 msgid "Available Ports"
 msgstr "可用的端口"
-
-msgid "Available Routers"
-msgstr "可用路由"
 
 msgid "Available Rules"
 msgstr "可用的规则"
@@ -157,19 +111,11 @@ msgid "Choose port(s) from Available Ports. "
 msgstr "从可用端口列表中选择。"
 
 msgid ""
-"Choose router(s) from Available Routers to Selected Routers by push button "
-"or drag and drop. "
-msgstr "通过按钮或者拖放来从可用路由中选择一个(或多个)到选定路由。"
-
-msgid ""
 "Choose rule(s) from Available Rules to Selected Rule by push button or drag "
 "and drop, you may change their order by drag and drop as well."
 msgstr ""
 "通过按下按钮或者拖放从可用策略中选择一个（或多个）添加至选定策略，您也可以利"
 "用拖放改变它们的顺序。"
-
-msgid "Choose the router(s) you want to add."
-msgstr "选择需要添加的路由。"
 
 msgid ""
 "Choose the rule you want to insert. Specify either the rule you want to "
@@ -182,26 +128,11 @@ msgstr ""
 msgid "Choose the rule you want to remove."
 msgstr "选择希望移除的规则。"
 
-msgid "Create Firewall"
-msgstr "创建防火墙"
-
 msgid "Create Firewall Group"
 msgstr "创建防火墙组"
 
 msgid "Create a Firewall Group with selected ports."
 msgstr "创建带有所选端口的路由器组。"
-
-msgid ""
-"Create a firewall based on a policy.\n"
-"\n"
-"A firewall represents a logical firewall resource that a tenant can "
-"instantiate and manage. A firewall must be associated with one policy, all "
-"other fields are optional."
-msgstr ""
-"根据策略创建防火墙。\n"
-"\n"
-"防火墙表示租户可以实例化和管理的逻辑防火墙资源。一个防火墙必须与一个策略相关"
-"联，所有其它字段是可选字段。"
 
 msgid ""
 "Create a firewall policy with an ordered list of firewall rules.\n"
@@ -253,38 +184,10 @@ msgstr ""
 "Any）。</li><li>操作：操作是所需过滤类型，它可为拒绝/放弃/允许数据包。</li>\n"
 "协议字段和操作字段是必填字段，所有其他字段为可选字段。"
 
-msgid ""
-"Create a firewall rule.\n"
-"\n"
-"A firewall rule is an association of the following attributes:\n"
-"\n"
-"<li>IP Addresses: The addresses from/to which the traffic filtration needs "
-"to be applied.</li><li>IP Version: The type of IP packets (IP V4/V6) that "
-"needs to be filtered.</li><li>Protocol: Type of packets (UDP, ICMP, TCP, "
-"Any) that needs to be checked.</li><li>Action: Action is the type of "
-"filtration required, it can be Reject/Deny/Allow data packets.</li>\n"
-"The protocol and action fields are required, all others are optional."
-msgstr ""
-"创建防火墙规则。\n"
-"\n"
-"防火墙规则由以下属性关联形成：\n"
-"\n"
-"<li>IP 地址：需要应用流量过滤的来源/目标地址。</li><li>IP版本：需要过滤的 IP "
-"包类型 (IP V4/V6)。</li><li>协议：需要检查的数据包类型（UDP、ICMP、TCP 和 "
-"Any）。</li><li>操作：操作是所需过滤类型，它可为拒绝/放弃/允许数据包。</li>\n"
-"协议字段和操作字段是必填字段，所有其他字段为可选字段。"
-
-msgid "Create a firewall with selected routers."
-msgstr "创建带有所选路由器的防火墙。"
-
 msgid "Create a policy with selected rules."
 msgstr "使用所选规则创建策略。"
 
 msgctxt "Current status of a Firewall Group"
-msgid "Created"
-msgstr "已创建"
-
-msgctxt "Current status of a firewall"
 msgid "Created"
 msgstr "已创建"
 
@@ -295,21 +198,9 @@ msgctxt "Action Name of a Firewall Rule"
 msgid "DENY"
 msgstr "丢弃"
 
-msgctxt "Action name of a firewall rule"
-msgid "DENY"
-msgstr "拒绝"
-
 msgctxt "Admin state of a Firewall Group"
 msgid "DOWN"
 msgstr "关闭"
-
-msgctxt "Admin state of a firewall"
-msgid "DOWN"
-msgstr "关闭"
-
-msgid "Delete Firewall"
-msgid_plural "Delete Firewalls"
-msgstr[0] "删除防火墙"
 
 msgid "Delete Firewall Group"
 msgid_plural "Delete Firewall Groups"
@@ -354,18 +245,8 @@ msgctxt "Current status of a Firewall Group"
 msgid "Down"
 msgstr "关闭"
 
-msgctxt "Current status of a firewall"
-msgid "Down"
-msgstr "关闭"
-
-msgid "Edit Firewall"
-msgstr "编辑防火墙"
-
 msgid "Edit Firewall Group"
 msgstr "编辑防火墙组"
-
-msgid "Edit Firewall {{ name }}"
-msgstr "编辑防火墙 {{ name }}"
 
 msgid "Edit FirewallGroup {{ name }}"
 msgstr "编辑防火墙组 {{ name }}"
@@ -388,9 +269,6 @@ msgstr "出口策略"
 msgid "Egress Policy ID"
 msgstr "出口策略 ID"
 
-msgid "Enable Admin State"
-msgstr "启用管理员状态"
-
 msgid "Enabled"
 msgstr "已启用"
 
@@ -398,37 +276,17 @@ msgctxt "Current status of a Firewall Group"
 msgid "Error"
 msgstr "错误"
 
-msgctxt "Current status of a firewall"
-msgid "Error"
-msgstr "错误"
-
-#, python-format
-msgid "Failed to add router(s) to firewall %(name)s: %(reason)s"
-msgstr "将路由器添加至防火墙 %(name)s 失败：%(reason)s"
-
 #, python-format
 msgid "Failed to insert rule to policy %(name)s: %(reason)s"
 msgstr "无法将规则插入至策略 %(name)s：%(reason)s"
-
-#, python-format
-msgid "Failed to remove router(s) from firewall %(name)s: %(reason)s"
-msgstr "未能从防火墙 %(name)s 中移除路由器：%(reason)s"
 
 #, python-format
 msgid "Failed to remove rule from policy %(name)s: %(reason)s"
 msgstr "无法从策略 %(name)s 中移除规则：%(reason)s"
 
 #, python-format
-msgid "Failed to retrieve available routers: %s"
-msgstr "无法获取可用的路由器：%s"
-
-#, python-format
 msgid "Failed to retrieve available rules: %s"
 msgstr "无法检索可用的规则：%s"
-
-#, python-format
-msgid "Failed to retrieve current routers in firewall %(name)s: %(reason)s"
-msgstr "无法检索防火墙 %(name)s 中的当前路由器：%(reason)s"
 
 #, python-format
 msgid "Failed to retrieve current rules in policy %(name)s: %(reason)s"
@@ -438,27 +296,12 @@ msgid "Failed to retrieve port list of the firewall group."
 msgstr "无法获取防火墙组的端口列表。"
 
 #, python-format
-msgid "Failed to update firewall %(name)s: %(reason)s"
-msgstr "无法更新防火墙 %(name)s：%(reason)s"
-
-#, python-format
 msgid "Failed to update policy %(name)s: %(reason)s"
 msgstr "无法更新策略 %(name)s：%(reason)s"
 
 #, python-format
 msgid "Failed to update rule %(name)s: %(reason)s"
 msgstr "无法更新规则 %(name)s：%(reason)s"
-
-#, python-format
-msgid "Failed to verify extension support %s"
-msgstr "验证扩展支持 %s 失败"
-
-msgid "Firewall"
-msgstr "防火墙"
-
-#, python-format
-msgid "Firewall %s was successfully updated."
-msgstr "已成功更新防火墙 %s。"
 
 msgid "Firewall Groups"
 msgstr "防火墙组"
@@ -472,9 +315,6 @@ msgstr "防火墙规则"
 msgid "FirewallGroup"
 msgstr "防火墙组"
 
-msgid "Firewalls"
-msgstr "防火墙"
-
 msgid "ICMP"
 msgstr "ICMP"
 
@@ -487,16 +327,9 @@ msgstr "IP版本"
 msgid "IP Version for Firewall Rule"
 msgstr "防火墙规则的 IP 版本"
 
-msgid "In Policy"
-msgstr "在策略"
-
 msgctxt "Current status of a Firewall Group"
 msgid "Inactive"
 msgstr "不活跃"
-
-msgctxt "Current status of a firewall"
-msgid "Inactive"
-msgstr "失效"
 
 msgid "Ingress Policy"
 msgstr "入口策略"
@@ -513,13 +346,6 @@ msgstr "向策略中添加规则"
 msgid "Name"
 msgstr "名称"
 
-msgid ""
-"Non admin users are not allowed to set the shared property of the policy."
-msgstr "非管理用户不允许设置策略的共享属性。"
-
-msgid "Non admin users are not allowed to set the shared property of the rule."
-msgstr "非管理用户不允许设置规则的共享属性。"
-
 msgid "None"
 msgstr "无"
 
@@ -527,23 +353,11 @@ msgctxt "Current status of a Firewall Group"
 msgid "Pending Create"
 msgstr "等待创建"
 
-msgctxt "Current status of a firewall"
-msgid "Pending Create"
-msgstr "等待创建"
-
 msgctxt "Current status of a Firewall Group"
 msgid "Pending Delete"
 msgstr "等待删除"
 
-msgctxt "Current status of a firewall"
-msgid "Pending Delete"
-msgstr "等待删除"
-
 msgctxt "Current status of a Firewall Group"
-msgid "Pending Update"
-msgstr "等待更新"
-
-msgctxt "Current status of a firewall"
 msgid "Pending Update"
 msgstr "等待更新"
 
@@ -559,9 +373,6 @@ msgstr "已成功更新策略 %s。"
 
 msgid "Ports"
 msgstr "端口"
-
-msgid "Position in Policy"
-msgstr "在策略中的位置"
 
 msgid "Project ID"
 msgstr "项目 ID"
@@ -579,21 +390,11 @@ msgctxt "Action Name of a Firewall Rule"
 msgid "REJECT"
 msgstr "拒绝"
 
-msgctxt "Action name of a firewall rule"
-msgid "REJECT"
-msgstr "拒绝"
-
 msgid "Remove Port"
 msgstr "删除端口"
 
 msgid "Remove Port from Firewall Group"
 msgstr "为防火墙组删除端口"
-
-msgid "Remove Router"
-msgstr "删除路由器"
-
-msgid "Remove Router from Firewall"
-msgstr "从防火墙中删除路由器"
 
 msgid "Remove Rule"
 msgstr "移除规则"
@@ -603,17 +404,6 @@ msgstr "从策略中移除规则"
 
 msgid "Remove port from FirewallGroup {{ name }}"
 msgstr "从防火墙组中删除端口 {{ name }}"
-
-#, python-format
-msgid "Router(s)  was successfully removed from firewall %(firewall)s."
-msgstr "已成功从防火墙 %(firewall)s 中移除路由器。"
-
-#, python-format
-msgid "Router(s) was/were successfully added to firewall %(firewall)s."
-msgstr "路由器已经成功添加至以下防火墙：%(firewall)s。"
-
-msgid "Routers"
-msgstr "路由器"
 
 msgid "Rule"
 msgstr "规则"
@@ -648,38 +438,17 @@ msgid "Scheduled deletion of Rule"
 msgid_plural "Scheduled deletion of Rules"
 msgstr[0] "已安排删除规则"
 
-msgid "Scheduled deletion of firewall"
-msgid_plural "Scheduled deletion of firewalls"
-msgstr[0] "已调度删除防火墙"
-
-msgid "Scheduled deletion of policy"
-msgid_plural "Scheduled deletion of policies"
-msgstr[0] "已安排删除策略"
-
-msgid "Scheduled deletion of rule"
-msgid_plural "Scheduled deletion of rules"
-msgstr[0] "已安排删除规则"
-
 msgid "Select a Policy"
 msgstr "选择策略"
 
-msgid "Select a policy"
-msgstr "选择一个策略"
-
 msgid "Select ports for your firewall group."
 msgstr "为防火墙组选择端口。"
-
-msgid "Select routers for your firewall."
-msgstr "为您的防火墙选择路由器。"
 
 msgid "Select rules for your policy."
 msgstr "为您的策略选择规则。"
 
 msgid "Selected Ports"
 msgstr "选择的端口"
-
-msgid "Selected Routers"
-msgstr "选择的路由"
 
 msgid "Selected Rules"
 msgstr "选定的规则"
@@ -726,10 +495,6 @@ msgctxt "Admin state of a Firewall Group"
 msgid "UP"
 msgstr "启动"
 
-msgctxt "Admin state of a firewall"
-msgid "UP"
-msgstr "启动"
-
 #, python-format
 msgid "Unable to add Firewall Group \"%s\"."
 msgstr "无法添加防火墙组 \"%s\"。"
@@ -743,34 +508,12 @@ msgid "Unable to add Rule \"%s\"."
 msgstr "无法添加规则 “%s”。"
 
 #, python-format
-msgid "Unable to add firewall \"%s\"."
-msgstr "无法添加防火墙 \"%s\"。"
-
-#, python-format
-msgid "Unable to add policy \"%s\"."
-msgstr "无法添加策略 “%s”。"
-
-#, python-format
-msgid "Unable to add rule \"%s\"."
-msgstr "无法添加规则 \"%s\"。"
-
-#, python-format
-msgid "Unable to delete firewall. %s"
-msgstr "无法删除防火墙 %s"
-
-#, python-format
 msgid "Unable to delete policy. %s"
 msgstr "无法删除策略 %s"
 
 #, python-format
 msgid "Unable to delete rule. %s"
 msgstr "无法删除规则 %s"
-
-msgid "Unable to retrieve firewall details."
-msgstr "无法检索防火墙详情。"
-
-msgid "Unable to retrieve firewall list."
-msgstr "无法检索防火墙列表。"
 
 msgid "Unable to retrieve firewallgroup details."
 msgstr "无法获取防火墙组详情。"
@@ -780,10 +523,6 @@ msgstr "无法检索策略列表。"
 
 msgid "Unable to retrieve policy details."
 msgstr "无法检索策略详情。"
-
-#, python-format
-msgid "Unable to retrieve policy list (%(error)s)."
-msgstr "无法检索策略列表 (%(error)s)。"
 
 #, python-format
 msgid "Unable to retrieve policy list (%s)."
@@ -796,16 +535,8 @@ msgstr "无法检索策略列表。"
 msgid "Unable to retrieve ports (%s)."
 msgstr "无法获取端口 (%s)。"
 
-#, python-format
-msgid "Unable to retrieve routers (%(error)s)."
-msgstr "无法检索路由器 (%(error)s)。"
-
 msgid "Unable to retrieve rule details."
 msgstr "无法检索规则详情。"
-
-#, python-format
-msgid "Unable to retrieve rules (%(error)s)."
-msgstr "无法检索规则 (%(error)s)。"
 
 #, python-format
 msgid "Unable to retrieve rules (%s)."
@@ -814,32 +545,14 @@ msgstr "无法获取规则 (%s)。"
 msgid "Unable to retrieve rules list."
 msgstr "无法检索规则列表。"
 
-msgid "Unselect the router(s) to be removed from firewall."
-msgstr "取消选中要从防火墙中移除的路由器。"
-
-msgid "Unselect the routers you want to disassociate from the firewall."
-msgstr "取消选择需要从防火墙中分离的路由。"
-
-msgid "Used in Policy"
-msgstr "已使用在策略"
-
 msgid "You may add ports to firewall group here."
 msgstr "您可以在这里为防火墙组添加端口。"
 
 msgid "You may remove ports from firewall group here."
 msgstr "您可以在这里为防火墙组删除端口。"
 
-msgid "You may update firewall details here."
-msgstr "您可以在此处更新防火墙详情。"
-
 msgid "You may update firewall group details here."
 msgstr "您可以在此处更新防火墙组的详情。"
-
-msgid ""
-"You may update policy details here. Use 'Insert Rule' or 'Remove Rule' links "
-"instead to insert or remove a rule"
-msgstr ""
-"您可以在此处更新策略详情。使用'插入规则'或'移除规则'链接来插入或删除规则。"
 
 msgid ""
 "You may update policy details here. Use 'Insert Rule' or 'Remove Rule' links "

@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: neutron-fwaas-dashboard VERSION\n"
 "Report-Msgid-Bugs-To: https://bugs.launchpad.net/openstack-i18n/\n"
-"POT-Creation-Date: 2019-01-18 03:31+0000\n"
+"POT-Creation-Date: 2019-02-19 16:16+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -25,10 +25,6 @@ msgctxt "Action Name of a Firewall Rule"
 msgid "ALLOW"
 msgstr "ALLOW"
 
-msgctxt "Action name of a firewall rule"
-msgid "ALLOW"
-msgstr "ALLOW"
-
 msgid "ANY"
 msgstr "ANY"
 
@@ -42,21 +38,11 @@ msgctxt "Current status of a Firewall Group"
 msgid "Active"
 msgstr "稼働中"
 
-msgctxt "Current status of a firewall"
-msgid "Active"
-msgstr "稼働中"
-
 msgid "Add"
 msgstr "追加"
 
-msgid "Add Firewall"
-msgstr "ファイアウォールの追加"
-
 msgid "Add Firewall Group"
 msgstr "ファイアウォールグループの追加"
-
-msgid "Add New Firewall"
-msgstr "ファイアウォールの追加"
 
 msgid "Add New Firewall Group"
 msgstr "ファイアウォールグループの追加"
@@ -76,20 +62,8 @@ msgstr "ポートの追加"
 msgid "Add Port to Firewall Group"
 msgstr "ファイアウォールグループへのポートの追加"
 
-msgid "Add Router"
-msgstr "ルーターの追加"
-
-msgid "Add Router to Firewall"
-msgstr "ファイアウォールへのルーターの追加"
-
-msgid "Add Routers"
-msgstr "ルーターの追加"
-
 msgid "Add Rule"
 msgstr "ルールの追加"
-
-msgid "Add selected router(s) to the firewall."
-msgstr "選択したルーターをファイアウォールに追加します。"
 
 #, python-format
 msgid "Added Firewall Group\"%s\"."
@@ -103,18 +77,6 @@ msgstr "ポリシー \"%s\" を追加しました。"
 msgid "Added Rule \"%s\"."
 msgstr "ルール \"%s\" を追加しました。"
 
-#, python-format
-msgid "Added firewall \"%s\"."
-msgstr "ファイアウォール \"%s\" を追加しました。"
-
-#, python-format
-msgid "Added policy \"%s\"."
-msgstr "ポリシー \"%s\" を追加しました。"
-
-#, python-format
-msgid "Added rule \"%s\"."
-msgstr "ルール \"%s\" を追加しました。"
-
 msgid "Admin State"
 msgstr "管理状態"
 
@@ -124,17 +86,11 @@ msgstr "管理状態有効"
 msgid "After"
 msgstr "後に挿入"
 
-msgid "Associated Routers"
-msgstr "適用先ルーター"
-
 msgid "Audited"
 msgstr "監査対象 (Audited)"
 
 msgid "Available Ports"
 msgstr "利用可能なポート"
-
-msgid "Available Routers"
-msgstr "利用可能なルーター"
 
 msgid "Available Rules"
 msgstr "利用可能なルール"
@@ -146,22 +102,12 @@ msgid "Choose port(s) from Available Ports. "
 msgstr "以下の利用可能なポートからポートを選択してください。"
 
 msgid ""
-"Choose router(s) from Available Routers to Selected Routers by push button "
-"or drag and drop. "
-msgstr ""
-"ボタンを押すかドラッグアンドドロップで、「利用可能なルーター」から「選択済み"
-"ルーター」にルーターを移動します。"
-
-msgid ""
 "Choose rule(s) from Available Rules to Selected Rule by push button or drag "
 "and drop, you may change their order by drag and drop as well."
 msgstr ""
 "利用可能なルールから選択済みルールに、ボタンを押すかドラッグアンドドロップす"
 "ることでルールを選択します。ドラッグアンドドロップでルールの順番を変更するこ"
 "ともできます。"
-
-msgid "Choose the router(s) you want to add."
-msgstr "追加するルーターを選択してください。"
 
 msgid ""
 "Choose the rule you want to insert. Specify either the rule you want to "
@@ -175,27 +121,11 @@ msgstr ""
 msgid "Choose the rule you want to remove."
 msgstr "削除するルールを選択してください。"
 
-msgid "Create Firewall"
-msgstr "ファイアウォールの作成"
-
 msgid "Create Firewall Group"
 msgstr "ファイアウォールグループの作成"
 
 msgid "Create a Firewall Group with selected ports."
 msgstr "ポートを選択してファイアウォールグループを作成します。"
-
-msgid ""
-"Create a firewall based on a policy.\n"
-"\n"
-"A firewall represents a logical firewall resource that a tenant can "
-"instantiate and manage. A firewall must be associated with one policy, all "
-"other fields are optional."
-msgstr ""
-"ポリシーに基づいてファイアウォールを作成します。\n"
-"\n"
-"ファイアウォールは、テナントがインスタンス化して管理することができる論理的な"
-"ファイアウォールリソースを表します。1 つのファイアウォールは 1 つのポリシーと"
-"関連付けられる必要があり、他のフィールドはすべて省略可能です。"
 
 msgid ""
 "Create a firewall policy with an ordered list of firewall rules.\n"
@@ -255,40 +185,10 @@ msgstr ""
 "フィルターの種別で、データパケットを REJECT/DENY/ALLOW できます。</li>\n"
 "プロトコルとアクションは必須項目であり、他のフィールドはすべて省略可能です。"
 
-msgid ""
-"Create a firewall rule.\n"
-"\n"
-"A firewall rule is an association of the following attributes:\n"
-"\n"
-"<li>IP Addresses: The addresses from/to which the traffic filtration needs "
-"to be applied.</li><li>IP Version: The type of IP packets (IP V4/V6) that "
-"needs to be filtered.</li><li>Protocol: Type of packets (UDP, ICMP, TCP, "
-"Any) that needs to be checked.</li><li>Action: Action is the type of "
-"filtration required, it can be Reject/Deny/Allow data packets.</li>\n"
-"The protocol and action fields are required, all others are optional."
-msgstr ""
-"ファイアウォールルールを作成します。\n"
-"\n"
-"ファイアウォールルールは、以下の属性の組み合わせです。\n"
-"\n"
-"<li>IP アドレス: トラフィックフィルターを適用する必要があるアドレス (送信元/"
-"送信先) です。</li><li>IP バージョン: フィルタリングする必要がある IP パケッ"
-"トの種別 (IP V4/V6) です。</li><li>プロトコル: チェックされる必要があるパケッ"
-"トの種別 (UDP、ICMP、TCP、Any) です。</li><li>アクション: アクションは必要な"
-"フィルターの種別で、データパケットを REJECT/DENY/ALLOW できます。</li>\n"
-"プロトコルとアクションは必須項目であり、他のフィールドはすべて省略可能です。"
-
-msgid "Create a firewall with selected routers."
-msgstr "適用するルーターを指定してファイアウォールを作成します。"
-
 msgid "Create a policy with selected rules."
 msgstr "ルールを選択してポリシーを作成します。"
 
 msgctxt "Current status of a Firewall Group"
-msgid "Created"
-msgstr "作成済み"
-
-msgctxt "Current status of a firewall"
 msgid "Created"
 msgstr "作成済み"
 
@@ -299,21 +199,9 @@ msgctxt "Action Name of a Firewall Rule"
 msgid "DENY"
 msgstr "DENY"
 
-msgctxt "Action name of a firewall rule"
-msgid "DENY"
-msgstr "DENY"
-
 msgctxt "Admin state of a Firewall Group"
 msgid "DOWN"
 msgstr "DOWN"
-
-msgctxt "Admin state of a firewall"
-msgid "DOWN"
-msgstr "DOWN"
-
-msgid "Delete Firewall"
-msgid_plural "Delete Firewalls"
-msgstr[0] "ファイアウォールの削除"
 
 msgid "Delete Firewall Group"
 msgid_plural "Delete Firewall Groups"
@@ -358,18 +246,8 @@ msgctxt "Current status of a Firewall Group"
 msgid "Down"
 msgstr "停止中"
 
-msgctxt "Current status of a firewall"
-msgid "Down"
-msgstr "停止中"
-
-msgid "Edit Firewall"
-msgstr "ファイアウォールの編集"
-
 msgid "Edit Firewall Group"
 msgstr "ファイアウォールグループの編集"
-
-msgid "Edit Firewall {{ name }}"
-msgstr "ファイアウォール {{ name }} の編集"
 
 msgid "Edit FirewallGroup {{ name }}"
 msgstr "ファイアウォールグループ {{ name }} の編集"
@@ -392,9 +270,6 @@ msgstr "送信ポリシー"
 msgid "Egress Policy ID"
 msgstr "送信ポリシー ID"
 
-msgid "Enable Admin State"
-msgstr "管理状態有効"
-
 msgid "Enabled"
 msgstr "有効"
 
@@ -402,40 +277,17 @@ msgctxt "Current status of a Firewall Group"
 msgid "Error"
 msgstr "エラー"
 
-msgctxt "Current status of a firewall"
-msgid "Error"
-msgstr "エラー"
-
-#, python-format
-msgid "Failed to add router(s) to firewall %(name)s: %(reason)s"
-msgstr "ルーターのファイアウォール %(name)s への追加に失敗しました: %(reason)s"
-
 #, python-format
 msgid "Failed to insert rule to policy %(name)s: %(reason)s"
 msgstr "ポリシー %(name)s へのルールの挿入に失敗しました: %(reason)s"
-
-#, python-format
-msgid "Failed to remove router(s) from firewall %(name)s: %(reason)s"
-msgstr ""
-"ルーターのファイアウォール %(name)s からの削除に失敗しました: %(reason)s"
 
 #, python-format
 msgid "Failed to remove rule from policy %(name)s: %(reason)s"
 msgstr "ポリシー %(name)s からのルールの削除に失敗しました: %(reason)s"
 
 #, python-format
-msgid "Failed to retrieve available routers: %s"
-msgstr "利用可能なルーターの一覧を取得できませんでした: %s"
-
-#, python-format
 msgid "Failed to retrieve available rules: %s"
 msgstr "利用可能なルールの取得に失敗しました: %s"
-
-#, python-format
-msgid "Failed to retrieve current routers in firewall %(name)s: %(reason)s"
-msgstr ""
-"ファイアウォール %(name)s が現在適用されているルーターの取得に失敗しました: "
-"%(reason)s"
 
 #, python-format
 msgid "Failed to retrieve current rules in policy %(name)s: %(reason)s"
@@ -445,27 +297,12 @@ msgid "Failed to retrieve port list of the firewall group."
 msgstr "ファイアウォールグループのポート一覧を取得できません。"
 
 #, python-format
-msgid "Failed to update firewall %(name)s: %(reason)s"
-msgstr "ファイアウォール %(name)s の更新に失敗しました: %(reason)s"
-
-#, python-format
 msgid "Failed to update policy %(name)s: %(reason)s"
 msgstr "ポリシー %(name)s の更新に失敗しました: %(reason)s"
 
 #, python-format
 msgid "Failed to update rule %(name)s: %(reason)s"
 msgstr "ルール %(name)s の更新に失敗しました: %(reason)s"
-
-#, python-format
-msgid "Failed to verify extension support %s"
-msgstr "拡張機能に対応しているか確認できません: %s"
-
-msgid "Firewall"
-msgstr "ファイアウォール"
-
-#, python-format
-msgid "Firewall %s was successfully updated."
-msgstr "ファイアウォール %s が正常に更新されました。"
 
 msgid "Firewall Groups"
 msgstr "ファイアウォールグループ"
@@ -479,9 +316,6 @@ msgstr "ファイアウォールルール"
 msgid "FirewallGroup"
 msgstr "ファイアウォールグループ"
 
-msgid "Firewalls"
-msgstr "ファイアウォール"
-
 msgid "ICMP"
 msgstr "ICMP"
 
@@ -494,14 +328,7 @@ msgstr "IP バージョン"
 msgid "IP Version for Firewall Rule"
 msgstr "ファイアウォールルールの IP バージョン"
 
-msgid "In Policy"
-msgstr "利用中のポリシー"
-
 msgctxt "Current status of a Firewall Group"
-msgid "Inactive"
-msgstr "非稼働"
-
-msgctxt "Current status of a firewall"
 msgid "Inactive"
 msgstr "非稼働"
 
@@ -520,13 +347,6 @@ msgstr "ポリシーへのルールの挿入"
 msgid "Name"
 msgstr "名前"
 
-msgid ""
-"Non admin users are not allowed to set the shared property of the policy."
-msgstr "管理ユーザー以外は、ポリシーの共有属性を設定できません。"
-
-msgid "Non admin users are not allowed to set the shared property of the rule."
-msgstr "管理ユーザー以外は、ルールの共有属性を設定できません。"
-
 msgid "None"
 msgstr "なし"
 
@@ -534,23 +354,11 @@ msgctxt "Current status of a Firewall Group"
 msgid "Pending Create"
 msgstr "作成待ち"
 
-msgctxt "Current status of a firewall"
-msgid "Pending Create"
-msgstr "作成待ち"
-
 msgctxt "Current status of a Firewall Group"
 msgid "Pending Delete"
 msgstr "削除待ち"
 
-msgctxt "Current status of a firewall"
-msgid "Pending Delete"
-msgstr "削除待ち"
-
 msgctxt "Current status of a Firewall Group"
-msgid "Pending Update"
-msgstr "更新待ち"
-
-msgctxt "Current status of a firewall"
 msgid "Pending Update"
 msgstr "更新待ち"
 
@@ -566,9 +374,6 @@ msgstr "ポリシー %s が正常に更新されました。"
 
 msgid "Ports"
 msgstr "ポート"
-
-msgid "Position in Policy"
-msgstr "ポリシー内の位置"
 
 msgid "Project ID"
 msgstr "プロジェクト ID"
@@ -586,21 +391,11 @@ msgctxt "Action Name of a Firewall Rule"
 msgid "REJECT"
 msgstr "REJECT"
 
-msgctxt "Action name of a firewall rule"
-msgid "REJECT"
-msgstr "REJECT"
-
 msgid "Remove Port"
 msgstr "ポートの削除"
 
 msgid "Remove Port from Firewall Group"
 msgstr "ファイアウォールグループからのポートの削除"
-
-msgid "Remove Router"
-msgstr "ルーターの削除"
-
-msgid "Remove Router from Firewall"
-msgstr "ファイアウォールからのルーターの削除"
 
 msgid "Remove Rule"
 msgstr "ルールの削除"
@@ -610,17 +405,6 @@ msgstr "ポリシーからのルールの削除"
 
 msgid "Remove port from FirewallGroup {{ name }}"
 msgstr "ファイアウォールグループ {{ name }} からのポートの削除"
-
-#, python-format
-msgid "Router(s)  was successfully removed from firewall %(firewall)s."
-msgstr "ルーターはファイアウォール %(firewall)s から正常に削除されました。"
-
-#, python-format
-msgid "Router(s) was/were successfully added to firewall %(firewall)s."
-msgstr "ルーターはファイアウォール %(firewall)s に正常に追加されました。"
-
-msgid "Routers"
-msgstr "ルーター"
 
 msgid "Rule"
 msgstr "ルール"
@@ -655,38 +439,17 @@ msgid "Scheduled deletion of Rule"
 msgid_plural "Scheduled deletion of Rules"
 msgstr[0] "ルールの削除を予約しました"
 
-msgid "Scheduled deletion of firewall"
-msgid_plural "Scheduled deletion of firewalls"
-msgstr[0] "ファイアウォールの削除を予約しました"
-
-msgid "Scheduled deletion of policy"
-msgid_plural "Scheduled deletion of policies"
-msgstr[0] "ポリシーの削除を予約しました"
-
-msgid "Scheduled deletion of rule"
-msgid_plural "Scheduled deletion of rules"
-msgstr[0] "ルールの削除を予約しました"
-
 msgid "Select a Policy"
-msgstr "ポリシーを選択してください"
-
-msgid "Select a policy"
 msgstr "ポリシーを選択してください"
 
 msgid "Select ports for your firewall group."
 msgstr "ファイアウォールグループを適用するポートを選択してください。"
-
-msgid "Select routers for your firewall."
-msgstr "ファイアウォールを適用するルーターを選択してください。"
 
 msgid "Select rules for your policy."
 msgstr "ポリシーに追加するルールの選択"
 
 msgid "Selected Ports"
 msgstr "選択済みポート"
-
-msgid "Selected Routers"
-msgstr "選択されたルーター"
 
 msgid "Selected Rules"
 msgstr "選択済みのルール"
@@ -735,10 +498,6 @@ msgctxt "Admin state of a Firewall Group"
 msgid "UP"
 msgstr "UP"
 
-msgctxt "Admin state of a firewall"
-msgid "UP"
-msgstr "UP"
-
 #, python-format
 msgid "Unable to add Firewall Group \"%s\"."
 msgstr "ファイアウォールグループ \"%s\" を追加できません。"
@@ -752,34 +511,12 @@ msgid "Unable to add Rule \"%s\"."
 msgstr "ルール \"%s\" を追加できません。"
 
 #, python-format
-msgid "Unable to add firewall \"%s\"."
-msgstr "ファイアウォール \"%s\" を追加できません。"
-
-#, python-format
-msgid "Unable to add policy \"%s\"."
-msgstr "ポリシー \"%s\" を追加できません。"
-
-#, python-format
-msgid "Unable to add rule \"%s\"."
-msgstr "ルール \"%s\" を追加できません。"
-
-#, python-format
-msgid "Unable to delete firewall. %s"
-msgstr "ファイアウォールを削除できません: %s"
-
-#, python-format
 msgid "Unable to delete policy. %s"
 msgstr "ポリシーを削除できません: %s"
 
 #, python-format
 msgid "Unable to delete rule. %s"
 msgstr "ルールを削除できません: %s"
-
-msgid "Unable to retrieve firewall details."
-msgstr "ファイアウォールの詳細を取得できません。"
-
-msgid "Unable to retrieve firewall list."
-msgstr "ファイアウォール一覧を取得できません。"
 
 msgid "Unable to retrieve firewallgroup details."
 msgstr "ファイアウォールグループの詳細を取得できません。"
@@ -789,10 +526,6 @@ msgstr "ポリシー一覧を取得できません。"
 
 msgid "Unable to retrieve policy details."
 msgstr "ポリシーの詳細を取得できません。"
-
-#, python-format
-msgid "Unable to retrieve policy list (%(error)s)."
-msgstr "ポリシー覧を取得できません (%(error)s)"
 
 #, python-format
 msgid "Unable to retrieve policy list (%s)."
@@ -805,16 +538,8 @@ msgstr "ポリシー一覧を取得できません。"
 msgid "Unable to retrieve ports (%s)."
 msgstr "ポートを取得できません (%s)"
 
-#, python-format
-msgid "Unable to retrieve routers (%(error)s)."
-msgstr "ルーターの一覧を取得できません (%(error)s)"
-
 msgid "Unable to retrieve rule details."
 msgstr "ルールの詳細を取得できません。"
-
-#, python-format
-msgid "Unable to retrieve rules (%(error)s)."
-msgstr "ルール一覧を取得できません (%(error)s)"
 
 #, python-format
 msgid "Unable to retrieve rules (%s)."
@@ -823,33 +548,14 @@ msgstr "ルール一覧を取得できません (%s)"
 msgid "Unable to retrieve rules list."
 msgstr "ルール一覧を取得できません。"
 
-msgid "Unselect the router(s) to be removed from firewall."
-msgstr "ファイアウォールの適用を解除するルーターの選択を外してください。"
-
-msgid "Unselect the routers you want to disassociate from the firewall."
-msgstr "ファイアウォールの適用を解除するルーターの選択を外してください。"
-
-msgid "Used in Policy"
-msgstr "利用中のポリシー"
-
 msgid "You may add ports to firewall group here."
 msgstr "ファイアウォールグループにポートを追加できます。"
 
 msgid "You may remove ports from firewall group here."
 msgstr "ファイアウォールグループからポートを削除できます。"
 
-msgid "You may update firewall details here."
-msgstr "ファイアウォールの詳細をここから更新できます。"
-
 msgid "You may update firewall group details here."
 msgstr "ファイアウォールグループの詳細をここから更新できます。"
-
-msgid ""
-"You may update policy details here. Use 'Insert Rule' or 'Remove Rule' links "
-"instead to insert or remove a rule"
-msgstr ""
-"ポリシーの詳細をここから更新できます。ルールの挿入、削除はここではなく「ルー"
-"ルの挿入」「ルールの削除」を使ってください。"
 
 msgid ""
 "You may update policy details here. Use 'Insert Rule' or 'Remove Rule' links "
