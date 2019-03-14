@@ -15,7 +15,7 @@ function configure_neutron_fwaas_dashboard {
     # so check for an existence of locale directory is required.
     if [ -d $FWAAS_DASHBOARD_DIR/neutron_fwaas_dashboard/locale ]; then
         (cd $FWAAS_DASHBOARD_DIR/neutron_fwaas_dashboard; \
-         DJANGO_SETTINGS_MODULE=openstack_dashboard.settings ../manage.py compilemessages)
+         DJANGO_SETTINGS_MODULE=openstack_dashboard.settings $PYTHON ../manage.py compilemessages)
     fi
     # Add policy file for FWaaS
     cp $FWAAS_DASHBOARD_DIR/etc/neutron-fwaas-policy.json $OPENSTACK_DASHBOARD_DIR/conf/
