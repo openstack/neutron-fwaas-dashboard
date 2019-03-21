@@ -9,15 +9,16 @@
 # vuuv <froms2008@gmail.com>, 2017. #zanata
 # zhonghuali <lizhonghua.li@huawei.com>, 2017. #zanata
 # Tony <tfu@redhat.com>, 2018. #zanata
+# Tony <tfu@redhat.com>, 2019. #zanata
 msgid ""
 msgstr ""
 "Project-Id-Version: neutron-fwaas-dashboard VERSION\n"
 "Report-Msgid-Bugs-To: https://bugs.launchpad.net/openstack-i18n/\n"
-"POT-Creation-Date: 2019-02-19 16:16+0000\n"
+"POT-Creation-Date: 2019-03-19 10:41+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2018-09-13 08:09+0000\n"
+"PO-Revision-Date: 2019-03-21 12:54+0000\n"
 "Last-Translator: Tony <tfu@redhat.com>\n"
 "Language-Team: Chinese (China)\n"
 "Language: zh_CN\n"
@@ -74,6 +75,9 @@ msgstr "为防火墙组添加端口"
 msgid "Add Rule"
 msgstr "增加规则"
 
+msgid "Add port to Firewall Group {{ name }}"
+msgstr "添加端口到防火墙组 {{ name }}"
+
 #, python-format
 msgid "Added Firewall Group\"%s\"."
 msgstr "添加防火墙组 \"%s\"。"
@@ -85,6 +89,10 @@ msgstr "添加策略 “%s”。"
 #, python-format
 msgid "Added Rule \"%s\"."
 msgstr "已添加规则 “%s”。"
+
+#, python-format
+msgid "Added the port(s) to the firewall group %s successfully."
+msgstr "为防火墙组 %s 添加端口成功。"
 
 msgid "Admin State"
 msgstr "管理员状态"
@@ -133,6 +141,18 @@ msgstr "创建防火墙组"
 
 msgid "Create a Firewall Group with selected ports."
 msgstr "创建带有所选端口的路由器组。"
+
+msgid ""
+"Create a firewall group based on a policy.\n"
+"\n"
+"A firewall group represents a logical firewall resource that a tenant can "
+"instantiate and manage. A firewall group must be associated with one policy, "
+"all other fields are optional."
+msgstr ""
+"根据策略创建防火墙组。\n"
+"\n"
+"防火墙组代表租户可以实例化和管理的逻辑防火墙资源。一个防火墙组必须与一个策略"
+"相关联，所有其它字段是可选字段。"
 
 msgid ""
 "Create a firewall policy with an ordered list of firewall rules.\n"
@@ -277,12 +297,21 @@ msgid "Error"
 msgstr "错误"
 
 #, python-format
+msgid "Failed to add the port(s) to the firewall group %(name)s: %(reason)s"
+msgstr "为防火墙组 %(name)s 添加端口失败 : %(reason)s"
+
+#, python-format
 msgid "Failed to insert rule to policy %(name)s: %(reason)s"
 msgstr "无法将规则插入至策略 %(name)s：%(reason)s"
 
 #, python-format
 msgid "Failed to remove rule from policy %(name)s: %(reason)s"
 msgstr "无法从策略 %(name)s 中移除规则：%(reason)s"
+
+#, python-format
+msgid ""
+"Failed to remove the port(s) from the firewall group %(name)s: %(reason)s"
+msgstr "从防火墙组 %(name)s 中删除端口失败 : %(reason)s"
 
 #, python-format
 msgid "Failed to retrieve available rules: %s"
@@ -294,6 +323,10 @@ msgstr "无法检索策略 %(name)s 中的当前规则：%(reason)s"
 
 msgid "Failed to retrieve port list of the firewall group."
 msgstr "无法获取防火墙组的端口列表。"
+
+#, python-format
+msgid "Failed to update firewall group %(name)s: %(reason)s"
+msgstr "更新防火墙组 %(name)s 失败 : %(reason)s"
 
 #, python-format
 msgid "Failed to update policy %(name)s: %(reason)s"
@@ -311,6 +344,10 @@ msgstr "防火墙策略"
 
 msgid "Firewall Rules"
 msgstr "防火墙规则"
+
+#, python-format
+msgid "Firewall group %s was successfully updated."
+msgstr "防火墙组 %s 被成功更新。"
 
 msgid "FirewallGroup"
 msgstr "防火墙组"
@@ -343,8 +380,14 @@ msgstr "插入规则"
 msgid "Insert Rule to Policy"
 msgstr "向策略中添加规则"
 
+msgid "Label"
+msgstr "标签"
+
 msgid "Name"
 msgstr "名称"
+
+msgid "No options available"
+msgstr "无可用选项"
 
 msgid "None"
 msgstr "无"
@@ -404,6 +447,10 @@ msgstr "从策略中移除规则"
 
 msgid "Remove port from FirewallGroup {{ name }}"
 msgstr "从防火墙组中删除端口 {{ name }}"
+
+#, python-format
+msgid "Removed the port(s) from the firewall group %s successfully."
+msgstr "从防火墙组 %s 中删除端口成功。"
 
 msgid "Rule"
 msgstr "规则"
@@ -508,12 +555,22 @@ msgid "Unable to add Rule \"%s\"."
 msgstr "无法添加规则 “%s”。"
 
 #, python-format
+msgid "Unable to delete firewall group. %s"
+msgstr "无法删除防火墙组 %s"
+
+#, python-format
 msgid "Unable to delete policy. %s"
 msgstr "无法删除策略 %s"
 
 #, python-format
 msgid "Unable to delete rule. %s"
 msgstr "无法删除规则 %s"
+
+msgid "Unable to retrieve firewall group details."
+msgstr "无法获取防火墙组详情。"
+
+msgid "Unable to retrieve firewall group list."
+msgstr "无法获取防火墙组列表。"
 
 msgid "Unable to retrieve firewallgroup details."
 msgstr "无法获取防火墙组详情。"
@@ -544,6 +601,9 @@ msgstr "无法获取规则 (%s)。"
 
 msgid "Unable to retrieve rules list."
 msgstr "无法检索规则列表。"
+
+msgid "Value"
+msgstr "值"
 
 msgid "You may add ports to firewall group here."
 msgstr "您可以在这里为防火墙组添加端口。"
