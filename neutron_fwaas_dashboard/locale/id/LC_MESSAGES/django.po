@@ -3,16 +3,18 @@
 # suhartono <cloudsuhartono@gmail.com>, 2016. #zanata
 # suhartono <cloudsuhartono@gmail.com>, 2017. #zanata
 # suhartono <cloudsuhartono@gmail.com>, 2018. #zanata
+# Frank Kloeker <eumel@arcor.de>, 2019. #zanata
+# suhartono <cloudsuhartono@gmail.com>, 2019. #zanata
 msgid ""
 msgstr ""
 "Project-Id-Version: neutron-fwaas-dashboard VERSION\n"
 "Report-Msgid-Bugs-To: https://bugs.launchpad.net/openstack-i18n/\n"
-"POT-Creation-Date: 2019-02-19 16:16+0000\n"
+"POT-Creation-Date: 2019-03-27 14:25+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2018-05-10 01:48+0000\n"
-"Last-Translator: suhartono <cloudsuhartono@gmail.com>\n"
+"PO-Revision-Date: 2019-04-03 11:53+0000\n"
+"Last-Translator: Frank Kloeker <eumel@arcor.de>\n"
 "Language-Team: Indonesian\n"
 "Language: id\n"
 "X-Generator: Zanata 4.3.3\n"
@@ -68,6 +70,9 @@ msgstr "Tambahkan Port ke Firewall Group"
 msgid "Add Rule"
 msgstr "Tambahkan Aturan"
 
+msgid "Add port to Firewall Group {{ name }}"
+msgstr "Tambahkan port ke Firewall Group {{ name }}"
+
 #, python-format
 msgid "Added Firewall Group\"%s\"."
 msgstr "Ditambahkan Firewall Group\"%s\"."
@@ -79,6 +84,10 @@ msgstr "Kebijakan ditambahkan \"%s\"."
 #, python-format
 msgid "Added Rule \"%s\"."
 msgstr "Aturan ditambahkan \"%s\"."
+
+#, python-format
+msgid "Added the port(s) to the firewall group %s successfully."
+msgstr "Berhasil menambahkan port ke grup firewall %s."
 
 msgid "Admin State"
 msgstr "Admin State"
@@ -129,6 +138,19 @@ msgstr "Membuat Firewall Group"
 
 msgid "Create a Firewall Group with selected ports."
 msgstr "Buat Firewall Group dengan port yang dipilih."
+
+msgid ""
+"Create a firewall group based on a policy.\n"
+"\n"
+"A firewall group represents a logical firewall resource that a tenant can "
+"instantiate and manage. A firewall group must be associated with one policy, "
+"all other fields are optional."
+msgstr ""
+"Buat grup firewall berdasarkan kebijakan.\n"
+"\n"
+"Grup firewall mewakili sumber daya firewall logis dimana tenant dapat "
+"instantiate dan kelola. Grup firewall harus dikaitkan dengan satu kebijakan, "
+"semua bidang lainnya opsional."
 
 msgid ""
 "Create a firewall policy with an ordered list of firewall rules.\n"
@@ -284,12 +306,21 @@ msgid "Error"
 msgstr "Error"
 
 #, python-format
+msgid "Failed to add the port(s) to the firewall group %(name)s: %(reason)s"
+msgstr "Gagal menambahkan port(s) ke firewall group %(name)s: %(reason)s"
+
+#, python-format
 msgid "Failed to insert rule to policy %(name)s: %(reason)s"
 msgstr "Gagal untuk memasukkan aturan kebijakan %(name)s: %(reason)s"
 
 #, python-format
 msgid "Failed to remove rule from policy %(name)s: %(reason)s"
 msgstr "Gagal menghapus aturan dari kebijakan %(name)s: %(reason)s"
+
+#, python-format
+msgid ""
+"Failed to remove the port(s) from the firewall group %(name)s: %(reason)s"
+msgstr "Gagal menghapus port(s) dari firewall group %(name)s: %(reason)s"
 
 #, python-format
 msgid "Failed to retrieve available rules: %s"
@@ -301,6 +332,10 @@ msgstr "Gagal mengambil aturan saat ini dalam kebijakan %(name)s: %(reason)s"
 
 msgid "Failed to retrieve port list of the firewall group."
 msgstr "Gagal mengambil daftar port dari grup firewall."
+
+#, python-format
+msgid "Failed to update firewall group %(name)s: %(reason)s"
+msgstr "Gagal memperbarui grup firewall %(name)s: %(reason)s"
 
 #, python-format
 msgid "Failed to update policy %(name)s: %(reason)s"
@@ -318,6 +353,10 @@ msgstr "Firewall Policies (kebijakan firewall)"
 
 msgid "Firewall Rules"
 msgstr " Firewall Rules (aturan firewall)"
+
+#, python-format
+msgid "Firewall group %s was successfully updated."
+msgstr "Grup firewall %s berhasil diperbarui."
 
 msgid "FirewallGroup"
 msgstr "FirewallGroup"
@@ -350,8 +389,14 @@ msgstr "Insert Rule (menyisipkan aturan)"
 msgid "Insert Rule to Policy"
 msgstr "Sisipkan aturan ke kebijakan"
 
+msgid "Label"
+msgstr "Label"
+
 msgid "Name"
 msgstr "Name"
+
+msgid "No options available"
+msgstr "Tidak ada opsi yang tersedia"
 
 msgid "None"
 msgstr "None"
@@ -411,6 +456,10 @@ msgstr "Buang aturan dari kebijakan"
 
 msgid "Remove port from FirewallGroup {{ name }}"
 msgstr "Hapus port dari FirewallGroup {{ name }}"
+
+#, python-format
+msgid "Removed the port(s) from the firewall group %s successfully."
+msgstr "Port berhasil dihapus dari firewall group %s ."
 
 msgid "Rule"
 msgstr "Aturan"
@@ -517,12 +566,22 @@ msgid "Unable to add Rule \"%s\"."
 msgstr "Tidak dapat menambahkan Aturan \"%s\"."
 
 #, python-format
+msgid "Unable to delete firewall group. %s"
+msgstr "Tidak dapat menghapus firewall group. %s"
+
+#, python-format
 msgid "Unable to delete policy. %s"
 msgstr "Tidak dapat menghapus kebijakan. %s"
 
 #, python-format
 msgid "Unable to delete rule. %s"
 msgstr "Tidak dapat menghapus aturan. %s"
+
+msgid "Unable to retrieve firewall group details."
+msgstr "Tidak dapat mengambil detail grup firewall."
+
+msgid "Unable to retrieve firewall group list."
+msgstr "Tidak dapat mengambil daftar grup firewall."
 
 msgid "Unable to retrieve firewallgroup details."
 msgstr "Tidak dapat mengambil rincian firewallgroup."
@@ -553,6 +612,9 @@ msgstr "Tidak dapat mengambil peraturan (%s)."
 
 msgid "Unable to retrieve rules list."
 msgstr "Tidak dapat mengambil daftar aturan."
+
+msgid "Value"
+msgstr "Value"
 
 msgid "You may add ports to firewall group here."
 msgstr "Anda dapat menambahkan port ke grup firewall di sini."
