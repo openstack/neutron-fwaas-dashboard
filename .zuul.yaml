@@ -1,3 +1,25 @@
+- job:
+    name: neutron-fwaas-dashboard-integration-tests
+    parent: horizon-integration-tests
+    required-projects:
+      - name: openstack/horizon
+      - name: openstack/neutron-fwaas
+      - name: openstack/neutron-fwaas-dashboard
+    roles:
+      - zuul: openstack-infra/devstack
+      - zuul: openstack/horizon
+    irrelevant-files:
+      - ^.*\.rst$
+      - ^doc/.*$
+      - ^releasenotes/.*$
+    vars:
+      devstack_plugins:
+        neutron-fwaas: https://git.openstack.org/openstack/neutron-fwaas
+        neutron-fwaas-dashboard: https://git.openstack.org/openstack/neutron-fwaas-dashboard
+      devstack_services:
+        horizon: true
+      tox_envlist: integration
+
 - project:
     templates:
       - check-requirements
@@ -8,3 +30,7 @@
       - openstack-python3-train-jobs-horizon
       - publish-openstack-docs-pti
       - release-notes-jobs-python3
+    check:
+      jobs:
+        - neutron-fwaas-dashboard-integration-tests:
+            voting: false
