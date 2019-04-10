@@ -7,16 +7,17 @@
 # Frank Kloeker <eumel@arcor.de>, 2018. #zanata
 # Reik Keutterling <spielkind@gmail.com>, 2018. #zanata
 # Robert Simai <robert.simai@suse.com>, 2018. #zanata
+# Andreas Jaeger <jaegerandi@gmail.com>, 2019. #zanata
 msgid ""
 msgstr ""
 "Project-Id-Version: neutron-fwaas-dashboard VERSION\n"
 "Report-Msgid-Bugs-To: https://bugs.launchpad.net/openstack-i18n/\n"
-"POT-Creation-Date: 2019-02-19 16:16+0000\n"
+"POT-Creation-Date: 2019-04-09 08:55+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2018-09-13 08:09+0000\n"
-"Last-Translator: Frank Kloeker <eumel@arcor.de>\n"
+"PO-Revision-Date: 2019-04-10 07:28+0000\n"
+"Last-Translator: Andreas Jaeger <jaegerandi@gmail.com>\n"
 "Language-Team: German\n"
 "Language: de\n"
 "X-Generator: Zanata 4.3.3\n"
@@ -309,6 +310,10 @@ msgid "Failed to retrieve port list of the firewall group."
 msgstr "Abruf der Portliste der Firewall-Gruppe ist fehlgeschlagen."
 
 #, python-format
+msgid "Failed to update firewall group %(name)s: %(reason)s"
+msgstr "Firewallgruppe %(name)s konnte nicht aktualisiert werden: %(reason)s"
+
+#, python-format
 msgid "Failed to update policy %(name)s: %(reason)s"
 msgstr "Fehler beim Aktualisieren der Richtlinie %(name)s: %(reason)s"
 
@@ -324,6 +329,10 @@ msgstr "Firewallrichtlinien"
 
 msgid "Firewall Rules"
 msgstr "Firewallregeln"
+
+#, python-format
+msgid "Firewall group %s was successfully updated."
+msgstr "Firewallgruppe %s wurde erfolgreich aktualisiert."
 
 msgid "FirewallGroup"
 msgstr "Firewall-Gruppe"
@@ -355,6 +364,9 @@ msgstr "Regel einfügen"
 
 msgid "Insert Rule to Policy"
 msgstr "Regel in Richtlinie hinzufügen"
+
+msgid "Label"
+msgstr "Beschreibung"
 
 msgid "Name"
 msgstr "Name"
@@ -562,6 +574,9 @@ msgstr "Regeln können nicht abgerufen werden (%s)."
 
 msgid "Unable to retrieve rules list."
 msgstr "Liste der Regeln kann nicht abgerufen werden."
+
+msgid "Value"
+msgstr "Wert"
 
 msgid "You may add ports to firewall group here."
 msgstr "Hier können Sie Ports zur Firewallgruppe hinzufügen."
