@@ -20,6 +20,6 @@ of your local.conf.
 .. code-block:: none
 
    [[local|localrc]]
-   enable_plugin neutron-fwaas https://git.openstack.org/openstack/neutron-fwaas master
+   enable_plugin neutron-fwaas https://opendev.org/openstack/neutron-fwaas master
    enable_service q-fwaas-v2
-   enable_plugin neutron-fwaas-dashboard https://git.openstack.org/openstack/neutron-fwaas-dashboard master
+   enable_plugin neutron-fwaas-dashboard https://opendev.org/openstack/neutron-fwaas-dashboard master

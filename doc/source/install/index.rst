@@ -30,7 +30,7 @@ where horizon is installed.
 
 .. code-block:: console
 
-   $ git clone https://git.openstack.org/openstack/neutron-fwaas-dashboard
+   $ git clone https://opendev.org/openstack/neutron-fwaas-dashboard
    $ cd neutron-fwaas-dashboard
    $ sudo pip install .
 
