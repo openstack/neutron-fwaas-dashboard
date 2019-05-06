@@ -7,16 +7,18 @@
 # Frank Kloeker <eumel@arcor.de>, 2018. #zanata
 # Reik Keutterling <spielkind@gmail.com>, 2018. #zanata
 # Robert Simai <robert.simai@suse.com>, 2018. #zanata
+# Andreas Jaeger <jaegerandi@gmail.com>, 2019. #zanata
+# Robert Simai <robert.simai@suse.com>, 2019. #zanata
 msgid ""
 msgstr ""
 "Project-Id-Version: neutron-fwaas-dashboard VERSION\n"
 "Report-Msgid-Bugs-To: https://bugs.launchpad.net/openstack-i18n/\n"
-"POT-Creation-Date: 2019-02-19 16:16+0000\n"
+"POT-Creation-Date: 2019-04-25 13:36+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2018-09-13 08:09+0000\n"
-"Last-Translator: Frank Kloeker <eumel@arcor.de>\n"
+"PO-Revision-Date: 2019-05-03 02:14+0000\n"
+"Last-Translator: Robert Simai <robert.simai@suse.com>\n"
 "Language-Team: German\n"
 "Language: de\n"
 "X-Generator: Zanata 4.3.3\n"
@@ -72,6 +74,9 @@ msgstr "Port zur Firewallgruppe hinzufügen"
 msgid "Add Rule"
 msgstr "Regel hinzufügen"
 
+msgid "Add port to Firewall Group {{ name }}"
+msgstr "Port zur Firewallgruppe {{ name }} hinzufügen"
+
 #, python-format
 msgid "Added Firewall Group\"%s\"."
 msgstr "Firewall-Gruppe \"%s\" hinzugefügt."
@@ -83,6 +88,10 @@ msgstr "Richtlinie \"%s\" hinzugefügt."
 #, python-format
 msgid "Added Rule \"%s\"."
 msgstr "Regel \"%s\" wurde hinzugefügt."
+
+#, python-format
+msgid "Added the port(s) to the firewall group %s successfully."
+msgstr "Port(s) wurde(n) zur Firewall-Gruppe %s erfolgreich hinzugefügt."
 
 msgid "Admin State"
 msgstr "Adminstatus"
@@ -134,6 +143,19 @@ msgstr "Firewall-Gruppe erstellen"
 
 msgid "Create a Firewall Group with selected ports."
 msgstr "Erstellen einer Firewall-Gruppe mit den ausgewählten Ports."
+
+msgid ""
+"Create a firewall group based on a policy.\n"
+"\n"
+"A firewall group represents a logical firewall resource that a tenant can "
+"instantiate and manage. A firewall group must be associated with one policy, "
+"all other fields are optional."
+msgstr ""
+"Erzeugen einer Firewall-Gruppe auf Basis einer Richtlinie\n"
+"\n"
+"Eine Firewall-Gruppe repräsentiert eine logische Firewall-Ressource, die ein "
+"Mandant instanzieren und verwalten kann. Eine Firewall-Gruppe muss mit einer "
+"Richtlinie verbunden werden. Alle anderen Felder sind optional."
 
 msgid ""
 "Create a firewall policy with an ordered list of firewall rules.\n"
@@ -288,12 +310,24 @@ msgid "Error"
 msgstr "Fehler"
 
 #, python-format
+msgid "Failed to add the port(s) to the firewall group %(name)s: %(reason)s"
+msgstr ""
+"Port konnte zur der Firewallgruppe %(name)s nicht hinzugefügt werden: "
+"%(reason)s"
+
+#, python-format
 msgid "Failed to insert rule to policy %(name)s: %(reason)s"
 msgstr "Regel konnte nicht eingefügt werden in Richtlinie %(name)s: %(reason)s"
 
 #, python-format
 msgid "Failed to remove rule from policy %(name)s: %(reason)s"
 msgstr "Entfernen der Regel von Richtlinie %(name)s fehlgeschlagen: %(reason)s"
+
+#, python-format
+msgid ""
+"Failed to remove the port(s) from the firewall group %(name)s: %(reason)s"
+msgstr ""
+"Port konnte von der Firewallgruppe %(name)s nicht entfernt werden: %(reason)s"
 
 #, python-format
 msgid "Failed to retrieve available rules: %s"
@@ -307,6 +341,10 @@ msgstr ""
 
 msgid "Failed to retrieve port list of the firewall group."
 msgstr "Abruf der Portliste der Firewall-Gruppe ist fehlgeschlagen."
+
+#, python-format
+msgid "Failed to update firewall group %(name)s: %(reason)s"
+msgstr "Firewallgruppe %(name)s konnte nicht aktualisiert werden: %(reason)s"
 
 #, python-format
 msgid "Failed to update policy %(name)s: %(reason)s"
@@ -324,6 +362,10 @@ msgstr "Firewallrichtlinien"
 
 msgid "Firewall Rules"
 msgstr "Firewallregeln"
+
+#, python-format
+msgid "Firewall group %s was successfully updated."
+msgstr "Firewallgruppe %s wurde erfolgreich aktualisiert."
 
 msgid "FirewallGroup"
 msgstr "Firewall-Gruppe"
@@ -356,8 +398,14 @@ msgstr "Regel einfügen"
 msgid "Insert Rule to Policy"
 msgstr "Regel in Richtlinie hinzufügen"
 
+msgid "Label"
+msgstr "Beschreibung"
+
 msgid "Name"
 msgstr "Name"
+
+msgid "No options available"
+msgstr "Keine Optionen verfügbar"
 
 msgid "None"
 msgstr "Keine"
@@ -417,6 +465,10 @@ msgstr "Regel aus Richtlinie entfernen"
 
 msgid "Remove port from FirewallGroup {{ name }}"
 msgstr "Port aus Firewall-Gruppe entfernen {{ name }}"
+
+#, python-format
+msgid "Removed the port(s) from the firewall group %s successfully."
+msgstr "Port(s) wurde(n) von der Firewall-Gruppe %s erfolgreich entfernt."
 
 msgid "Rule"
 msgstr "Regel"
@@ -526,12 +578,22 @@ msgid "Unable to add Rule \"%s\"."
 msgstr "Regel \"%s\" kann nicht hinzugefügt werden"
 
 #, python-format
+msgid "Unable to delete firewall group. %s"
+msgstr "Firewall-Gruppe kann nicht gelöscht werden: %s"
+
+#, python-format
 msgid "Unable to delete policy. %s"
 msgstr "Richtlinie %s konnte nicht gelöscht werden."
 
 #, python-format
 msgid "Unable to delete rule. %s"
 msgstr "Regel %s kann nicht gelöscht werden."
+
+msgid "Unable to retrieve firewall group details."
+msgstr "Firewall-Gruppendetails können nicht abgerufen werden."
+
+msgid "Unable to retrieve firewall group list."
+msgstr "Firewall-Gruppenliste kann nicht abgerufen werden."
 
 msgid "Unable to retrieve firewallgroup details."
 msgstr "Konnte Firewall-Gruppendetails nicht abrufen."
@@ -562,6 +624,9 @@ msgstr "Regeln können nicht abgerufen werden (%s)."
 
 msgid "Unable to retrieve rules list."
 msgstr "Liste der Regeln kann nicht abgerufen werden."
+
+msgid "Value"
+msgstr "Wert"
 
 msgid "You may add ports to firewall group here."
 msgstr "Hier können Sie Ports zur Firewallgruppe hinzufügen."
