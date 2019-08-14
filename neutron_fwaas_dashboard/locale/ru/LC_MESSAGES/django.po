@@ -1,0 +1,655 @@
+# Antonio Kless <antoniok.spb@gmail.com>, 2015. #zanata
+# OpenStack Infra <zanata@openstack.org>, 2015. #zanata
+# Aleksey Alekseenko <9118250541@mail.ru>, 2016. #zanata
+# Alexander <ainikitenkov@gmail.com>, 2016. #zanata
+# Andreas Jaeger <jaegerandi@gmail.com>, 2016. #zanata
+# Artem <amikhalev90@gmail.com>, 2016. #zanata
+# Daisy <guoyingc@cn.ibm.com>, 2016. #zanata
+# Fedor Tarasenko <feodor.tarasenko@gmail.com>, 2016. #zanata
+# Irina Kochetova <ikochetova@hystax.com>, 2016. #zanata
+# Maxim Bozhenko <mbozhenko@gmail.com>, 2016. #zanata
+# Valentin Chikunov <vchikunov@hystax.com>, 2016. #zanata
+# Artem <amikhalev90@gmail.com>, 2017. #zanata
+# Ilya Alekseyev <ilyaalekseyev@acm.org>, 2017. #zanata
+# Roman Gorshunov <roman.gorshunov@att.com>, 2019. #zanata
+msgid ""
+msgstr ""
+"Project-Id-Version: neutron-fwaas-dashboard VERSION\n"
+"Report-Msgid-Bugs-To: https://bugs.launchpad.net/openstack-i18n/\n"
+"POT-Creation-Date: 2019-08-10 13:30+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2019-08-13 06:01+0000\n"
+"Last-Translator: Roman Gorshunov <roman.gorshunov@att.com>\n"
+"Language-Team: Russian\n"
+"Language: ru\n"
+"X-Generator: Zanata 4.3.3\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
+
+msgid "-"
+msgstr "-"
+
+msgid "ALLOW"
+msgstr "ALLOW"
+
+msgctxt "Action Name of a Firewall Rule"
+msgid "ALLOW"
+msgstr "ALLOW"
+
+msgid "ANY"
+msgstr "Любой"
+
+msgid "Action"
+msgstr "Действие"
+
+msgid "Action for the firewall rule"
+msgstr "Действие для правила межсетевого экрана."
+
+msgctxt "Current status of a Firewall Group"
+msgid "Active"
+msgstr "Активен"
+
+msgid "Add"
+msgstr "Добавить"
+
+msgid "Add Firewall Group"
+msgstr "Добавить новую группу межсетевого экрана"
+
+msgid "Add New Firewall Group"
+msgstr "Добавить новую группу межсетевого экрана"
+
+msgid "Add New Policy"
+msgstr "Добавить новую политику"
+
+msgid "Add New Rule"
+msgstr "Добавить новое правило"
+
+msgid "Add Policy"
+msgstr "Добавить политику"
+
+msgid "Add Port"
+msgstr "Добавить порт"
+
+msgid "Add Port to Firewall Group"
+msgstr "Добавить порт в группу межсетевого экрана"
+
+msgid "Add Rule"
+msgstr "Добавить правило"
+
+msgid "Add port to Firewall Group {{ name }}"
+msgstr "Добавить порт в группу межсетевого экрана {{ name }}"
+
+#, python-format
+msgid "Added Firewall Group\"%s\"."
+msgstr "Добавлена группа межсетевого экрана \"%s\"."
+
+#, python-format
+msgid "Added Policy \"%s\"."
+msgstr "Добалена политика \"%s\"."
+
+#, python-format
+msgid "Added Rule \"%s\"."
+msgstr "Добавлено правило \"%s\"."
+
+#, python-format
+msgid "Added the port(s) to the firewall group %s successfully."
+msgstr "Успешно добавлены порты в группу %s межсетевого экрана."
+
+msgid "Admin State"
+msgstr "Административное состояние"
+
+msgid "Admin State Up"
+msgstr "Административное состояние UP"
+
+msgid "After"
+msgstr "После"
+
+msgid "Audited"
+msgstr "Проверено"
+
+msgid "Available Ports"
+msgstr "Доступные порты"
+
+msgid "Available Rules"
+msgstr "Доступные правила"
+
+msgid "Before"
+msgstr "Перед"
+
+msgid "Choose port(s) from Available Ports. "
+msgstr "Выберите порт(ы) из доступных портов"
+
+msgid ""
+"Choose rule(s) from Available Rules to Selected Rule by push button or drag "
+"and drop, you may change their order by drag and drop as well."
+msgstr ""
+"Переместите правила из Доступных в Выбранные, нажав на кнопку или перетащив "
+"мышью, вы также можете изменить порядок с помощью мыши. "
+
+msgid ""
+"Choose the rule you want to insert. Specify either the rule you want to "
+"insert immediately before, or the rule to insert immediately after. If both "
+"are specified, the prior takes precedence."
+msgstr ""
+"Выберите правило, которое вы хотите вставить. Укажите правило до или после "
+"которого вы хотите вставить новое правило. Если указаны оба, используется "
+"первое."
+
+msgid "Choose the rule you want to remove."
+msgstr "Выберите правило, которое вы хотите удалить."
+
+msgid "Create Firewall Group"
+msgstr "Создать группу межсетевого экрана"
+
+msgid "Create a Firewall Group with selected ports."
+msgstr "Создать группу межсетевого экрана с выбранными портами."
+
+msgid ""
+"Create a firewall group based on a policy.\n"
+"\n"
+"A firewall group represents a logical firewall resource that a tenant can "
+"instantiate and manage. A firewall group must be associated with one policy, "
+"all other fields are optional."
+msgstr ""
+"Создание группы межсетевого экрана, основывающейся на политике.\n"
+"\n"
+"Группа межсетевого экрана представляет из себя ресурс логического "
+"межсетевого экрана, который может быть создан и настроен тенантом. Групп "
+"межсетевого экрана должна основываться на (одной) политике, все остальные "
+"поля - опциональны."
+
+msgid ""
+"Create a firewall policy with an ordered list of firewall rules.\n"
+"\n"
+"A firewall policy is an ordered collection of firewall rules. So if the "
+"traffic matches the first rule, the other rules are not executed. If the "
+"traffic does not match the current rule, then the next rule is executed. A "
+"firewall policy has the following attributes:\n"
+"\n"
+"<li>Shared: A firewall policy can be shared across tenants. Thus it can also "
+"be made part of an audit workflow wherein the firewall policy can be audited "
+"by the relevant entity that is authorized.</li><li>Audited: When audited is "
+"set to True, it indicates that the firewall policy has been audited. Each "
+"time the firewall policy or the associated firewall rules are changed, this "
+"attribute will be set to False and will have to be explicitly set to True "
+"through an update operation.</li>\n"
+"The name field is required, all others are optional."
+msgstr ""
+"Создайте политику межсетевого экрана с упорядоченной цепочкой правил.\n"
+"\n"
+"Политика межсетевого экрана - упорядоченная цепочка правил. Если трафик "
+"соответствует критериям первого правила, к нему не применяются остальные. "
+"Если трафик не соотвтествует критериям текущего правила, идёт проверка на "
+"соответствие критериям следующего правила до конца цепочки. Политика "
+"межсетевого экрана имеет следующие атрибуты:\n"
+"\n"
+"<li>Shared: Политика может быть общей между проектами. Предоставление общего "
+"доступа может частью процесса аудита, когда к политикам предоставляется "
+"авторизованный общий доступ.</li><li>Audited: При включении данной опции, "
+"при каждом изменении политики/правил атрибут Audited сбрасывается в "
+"состояние False и должен быть явно возвращён в состоянии True обновлением "
+"политики.</li> \n"
+"Имя является обязательным, остальные поля опциональны."
+
+msgid ""
+"Create a firewall rule.\n"
+"\n"
+"A Firewall rule is an association of the following attributes:\n"
+"\n"
+"<li>IP Addresses: The addresses from/to which the traffic filtration needs "
+"to be applied.</li><li>IP Version: The type of IP packets (IP V4/V6) that "
+"needs to be filtered.</li><li>Protocol: Type of packets (UDP, ICMP, TCP, "
+"Any) that needs to be checked.</li><li>Action: Action is the type of "
+"filtration required, it can be Reject/Deny/Allow data packets.</li>\n"
+"The protocol and action fields are required, all others are optional."
+msgstr ""
+"Создайте правило брандмауэра.\n"
+"\n"
+"Правило брандмауэра содержит следующие атрибуты:\n"
+"\n"
+"<li>IP-адреса: исходные или целевые адреса, для которых действует правило.</"
+"li><li>Версия IP: тип пакетов IP (IP V4/V6), для которых требуется "
+"фильтрация.</li><li>Протокол: тип пакетов (UDP, ICMP, TCP, Any), для которых "
+"действует правило.</li><li>Действие: действие правила с пакетом (отклонить, "
+"сбросить, разрешить).</li>\n"
+"Поля протокола и действия являются обязательными, все прочие поля - "
+"необязательные."
+
+msgid "Create a policy with selected rules."
+msgstr "Создать политику с выбранными правилами."
+
+msgctxt "Current status of a Firewall Group"
+msgid "Created"
+msgstr "Создано"
+
+msgid "DENY"
+msgstr "DENY"
+
+msgctxt "Action Name of a Firewall Rule"
+msgid "DENY"
+msgstr "DENY"
+
+msgctxt "Admin state of a Firewall Group"
+msgid "DOWN"
+msgstr "Выключен"
+
+msgid "Delete Firewall Group"
+msgid_plural "Delete Firewall Groups"
+msgstr[0] "Удалить группу межсетевого экрана"
+msgstr[1] "Удалить группу межсетевого экрана"
+msgstr[2] "Удалить группы межсетевого экрана"
+
+msgid "Delete Policy"
+msgid_plural "Delete Policies"
+msgstr[0] "Удалить политику"
+msgstr[1] "Удалить политики"
+msgstr[2] "Удалить политики"
+
+msgid "Delete Rule"
+msgid_plural "Delete Rules"
+msgstr[0] "Удалить правило"
+msgstr[1] "Удалить правила"
+msgstr[2] "Удалить правила"
+
+msgid "Description"
+msgstr "Описание"
+
+msgid "Description:"
+msgstr "Описание:"
+
+msgid "Destination IP"
+msgstr "IP адрес назначения"
+
+msgid "Destination IP Address"
+msgstr "IP адрес назначения"
+
+msgid "Destination IP Address/Subnet"
+msgstr "IP адрес/подсеть назначения"
+
+msgid "Destination IP address or subnet"
+msgstr "IP адрес/подсеть назначения"
+
+msgid "Destination Port"
+msgstr "Порт назначения"
+
+msgid "Destination Port/Port Range"
+msgstr "Порт/диапазон портов назначения"
+
+msgid "Destination port (integer in [1, 65535] or range in a:b)"
+msgstr "Порт назначения (целое число из диапазона [1-65535] или диапазон a:b) "
+
+msgctxt "Current status of a Firewall Group"
+msgid "Down"
+msgstr "Выключен"
+
+msgid "Edit Firewall Group"
+msgstr "Редактировать группу межсетевого экрана"
+
+msgid "Edit FirewallGroup {{ name }}"
+msgstr "Редактирование группы межсетевого экрана {{ name }}"
+
+msgid "Edit Policy"
+msgstr "Редактировать политику"
+
+msgid "Edit Policy {{ name }}"
+msgstr "Редактирование политики {{ name }}"
+
+msgid "Edit Rule"
+msgstr "Редактировать правило"
+
+msgid "Edit Rule {{ name }}"
+msgstr "Редактирование правила {{ name }}"
+
+msgid "Egress Policy"
+msgstr "Политика исходящего трафика"
+
+msgid "Egress Policy ID"
+msgstr "ID политики исходящего трафика"
+
+msgid "Enabled"
+msgstr "Включен"
+
+msgctxt "Current status of a Firewall Group"
+msgid "Error"
+msgstr "Ошибка"
+
+#, python-format
+msgid "Failed to add the port(s) to the firewall group %(name)s: %(reason)s"
+msgstr ""
+"Не удалось добавить порты в группу межсетевого экрана %(name)s: %(reason)s"
+
+#, python-format
+msgid "Failed to insert rule to policy %(name)s: %(reason)s"
+msgstr "Не удалось добавить правило в политику %(name)s: %(reason)s"
+
+#, python-format
+msgid "Failed to remove rule from policy %(name)s: %(reason)s"
+msgstr "Не удалось удалить правило из политики %(name)s: %(reason)s"
+
+#, python-format
+msgid ""
+"Failed to remove the port(s) from the firewall group %(name)s: %(reason)s"
+msgstr ""
+"Не удалось удалить порты из группы межсетевого экрана %(name)s: %(reason)s"
+
+#, python-format
+msgid "Failed to retrieve available rules: %s"
+msgstr "Не удалось получить доступные правила: %s"
+
+#, python-format
+msgid "Failed to retrieve current rules in policy %(name)s: %(reason)s"
+msgstr "Не удалось получить текущие правила политики %(name)s: %(reason)s"
+
+msgid "Failed to retrieve port list of the firewall group."
+msgstr "Не удалось получить список портов группы межсетевого экрана."
+
+#, python-format
+msgid "Failed to update firewall group %(name)s: %(reason)s"
+msgstr "Не удалось обновить группу межсетевого экрана %(name)s: %(reason)s"
+
+#, python-format
+msgid "Failed to update policy %(name)s: %(reason)s"
+msgstr "Не удалось обновить политику %(name)s: %(reason)s"
+
+#, python-format
+msgid "Failed to update rule %(name)s: %(reason)s"
+msgstr "Не удалось обновить правило %(name)s: %(reason)s"
+
+msgid "Firewall Groups"
+msgstr "Группы межсетевого экрана"
+
+msgid "Firewall Policies"
+msgstr "Политики межсетевого экрана"
+
+msgid "Firewall Rules"
+msgstr "Правила межсетевого экрана"
+
+#, python-format
+msgid "Firewall group %s was successfully updated."
+msgstr "Группа %s межсетевого экрана была успешно обновлена."
+
+msgid "FirewallGroup"
+msgstr "Группа межсетевого экрана"
+
+msgid "ICMP"
+msgstr "ICMP"
+
+msgid "ID"
+msgstr "ID"
+
+msgid "IP Version"
+msgstr "Версия IP"
+
+msgid "IP Version for Firewall Rule"
+msgstr "Версия протокола IP для правила межсетевого экрана"
+
+msgctxt "Current status of a Firewall Group"
+msgid "Inactive"
+msgstr "Неактивно"
+
+msgid "Ingress Policy"
+msgstr "Политика входящего трафика"
+
+msgid "Ingress Policy ID"
+msgstr "ID политики входящего трафика"
+
+msgid "Insert Rule"
+msgstr "Вставить правило"
+
+msgid "Insert Rule to Policy"
+msgstr "Вставить правило в политику"
+
+msgid "Label"
+msgstr "Метка"
+
+msgid "Name"
+msgstr "Имя"
+
+msgid "No options available"
+msgstr "Нет доступных опций"
+
+msgid "None"
+msgstr "Нет"
+
+msgctxt "Current status of a Firewall Group"
+msgid "Pending Create"
+msgstr "Ожидает создания"
+
+msgctxt "Current status of a Firewall Group"
+msgid "Pending Delete"
+msgstr "Ожидает удаления"
+
+msgctxt "Current status of a Firewall Group"
+msgid "Pending Update"
+msgstr "Ожидает обновления"
+
+msgid "Policies"
+msgstr "Политики"
+
+msgid "Policy"
+msgstr "Политика"
+
+#, python-format
+msgid "Policy %s was successfully updated."
+msgstr "Политика %s была успешно обновлена."
+
+msgid "Ports"
+msgstr "Порты"
+
+msgid "Project ID"
+msgstr " ID проекта"
+
+msgid "Protocol"
+msgstr "Протокол"
+
+msgid "Protocol for the firewall rule"
+msgstr "Протокол для правила межсетевого экрана."
+
+msgid "REJECT"
+msgstr "REJECT"
+
+msgctxt "Action Name of a Firewall Rule"
+msgid "REJECT"
+msgstr "REJECT"
+
+msgid "Remove Port"
+msgstr "Удалить порт"
+
+msgid "Remove Port from Firewall Group"
+msgstr "Удалить порт из группы межсетевого экрана"
+
+msgid "Remove Rule"
+msgstr "Удалить правило"
+
+msgid "Remove Rule from Policy"
+msgstr "Удалить правило из политики"
+
+msgid "Remove port from FirewallGroup {{ name }}"
+msgstr "Удалить порт из группы межсетевого экрана {{ name }}"
+
+#, python-format
+msgid "Removed the port(s) from the firewall group %s successfully."
+msgstr "Порты успешно удалены из группы %s межсетевого экрана."
+
+msgid "Rule"
+msgstr "Правило"
+
+#, python-format
+msgid "Rule %(rule)s was successfully inserted to policy %(policy)s."
+msgstr "Правило %(rule)s было успешно добавлено в политику %(policy)s."
+
+#, python-format
+msgid "Rule %(rule)s was successfully removed from policy %(policy)s."
+msgstr "Правило %(rule)s было успешно удалено из политики %(policy)s."
+
+#, python-format
+msgid "Rule %s was successfully updated."
+msgstr "Правило %s было успешно обновлено."
+
+msgid "Rules"
+msgstr "Правила"
+
+msgid "Save Changes"
+msgstr "Сохранить изменения"
+
+msgid "Scheduled deletion of Firewall Group"
+msgid_plural "Scheduled deletion of Firewall Groups"
+msgstr[0] "Запланировано удаление группы межсетевого экрана"
+msgstr[1] "Запланировано удаление группы межсетевого экрана"
+msgstr[2] "Запланировано удаление групп межсетевого экрана"
+
+msgid "Scheduled deletion of Policy"
+msgid_plural "Scheduled deletion of Policies"
+msgstr[0] "Запланированное удаление политики"
+msgstr[1] "Запланированное удаление политик"
+msgstr[2] "Запланировано удаление политик"
+
+msgid "Scheduled deletion of Rule"
+msgid_plural "Scheduled deletion of Rules"
+msgstr[0] "Запланированное удаление правила"
+msgstr[1] "Запланированное удаление правил"
+msgstr[2] "Запланировано удаление правил"
+
+msgid "Select a Policy"
+msgstr "Выберите политику"
+
+msgid "Select ports for your firewall group."
+msgstr "Выберите порты для вашей группы сетевого экрана."
+
+msgid "Select rules for your policy."
+msgstr "Выбрать правила для вашей политики."
+
+msgid "Selected Ports"
+msgstr "Выбранные порты"
+
+msgid "Selected Rules"
+msgstr "Выбранные правила"
+
+msgid "Shared"
+msgstr "Общая"
+
+msgid "Source IP"
+msgstr "IP-адрес источника"
+
+msgid "Source IP Address"
+msgstr "IP адрес источника"
+
+msgid "Source IP Address/Subnet"
+msgstr "IP адрес/подсеть источника"
+
+msgid "Source IP address or subnet"
+msgstr "IP адрес/подсеть источника"
+
+msgid "Source Port"
+msgstr "Порт отправления"
+
+msgid "Source Port/Port Range"
+msgstr "Порт/диапазон портов отправления"
+
+msgid "Source port (integer in [1, 65535] or range in a:b)"
+msgstr ""
+"Порт отправления (целое число из диапазона [1-65535] или диапазон a:b) "
+
+msgid ""
+"Source/Destination Network Address and IP version are inconsistent. Please "
+"make them consistent."
+msgstr ""
+"Адрес источника/получателя и версия протокола несовместимы. Пожалуйста "
+"исправьте."
+
+msgid "Status"
+msgstr "Статус"
+
+msgid "TCP"
+msgstr "TCP"
+
+msgid "UDP"
+msgstr "UDP"
+
+msgctxt "Admin state of a Firewall Group"
+msgid "UP"
+msgstr "Включен"
+
+#, python-format
+msgid "Unable to add Firewall Group \"%s\"."
+msgstr "Не удалось добавить группу межсетевого экрана \"%s\"."
+
+#, python-format
+msgid "Unable to add Policy \"%s\"."
+msgstr "Не удалось добавить политику \"%s\"."
+
+#, python-format
+msgid "Unable to add Rule \"%s\"."
+msgstr "Не удалось добавить правило \"%s\"."
+
+#, python-format
+msgid "Unable to delete firewall group. %s"
+msgstr "Не удалось удалить группу межсетевого экрана. %s"
+
+#, python-format
+msgid "Unable to delete policy. %s"
+msgstr "Не удалось удалить политику. %s"
+
+#, python-format
+msgid "Unable to delete rule. %s"
+msgstr "Не удалось удалить правило. %s"
+
+msgid "Unable to retrieve firewall group details."
+msgstr "Не удалось получить детали группы межсетевого экрана."
+
+msgid "Unable to retrieve firewall group list."
+msgstr "Не удалось получить список групп межсетевого экрана."
+
+msgid "Unable to retrieve firewallgroup details."
+msgstr "Не удалось получить информацию о группе межсетевого экрана."
+
+msgid "Unable to retrieve policies list."
+msgstr "Не удалось получить список политик."
+
+msgid "Unable to retrieve policy details."
+msgstr "Не удалось получить информацию о политике."
+
+#, python-format
+msgid "Unable to retrieve policy list (%s)."
+msgstr "Не удалось получить список политик (%s)."
+
+msgid "Unable to retrieve policy list."
+msgstr "Не удалось получить список политик."
+
+#, python-format
+msgid "Unable to retrieve ports (%s)."
+msgstr "Не удалось получить порты (%s)."
+
+msgid "Unable to retrieve rule details."
+msgstr "Не удалось получить информацию о правиле."
+
+#, python-format
+msgid "Unable to retrieve rules (%s)."
+msgstr "Не удалось получить правила (%s).."
+
+msgid "Unable to retrieve rules list."
+msgstr "Не удалось получить список правил."
+
+msgid "Value"
+msgstr "Значение"
+
+msgid "You may add ports to firewall group here."
+msgstr " Здесь вы можете добавить порты к группе межсетевого экрана."
+
+msgid "You may remove ports from firewall group here."
+msgstr " Здесь вы можете удалить порты из группы межсетевого экрана."
+
+msgid "You may update firewall group details here."
+msgstr " Здесь вы можете изменить конфигурацию группы межсетевого экрана."
+
+msgid ""
+"You may update policy details here. Use 'Insert Rule' or 'Remove Rule' links "
+"instead to insert or remove a rule."
+msgstr ""
+"Здесь вы можете изменить конфигурацию политики. Для добавления или удаления "
+"правил используйте соответствующие ссылки."
+
+msgid "You may update rule details here."
+msgstr " Здесь вы можете изменить конфигурацию правила."
