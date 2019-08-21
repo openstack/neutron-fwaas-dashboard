@@ -313,7 +313,8 @@ class AddFirewallGroupAction(workflows.Action):
     egress_firewall_policy_id = forms.ThemableChoiceField(
         label=_("Egress Policy"),
         required=False)
-    admin_state_up = forms.BooleanField(label=_("Admin State"), required=False)
+    admin_state_up = forms.BooleanField(
+        label=_("Admin State"), initial=True, required=False)
     shared = forms.BooleanField(
         label=_("Shared"), initial=False, required=False)
 
