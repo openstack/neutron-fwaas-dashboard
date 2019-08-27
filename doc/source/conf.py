@@ -217,3 +217,11 @@ html_static_path = []
 
 # Output file base name for HTML help builder.
 htmlhelp_basename = 'neutronfwaasdashboarddoc'
+
+# -- Options for LaTeX output ------------------------------------------------
+
+latex_documents = [
+    ('index', 'doc-neutron-fwaas-dashboard.tex',
+     u'Neutron FWaaS Dashboard Documentation',
+     u'Neutron Contributors', 'howto'),
+]
