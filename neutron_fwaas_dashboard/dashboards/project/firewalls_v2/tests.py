@@ -331,7 +331,7 @@ class FirewallTests(test.TestCase):
         rules = self.fw_rules_v2.list()
         tenant_id = self.tenant.id
         form_data = {'description': policy.description,
-                     'firewall_rules': None,
+                     'firewall_rules': '',
                      'shared': policy.shared,
                      'audited': policy.audited
                      }
