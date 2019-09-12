@@ -206,7 +206,7 @@ class TableSelectWidget(fields.ThemableDynamicSelectWidget):
 
         return other_html
 
-    def render(self, name, value, attrs=None, choices=None):
+    def render(self, name, value, attrs=None, choices=None, renderer=None):
         new_choices = []
         initial_value = value
 
