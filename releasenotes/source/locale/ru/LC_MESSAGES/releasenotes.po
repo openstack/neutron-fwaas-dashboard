@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: neutron-fwaas-dashboard\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-02-27 17:37+0000\n"
+"POT-Creation-Date: 2020-04-08 17:28+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -44,9 +44,6 @@ msgstr "1.1.0"
 
 msgid "2.0.0"
 msgstr "2.0.0"
-
-msgid "2.1.0-11"
-msgstr "2.1.0-11"
 
 msgid ""
 "A panel for FWaaS v2 is newly added. There is no specific installation "
