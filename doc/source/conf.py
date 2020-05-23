@@ -63,9 +63,11 @@ extensions = [
 ]
 
 # openstackdocstheme options
-repository_name = 'openstack/neutron-fwaas-dashboard'
-bug_project = 'neutron-fwaas-dashboard'
-bug_tag = 'doc'
+openstackdocs_repo_name = 'openstack/neutron-fwaas-dashboard'
+openstackdocs_pdf_link = True
+openstackdocs_auto_name = False
+openstackdocs_bug_project = 'neutron-fwaas-dashboard'
+openstackdocs_bug_tag = 'doc'
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
@@ -113,7 +115,7 @@ exclude_patterns = ['**/#*', '**~', '**/#*#']
 show_authors = False
 
 # The name of the Pygments (syntax highlighting) style to use.
-pygments_style = 'sphinx'
+pygments_style = 'native'
 
 # A list of ignored prefixes for module index sorting.
 modindex_common_prefix = ['neutron_fwaas_dashboard.']
