@@ -12,7 +12,8 @@
 #    License for the specific language governing permissions and limitations
 #    under the License.
 
-import mock
+from unittest import mock
+
 from neutronclient.v2_0.client import Client as neutronclient
 import openstack_dashboard.api.nova as nova
 
