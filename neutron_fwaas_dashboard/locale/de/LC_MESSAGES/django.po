@@ -1,0 +1,649 @@
+# Frank Kloeker <eumel@arcor.de>, 2016. #zanata
+# Robert Simai <robert.simai@suse.com>, 2016. #zanata
+# Andreas Jaeger <jaegerandi@gmail.com>, 2017. #zanata
+# Frank Kloeker <eumel@arcor.de>, 2017. #zanata
+# Robert Simai <robert.simai@suse.com>, 2017. #zanata
+# Andreas Jaeger <jaegerandi@gmail.com>, 2018. #zanata
+# Frank Kloeker <eumel@arcor.de>, 2018. #zanata
+# Reik Keutterling <spielkind@gmail.com>, 2018. #zanata
+# Robert Simai <robert.simai@suse.com>, 2018. #zanata
+# Andreas Jaeger <jaegerandi@gmail.com>, 2019. #zanata
+# Robert Simai <robert.simai@suse.com>, 2019. #zanata
+msgid ""
+msgstr ""
+"Project-Id-Version: neutron-fwaas-dashboard VERSION\n"
+"Report-Msgid-Bugs-To: https://bugs.launchpad.net/openstack-i18n/\n"
+"POT-Creation-Date: 2019-04-25 13:36+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2019-05-03 02:14+0000\n"
+"Last-Translator: Robert Simai <robert.simai@suse.com>\n"
+"Language-Team: German\n"
+"Language: de\n"
+"X-Generator: Zanata 4.3.3\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+
+msgid "-"
+msgstr "-"
+
+msgid "ALLOW"
+msgstr "Erlauben"
+
+msgctxt "Action Name of a Firewall Rule"
+msgid "ALLOW"
+msgstr "Erlauben"
+
+msgid "ANY"
+msgstr "ALLE"
+
+msgid "Action"
+msgstr "Aktion"
+
+msgid "Action for the firewall rule"
+msgstr "Aktion für die Firewallregel"
+
+msgctxt "Current status of a Firewall Group"
+msgid "Active"
+msgstr "Aktiv"
+
+msgid "Add"
+msgstr "Hinzufügen"
+
+msgid "Add Firewall Group"
+msgstr "Firewall-Gruppe hinzufügen"
+
+msgid "Add New Firewall Group"
+msgstr "Neue Firewall-Gruppe hinzufügen"
+
+msgid "Add New Policy"
+msgstr "Neue Richtlinie hinzufügen"
+
+msgid "Add New Rule"
+msgstr "Neue Regel hinzufügen"
+
+msgid "Add Policy"
+msgstr "Richtlinie hinzufügen"
+
+msgid "Add Port"
+msgstr "Port hinzufügen"
+
+msgid "Add Port to Firewall Group"
+msgstr "Port zur Firewallgruppe hinzufügen"
+
+msgid "Add Rule"
+msgstr "Regel hinzufügen"
+
+msgid "Add port to Firewall Group {{ name }}"
+msgstr "Port zur Firewallgruppe {{ name }} hinzufügen"
+
+#, python-format
+msgid "Added Firewall Group\"%s\"."
+msgstr "Firewall-Gruppe \"%s\" hinzugefügt."
+
+#, python-format
+msgid "Added Policy \"%s\"."
+msgstr "Richtlinie \"%s\" hinzugefügt."
+
+#, python-format
+msgid "Added Rule \"%s\"."
+msgstr "Regel \"%s\" wurde hinzugefügt."
+
+#, python-format
+msgid "Added the port(s) to the firewall group %s successfully."
+msgstr "Port(s) wurde(n) zur Firewall-Gruppe %s erfolgreich hinzugefügt."
+
+msgid "Admin State"
+msgstr "Adminstatus"
+
+msgid "Admin State Up"
+msgstr "Adminstatus aktiv"
+
+msgid "After"
+msgstr "Nachher"
+
+msgid "Audited"
+msgstr "Geprüft"
+
+msgid "Available Ports"
+msgstr "Verfügbare Ports"
+
+msgid "Available Rules"
+msgstr "Verfügbare Regeln"
+
+msgid "Before"
+msgstr "Vorher"
+
+msgid "Choose port(s) from Available Ports. "
+msgstr "Wählen Sie aus den verfügbaren Ports aus."
+
+msgid ""
+"Choose rule(s) from Available Rules to Selected Rule by push button or drag "
+"and drop, you may change their order by drag and drop as well."
+msgstr ""
+"Wählen Sie aus den \"Verfügbaren Regeln\" Regel(n) aus, indem Sie den Knopf "
+"drücken oder mit Ziehen und Ablegen. Sie können auch die Reihenfolge mit "
+"Ziehen und Ablegen ändern."
+
+msgid ""
+"Choose the rule you want to insert. Specify either the rule you want to "
+"insert immediately before, or the rule to insert immediately after. If both "
+"are specified, the prior takes precedence."
+msgstr ""
+"Wählen Sie die Regel aus, die Sie einfügen wollen. Spezifizieren Sie "
+"entweder die Regel unmittelbar vor der Sie einfügen wollen oder die Regel "
+"unmittelbar nach der Sie einfügen wollen. Wenn beide angegeben werden, hat "
+"die vorherige Vorrang. "
+
+msgid "Choose the rule you want to remove."
+msgstr "Zu entfernende Richtlinie auswählen."
+
+msgid "Create Firewall Group"
+msgstr "Firewall-Gruppe erstellen"
+
+msgid "Create a Firewall Group with selected ports."
+msgstr "Erstellen einer Firewall-Gruppe mit den ausgewählten Ports."
+
+msgid ""
+"Create a firewall group based on a policy.\n"
+"\n"
+"A firewall group represents a logical firewall resource that a tenant can "
+"instantiate and manage. A firewall group must be associated with one policy, "
+"all other fields are optional."
+msgstr ""
+"Erzeugen einer Firewall-Gruppe auf Basis einer Richtlinie\n"
+"\n"
+"Eine Firewall-Gruppe repräsentiert eine logische Firewall-Ressource, die ein "
+"Mandant instanzieren und verwalten kann. Eine Firewall-Gruppe muss mit einer "
+"Richtlinie verbunden werden. Alle anderen Felder sind optional."
+
+msgid ""
+"Create a firewall policy with an ordered list of firewall rules.\n"
+"\n"
+"A firewall policy is an ordered collection of firewall rules. So if the "
+"traffic matches the first rule, the other rules are not executed. If the "
+"traffic does not match the current rule, then the next rule is executed. A "
+"firewall policy has the following attributes:\n"
+"\n"
+"<li>Shared: A firewall policy can be shared across tenants. Thus it can also "
+"be made part of an audit workflow wherein the firewall policy can be audited "
+"by the relevant entity that is authorized.</li><li>Audited: When audited is "
+"set to True, it indicates that the firewall policy has been audited. Each "
+"time the firewall policy or the associated firewall rules are changed, this "
+"attribute will be set to False and will have to be explicitly set to True "
+"through an update operation.</li>\n"
+"The name field is required, all others are optional."
+msgstr ""
+"Erzeugen einer Firewall-Richtlinie mit einer geordneten Liste von Regeln.\n"
+"\n"
+"Eine Firewall-Richtlinie ist eine geordnete Sammlung von Firewall-Regeln. "
+"Sobald eine Regel auf den Datenverkehr zutrifft, werden die weiteren Regeln "
+"nicht mehr ausgeführt. Solange die Regeln nicht zutreffen, werden weitere "
+"Regeln ausgeführt. Eine Firewall-Richtlinie hat die folgenden Attribute:\n"
+"\n"
+"<li>Geteilt/Shared: eine Firewall-Richtlinie kann mit mehreren Mandanten "
+"geteilt werden. Dadurch kann sie auch als Teil eines Audit-Workflows "
+"verwendet werden, um von einer berechtigten Einheit/Organisation/Person "
+"geprüft zu werden.</li><li>Auditiert/Audited: wenn dies auf wahr/true "
+"gesetzt ist, zeigt es an, dass die Richtlinie geprüft wurde. Jedes Mal, wenn "
+"eine Richtlinie oder eine der Regeln darin geändert wird, wird der Indikator "
+"wieder auf falsch/false gesetzt und muss durch eine Update-Operation "
+"explizit wieder auf wahr/true gesetzt werden.</li>\n"
+"Das Namensfeld ist erforderlich, alle anderen sind optional."
+
+msgid ""
+"Create a firewall rule.\n"
+"\n"
+"A Firewall rule is an association of the following attributes:\n"
+"\n"
+"<li>IP Addresses: The addresses from/to which the traffic filtration needs "
+"to be applied.</li><li>IP Version: The type of IP packets (IP V4/V6) that "
+"needs to be filtered.</li><li>Protocol: Type of packets (UDP, ICMP, TCP, "
+"Any) that needs to be checked.</li><li>Action: Action is the type of "
+"filtration required, it can be Reject/Deny/Allow data packets.</li>\n"
+"The protocol and action fields are required, all others are optional."
+msgstr ""
+"Firewall-Regel anlegen\n"
+"\n"
+"Eine Firewall-Regel bezieht sich auf die folgenden Attribute:\n"
+"\n"
+"<li>IP-Adresse: die Adresse, auf zu/von der der Datenverkehr gefiltert wird."
+"</li><li>IP-Version: der IP Pakettyp (IPV4/6) der gefiltert wird.</"
+"li><li>Protokoll: der Pakettyp (UDP, ICMP, TCP, Any) der kontrolliert wird.</"
+"li><li>Aktion: die vorhergesehene Filteraktion, möglich ist Abweisen/"
+"Verweigern/Erlauben für Datenpakete.</li>\n"
+"Die Protokoll- und Aktionsfelder sind erforderlich, andere optional."
+
+msgid "Create a policy with selected rules."
+msgstr "Richtlinie mit ausgewählten Regeln erstellen."
+
+msgctxt "Current status of a Firewall Group"
+msgid "Created"
+msgstr "Erstellt"
+
+msgid "DENY"
+msgstr "Verweigern"
+
+msgctxt "Action Name of a Firewall Rule"
+msgid "DENY"
+msgstr "Verweigern"
+
+msgctxt "Admin state of a Firewall Group"
+msgid "DOWN"
+msgstr "INAKTIV"
+
+msgid "Delete Firewall Group"
+msgid_plural "Delete Firewall Groups"
+msgstr[0] "Firewall-Gruppe löschen"
+msgstr[1] "Firewall-Gruppen löschen"
+
+msgid "Delete Policy"
+msgid_plural "Delete Policies"
+msgstr[0] "Richtlinie löschen"
+msgstr[1] "Richtlinien löschen"
+
+msgid "Delete Rule"
+msgid_plural "Delete Rules"
+msgstr[0] "Regel löschen"
+msgstr[1] "Regeln löschen"
+
+msgid "Description"
+msgstr "Beschreibung"
+
+msgid "Description:"
+msgstr "Beschreibung:"
+
+msgid "Destination IP"
+msgstr "Ziel-IP"
+
+msgid "Destination IP Address"
+msgstr "Ziel-IP-Adresse"
+
+msgid "Destination IP Address/Subnet"
+msgstr "Ziel-IP-Adresse oder Subnetz"
+
+msgid "Destination IP address or subnet"
+msgstr "Ziel-IP-Adresse oder Subnetz"
+
+msgid "Destination Port"
+msgstr "Ziel-Port"
+
+msgid "Destination Port/Port Range"
+msgstr "Ziel-Port/-Portbereich"
+
+msgid "Destination port (integer in [1, 65535] or range in a:b)"
+msgstr "Ziel-Port (Ganzzahl aus [1, 65535] oder Bereich als a:b)"
+
+msgctxt "Current status of a Firewall Group"
+msgid "Down"
+msgstr "Inaktiv"
+
+msgid "Edit Firewall Group"
+msgstr "Firewall-Gruppe bearbeiten"
+
+msgid "Edit FirewallGroup {{ name }}"
+msgstr "Firewall-Gruppe bearbeiten {{ name }}"
+
+msgid "Edit Policy"
+msgstr "Richtlinie bearbeiten"
+
+msgid "Edit Policy {{ name }}"
+msgstr "Richtlinie bearbeiten {{ name }}"
+
+msgid "Edit Rule"
+msgstr "Regel bearbeiten"
+
+msgid "Edit Rule {{ name }}"
+msgstr "Regel bearbeiten {{ name }}"
+
+msgid "Egress Policy"
+msgstr "Austrittsrichtlinie"
+
+msgid "Egress Policy ID"
+msgstr "Ausgang Richtlinien-ID"
+
+msgid "Enabled"
+msgstr "Aktiviert"
+
+msgctxt "Current status of a Firewall Group"
+msgid "Error"
+msgstr "Fehler"
+
+#, python-format
+msgid "Failed to add the port(s) to the firewall group %(name)s: %(reason)s"
+msgstr ""
+"Port konnte zur der Firewallgruppe %(name)s nicht hinzugefügt werden: "
+"%(reason)s"
+
+#, python-format
+msgid "Failed to insert rule to policy %(name)s: %(reason)s"
+msgstr "Regel konnte nicht eingefügt werden in Richtlinie %(name)s: %(reason)s"
+
+#, python-format
+msgid "Failed to remove rule from policy %(name)s: %(reason)s"
+msgstr "Entfernen der Regel von Richtlinie %(name)s fehlgeschlagen: %(reason)s"
+
+#, python-format
+msgid ""
+"Failed to remove the port(s) from the firewall group %(name)s: %(reason)s"
+msgstr ""
+"Port konnte von der Firewallgruppe %(name)s nicht entfernt werden: %(reason)s"
+
+#, python-format
+msgid "Failed to retrieve available rules: %s"
+msgstr "Verfügbare Regeln konnten nicht abgerufen werden: %s"
+
+#, python-format
+msgid "Failed to retrieve current rules in policy %(name)s: %(reason)s"
+msgstr ""
+"Aktuelle Regeln in Richtline %(name)s konnten nicht abgerufen werden: "
+"%(reason)s"
+
+msgid "Failed to retrieve port list of the firewall group."
+msgstr "Abruf der Portliste der Firewall-Gruppe ist fehlgeschlagen."
+
+#, python-format
+msgid "Failed to update firewall group %(name)s: %(reason)s"
+msgstr "Firewallgruppe %(name)s konnte nicht aktualisiert werden: %(reason)s"
+
+#, python-format
+msgid "Failed to update policy %(name)s: %(reason)s"
+msgstr "Fehler beim Aktualisieren der Richtlinie %(name)s: %(reason)s"
+
+#, python-format
+msgid "Failed to update rule %(name)s: %(reason)s"
+msgstr "Regel %(name)s konnte nicht aktualisiert werden: %(reason)s"
+
+msgid "Firewall Groups"
+msgstr "Firewall-Gruppe"
+
+msgid "Firewall Policies"
+msgstr "Firewallrichtlinien"
+
+msgid "Firewall Rules"
+msgstr "Firewallregeln"
+
+#, python-format
+msgid "Firewall group %s was successfully updated."
+msgstr "Firewallgruppe %s wurde erfolgreich aktualisiert."
+
+msgid "FirewallGroup"
+msgstr "Firewall-Gruppe"
+
+msgid "ICMP"
+msgstr "ICMP"
+
+msgid "ID"
+msgstr "ID"
+
+msgid "IP Version"
+msgstr "IP Version"
+
+msgid "IP Version for Firewall Rule"
+msgstr "IP-Version der Firewall-Regel"
+
+msgctxt "Current status of a Firewall Group"
+msgid "Inactive"
+msgstr "Inaktiv"
+
+msgid "Ingress Policy"
+msgstr "Eingangsrichtlinie"
+
+msgid "Ingress Policy ID"
+msgstr "Eingang Richtlinien-ID"
+
+msgid "Insert Rule"
+msgstr "Regel einfügen"
+
+msgid "Insert Rule to Policy"
+msgstr "Regel in Richtlinie hinzufügen"
+
+msgid "Label"
+msgstr "Beschreibung"
+
+msgid "Name"
+msgstr "Name"
+
+msgid "No options available"
+msgstr "Keine Optionen verfügbar"
+
+msgid "None"
+msgstr "Keine"
+
+msgctxt "Current status of a Firewall Group"
+msgid "Pending Create"
+msgstr "Geplante Erstellung"
+
+msgctxt "Current status of a Firewall Group"
+msgid "Pending Delete"
+msgstr "Geplante Löschung"
+
+msgctxt "Current status of a Firewall Group"
+msgid "Pending Update"
+msgstr "Geplante Aktualisierung"
+
+msgid "Policies"
+msgstr "Richtlinien"
+
+msgid "Policy"
+msgstr "Richtlinie"
+
+#, python-format
+msgid "Policy %s was successfully updated."
+msgstr "Richtlinie %s wurde wurde erfolgreich aktualisiert."
+
+msgid "Ports"
+msgstr "Ports"
+
+msgid "Project ID"
+msgstr "Projekt-ID"
+
+msgid "Protocol"
+msgstr "Protokoll"
+
+msgid "Protocol for the firewall rule"
+msgstr "Protokoll für die Firewallregel"
+
+msgid "REJECT"
+msgstr "Abweisen"
+
+msgctxt "Action Name of a Firewall Rule"
+msgid "REJECT"
+msgstr "Abweisen"
+
+msgid "Remove Port"
+msgstr "Port entfernen"
+
+msgid "Remove Port from Firewall Group"
+msgstr "Port von der Firewallgruppe entfernen"
+
+msgid "Remove Rule"
+msgstr "Regel entfernen"
+
+msgid "Remove Rule from Policy"
+msgstr "Regel aus Richtlinie entfernen"
+
+msgid "Remove port from FirewallGroup {{ name }}"
+msgstr "Port aus Firewall-Gruppe entfernen {{ name }}"
+
+#, python-format
+msgid "Removed the port(s) from the firewall group %s successfully."
+msgstr "Port(s) wurde(n) von der Firewall-Gruppe %s erfolgreich entfernt."
+
+msgid "Rule"
+msgstr "Regel"
+
+#, python-format
+msgid "Rule %(rule)s was successfully inserted to policy %(policy)s."
+msgstr "Regel %(rule)s wurde erfolgreich in Richtlinie %(policy)s eingefügt ."
+
+#, python-format
+msgid "Rule %(rule)s was successfully removed from policy %(policy)s."
+msgstr "Regel %(rule)s wurde erfolgreich aus Richtlinie %(policy)s entfernt."
+
+#, python-format
+msgid "Rule %s was successfully updated."
+msgstr "Regel %s wurde erfolgreich aktualisiert."
+
+msgid "Rules"
+msgstr "Regeln"
+
+msgid "Save Changes"
+msgstr "Änderungen speichern"
+
+msgid "Scheduled deletion of Firewall Group"
+msgid_plural "Scheduled deletion of Firewall Groups"
+msgstr[0] "Geplante Löschung der Firewall-Gruppe"
+msgstr[1] "Geplante Löschung der Firewall-Gruppen"
+
+msgid "Scheduled deletion of Policy"
+msgid_plural "Scheduled deletion of Policies"
+msgstr[0] "Geplante Löschung der Richtlinie"
+msgstr[1] "Geplante Löschung von Richtlinien"
+
+msgid "Scheduled deletion of Rule"
+msgid_plural "Scheduled deletion of Rules"
+msgstr[0] "Geplante Löschung der Regel"
+msgstr[1] "Geplante Löschung von Regeln"
+
+msgid "Select a Policy"
+msgstr "Richtlinie auswählen"
+
+msgid "Select ports for your firewall group."
+msgstr "Wählen Sie Ports für Ihre Firewall-Gruppe."
+
+msgid "Select rules for your policy."
+msgstr "Regeln für Richtlinie auswählen."
+
+msgid "Selected Ports"
+msgstr "Ausgewählte Ports"
+
+msgid "Selected Rules"
+msgstr "Ausgewählte Regeln"
+
+msgid "Shared"
+msgstr "Geteilt"
+
+msgid "Source IP"
+msgstr "Quell-IP"
+
+msgid "Source IP Address"
+msgstr "Quell-IP-Adresse"
+
+msgid "Source IP Address/Subnet"
+msgstr "Quell-IP-Adresse oder Subnetz"
+
+msgid "Source IP address or subnet"
+msgstr "Quell-IP-Adresse oder Subnetz"
+
+msgid "Source Port"
+msgstr "Quell-Port"
+
+msgid "Source Port/Port Range"
+msgstr "Quell-Port/-Portbereich"
+
+msgid "Source port (integer in [1, 65535] or range in a:b)"
+msgstr "Quell-Port (Ganzzahl aus [1, 65535] oder Bereich als a:b)"
+
+msgid ""
+"Source/Destination Network Address and IP version are inconsistent. Please "
+"make them consistent."
+msgstr ""
+"Quelle/Ziel Netzwekadresse und IP-Version sind nicht konsistent. Bitte "
+"ändern Sie dies."
+
+msgid "Status"
+msgstr "Status"
+
+msgid "TCP"
+msgstr "TCP"
+
+msgid "UDP"
+msgstr "UDP"
+
+msgctxt "Admin state of a Firewall Group"
+msgid "UP"
+msgstr "AKTIV"
+
+#, python-format
+msgid "Unable to add Firewall Group \"%s\"."
+msgstr "Firewall-Gruppe \"%s\" konnte nicht hinzugefügt werden."
+
+#, python-format
+msgid "Unable to add Policy \"%s\"."
+msgstr "Richtlinie \"%s\" konnte nicht hinzugefügt werden."
+
+#, python-format
+msgid "Unable to add Rule \"%s\"."
+msgstr "Regel \"%s\" kann nicht hinzugefügt werden"
+
+#, python-format
+msgid "Unable to delete firewall group. %s"
+msgstr "Firewall-Gruppe kann nicht gelöscht werden: %s"
+
+#, python-format
+msgid "Unable to delete policy. %s"
+msgstr "Richtlinie %s konnte nicht gelöscht werden."
+
+#, python-format
+msgid "Unable to delete rule. %s"
+msgstr "Regel %s kann nicht gelöscht werden."
+
+msgid "Unable to retrieve firewall group details."
+msgstr "Firewall-Gruppendetails können nicht abgerufen werden."
+
+msgid "Unable to retrieve firewall group list."
+msgstr "Firewall-Gruppenliste kann nicht abgerufen werden."
+
+msgid "Unable to retrieve firewallgroup details."
+msgstr "Konnte Firewall-Gruppendetails nicht abrufen."
+
+msgid "Unable to retrieve policies list."
+msgstr "Liste der Richtlinien kann nicht abgerufen werden."
+
+msgid "Unable to retrieve policy details."
+msgstr "Richtliniendetails können nicht abgerufen werden."
+
+#, python-format
+msgid "Unable to retrieve policy list (%s)."
+msgstr "Richtlinienliste kann nicht abgerufen werden (%s)."
+
+msgid "Unable to retrieve policy list."
+msgstr "Liste der Richtlinien kann nicht abgerufen werden."
+
+#, python-format
+msgid "Unable to retrieve ports (%s)."
+msgstr "Ports können nicht abgerufen werden (%s)."
+
+msgid "Unable to retrieve rule details."
+msgstr "Details der Regeln können nicht abgerufen werden. "
+
+#, python-format
+msgid "Unable to retrieve rules (%s)."
+msgstr "Regeln können nicht abgerufen werden (%s)."
+
+msgid "Unable to retrieve rules list."
+msgstr "Liste der Regeln kann nicht abgerufen werden."
+
+msgid "Value"
+msgstr "Wert"
+
+msgid "You may add ports to firewall group here."
+msgstr "Hier können Sie Ports zur Firewallgruppe hinzufügen."
+
+msgid "You may remove ports from firewall group here."
+msgstr "Hier können Sie Ports von der Firewallgruppe entfernen."
+
+msgid "You may update firewall group details here."
+msgstr "Hier können Sie die Firewallgruppendetails bearbeiten."
+
+msgid ""
+"You may update policy details here. Use 'Insert Rule' or 'Remove Rule' links "
+"instead to insert or remove a rule."
+msgstr ""
+"Hier können Sie Richtliniendetails aktualisieren. Wählen Sie die "
+"Verknüpfungen 'Regel einfügen' oder 'Regel entfernen', um eine Regel "
+"einzufügen oder zu entfernen."
+
+msgid "You may update rule details here."
+msgstr "Hier können Sie die Details der Regeln aktualisieren."

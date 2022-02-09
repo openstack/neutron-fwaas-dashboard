@@ -1,0 +1,661 @@
+# Andrea Young Oak Li <youli@redhat.com>, 2016. #zanata
+# Andreas Jaeger <jaegerandi@gmail.com>, 2016. #zanata
+# Eunseop Shin <kairos9603@khu.ac.kr>, 2016. #zanata
+# Ian Y. Choi <ianyrchoi@gmail.com>, 2016. #zanata
+# Sungjin Kang <gang.sungjin@gmail.com>, 2016. #zanata
+# ByungYeol Woo <wby1089@gmail.com>, 2017. #zanata
+# Ian Y. Choi <ianyrchoi@gmail.com>, 2017. #zanata
+# Sungjin Kang <gang.sungjin@gmail.com>, 2017. #zanata
+# minwook-shin <minwook0106@gmail.com>, 2017. #zanata
+# Ian Y. Choi <ianyrchoi@gmail.com>, 2018. #zanata
+# Sungjin Kang <gang.sungjin@gmail.com>, 2018. #zanata
+# ByungYeol Woo <wby1089@gmail.com>, 2019. #zanata
+msgid ""
+msgstr ""
+"Project-Id-Version: neutron-fwaas-dashboard VERSION\n"
+"Report-Msgid-Bugs-To: https://bugs.launchpad.net/openstack-i18n/\n"
+"POT-Creation-Date: 2019-02-19 16:16+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2019-03-05 12:40+0000\n"
+"Last-Translator: ByungYeol Woo <wby1089@gmail.com>\n"
+"Language-Team: Korean (South Korea)\n"
+"Language: ko_KR\n"
+"X-Generator: Zanata 4.3.3\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+
+msgid "-"
+msgstr "-"
+
+msgid "ALLOW"
+msgstr "ALLOW"
+
+msgctxt "Action Name of a Firewall Rule"
+msgid "ALLOW"
+msgstr "ALLOW"
+
+msgid "ANY"
+msgstr "ANY"
+
+msgid "Action"
+msgstr "Action"
+
+msgid "Action for the firewall rule"
+msgstr "방화벽 규칙 작업"
+
+# auto translated by TM merge from project: neutron-lbaas-dashboard, version: stable-pike, DocId: neutron_lbaas_dashboard/locale/djangojs
+msgctxt "Current status of a Firewall Group"
+msgid "Active"
+msgstr "Active"
+
+# auto translated by TM merge from project: horizon, version: master, DocId: horizon/locale/djangojs
+msgid "Add"
+msgstr "추가"
+
+msgid "Add Firewall Group"
+msgstr "방화벽 그룹 추가"
+
+msgid "Add New Firewall Group"
+msgstr "방화벽 그룹 추가"
+
+msgid "Add New Policy"
+msgstr "새로운 정책 추가"
+
+msgid "Add New Rule"
+msgstr "새로운 규칙 추가"
+
+msgid "Add Policy"
+msgstr "정책 추가"
+
+msgid "Add Port"
+msgstr "포트 추가"
+
+msgid "Add Port to Firewall Group"
+msgstr "방화벽 그룹에 포트 추가"
+
+msgid "Add Rule"
+msgstr "규칙 추가"
+
+msgid "Add port to Firewall Group {{ name }}"
+msgstr "방화벽 그룹 {{ name }}에 포트 추가"
+
+#, python-format
+msgid "Added Firewall Group\"%s\"."
+msgstr "방화벽 그룹 \"%s\"를 추가하였습니다."
+
+#, python-format
+msgid "Added Policy \"%s\"."
+msgstr "정책 \"%s\"를 추가하였습니다.:"
+
+#, python-format
+msgid "Added Rule \"%s\"."
+msgstr "규칙 \"%s\"를 추가하였습니다."
+
+#, python-format
+msgid "Added the port(s) to the firewall group %s successfully."
+msgstr "성공적으로 방화벽 그룹 %s에 포트가 추가되었습니다."
+
+msgid "Admin State"
+msgstr "관리 상태"
+
+# auto translated by TM merge from project: neutron-fwaas-dashboard, version: stable-queens, DocId: neutron_fwaas_dashboard/locale/django
+msgid "Admin State Up"
+msgstr "관리자 업 상태"
+
+msgid "After"
+msgstr "이후"
+
+msgid "Audited"
+msgstr "상태 확인"
+
+# auto translated by TM merge from project: neutron-fwaas-dashboard, version: stable-queens, DocId: neutron_fwaas_dashboard/locale/django
+msgid "Available Ports"
+msgstr "사용 가능한 포트"
+
+# auto translated by TM merge from project: neutron-fwaas-dashboard, version: stable-queens, DocId: neutron_fwaas_dashboard/locale/django
+msgid "Available Rules"
+msgstr "사용 가능한 규칙"
+
+msgid "Before"
+msgstr "이전"
+
+msgid "Choose port(s) from Available Ports. "
+msgstr "사용 가능한 포트에서 포트를 선택합니다."
+
+# auto translated by TM merge from project: neutron-fwaas-dashboard, version: stable-queens, DocId: neutron_fwaas_dashboard/locale/django
+msgid ""
+"Choose rule(s) from Available Rules to Selected Rule by push button or drag "
+"and drop, you may change their order by drag and drop as well."
+msgstr ""
+"사용 가능한 규칙에서 선택한 규칙에 버튼을 누르거나 드래그 앤 드롭하여 규칙을 "
+"선택합니다. 드래그 앤 드롭으로 규칙 순서를 변경할 수 있습니다."
+
+# auto translated by TM merge from project: neutron-fwaas-dashboard, version: stable-queens, DocId: neutron_fwaas_dashboard/locale/django
+msgid ""
+"Choose the rule you want to insert. Specify either the rule you want to "
+"insert immediately before, or the rule to insert immediately after. If both "
+"are specified, the prior takes precedence."
+msgstr ""
+"삽입할 규칙을 선택합니다. 바로 앞에 삽입할 규칙인지, 바로 뒤에 삽입할 규칙인"
+"지를 정해야합니다. 양 쪽 모두 지정하면, 앞에 있는 것이 우선 순위가 높습니다."
+
+# auto translated by TM merge from project: neutron-fwaas-dashboard, version: stable-queens, DocId: neutron_fwaas_dashboard/locale/django
+msgid "Choose the rule you want to remove."
+msgstr "제거할 규칙을 선택하세요."
+
+msgid "Create Firewall Group"
+msgstr "방화벽 그룹 생성"
+
+msgid "Create a Firewall Group with selected ports."
+msgstr "선택한 포트와 함께 방화벽 그룹을 생성합니다."
+
+msgid ""
+"Create a firewall group based on a policy.\n"
+"\n"
+"A firewall group represents a logical firewall resource that a tenant can "
+"instantiate and manage. A firewall group must be associated with one policy, "
+"all other fields are optional."
+msgstr ""
+"정책에 기반하여 방화벽 그룹을 생성합니다.\n"
+"\n"
+"방화벽 그룹은 tenant가 인스턴스화하고 관리할 수 있는 논리적인 방화벽 자원을 "
+"나타냅니다. 방화벽 그룹은 반드시 한 정책과 연결되어야 하며, 그 외 다른 필드들"
+"은 선택 사항입니다."
+
+msgid ""
+"Create a firewall policy with an ordered list of firewall rules.\n"
+"\n"
+"A firewall policy is an ordered collection of firewall rules. So if the "
+"traffic matches the first rule, the other rules are not executed. If the "
+"traffic does not match the current rule, then the next rule is executed. A "
+"firewall policy has the following attributes:\n"
+"\n"
+"<li>Shared: A firewall policy can be shared across tenants. Thus it can also "
+"be made part of an audit workflow wherein the firewall policy can be audited "
+"by the relevant entity that is authorized.</li><li>Audited: When audited is "
+"set to True, it indicates that the firewall policy has been audited. Each "
+"time the firewall policy or the associated firewall rules are changed, this "
+"attribute will be set to False and will have to be explicitly set to True "
+"through an update operation.</li>\n"
+"The name field is required, all others are optional."
+msgstr ""
+"방화벽 정책을 방화벽 규칙에 대한 정렬된 목록과 함께 생성합니다.\n"
+"\n"
+"방화벽 정책은 특정 순서의 방화벽 규칙 모음입니다. 따라서 트래픽이 첫 번째 규"
+"칙과 매칭되는 경우, 다른 규칙들은 실행되지 않습니다. 트래픽이 현재 규칙과 매"
+"칭이 되지 않는 경우에는, 다음 규칙이 실행됩니다. 방화벽 정책은 다음 속성을 가"
+"집니다:\n"
+"\n"
+"<li>Shared: 방화벽 정책은 tenant에 걸쳐 공유될 수 있습니다. 따라서 이는 방화"
+"벽 정책이 인증된 관련 엔티티에 의해 감사가 이루어지는  감사 워크플로우의 일부"
+"가 될 수 있습니다.</li><li>Audited: 해당 속성이 True로 설정되면, 해당 방화벽 "
+"정책에 대해 감사가 이루어졌음을 가리킵니다. 방화벽 정책 또는 연관된 방화벽 규"
+"칙이 변경될 때마다 해당 속성은 False로 설정된 후 업데이트 작업이 이루어진 다"
+"음 명확히 True로 설정될 것입니다.</li>\n"
+"name 필드는 필수이며, 그 외는 선택 사항입니다."
+
+msgid ""
+"Create a firewall rule.\n"
+"\n"
+"A Firewall rule is an association of the following attributes:\n"
+"\n"
+"<li>IP Addresses: The addresses from/to which the traffic filtration needs "
+"to be applied.</li><li>IP Version: The type of IP packets (IP V4/V6) that "
+"needs to be filtered.</li><li>Protocol: Type of packets (UDP, ICMP, TCP, "
+"Any) that needs to be checked.</li><li>Action: Action is the type of "
+"filtration required, it can be Reject/Deny/Allow data packets.</li>\n"
+"The protocol and action fields are required, all others are optional."
+msgstr ""
+"방화벽 규칙을 생성합니다.\n"
+"\n"
+"방화벽 규칙은 다음과 같은 속성이 있습니다:\n"
+"\n"
+"<li>IP 주소: 트래픽 필터링이 적용되어야 하는 들어오는/나가는 주소입니다.</"
+"li><li>IP 버전: 필터링을 필요로 하는 IP 패킷에 대한 유형입니다 (IP V4/V6).</"
+"li><li>프로토콜: 확인될 필요가 있는 패킷 유형입니다 (UDP, ICMP, TCP, Any).</"
+"li><li>액션: 액션은 필요로 하는 필터링 유형으로, 데이터 패킷에 대해 Reject/"
+"Deny/Allow 가 될 수 있습니다.</li>\n"
+"프로토콜 및 애견 필드는 필수이며, 그 외는 선택 사항입니다."
+
+msgid "Create a policy with selected rules."
+msgstr "선택한 규칙에 대한 정책를 생성합니다."
+
+# auto translated by TM merge from project: designate-dashboard, version: master, DocId: designatedashboard/locale/django
+msgctxt "Current status of a Firewall Group"
+msgid "Created"
+msgstr "생성됨"
+
+msgid "DENY"
+msgstr "DENY"
+
+msgctxt "Action Name of a Firewall Rule"
+msgid "DENY"
+msgstr "DENY"
+
+# auto translated by TM merge from project: horizon, version: stable-mitaka, DocId: openstack_dashboard/locale/django
+msgctxt "Admin state of a Firewall Group"
+msgid "DOWN"
+msgstr "DOWN"
+
+msgid "Delete Firewall Group"
+msgid_plural "Delete Firewall Groups"
+msgstr[0] "방화벽 그룹 삭제"
+
+msgid "Delete Policy"
+msgid_plural "Delete Policies"
+msgstr[0] "정책 삭제"
+
+msgid "Delete Rule"
+msgid_plural "Delete Rules"
+msgstr[0] "규칙 삭제"
+
+msgid "Description"
+msgstr "설명"
+
+# auto translated by TM merge from project: neutron-fwaas-dashboard, version: stable-queens, DocId: neutron_fwaas_dashboard/locale/django
+msgid "Description:"
+msgstr "설명:"
+
+msgid "Destination IP"
+msgstr "대상 IP"
+
+# auto translated by TM merge from project: neutron-fwaas-dashboard, version: stable-queens, DocId: neutron_fwaas_dashboard/locale/django
+msgid "Destination IP Address"
+msgstr "대상 IP 주소"
+
+msgid "Destination IP Address/Subnet"
+msgstr "대상 IP 주소/서브넷"
+
+msgid "Destination IP address or subnet"
+msgstr "대상 IP 주소 또는 서브넷"
+
+msgid "Destination Port"
+msgstr "대상 포트"
+
+msgid "Destination Port/Port Range"
+msgstr "대상 포트/포트 범위"
+
+msgid "Destination port (integer in [1, 65535] or range in a:b)"
+msgstr "대상 포트 ([1, 65535] 중 정수거나 a:b 범위 내)"
+
+# auto translated by TM merge from project: zun-ui, version: master, DocId: zun_ui/locale/djangojs
+msgctxt "Current status of a Firewall Group"
+msgid "Down"
+msgstr "Down"
+
+msgid "Edit Firewall Group"
+msgstr "방화벽 그룹 편집"
+
+msgid "Edit FirewallGroup {{ name }}"
+msgstr "FirewallGroup {{ name }} 편집"
+
+msgid "Edit Policy"
+msgstr "정책 편집"
+
+msgid "Edit Policy {{ name }}"
+msgstr "정책 {{ name }} 편집"
+
+msgid "Edit Rule"
+msgstr "규칙 편집"
+
+msgid "Edit Rule {{ name }}"
+msgstr "{{ name }} 규칙 편집"
+
+msgid "Egress Policy"
+msgstr "Egress 정책"
+
+msgid "Egress Policy ID"
+msgstr "Egress 정책 ID"
+
+msgid "Enabled"
+msgstr "사용됨"
+
+# auto translated by TM merge from project: neutron-lbaas-dashboard, version: master, DocId: neutron_lbaas_dashboard/locale/djangojs
+msgctxt "Current status of a Firewall Group"
+msgid "Error"
+msgstr "오류"
+
+#, python-format
+msgid "Failed to add the port(s) to the firewall group %(name)s: %(reason)s"
+msgstr "방화벽 그룹 %(name)s 에 포트 추가하기가 실패했습니다: %(reason)s"
+
+#, python-format
+msgid "Failed to insert rule to policy %(name)s: %(reason)s"
+msgstr "%(name)s 정책에 규칙을 추가하지 못하였습니다.: %(reason)s"
+
+#, python-format
+msgid "Failed to remove rule from policy %(name)s: %(reason)s"
+msgstr "규칙을 %(name)s 정책에서 제거하지 못하였습니다.: %(reason)s"
+
+#, python-format
+msgid ""
+"Failed to remove the port(s) from the firewall group %(name)s: %(reason)s"
+msgstr "방화벽 그룹 %(name)s 에 포트 제거하기가 실패했습니다: %(reason)s"
+
+#, python-format
+msgid "Failed to retrieve available rules: %s"
+msgstr "사용가능한 규칙을 검색하지 못하였습니다.: %s"
+
+#, python-format
+msgid "Failed to retrieve current rules in policy %(name)s: %(reason)s"
+msgstr "%(name)s 정책에서 현재 규칙을 찾지 못하였습니다.: %(reason)s"
+
+msgid "Failed to retrieve port list of the firewall group."
+msgstr "방화벽 그룹에 대한 포트 목록을 가져올 수 없습니다."
+
+#, python-format
+msgid "Failed to update firewall group %(name)s: %(reason)s"
+msgstr "방화벽 그룹 %(name)s 업데이트에 실패했습니다: %(reason)s"
+
+#, python-format
+msgid "Failed to update policy %(name)s: %(reason)s"
+msgstr "정책 %(name)s를 업데이트하지 못하였습니다.: %(reason)s"
+
+#, python-format
+msgid "Failed to update rule %(name)s: %(reason)s"
+msgstr "%(name)s 규칙을 업데이트하지 못하였습니다.: %(reason)s"
+
+msgid "Firewall Groups"
+msgstr "방화벽 그룹"
+
+msgid "Firewall Policies"
+msgstr "방화벽 정책"
+
+msgid "Firewall Rules"
+msgstr "방화벽 규칙"
+
+#, python-format
+msgid "Firewall group %s was successfully updated."
+msgstr "방화벽 그룹 %s은 성공적으로 업데이트 되었습니다."
+
+msgid "FirewallGroup"
+msgstr "FirewallGroup"
+
+# auto translated by TM merge from project: openstack-manuals, version: stable-liberty, DocId: doc/common-rst/source/locale/common-rst
+msgid "ICMP"
+msgstr "ICMP"
+
+# auto translated by TM merge from project: neutron-fwaas-dashboard, version: stable-queens, DocId: neutron_fwaas_dashboard/locale/django
+msgid "ID"
+msgstr "ID"
+
+msgid "IP Version"
+msgstr "IP 버전"
+
+msgid "IP Version for Firewall Rule"
+msgstr "방화벽 규칙에 대한 IP 버전"
+
+# auto translated by TM merge from project: horizon, version: stable-mitaka, DocId: openstack_dashboard/locale/django
+msgctxt "Current status of a Firewall Group"
+msgid "Inactive"
+msgstr "Inactive"
+
+msgid "Ingress Policy"
+msgstr "Ingress 정책"
+
+msgid "Ingress Policy ID"
+msgstr "Ingress 정책 ID"
+
+msgid "Insert Rule"
+msgstr "규칙 추가"
+
+msgid "Insert Rule to Policy"
+msgstr "정책에 규칙을 추가"
+
+msgid "Label"
+msgstr "레이블"
+
+msgid "Name"
+msgstr "이름"
+
+msgid "No options available"
+msgstr "사용 가능한 옵션이 없습니다"
+
+msgid "None"
+msgstr "없음"
+
+# auto translated by TM merge from project: horizon, version: stable-mitaka, DocId: openstack_dashboard/locale/django
+msgctxt "Current status of a Firewall Group"
+msgid "Pending Create"
+msgstr "대기중인 생성"
+
+# auto translated by TM merge from project: horizon, version: stable-mitaka, DocId: openstack_dashboard/locale/django
+msgctxt "Current status of a Firewall Group"
+msgid "Pending Delete"
+msgstr "대기중인 삭제"
+
+# auto translated by TM merge from project: horizon, version: stable-mitaka, DocId: openstack_dashboard/locale/django
+msgctxt "Current status of a Firewall Group"
+msgid "Pending Update"
+msgstr "대기중인 업데이트"
+
+msgid "Policies"
+msgstr "정책"
+
+msgid "Policy"
+msgstr "정책"
+
+#, python-format
+msgid "Policy %s was successfully updated."
+msgstr "정책 %s를 성공적으로 업데이트 하였습니다."
+
+msgid "Ports"
+msgstr "포트"
+
+# auto translated by TM merge from project: neutron-fwaas-dashboard, version: stable-queens, DocId: neutron_fwaas_dashboard/locale/django
+msgid "Project ID"
+msgstr "프로젝트 ID"
+
+# auto translated by TM merge from project: zun-ui, version: master, DocId: zun_ui/locale/djangojs
+msgid "Protocol"
+msgstr "프로토콜"
+
+msgid "Protocol for the firewall rule"
+msgstr "방화벽 규칙 프로토콜"
+
+msgid "REJECT"
+msgstr "REJECT"
+
+msgctxt "Action Name of a Firewall Rule"
+msgid "REJECT"
+msgstr "REJECT"
+
+msgid "Remove Port"
+msgstr "포트 제거"
+
+msgid "Remove Port from Firewall Group"
+msgstr "방화벽 그룹에 포트 제거"
+
+msgid "Remove Rule"
+msgstr "규칙 삭제"
+
+msgid "Remove Rule from Policy"
+msgstr "정책에서 규칙 제거"
+
+msgid "Remove port from FirewallGroup {{ name }}"
+msgstr "FirewallGroup {{ name }} 에서 포트 제거"
+
+#, python-format
+msgid "Removed the port(s) from the firewall group %s successfully."
+msgstr "성공적으로 방화벽 그룹 %s에서 포트를 제거하였습니다."
+
+msgid "Rule"
+msgstr "규칙"
+
+#, python-format
+msgid "Rule %(rule)s was successfully inserted to policy %(policy)s."
+msgstr "%(rule)s 규칙을 %(policy)s 정책에 성공적으로 추가하였습니다."
+
+#, python-format
+msgid "Rule %(rule)s was successfully removed from policy %(policy)s."
+msgstr "%(rule)s 규칙을 %(policy)s 정책에서 성공적으로 제거하였습니다."
+
+#, python-format
+msgid "Rule %s was successfully updated."
+msgstr "%s 규칙을 성공적으로 업데이트 하였습니다."
+
+msgid "Rules"
+msgstr "규칙"
+
+msgid "Save Changes"
+msgstr "변경사항 저장"
+
+msgid "Scheduled deletion of Firewall Group"
+msgid_plural "Scheduled deletion of Firewall Groups"
+msgstr[0] "방화벽 그룹에 대한 예약된 삭제"
+
+msgid "Scheduled deletion of Policy"
+msgid_plural "Scheduled deletion of Policies"
+msgstr[0] "정책 예약 삭제"
+
+msgid "Scheduled deletion of Rule"
+msgid_plural "Scheduled deletion of Rules"
+msgstr[0] "규칙 예약 삭제"
+
+msgid "Select a Policy"
+msgstr "정책 선택합니다."
+
+msgid "Select ports for your firewall group."
+msgstr "방화벽 그룹에 대한 포트를 선택합니다."
+
+msgid "Select rules for your policy."
+msgstr "정책을 위해 규칙을 선택합니다."
+
+msgid "Selected Ports"
+msgstr "선택한 포트"
+
+# auto translated by TM merge from project: neutron-fwaas-dashboard, version: stable-queens, DocId: neutron_fwaas_dashboard/locale/django
+msgid "Selected Rules"
+msgstr "규칙을 선택합니다."
+
+msgid "Shared"
+msgstr "공유"
+
+# auto translated by TM merge from project: neutron-lbaas-dashboard, version: master, DocId: neutron_lbaas_dashboard/locale/djangojs
+msgid "Source IP"
+msgstr "소스 IP"
+
+# auto translated by TM merge from project: neutron-fwaas-dashboard, version: stable-queens, DocId: neutron_fwaas_dashboard/locale/django
+msgid "Source IP Address"
+msgstr "소스 IP 주소"
+
+msgid "Source IP Address/Subnet"
+msgstr "소스 IP 주소/서브넷"
+
+msgid "Source IP address or subnet"
+msgstr "소스 IP 주소 또는 서브넷"
+
+msgid "Source Port"
+msgstr "소스 포트"
+
+msgid "Source Port/Port Range"
+msgstr "소스 포트/포트 범위"
+
+msgid "Source port (integer in [1, 65535] or range in a:b)"
+msgstr "소스 포트 (정수 [1, 65535] 사이 또는 a:b 범위)"
+
+msgid ""
+"Source/Destination Network Address and IP version are inconsistent. Please "
+"make them consistent."
+msgstr ""
+"원본/대상 네트워크 주소와 IP 버전이 일치하지 않습니다. 일치 시켜주세요."
+
+msgid "Status"
+msgstr "상태"
+
+msgid "TCP"
+msgstr "TCP"
+
+msgid "UDP"
+msgstr "UDP"
+
+# auto translated by TM merge from project: horizon, version: stable-mitaka, DocId: openstack_dashboard/locale/django
+msgctxt "Admin state of a Firewall Group"
+msgid "UP"
+msgstr "UP"
+
+#, python-format
+msgid "Unable to add Firewall Group \"%s\"."
+msgstr "방화벽 그룹 \"%s\"를 추가할 수 없습니다."
+
+#, python-format
+msgid "Unable to add Policy \"%s\"."
+msgstr "정책 \"%s\"를 추가할 수 없습니다."
+
+#, python-format
+msgid "Unable to add Rule \"%s\"."
+msgstr "규칙 \"%s\"를 추가할 수 없습니다."
+
+#, python-format
+msgid "Unable to delete firewall group. %s"
+msgstr "방화벽 그룹 %s를 삭제할 수 없습니다."
+
+#, python-format
+msgid "Unable to delete policy. %s"
+msgstr "정책를 삭제할 수 없습니다. %s"
+
+#, python-format
+msgid "Unable to delete rule. %s"
+msgstr "규칙을 삭제할 수 없습니다. %s"
+
+msgid "Unable to retrieve firewall group details."
+msgstr "방화벽 그룹 상세 정볼르 가져올 수 없습니다."
+
+msgid "Unable to retrieve firewall group list."
+msgstr "방화벽 그룹 목록을 가져올 수 없습니다."
+
+msgid "Unable to retrieve firewallgroup details."
+msgstr "방화벽 그룹 세부 사항을 가져올 수 없습니다."
+
+msgid "Unable to retrieve policies list."
+msgstr "정책 목록을 찾지 못 했습니다."
+
+msgid "Unable to retrieve policy details."
+msgstr "정책 세부 정보를 찾지 못 했습니다."
+
+#, python-format
+msgid "Unable to retrieve policy list (%s)."
+msgstr "정책 목록 (%s) 을(를) 가져올 수 없습니다."
+
+msgid "Unable to retrieve policy list."
+msgstr "정책 목록을 찾지 못 했습니다."
+
+#, python-format
+msgid "Unable to retrieve ports (%s)."
+msgstr "포트 (%s) 을(를) 가져올 수 없습니다."
+
+msgid "Unable to retrieve rule details."
+msgstr "규칙 세부 정보를 찾지 못 했습니다."
+
+#, python-format
+msgid "Unable to retrieve rules (%s)."
+msgstr "규칙 (%s) 을(를) 가져올 수 없습니다."
+
+msgid "Unable to retrieve rules list."
+msgstr "규칙 목록을 찾지 못 했습니다."
+
+msgid "Value"
+msgstr "값"
+
+msgid "You may add ports to firewall group here."
+msgstr "이 방화벽 그룹에 포트를 추가할 수 있습니다."
+
+msgid "You may remove ports from firewall group here."
+msgstr "이 방화벽 그룹에서 포트를 제거할 수 있습니다."
+
+# auto translated by TM merge from project: neutron-fwaas-dashboard, version: stable-queens, DocId: neutron_fwaas_dashboard/locale/django
+msgid "You may update firewall group details here."
+msgstr "방화벽 그룹 세부 사항을 여기서 업데이트 할 수 있습니다."
+
+# auto translated by TM merge from project: neutron-fwaas-dashboard, version: stable-queens, DocId: neutron_fwaas_dashboard/locale/django
+msgid ""
+"You may update policy details here. Use 'Insert Rule' or 'Remove Rule' links "
+"instead to insert or remove a rule."
+msgstr ""
+"여기서 정책의 세부 사항을 업데이트 할 수 있습니다. 규칙을 삽입하거나 삭제하"
+"는 대신에 '규칙 삽입'나 '규칙 삭제' 링크를 사용하십시오."
+
+# auto translated by TM merge from project: neutron-fwaas-dashboard, version: stable-queens, DocId: neutron_fwaas_dashboard/locale/django
+msgid "You may update rule details here."
+msgstr "여기서 규칙 세부 사항을 업데이트 할 수 있습니다."

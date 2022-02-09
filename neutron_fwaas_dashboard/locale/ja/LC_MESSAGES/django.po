@@ -1,0 +1,633 @@
+# Akihiro Motoki <amotoki@gmail.com>, 2017. #zanata
+# Yuko Katabami <yukokatabami@gmail.com>, 2018. #zanata
+# Takashi Kuroda <tkuroda@redhat.com>, 2019. #zanata
+msgid ""
+msgstr ""
+"Project-Id-Version: neutron-fwaas-dashboard VERSION\n"
+"Report-Msgid-Bugs-To: https://bugs.launchpad.net/openstack-i18n/\n"
+"POT-Creation-Date: 2019-03-19 10:41+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2019-03-20 03:16+0000\n"
+"Last-Translator: Takashi Kuroda <tkuroda@redhat.com>\n"
+"Language-Team: Japanese\n"
+"Language: ja\n"
+"X-Generator: Zanata 4.3.3\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+
+msgid "-"
+msgstr "-"
+
+msgid "ALLOW"
+msgstr "ALLOW"
+
+msgctxt "Action Name of a Firewall Rule"
+msgid "ALLOW"
+msgstr "ALLOW"
+
+msgid "ANY"
+msgstr "ANY"
+
+msgid "Action"
+msgstr "アクション"
+
+msgid "Action for the firewall rule"
+msgstr "ファイアウォールルールのアクション"
+
+msgctxt "Current status of a Firewall Group"
+msgid "Active"
+msgstr "稼働中"
+
+msgid "Add"
+msgstr "追加"
+
+msgid "Add Firewall Group"
+msgstr "ファイアウォールグループの追加"
+
+msgid "Add New Firewall Group"
+msgstr "ファイアウォールグループの追加"
+
+msgid "Add New Policy"
+msgstr "ポリシーの追加"
+
+msgid "Add New Rule"
+msgstr "ルールの追加"
+
+msgid "Add Policy"
+msgstr "ポリシーの追加"
+
+msgid "Add Port"
+msgstr "ポートの追加"
+
+msgid "Add Port to Firewall Group"
+msgstr "ファイアウォールグループへのポートの追加"
+
+msgid "Add Rule"
+msgstr "ルールの追加"
+
+msgid "Add port to Firewall Group {{ name }}"
+msgstr "ファイアウォールグループ {{ name }} へのポートの追加"
+
+#, python-format
+msgid "Added Firewall Group\"%s\"."
+msgstr "ファイアウォールグループ \"%s\" を追加しました。"
+
+#, python-format
+msgid "Added Policy \"%s\"."
+msgstr "ポリシー \"%s\" を追加しました。"
+
+#, python-format
+msgid "Added Rule \"%s\"."
+msgstr "ルール \"%s\" を追加しました。"
+
+#, python-format
+msgid "Added the port(s) to the firewall group %s successfully."
+msgstr "ポートを正常にファイアウォールグループ %s に追加しました。"
+
+msgid "Admin State"
+msgstr "管理状態"
+
+msgid "Admin State Up"
+msgstr "管理状態有効"
+
+msgid "After"
+msgstr "後に挿入"
+
+msgid "Audited"
+msgstr "監査対象 (Audited)"
+
+msgid "Available Ports"
+msgstr "利用可能なポート"
+
+msgid "Available Rules"
+msgstr "利用可能なルール"
+
+msgid "Before"
+msgstr "前に挿入"
+
+msgid "Choose port(s) from Available Ports. "
+msgstr "以下の利用可能なポートからポートを選択してください。"
+
+msgid ""
+"Choose rule(s) from Available Rules to Selected Rule by push button or drag "
+"and drop, you may change their order by drag and drop as well."
+msgstr ""
+"利用可能なルールから選択済みルールに、ボタンを押すかドラッグアンドドロップす"
+"ることでルールを選択します。ドラッグアンドドロップでルールの順番を変更するこ"
+"ともできます。"
+
+msgid ""
+"Choose the rule you want to insert. Specify either the rule you want to "
+"insert immediately before, or the rule to insert immediately after. If both "
+"are specified, the prior takes precedence."
+msgstr ""
+"挿入するルールを選択してください。ルールをどのルールの直前、または直後に挿入"
+"するかを指定してください。両方指定した場合は指定したルールの直前に挿入されま"
+"す。"
+
+msgid "Choose the rule you want to remove."
+msgstr "削除するルールを選択してください。"
+
+msgid "Create Firewall Group"
+msgstr "ファイアウォールグループの作成"
+
+msgid "Create a Firewall Group with selected ports."
+msgstr "ポートを選択してファイアウォールグループを作成します。"
+
+msgid ""
+"Create a firewall group based on a policy.\n"
+"\n"
+"A firewall group represents a logical firewall resource that a tenant can "
+"instantiate and manage. A firewall group must be associated with one policy, "
+"all other fields are optional."
+msgstr ""
+"ポリシーに基づいてファイアウォールグループを作成します。\n"
+"\n"
+"ファイアウォールグループは、テナントがインスタンス化して管理することのできる"
+"論理的なファイアウォールリソースを表します。1 つのファイアウォールグループは "
+"1 つのポリシーと関連付けられる必要があり、他のフィールドはすべて省略可能で"
+"す。"
+
+msgid ""
+"Create a firewall policy with an ordered list of firewall rules.\n"
+"\n"
+"A firewall policy is an ordered collection of firewall rules. So if the "
+"traffic matches the first rule, the other rules are not executed. If the "
+"traffic does not match the current rule, then the next rule is executed. A "
+"firewall policy has the following attributes:\n"
+"\n"
+"<li>Shared: A firewall policy can be shared across tenants. Thus it can also "
+"be made part of an audit workflow wherein the firewall policy can be audited "
+"by the relevant entity that is authorized.</li><li>Audited: When audited is "
+"set to True, it indicates that the firewall policy has been audited. Each "
+"time the firewall policy or the associated firewall rules are changed, this "
+"attribute will be set to False and will have to be explicitly set to True "
+"through an update operation.</li>\n"
+"The name field is required, all others are optional."
+msgstr ""
+"ファイアウォールルールの順序付きリストでファイアウォールポリシーを作成しま"
+"す。\n"
+"\n"
+"ファイアウォールポリシーは、ファイアウォールルールの順序付きコレクションなの"
+"で、トラフィックが最初のルールに一致した場合には、他のルールは実行されませ"
+"ん。トラフィックが現在のルールに一致しない場合には、次のルールが実行されま"
+"す。ファイアウォールポリシーには、以下の属性があります。\n"
+"\n"
+"<li>共有: ファイアウォールポリシーをテナント間で共有できます。そのため、承認"
+"済みの関連エンティティーによってファイアウォールポリシーを監査することができ"
+"る監査ワークフローの一部にすることも可能です。</li><li>監査: 監査が True に設"
+"定されている場合には、ファイアウォールポリシーが監査されることを意味します。"
+"ファイアウォールポリシーまたは関連付けられたファイアウォールルールが変更され"
+"るたびに、この属性は False に設定され、更新操作で明示的に True に設定する必要"
+"があります。</li>\n"
+"名前のフィールドは入力する必要があり、その他のフィールドはすべて省略可能で"
+"す。"
+
+msgid ""
+"Create a firewall rule.\n"
+"\n"
+"A Firewall rule is an association of the following attributes:\n"
+"\n"
+"<li>IP Addresses: The addresses from/to which the traffic filtration needs "
+"to be applied.</li><li>IP Version: The type of IP packets (IP V4/V6) that "
+"needs to be filtered.</li><li>Protocol: Type of packets (UDP, ICMP, TCP, "
+"Any) that needs to be checked.</li><li>Action: Action is the type of "
+"filtration required, it can be Reject/Deny/Allow data packets.</li>\n"
+"The protocol and action fields are required, all others are optional."
+msgstr ""
+"ファイアウォールルールを作成します。\n"
+"\n"
+"ファイアウォールルールは、以下の属性の組み合わせです。\n"
+"\n"
+"<li>IP アドレス: トラフィックフィルターを適用する必要があるアドレス (送信元/"
+"送信先) です。</li><li>IP バージョン: フィルタリングする必要がある IP パケッ"
+"トの種別 (IP V4/V6) です。</li><li>プロトコル: チェックされる必要があるパケッ"
+"トの種別 (UDP、ICMP、TCP、Any) です。</li><li>アクション: アクションは必要な"
+"フィルターの種別で、データパケットを REJECT/DENY/ALLOW できます。</li>\n"
+"プロトコルとアクションは必須項目であり、他のフィールドはすべて省略可能です。"
+
+msgid "Create a policy with selected rules."
+msgstr "ルールを選択してポリシーを作成します。"
+
+msgctxt "Current status of a Firewall Group"
+msgid "Created"
+msgstr "作成済み"
+
+msgid "DENY"
+msgstr "DENY"
+
+msgctxt "Action Name of a Firewall Rule"
+msgid "DENY"
+msgstr "DENY"
+
+msgctxt "Admin state of a Firewall Group"
+msgid "DOWN"
+msgstr "DOWN"
+
+msgid "Delete Firewall Group"
+msgid_plural "Delete Firewall Groups"
+msgstr[0] "ファイアウォールグループの削除"
+
+msgid "Delete Policy"
+msgid_plural "Delete Policies"
+msgstr[0] "ポリシーの削除"
+
+msgid "Delete Rule"
+msgid_plural "Delete Rules"
+msgstr[0] "ルールの削除"
+
+msgid "Description"
+msgstr "説明"
+
+msgid "Description:"
+msgstr "説明:"
+
+msgid "Destination IP"
+msgstr "宛先 IP アドレス"
+
+msgid "Destination IP Address"
+msgstr "宛先 IP アドレス"
+
+msgid "Destination IP Address/Subnet"
+msgstr "宛先 IP アドレス/サブネット"
+
+msgid "Destination IP address or subnet"
+msgstr "宛先 IP アドレスまたはサブネット"
+
+msgid "Destination Port"
+msgstr "宛先ポート番号"
+
+msgid "Destination Port/Port Range"
+msgstr "宛先ポート/ポートの範囲"
+
+msgid "Destination port (integer in [1, 65535] or range in a:b)"
+msgstr "宛先ポート ([1, 65535] の整数か a:b 形式の範囲)"
+
+msgctxt "Current status of a Firewall Group"
+msgid "Down"
+msgstr "停止中"
+
+msgid "Edit Firewall Group"
+msgstr "ファイアウォールグループの編集"
+
+msgid "Edit FirewallGroup {{ name }}"
+msgstr "ファイアウォールグループ {{ name }} の編集"
+
+msgid "Edit Policy"
+msgstr "ポリシーの編集"
+
+msgid "Edit Policy {{ name }}"
+msgstr "ポリシー {{ name }} の編集"
+
+msgid "Edit Rule"
+msgstr "ルールの編集"
+
+msgid "Edit Rule {{ name }}"
+msgstr "ルール {{ name }} の編集"
+
+msgid "Egress Policy"
+msgstr "送信ポリシー"
+
+msgid "Egress Policy ID"
+msgstr "送信ポリシー ID"
+
+msgid "Enabled"
+msgstr "有効"
+
+msgctxt "Current status of a Firewall Group"
+msgid "Error"
+msgstr "エラー"
+
+#, python-format
+msgid "Failed to add the port(s) to the firewall group %(name)s: %(reason)s"
+msgstr ""
+"ポートのファイアウォールグループ %(name)s への追加に失敗しました: %(reason)s"
+
+#, python-format
+msgid "Failed to insert rule to policy %(name)s: %(reason)s"
+msgstr "ポリシー %(name)s へのルールの挿入に失敗しました: %(reason)s"
+
+#, python-format
+msgid "Failed to remove rule from policy %(name)s: %(reason)s"
+msgstr "ポリシー %(name)s からのルールの削除に失敗しました: %(reason)s"
+
+#, python-format
+msgid ""
+"Failed to remove the port(s) from the firewall group %(name)s: %(reason)s"
+msgstr ""
+"ポートのファイアウォールグループ  %(name)s からの削除に失敗しました: "
+"%(reason)s"
+
+#, python-format
+msgid "Failed to retrieve available rules: %s"
+msgstr "利用可能なルールの取得に失敗しました: %s"
+
+#, python-format
+msgid "Failed to retrieve current rules in policy %(name)s: %(reason)s"
+msgstr "ポリシー %(name)s の現在のルールの取得に失敗しました: %(reason)s"
+
+msgid "Failed to retrieve port list of the firewall group."
+msgstr "ファイアウォールグループのポート一覧を取得できません。"
+
+#, python-format
+msgid "Failed to update firewall group %(name)s: %(reason)s"
+msgstr "ファイアウォールグループ %(name)s の更新に失敗しました: %(reason)s"
+
+#, python-format
+msgid "Failed to update policy %(name)s: %(reason)s"
+msgstr "ポリシー %(name)s の更新に失敗しました: %(reason)s"
+
+#, python-format
+msgid "Failed to update rule %(name)s: %(reason)s"
+msgstr "ルール %(name)s の更新に失敗しました: %(reason)s"
+
+msgid "Firewall Groups"
+msgstr "ファイアウォールグループ"
+
+msgid "Firewall Policies"
+msgstr "ファイアウォールポリシー"
+
+msgid "Firewall Rules"
+msgstr "ファイアウォールルール"
+
+#, python-format
+msgid "Firewall group %s was successfully updated."
+msgstr "ファイアウォールグループ %s が正常に更新されました。"
+
+msgid "FirewallGroup"
+msgstr "ファイアウォールグループ"
+
+msgid "ICMP"
+msgstr "ICMP"
+
+msgid "ID"
+msgstr "ID"
+
+msgid "IP Version"
+msgstr "IP バージョン"
+
+msgid "IP Version for Firewall Rule"
+msgstr "ファイアウォールルールの IP バージョン"
+
+msgctxt "Current status of a Firewall Group"
+msgid "Inactive"
+msgstr "非稼働"
+
+msgid "Ingress Policy"
+msgstr "受信ポリシー"
+
+msgid "Ingress Policy ID"
+msgstr "受信ポリシー ID"
+
+msgid "Insert Rule"
+msgstr "ルールの挿入"
+
+msgid "Insert Rule to Policy"
+msgstr "ポリシーへのルールの挿入"
+
+msgid "Label"
+msgstr "ラベル"
+
+msgid "Name"
+msgstr "名前"
+
+msgid "No options available"
+msgstr "利用可能なオプションはありません"
+
+msgid "None"
+msgstr "なし"
+
+msgctxt "Current status of a Firewall Group"
+msgid "Pending Create"
+msgstr "作成待ち"
+
+msgctxt "Current status of a Firewall Group"
+msgid "Pending Delete"
+msgstr "削除待ち"
+
+msgctxt "Current status of a Firewall Group"
+msgid "Pending Update"
+msgstr "更新待ち"
+
+msgid "Policies"
+msgstr "ポリシー"
+
+msgid "Policy"
+msgstr "ポリシー"
+
+#, python-format
+msgid "Policy %s was successfully updated."
+msgstr "ポリシー %s が正常に更新されました。"
+
+msgid "Ports"
+msgstr "ポート"
+
+msgid "Project ID"
+msgstr "プロジェクト ID"
+
+msgid "Protocol"
+msgstr "プロトコル"
+
+msgid "Protocol for the firewall rule"
+msgstr "ファイアウォールルールのプロトコル"
+
+msgid "REJECT"
+msgstr "REJECT"
+
+msgctxt "Action Name of a Firewall Rule"
+msgid "REJECT"
+msgstr "REJECT"
+
+msgid "Remove Port"
+msgstr "ポートの削除"
+
+msgid "Remove Port from Firewall Group"
+msgstr "ファイアウォールグループからのポートの削除"
+
+msgid "Remove Rule"
+msgstr "ルールの削除"
+
+msgid "Remove Rule from Policy"
+msgstr "ポリシーからのルールの削除"
+
+msgid "Remove port from FirewallGroup {{ name }}"
+msgstr "ファイアウォールグループ {{ name }} からのポートの削除"
+
+#, python-format
+msgid "Removed the port(s) from the firewall group %s successfully."
+msgstr "ポートを正常にファイアウォールグループ %s から削除しました。"
+
+msgid "Rule"
+msgstr "ルール"
+
+#, python-format
+msgid "Rule %(rule)s was successfully inserted to policy %(policy)s."
+msgstr "ルール %(rule)s のポリシー %(policy)s への挿入に成功しました。"
+
+#, python-format
+msgid "Rule %(rule)s was successfully removed from policy %(policy)s."
+msgstr "ポリシー %(policy)s からのルール %(rule)s の削除に成功しました。"
+
+#, python-format
+msgid "Rule %s was successfully updated."
+msgstr "ルール %s が正常に更新されました。"
+
+msgid "Rules"
+msgstr "ルール"
+
+msgid "Save Changes"
+msgstr "変更の保存"
+
+msgid "Scheduled deletion of Firewall Group"
+msgid_plural "Scheduled deletion of Firewall Groups"
+msgstr[0] "ファイアウォールグループの削除を予約しました"
+
+msgid "Scheduled deletion of Policy"
+msgid_plural "Scheduled deletion of Policies"
+msgstr[0] "ポリシーの削除を予約しました"
+
+msgid "Scheduled deletion of Rule"
+msgid_plural "Scheduled deletion of Rules"
+msgstr[0] "ルールの削除を予約しました"
+
+msgid "Select a Policy"
+msgstr "ポリシーを選択してください"
+
+msgid "Select ports for your firewall group."
+msgstr "ファイアウォールグループを適用するポートを選択してください。"
+
+msgid "Select rules for your policy."
+msgstr "ポリシーに追加するルールの選択"
+
+msgid "Selected Ports"
+msgstr "選択済みポート"
+
+msgid "Selected Rules"
+msgstr "選択済みのルール"
+
+msgid "Shared"
+msgstr "共有"
+
+msgid "Source IP"
+msgstr "送信元 IP"
+
+msgid "Source IP Address"
+msgstr "送信元 IP アドレス"
+
+msgid "Source IP Address/Subnet"
+msgstr "送信元 IP アドレス/サブネット"
+
+msgid "Source IP address or subnet"
+msgstr "送信元 IP アドレスまたはサブネット"
+
+msgid "Source Port"
+msgstr "送信元ポート番号"
+
+msgid "Source Port/Port Range"
+msgstr "送信元ポート/ポートの範囲"
+
+msgid "Source port (integer in [1, 65535] or range in a:b)"
+msgstr "送信元ポート ([1, 65535] の整数か a:b 形式の範囲)"
+
+msgid ""
+"Source/Destination Network Address and IP version are inconsistent. Please "
+"make them consistent."
+msgstr ""
+"送信元 / 送信先のネットワークアドレスと IP バージョンが一致していません。これ"
+"らを一致させてください。"
+
+msgid "Status"
+msgstr "ステータス"
+
+msgid "TCP"
+msgstr "TCP"
+
+msgid "UDP"
+msgstr "UDP"
+
+msgctxt "Admin state of a Firewall Group"
+msgid "UP"
+msgstr "UP"
+
+#, python-format
+msgid "Unable to add Firewall Group \"%s\"."
+msgstr "ファイアウォールグループ \"%s\" を追加できません。"
+
+#, python-format
+msgid "Unable to add Policy \"%s\"."
+msgstr "ポリシー \"%s\" を追加できません。"
+
+#, python-format
+msgid "Unable to add Rule \"%s\"."
+msgstr "ルール \"%s\" を追加できません。"
+
+#, python-format
+msgid "Unable to delete firewall group. %s"
+msgstr "ファイアウォールグループを削除できません: %s"
+
+#, python-format
+msgid "Unable to delete policy. %s"
+msgstr "ポリシーを削除できません: %s"
+
+#, python-format
+msgid "Unable to delete rule. %s"
+msgstr "ルールを削除できません: %s"
+
+msgid "Unable to retrieve firewall group details."
+msgstr "ファイアウォールグループの詳細を取得できません。"
+
+msgid "Unable to retrieve firewall group list."
+msgstr "ファイアウォールグループの一覧を取得できません。"
+
+msgid "Unable to retrieve firewallgroup details."
+msgstr "ファイアウォールグループの詳細を取得できません。"
+
+msgid "Unable to retrieve policies list."
+msgstr "ポリシー一覧を取得できません。"
+
+msgid "Unable to retrieve policy details."
+msgstr "ポリシーの詳細を取得できません。"
+
+#, python-format
+msgid "Unable to retrieve policy list (%s)."
+msgstr "ポリシー覧を取得できません (%s)"
+
+msgid "Unable to retrieve policy list."
+msgstr "ポリシー一覧を取得できません。"
+
+#, python-format
+msgid "Unable to retrieve ports (%s)."
+msgstr "ポートを取得できません (%s)"
+
+msgid "Unable to retrieve rule details."
+msgstr "ルールの詳細を取得できません。"
+
+#, python-format
+msgid "Unable to retrieve rules (%s)."
+msgstr "ルール一覧を取得できません (%s)"
+
+msgid "Unable to retrieve rules list."
+msgstr "ルール一覧を取得できません。"
+
+msgid "Value"
+msgstr "値"
+
+msgid "You may add ports to firewall group here."
+msgstr "ファイアウォールグループにポートを追加できます。"
+
+msgid "You may remove ports from firewall group here."
+msgstr "ファイアウォールグループからポートを削除できます。"
+
+msgid "You may update firewall group details here."
+msgstr "ファイアウォールグループの詳細をここから更新できます。"
+
+msgid ""
+"You may update policy details here. Use 'Insert Rule' or 'Remove Rule' links "
+"instead to insert or remove a rule."
+msgstr ""
+"ポリシーの詳細をここから更新できます。ルールの挿入、削除はここではなく「ルー"
+"ルの挿入」「ルールの削除」を使ってください。"
+
+msgid "You may update rule details here."
+msgstr "ルールの詳細をここから更新できます。"

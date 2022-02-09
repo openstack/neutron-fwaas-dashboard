@@ -1,0 +1,10 @@
+---
+fixes:
+  - |
+    "Add Router" and "Remove Router" operations are now controlled by
+    ``update_firewall`` rule in the policy.json file.
+    Previously they were controlled by ``get_firewall`` rule and non-existing
+    rules like ``add_router`` and ``remove_router``.
+    If operators define their custom policy rules for ``add_router`` and
+    ``remove_router``, such policy rules need to updated accordingly.
+    [`bug 1703952 <https://bugs.launchpad.net/neutron-fwaas-dashboard/+bug/1703952>`__]

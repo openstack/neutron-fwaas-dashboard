@@ -1,0 +1,76 @@
+# Akihiro Motoki <amotoki@gmail.com>, 2017. #zanata
+# Hidekazu Nakamura <hid-nakamura@vf.jp.nec.com>, 2017. #zanata
+# Yuko Fukuda <fukuda.yuko@jp.fujitsu.com>, 2017. #zanata
+# Akihiro Motoki <amotoki@gmail.com>, 2018. #zanata
+msgid ""
+msgstr ""
+"Project-Id-Version: Neutron FWaaS Dashboard Release Notes\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-02-07 04:59+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2018-02-06 09:35+0000\n"
+"Last-Translator: Akihiro Motoki <amotoki@gmail.com>\n"
+"Language-Team: Japanese\n"
+"Language: ja\n"
+"X-Generator: Zanata 3.9.6\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+
+msgid "0.1.0"
+msgstr "0.1.0"
+
+msgid "1.1.0"
+msgstr "1.1.0"
+
+msgid ""
+"A panel for FWaaS v2 is newly added. There is no specific installation "
+"process. After installing the new release of neutron-fwaas-dashboard, if "
+"FWaaS v2 API is available on your neutron deployment, the panel for FWaaS v2 "
+"will be displayed."
+msgstr ""
+"FWaaS v2 用のパネルが新たに追加されました。 neutron-fwaas-dashboard の新リ"
+"リースをインストールすると、お使いの環境の neutron で FWaaS v2 API が利用可能"
+"であれば、 FWaaS v2 用のパネルが表示されます、"
+
+msgid "Bug Fixes"
+msgstr "バグ修正"
+
+msgid "Current Series Release Notes"
+msgstr "開発中バージョンのリリースノート"
+
+msgid "Neutron FWaaS Dashboard Release Notes"
+msgstr "Neutron FWaaS Dashboard リリースノート"
+
+msgid ""
+"Neutron FWaaS support in the OpenStack Dashboard is now split out into a "
+"separate package ``neutron-fwaas-dashboard``. You need to install ``neutron-"
+"fwaas-dashboard`` after upgrading the OpenStack Dashboard to Pike release "
+"and add ``enabled`` file for Neutron FWaaS dashboard. For detail "
+"information, see https://docs.openstack.org/neutron-fwaas-dashboard/latest/."
+msgstr ""
+"OpenStack Dashboard の Neutron FWaaS 対応は、別のパッケージ ``neutron-fwaas-"
+"dashboard`` として分離されました。 OpenStack Dashboard を Pike リリースにアッ"
+"プグレードした後で、 ``neutron-fwaas-dashboard`` をインストールし、 Neutron "
+"FWaaS ダッシュボード用の ``enabled`` ファイルを追加する必要があります。詳しく"
+"は https://docs.openstack.org/neutron-fwaas-dashboard/latest/ を参照してくだ"
+"さい。"
+
+msgid ""
+"Neutron FWaaS support in the OpenStack Dashboard is now split out into a "
+"separate python package."
+msgstr ""
+"OpenStack Dashboard の Neutron FWaaS 対応は、別の Python パッケージに分離され"
+"ました。"
+
+msgid "New Features"
+msgstr "新機能"
+
+msgid "Pike Series Release Notes"
+msgstr "Pike バージョンのリリースノート"
+
+msgid "Prelude"
+msgstr "前置"
+
+msgid "Queens Series Release Notes"
+msgstr "Queens バージョンのリリースノート"

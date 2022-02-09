@@ -1,0 +1,12 @@
+---
+prelude: >
+    Neutron FWaaS support in the OpenStack Dashboard is now split out into
+    a separate python package.
+features:
+  - |
+    Neutron FWaaS support in the OpenStack Dashboard is now split out into a
+    separate package ``neutron-fwaas-dashboard``. You need to install
+    ``neutron-fwaas-dashboard`` after upgrading the OpenStack Dashboard
+    to Pike release and add ``enabled`` file for Neutron FWaaS dashboard.
+    For detail information, see
+    https://docs.openstack.org/neutron-fwaas-dashboard/latest/.

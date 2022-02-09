@@ -1,0 +1,9 @@
+---
+fixes:
+  - |
+    Handling a shared rule or policy is now controlled by the policy
+    mechanism. Only admin users (by default) can set ``shared`` attribute
+    when creating or updating a firewall rule or policy.
+    The checkbox on ``shared`` attribute is now disabled if a user
+    has no sufficient permission.
+    [`bug 1699717 <https://bugs.launchpad.net/neutron-fwaas-dashboard/+bug/1699717>`__]

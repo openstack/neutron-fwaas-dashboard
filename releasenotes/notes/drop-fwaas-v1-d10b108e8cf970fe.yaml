@@ -1,0 +1,7 @@
+---
+upgrade:
+  - |
+    FWaaS v1 support was dropped.
+    FWaaS v1 has been deprecated in neutron-fwaas and was dropped in Stein
+    release. Along with neutron-fwaas, neutron-fwaas-dashboard dropped
+    its support.

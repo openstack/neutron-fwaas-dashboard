@@ -1,0 +1,14 @@
+*.pyc
+*.swp
+*.egg*/
+.coverage
+.tox/
+build/
+cover/
+dist/
+AUTHORS
+ChangeLog
+
+# Translation catalogs
+*.mo
+*.pot

@@ -1,0 +1,75 @@
+@import "/dashboard/scss/components/resource_topology";
+
+.sort-container {
+  #selected_port {
+    @include common_box_list_selected("rule");
+  }
+  /* FWaaS v2 */
+  #selected_port {
+    @include common_box_list_selected("port");
+  }
+}
+
+// Table like styling of boostrap grid options in a bootstrap-dropdown
+// compatible with the horizon dropdown javascript
+.dropdown-table {
+  @media only screen and (min-width: 768px) {
+    min-width: $modal-md - $grid-gutter-width;
+  }
+
+  margin-bottom: $line-height-computed;
+  background-color: $body-bg;
+  padding: 10px;
+
+  .dropdown-thead {
+    margin: 0px;
+
+    .col-xs-12 {
+      padding: 0px;
+    }
+
+    .dropdown-tr {
+      .dropdown-th {
+        vertical-align: bottom;
+        border-bottom: 1px solid $table-border-color;
+        border-top: 0;
+
+        display: table-cell;
+        vertical-align: inherit;
+        font-weight: bold;
+        text-align: -internal-center;
+
+        color: $dropdown-header-color;
+      }
+    }
+  }
+
+  .dropdown-tr {
+    margin: 0px;
+    padding: 0px;
+
+    .col-xs-12 {
+      padding: 0px;
+      margin: 0px;
+    }
+
+    .row {
+      margin: 0px;
+      padding: 0px;
+    }
+
+    .dropdown-th, .dropdown-td {
+      padding: $table-cell-padding;
+      line-height: $line-height-base;
+      vertical-align: top;
+      border-top: 1px solid $table-border-color;
+      color: $dropdown-link-color;
+    }
+  }
+
+  .empty-options {
+    text-align: center;
+    vertical-align: center;
+    font-style: italic;
+  }
+}

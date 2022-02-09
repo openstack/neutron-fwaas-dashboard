@@ -1,0 +1,7 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% block title %}{% trans "Remove Port from Firewall Group" %}{% endblock %}
+
+{% block main %}
+  {% include 'project/firewalls_v2/_removeport.html' %}
+{% endblock %}

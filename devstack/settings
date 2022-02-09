@@ -1,0 +1,2 @@
+# settings file for neutron-fwaas-dashboard plugin
+enable_service neutron-fwaas-dashboard

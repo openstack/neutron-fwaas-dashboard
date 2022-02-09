@@ -1,0 +1,637 @@
+# OpenStack Infra <zanata@openstack.org>, 2015. #zanata
+# Andreas Jaeger <jaegerandi@gmail.com>, 2016. #zanata
+# suhartono <cloudsuhartono@gmail.com>, 2016. #zanata
+# suhartono <cloudsuhartono@gmail.com>, 2017. #zanata
+# suhartono <cloudsuhartono@gmail.com>, 2018. #zanata
+# Frank Kloeker <eumel@arcor.de>, 2019. #zanata
+# suhartono <cloudsuhartono@gmail.com>, 2019. #zanata
+msgid ""
+msgstr ""
+"Project-Id-Version: neutron-fwaas-dashboard VERSION\n"
+"Report-Msgid-Bugs-To: https://bugs.launchpad.net/openstack-i18n/\n"
+"POT-Creation-Date: 2019-03-27 14:25+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2019-04-03 11:53+0000\n"
+"Last-Translator: Frank Kloeker <eumel@arcor.de>\n"
+"Language-Team: Indonesian\n"
+"Language: id\n"
+"X-Generator: Zanata 4.3.3\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+
+msgid "-"
+msgstr "-"
+
+msgid "ALLOW"
+msgstr "ALLOW"
+
+msgctxt "Action Name of a Firewall Rule"
+msgid "ALLOW"
+msgstr "ALLOW (mengizinkan)"
+
+msgid "ANY"
+msgstr "ANY"
+
+msgid "Action"
+msgstr "Action"
+
+msgid "Action for the firewall rule"
+msgstr "Aksi aturan firewall"
+
+msgctxt "Current status of a Firewall Group"
+msgid "Active"
+msgstr "Active"
+
+msgid "Add"
+msgstr "Menambahkan"
+
+msgid "Add Firewall Group"
+msgstr "Menambahkan Firewall Group"
+
+msgid "Add New Firewall Group"
+msgstr "Add New Firewall Group"
+
+msgid "Add New Policy"
+msgstr "Menambah kebijakan baru"
+
+msgid "Add New Rule"
+msgstr "Menambah aturan baru"
+
+msgid "Add Policy"
+msgstr "Add Policy (tambahkan kebiijakan)"
+
+msgid "Add Port"
+msgstr "Add Port"
+
+msgid "Add Port to Firewall Group"
+msgstr "Tambahkan Port ke Firewall Group"
+
+msgid "Add Rule"
+msgstr "Tambahkan Aturan"
+
+msgid "Add port to Firewall Group {{ name }}"
+msgstr "Tambahkan port ke Firewall Group {{ name }}"
+
+#, python-format
+msgid "Added Firewall Group\"%s\"."
+msgstr "Ditambahkan Firewall Group\"%s\"."
+
+#, python-format
+msgid "Added Policy \"%s\"."
+msgstr "Kebijakan ditambahkan \"%s\"."
+
+#, python-format
+msgid "Added Rule \"%s\"."
+msgstr "Aturan ditambahkan \"%s\"."
+
+#, python-format
+msgid "Added the port(s) to the firewall group %s successfully."
+msgstr "Berhasil menambahkan port ke grup firewall %s."
+
+msgid "Admin State"
+msgstr "Admin State"
+
+msgid "Admin State Up"
+msgstr "Admin State Up"
+
+msgid "After"
+msgstr "After (sesudah)"
+
+msgid "Audited"
+msgstr "Audited"
+
+msgid "Available Ports"
+msgstr "Available Ports"
+
+msgid "Available Rules"
+msgstr "Available Rules"
+
+msgid "Before"
+msgstr "Before (sebelum)"
+
+msgid "Choose port(s) from Available Ports. "
+msgstr "Pilih port dari Available Ports. "
+
+msgid ""
+"Choose rule(s) from Available Rules to Selected Rule by push button or drag "
+"and drop, you may change their order by drag and drop as well."
+msgstr ""
+"Pilih aturan dari Available Rules ke Selected Rule dengan menekan tombol "
+"atau seret dan lepaskan, Anda dapat mengubah pesanan mereka dengan drag dan "
+"drop juga."
+
+msgid ""
+"Choose the rule you want to insert. Specify either the rule you want to "
+"insert immediately before, or the rule to insert immediately after. If both "
+"are specified, the prior takes precedence."
+msgstr ""
+"Pilih aturan yang ingin Anda sisipkan. Tentukan baik aturan yang ingin Anda "
+"masukkan segera sebelumnya, atau aturan untuk memasukkan segera setelahnya. "
+"Jika keduanya ditentukan, sebelumnya diutamakan."
+
+msgid "Choose the rule you want to remove."
+msgstr "Pilih aturan yang ingin Anda hapus."
+
+msgid "Create Firewall Group"
+msgstr "Membuat Firewall Group"
+
+msgid "Create a Firewall Group with selected ports."
+msgstr "Buat Firewall Group dengan port yang dipilih."
+
+msgid ""
+"Create a firewall group based on a policy.\n"
+"\n"
+"A firewall group represents a logical firewall resource that a tenant can "
+"instantiate and manage. A firewall group must be associated with one policy, "
+"all other fields are optional."
+msgstr ""
+"Buat grup firewall berdasarkan kebijakan.\n"
+"\n"
+"Grup firewall mewakili sumber daya firewall logis dimana tenant dapat "
+"instantiate dan kelola. Grup firewall harus dikaitkan dengan satu kebijakan, "
+"semua bidang lainnya opsional."
+
+msgid ""
+"Create a firewall policy with an ordered list of firewall rules.\n"
+"\n"
+"A firewall policy is an ordered collection of firewall rules. So if the "
+"traffic matches the first rule, the other rules are not executed. If the "
+"traffic does not match the current rule, then the next rule is executed. A "
+"firewall policy has the following attributes:\n"
+"\n"
+"<li>Shared: A firewall policy can be shared across tenants. Thus it can also "
+"be made part of an audit workflow wherein the firewall policy can be audited "
+"by the relevant entity that is authorized.</li><li>Audited: When audited is "
+"set to True, it indicates that the firewall policy has been audited. Each "
+"time the firewall policy or the associated firewall rules are changed, this "
+"attribute will be set to False and will have to be explicitly set to True "
+"through an update operation.</li>\n"
+"The name field is required, all others are optional."
+msgstr ""
+"Membuat kebijakan firewall dengan daftar aturan firewall tersusun "
+"berurutan.\n"
+"\n"
+"Sebuah kebijakan firewall adalah koleksi aturan firewall berurutan. Jadi "
+"jika lalu lintas sesuai dengan aturan pertama, maka aturan lain tidak "
+"dieksekusi. Jika lalu lintas tidak sesuai dengan aturan saat ini, maka "
+"aturan berikutnya dieksekusi. Sebuah kebijakan firewall memiliki atribut "
+"sebagai berikut:\n"
+"\n"
+"<li>Shared: Sebuah kebijakan firewall dapat digunakan bersama seluruh "
+"penyewa (tenant). Dengan demikian kebijakan itu dapat juga menjadi bagian "
+"dari alur kerja pemeriksaan dimana kebijakan firewall dapat diaudit oleh "
+"entitas terkait yang berwenang.</li><li>Audited: Ketika diaudit diatur ke "
+"True, ini menunjukkan bahwa kebijakan firewall telah diaudit. Setiap kali "
+"kebijakan firewall atau aturan firewall yang terkait berubah, atribut ini "
+"akan diatur ke False dan harus secara eksplisit diatur ke True melalui "
+"operasi update.</li>\n"
+"Kolom (field) nama diperlukan, semua yang lain adalah opsional."
+
+msgid ""
+"Create a firewall rule.\n"
+"\n"
+"A Firewall rule is an association of the following attributes:\n"
+"\n"
+"<li>IP Addresses: The addresses from/to which the traffic filtration needs "
+"to be applied.</li><li>IP Version: The type of IP packets (IP V4/V6) that "
+"needs to be filtered.</li><li>Protocol: Type of packets (UDP, ICMP, TCP, "
+"Any) that needs to be checked.</li><li>Action: Action is the type of "
+"filtration required, it can be Reject/Deny/Allow data packets.</li>\n"
+"The protocol and action fields are required, all others are optional."
+msgstr ""
+"Buat aturan firewall\n"
+"\n"
+"Aturan firewall adalah sebuah asosiasi atribut berikut:\n"
+"\n"
+"<li>IP Addresses: Alamat dari/ke dimana filtrasi lalu lintas perlu "
+"diterapkan.</li><li>IP Version: Tipe paket IP (IP V4/V6) yang perlu disaring."
+"</li><li>Protocol: Tipe paket (UDP, ICMP, TCP, lainnya) yang perlu diperiksa."
+"</li><li>Action: Action adalah tipe filtrasi diperlukan, dapat Reject/Deny/"
+"Allow paket data.</li>\n"
+"Protokol dan action field (kolom aksi) yang diperlukan, semua yang lain "
+"adalah opsional."
+
+msgid "Create a policy with selected rules."
+msgstr "Membuat kebijakan dengan aturan yang dipilih."
+
+msgctxt "Current status of a Firewall Group"
+msgid "Created"
+msgstr "Created"
+
+msgid "DENY"
+msgstr "DENY (menyangkal)"
+
+msgctxt "Action Name of a Firewall Rule"
+msgid "DENY"
+msgstr "DENY (menyangkal)"
+
+msgctxt "Admin state of a Firewall Group"
+msgid "DOWN"
+msgstr "DOWN"
+
+msgid "Delete Firewall Group"
+msgid_plural "Delete Firewall Groups"
+msgstr[0] "Delete Firewall Group"
+
+msgid "Delete Policy"
+msgid_plural "Delete Policies"
+msgstr[0] "Delete Policy"
+
+msgid "Delete Rule"
+msgid_plural "Delete Rules"
+msgstr[0] "Delete Rule"
+
+msgid "Description"
+msgstr "Deskripsi"
+
+msgid "Description:"
+msgstr "Deskripsi:"
+
+msgid "Destination IP"
+msgstr "IP Tujuan"
+
+msgid "Destination IP Address"
+msgstr "Destination IP Address"
+
+msgid "Destination IP Address/Subnet"
+msgstr "Tujuan  subnet/alamat IP"
+
+msgid "Destination IP address or subnet"
+msgstr "Tujuan subnet atau alamat IP"
+
+msgid "Destination Port"
+msgstr "Port Tujuan"
+
+msgid "Destination Port/Port Range"
+msgstr "Destination Port/Port Range (tujuan port/ kisaran port)"
+
+msgid "Destination port (integer in [1, 65535] or range in a:b)"
+msgstr ""
+"Destination (tujuan) port (integer dalam [1, 65535] atau dalam kisaran a:b)"
+
+msgctxt "Current status of a Firewall Group"
+msgid "Down"
+msgstr "Down"
+
+msgid "Edit Firewall Group"
+msgstr "Edit Firewall Group"
+
+msgid "Edit FirewallGroup {{ name }}"
+msgstr "Edit FirewallGroup {{ name }}"
+
+msgid "Edit Policy"
+msgstr "Ubah Kebijakan"
+
+msgid "Edit Policy {{ name }}"
+msgstr "Edit Policy {{ name }}"
+
+msgid "Edit Rule"
+msgstr "Ubah Aturan"
+
+msgid "Edit Rule {{ name }}"
+msgstr "Edit Rule {{ name }}"
+
+msgid "Egress Policy"
+msgstr "Egress Policy"
+
+msgid "Egress Policy ID"
+msgstr "Egress Policy ID"
+
+msgid "Enabled"
+msgstr "Enabled (aktif)"
+
+msgctxt "Current status of a Firewall Group"
+msgid "Error"
+msgstr "Error"
+
+#, python-format
+msgid "Failed to add the port(s) to the firewall group %(name)s: %(reason)s"
+msgstr "Gagal menambahkan port(s) ke firewall group %(name)s: %(reason)s"
+
+#, python-format
+msgid "Failed to insert rule to policy %(name)s: %(reason)s"
+msgstr "Gagal untuk memasukkan aturan kebijakan %(name)s: %(reason)s"
+
+#, python-format
+msgid "Failed to remove rule from policy %(name)s: %(reason)s"
+msgstr "Gagal menghapus aturan dari kebijakan %(name)s: %(reason)s"
+
+#, python-format
+msgid ""
+"Failed to remove the port(s) from the firewall group %(name)s: %(reason)s"
+msgstr "Gagal menghapus port(s) dari firewall group %(name)s: %(reason)s"
+
+#, python-format
+msgid "Failed to retrieve available rules: %s"
+msgstr "Gagal mengambil aturan yang tersedia: %s"
+
+#, python-format
+msgid "Failed to retrieve current rules in policy %(name)s: %(reason)s"
+msgstr "Gagal mengambil aturan saat ini dalam kebijakan %(name)s: %(reason)s"
+
+msgid "Failed to retrieve port list of the firewall group."
+msgstr "Gagal mengambil daftar port dari grup firewall."
+
+#, python-format
+msgid "Failed to update firewall group %(name)s: %(reason)s"
+msgstr "Gagal memperbarui grup firewall %(name)s: %(reason)s"
+
+#, python-format
+msgid "Failed to update policy %(name)s: %(reason)s"
+msgstr "Gagal memperbarui kebijakan %(name)s: %(reason)s"
+
+#, python-format
+msgid "Failed to update rule %(name)s: %(reason)s"
+msgstr "Gagal memperbarui aturan %(name)s: %(reason)s"
+
+msgid "Firewall Groups"
+msgstr "Firewall Groups"
+
+msgid "Firewall Policies"
+msgstr "Firewall Policies (kebijakan firewall)"
+
+msgid "Firewall Rules"
+msgstr " Firewall Rules (aturan firewall)"
+
+#, python-format
+msgid "Firewall group %s was successfully updated."
+msgstr "Grup firewall %s berhasil diperbarui."
+
+msgid "FirewallGroup"
+msgstr "FirewallGroup"
+
+msgid "ICMP"
+msgstr "ICMP"
+
+msgid "ID"
+msgstr "ID"
+
+msgid "IP Version"
+msgstr "IP Version"
+
+msgid "IP Version for Firewall Rule"
+msgstr "IP Version untuk Firewall Rule"
+
+msgctxt "Current status of a Firewall Group"
+msgid "Inactive"
+msgstr "Inactive"
+
+msgid "Ingress Policy"
+msgstr "Ingress Policy"
+
+msgid "Ingress Policy ID"
+msgstr "Ingress Policy ID"
+
+msgid "Insert Rule"
+msgstr "Insert Rule (menyisipkan aturan)"
+
+msgid "Insert Rule to Policy"
+msgstr "Sisipkan aturan ke kebijakan"
+
+msgid "Label"
+msgstr "Label"
+
+msgid "Name"
+msgstr "Name"
+
+msgid "No options available"
+msgstr "Tidak ada opsi yang tersedia"
+
+msgid "None"
+msgstr "None"
+
+msgctxt "Current status of a Firewall Group"
+msgid "Pending Create"
+msgstr "Pending Create"
+
+msgctxt "Current status of a Firewall Group"
+msgid "Pending Delete"
+msgstr "Pending Delete"
+
+msgctxt "Current status of a Firewall Group"
+msgid "Pending Update"
+msgstr "Pending Update"
+
+msgid "Policies"
+msgstr "Kebijakan"
+
+msgid "Policy"
+msgstr "Policy (kebijakan)"
+
+#, python-format
+msgid "Policy %s was successfully updated."
+msgstr "Kebijakan %s telah berhasil diperbarui."
+
+msgid "Ports"
+msgstr "Ports"
+
+msgid "Project ID"
+msgstr "Project ID"
+
+msgid "Protocol"
+msgstr "Protocol"
+
+msgid "Protocol for the firewall rule"
+msgstr "Protokol untuk aturan firewall"
+
+msgid "REJECT"
+msgstr "REJECT (menolak)"
+
+msgctxt "Action Name of a Firewall Rule"
+msgid "REJECT"
+msgstr "REJECT (menolak)"
+
+msgid "Remove Port"
+msgstr "Remove Port"
+
+msgid "Remove Port from Firewall Group"
+msgstr "Hapus Port dari Firewall Group"
+
+msgid "Remove Rule"
+msgstr "Remove Rule (hapus aturan)"
+
+msgid "Remove Rule from Policy"
+msgstr "Buang aturan dari kebijakan"
+
+msgid "Remove port from FirewallGroup {{ name }}"
+msgstr "Hapus port dari FirewallGroup {{ name }}"
+
+#, python-format
+msgid "Removed the port(s) from the firewall group %s successfully."
+msgstr "Port berhasil dihapus dari firewall group %s ."
+
+msgid "Rule"
+msgstr "Aturan"
+
+#, python-format
+msgid "Rule %(rule)s was successfully inserted to policy %(policy)s."
+msgstr "Aturan %(rule)s berhasil dimasukkan ke kebijakan %(policy)s."
+
+#, python-format
+msgid "Rule %(rule)s was successfully removed from policy %(policy)s."
+msgstr "Aturan %(rule)s berhasil dihapus dari kebijakan %(policy)s."
+
+#, python-format
+msgid "Rule %s was successfully updated."
+msgstr "Aturan %s telah berhasil diperbarui."
+
+msgid "Rules"
+msgstr "Aturan"
+
+msgid "Save Changes"
+msgstr "Simpan perubahan"
+
+msgid "Scheduled deletion of Firewall Group"
+msgid_plural "Scheduled deletion of Firewall Groups"
+msgstr[0] "Scheduled deletion of Firewall Group"
+
+msgid "Scheduled deletion of Policy"
+msgid_plural "Scheduled deletion of Policies"
+msgstr[0] "Scheduled deletion of Policy"
+
+msgid "Scheduled deletion of Rule"
+msgid_plural "Scheduled deletion of Rules"
+msgstr[0] "Scheduled deletion of Rule"
+
+msgid "Select a Policy"
+msgstr "Pilih kebijakan "
+
+msgid "Select ports for your firewall group."
+msgstr "Pilih port untuk grup firewall Anda."
+
+msgid "Select rules for your policy."
+msgstr "Pilih aturan untuk kebijakan Anda."
+
+msgid "Selected Ports"
+msgstr "Selected Ports"
+
+msgid "Selected Rules"
+msgstr "Selected Rules"
+
+msgid "Shared"
+msgstr "Shared"
+
+msgid "Source IP"
+msgstr "Source IP (IP sumber)"
+
+msgid "Source IP Address"
+msgstr "Source IP Address"
+
+msgid "Source IP Address/Subnet"
+msgstr "Source (asal) subnet/alamat IP"
+
+msgid "Source IP address or subnet"
+msgstr "Source (asal) subnet atau alamat IP"
+
+msgid "Source Port"
+msgstr "Port Sumber"
+
+msgid "Source Port/Port Range"
+msgstr "Source Port/Port Range (asal port/ kisaran port)"
+
+msgid "Source port (integer in [1, 65535] or range in a:b)"
+msgstr "Source (asal) port (integer dalam [1, 65535] atau dalam kisaran a:b)"
+
+msgid ""
+"Source/Destination Network Address and IP version are inconsistent. Please "
+"make them consistent."
+msgstr ""
+"Sumber/tujuan alamat jaringan dan IP versi tidak konsisten. Harap membuat "
+"mereka konsisten."
+
+msgid "Status"
+msgstr "Status"
+
+msgid "TCP"
+msgstr "TCP"
+
+msgid "UDP"
+msgstr "UDP"
+
+msgctxt "Admin state of a Firewall Group"
+msgid "UP"
+msgstr "UP"
+
+#, python-format
+msgid "Unable to add Firewall Group \"%s\"."
+msgstr "Tidak dapat menambahkan Firewall Group \"%s\"."
+
+#, python-format
+msgid "Unable to add Policy \"%s\"."
+msgstr "Tidak dapat menambahkan kebijakan \"%s\"."
+
+#, python-format
+msgid "Unable to add Rule \"%s\"."
+msgstr "Tidak dapat menambahkan Aturan \"%s\"."
+
+#, python-format
+msgid "Unable to delete firewall group. %s"
+msgstr "Tidak dapat menghapus firewall group. %s"
+
+#, python-format
+msgid "Unable to delete policy. %s"
+msgstr "Tidak dapat menghapus kebijakan. %s"
+
+#, python-format
+msgid "Unable to delete rule. %s"
+msgstr "Tidak dapat menghapus aturan. %s"
+
+msgid "Unable to retrieve firewall group details."
+msgstr "Tidak dapat mengambil detail grup firewall."
+
+msgid "Unable to retrieve firewall group list."
+msgstr "Tidak dapat mengambil daftar grup firewall."
+
+msgid "Unable to retrieve firewallgroup details."
+msgstr "Tidak dapat mengambil rincian firewallgroup."
+
+msgid "Unable to retrieve policies list."
+msgstr "Tidak dapat mengambil daftar kebijakan."
+
+msgid "Unable to retrieve policy details."
+msgstr "Tidak dapat mengambil rincian kebijakan."
+
+#, python-format
+msgid "Unable to retrieve policy list (%s)."
+msgstr "Tidak dapat mengambil daftar kebijakan (%s)."
+
+msgid "Unable to retrieve policy list."
+msgstr "Tidak dapat mengambil daftar kebijakan."
+
+#, python-format
+msgid "Unable to retrieve ports (%s)."
+msgstr "Tidak dapat mengambil port (%s)."
+
+msgid "Unable to retrieve rule details."
+msgstr "Tidak dapat mengambil rincian aturan."
+
+#, python-format
+msgid "Unable to retrieve rules (%s)."
+msgstr "Tidak dapat mengambil peraturan (%s)."
+
+msgid "Unable to retrieve rules list."
+msgstr "Tidak dapat mengambil daftar aturan."
+
+msgid "Value"
+msgstr "Value"
+
+msgid "You may add ports to firewall group here."
+msgstr "Anda dapat menambahkan port ke grup firewall di sini."
+
+msgid "You may remove ports from firewall group here."
+msgstr "Anda dapat menghapus port dari grup firewall di sini."
+
+msgid "You may update firewall group details here."
+msgstr "Anda dapat memperbarui rincian grup firewall di sini."
+
+msgid ""
+"You may update policy details here. Use 'Insert Rule' or 'Remove Rule' links "
+"instead to insert or remove a rule."
+msgstr ""
+"Anda dapat memperbarui rincian kebijakan di sini. Gunakan tautan 'Insert "
+"Rule' atau 'Remove Rule' sebagai gantinya untuk memasukkan atau menghapus "
+"aturan."
+
+msgid "You may update rule details here."
+msgstr "Anda dapat memperbarui detail aturan di sini."
