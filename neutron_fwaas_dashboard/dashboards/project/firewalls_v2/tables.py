@@ -16,9 +16,9 @@ import logging
 
 from django.template import defaultfilters as filters
 from django.urls import reverse
+from django.utils.translation import gettext_lazy as _
+from django.utils.translation import ngettext_lazy
 from django.utils.translation import pgettext_lazy
-from django.utils.translation import ugettext_lazy as _
-from django.utils.translation import ungettext_lazy
 
 from horizon import exceptions
 from horizon import tables
@@ -65,7 +65,7 @@ class DeleteRuleLink(policy.PolicyTargetMixin, tables.DeleteAction):
 
     @staticmethod
     def action_present(count):
-        return ungettext_lazy(
+        return ngettext_lazy(
             u"Delete Rule",
             u"Delete Rules",
             count
@@ -73,7 +73,7 @@ class DeleteRuleLink(policy.PolicyTargetMixin, tables.DeleteAction):
 
     @staticmethod
     def action_past(count):
-        return ungettext_lazy(
+        return ngettext_lazy(
             u"Scheduled deletion of Rule",
             u"Scheduled deletion of Rules",
             count
@@ -97,7 +97,7 @@ class DeletePolicyLink(policy.PolicyTargetMixin, tables.DeleteAction):
 
     @staticmethod
     def action_present(count):
-        return ungettext_lazy(
+        return ngettext_lazy(
             u"Delete Policy",
             u"Delete Policies",
             count
@@ -105,7 +105,7 @@ class DeletePolicyLink(policy.PolicyTargetMixin, tables.DeleteAction):
 
     @staticmethod
     def action_past(count):
-        return ungettext_lazy(
+        return ngettext_lazy(
             u"Scheduled deletion of Policy",
             u"Scheduled deletion of Policies",
             count
@@ -125,7 +125,7 @@ class DeleteFirewallGroupLink(policy.PolicyTargetMixin,
 
     @staticmethod
     def action_present(count):
-        return ungettext_lazy(
+        return ngettext_lazy(
             u"Delete Firewall Group",
             u"Delete Firewall Groups",
             count
@@ -133,7 +133,7 @@ class DeleteFirewallGroupLink(policy.PolicyTargetMixin,
 
     @staticmethod
     def action_past(count):
-        return ungettext_lazy(
+        return ngettext_lazy(
             u"Scheduled deletion of Firewall Group",
             u"Scheduled deletion of Firewall Groups",
             count

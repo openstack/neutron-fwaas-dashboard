@@ -13,7 +13,7 @@
 import itertools
 
 from django.template.loader import get_template
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 from horizon.forms import fields
 
 """A custom Horizon Forms Select widget that displays select choices as a table
