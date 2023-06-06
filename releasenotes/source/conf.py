@@ -61,8 +61,8 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = u'Neutron FWaaS Dashboard Release Notes'
-copyright = u'2017, OpenStack Foundation'
+project = 'Neutron FWaaS Dashboard Release Notes'
+copyright = '2017, OpenStack Foundation'
 
 # Release notes are version independent.
 # The full version, including alpha/beta/rc tags.
