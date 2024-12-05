@@ -436,7 +436,6 @@ class FirewallTests(test.TestCase):
             'name': 'new name',
             'description': 'new desc',
             'protocol': 'icmp',
-            'action': 'allow',
             'shared': False,
             'destination_ip_address': None,
             'source_port': None,
@@ -482,7 +481,6 @@ class FirewallTests(test.TestCase):
             'name': 'new name',
             'description': 'new desc',
             'protocol': 'icmp',
-            'action': 'allow',
             'shared': False,
             'destination_ip_address': None,
             'source_port': None,
@@ -528,11 +526,53 @@ class FirewallTests(test.TestCase):
             'name': 'new name',
             'description': 'new desc',
             'protocol': None,
-            'action': 'allow',
             'shared': False,
             'destination_ip_address': None,
             'source_port': None,
         }
+
+        res = self.client.post(
+            reverse(self.UPDATERULE_PATH, args=(rule.id,)), form_data)
+
+        self.assertNoFormErrors(res)
+        self.assertRedirectsNoFollow(res, str(self.INDEX_URL))
+
+        self.mock_rule_get.assert_called_once_with(helpers.IsHttpRequest(),
+                                                   rule.id)
+        self.mock_rule_update.assert_called_once_with(
+            helpers.IsHttpRequest(), rule.id, **expected_put_data)
+
+    @helpers.create_mocks({api_fwaas_v2: ('rule_get', 'rule_update')})
+    def test_update_rule_other_attributes_post(self):
+        rule = self.fw_rules_v2.first()
+
+        self.mock_rule_get.return_value = rule
+        self.mock_rule_update.return_value = rule
+
+        data = {
+            'name': rule.name,
+            'description': rule.description,
+            'protocol': rule.protocol,
+            'action': 'deny',
+            'shared': rule.shared,
+            'enabled': False,
+            'ip_version': '6',
+            'source_ip_address': '::1',
+            'destination_ip_address': 'fe80::1',
+            'source_port': '9999',
+            'destination_port': '8888',
+        }
+        expected_put_data = {
+            'action': 'deny',
+            'enabled': False,
+            'ip_version': '6',
+            'source_ip_address': '::1/128',
+            'destination_ip_address': 'fe80::1/128',
+            'source_port': '9999',
+            'destination_port': '8888'
+        }
+
+        form_data = data.copy()
 
         res = self.client.post(
             reverse(self.UPDATERULE_PATH, args=(rule.id,)), form_data)
