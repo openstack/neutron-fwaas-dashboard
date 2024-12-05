@@ -605,12 +605,18 @@ class FwaasV2ApiTests(test.APITestCase):
             'name': 'port-4',
             'device_owner': 'network:dhcp'
         }
+        ha_router_port = {
+            'id': 'id-5',
+            'name': 'port-5',
+            'device_owner': 'network:ha_router_replicated_interface'
+        }
         dummy_ports = {'ports': [
             router_port,
             vm_port1,
             vm_port2,
             gateway_port,
             dhcp_port,
+            ha_router_port
         ]}
 
         self.mock_list_ports.return_value = dummy_ports
@@ -621,6 +627,8 @@ class FwaasV2ApiTests(test.APITestCase):
         self.assertEqual(router_port['id'], ports[0]['id'])
         self.assertEqual(vm_port1['id'], ports[1]['id'])
         self.assertEqual(vm_port2['id'], ports[2]['id'])
+        self.assertEqual(ha_router_port['id'], ports[3]['id'])
+        self.assertEqual(4, len(ports))
 
         self.mock_list_ports.assert_called_once_with(tenant_id=tenant_id)
         self.mock_list_fwaas_firewall_groups.assert_called_once_with(
@@ -650,20 +658,28 @@ class FwaasV2ApiTests(test.APITestCase):
             'name': 'port-4',
             'device_owner': 'network:dhcp'
         }
+        ha_router_port = {
+            'id': 'id-5',
+            'name': 'port-5',
+            'device_owner': 'network:ha_router_replicated_interface'
+        }
         dummy_ports = {'ports': [
             router_port,
             vm_port1,
             gateway_port,
             dhcp_port,
+            ha_router_port
         ]}
 
-        used_ports = {'firewall_groups': [{'ports': [router_port['id']]}]}
+        used_ports = {'firewall_groups': [{'ports': [router_port['id'],
+                                                     ha_router_port['id']]}]}
 
         self.mock_list_ports.return_value = dummy_ports
         self.mock_list_fwaas_firewall_groups.return_value = used_ports
 
         ports = api_fwaas_v2.fwg_port_list_for_tenant(self.request, tenant_id)
         self.assertEqual(vm_port1['id'], ports[0]['id'])
+        self.assertEqual(1, len(ports))
 
         self.mock_list_ports.assert_called_once_with(tenant_id=tenant_id)
         self.mock_list_fwaas_firewall_groups.assert_called_once_with(

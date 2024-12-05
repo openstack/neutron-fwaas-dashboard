@@ -126,7 +126,9 @@ def fwg_port_list_for_tenant(request, tenant_id, **kwargs):
 
 def _is_target(port):
     return (port['device_owner'].startswith('compute:') or
-            port['device_owner'].startswith('network:router_interface'))
+            port['device_owner'].startswith('network:router_interface') or
+            port['device_owner'].startswith(
+                'network:ha_router_replicated_interface'))
 
 
 @profiler.trace
