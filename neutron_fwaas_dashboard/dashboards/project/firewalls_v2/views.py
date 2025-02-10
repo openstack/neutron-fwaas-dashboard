@@ -211,8 +211,8 @@ class UpdateRuleView(forms.ModalFormView):
         rule = self._get_object()
         initial = rule.to_dict()
         protocol = initial['protocol']
-        initial['protocol'] = protocol.upper() if protocol else 'ANY'
-        initial['action'] = initial['action'].upper()
+        initial['protocol'] = protocol if protocol else 'any'
+        initial['ip_version'] = str(initial['ip_version'])
         return initial
 
 
