@@ -19,7 +19,6 @@ from django.urls import reverse
 from django.utils.translation import gettext_lazy as _
 from django.utils.translation import ngettext_lazy
 from django.utils.translation import pgettext_lazy
-
 from horizon import exceptions
 from horizon import tables
 from openstack_dashboard.dashboards.project.networks.ports \

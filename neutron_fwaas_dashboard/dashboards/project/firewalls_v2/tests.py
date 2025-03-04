@@ -15,7 +15,6 @@
 from unittest import mock
 
 from django.urls import reverse
-
 from openstack_dashboard.test import helpers
 
 from neutron_fwaas_dashboard.api import fwaas_v2 as api_fwaas_v2

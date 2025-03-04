@@ -16,7 +16,6 @@ from unittest import mock
 
 from neutronclient.v2_0.client import Client as neutronclient
 import openstack_dashboard.api.nova as nova
-
 from openstack_dashboard.test import helpers
 
 from neutron_fwaas_dashboard.api import fwaas_v2 as api_fwaas_v2

@@ -12,9 +12,8 @@
 
 # Default to Horizons test settings to avoid any missing keys
 from horizon.test.settings import *  # noqa
-from openstack_dashboard.test.settings import *  # noqa
-
 import openstack_dashboard.enabled
+from openstack_dashboard.test.settings import *  # noqa
 from openstack_dashboard.utils import settings
 
 import neutron_fwaas_dashboard.enabled

@@ -13,7 +13,6 @@
 #    under the License.
 
 from django.utils.translation import gettext_lazy as _
-
 from horizon import exceptions
 from horizon import tabs
 from openstack_dashboard.api import neutron as api_neutron
