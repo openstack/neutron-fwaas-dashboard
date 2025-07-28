@@ -68,7 +68,7 @@ across distributions or deployments.
 
 .. code-block:: python
 
-   POLICY_FILES['neutron-fwaas'] = '<fwaas-dashboard-config-dir>/etc/neutron-fwaas-policy.json'
+   POLICY_FILES['neutron-fwaas'] = '<fwaas-dashboard-config-dir>/etc/neutron-fwaas-policy.yaml'
 
 .. note::
 
