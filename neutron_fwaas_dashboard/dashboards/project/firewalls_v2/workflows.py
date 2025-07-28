@@ -346,7 +346,7 @@ class AddFirewallGroupAction(workflows.Action):
         return cleaned_data
 
     class Meta(object):
-        name = _("FirewallGroup")
+        name = _("Firewall Group")
         permissions = ('openstack.services.network',)
         help_text = _("Create a firewall group based on a policy.\n\n"
                       "A firewall group represents a logical firewall "

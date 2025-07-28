@@ -115,7 +115,7 @@ class PolicyDetailsTab(tabs.Tab):
 
 
 class FirewallGroupDetailsTab(tabs.Tab):
-    name = _("FirewallGroup")
+    name = _("Firewall Group")
     slug = "firewallgroupdetails"
     template_name = "project/firewalls_v2/_firewallgroup_details.html"
 

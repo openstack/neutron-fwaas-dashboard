@@ -260,7 +260,7 @@ class UpdateFirewallView(forms.ModalFormView):
     submit_label = _("Save Changes")
     submit_url = "horizon:project:firewalls_v2:updatefirewall"
     success_url = reverse_lazy("horizon:project:firewalls_v2:index")
-    page_title = _("Edit FirewallGroup {{ name }}")
+    page_title = _("Edit Firewall Group {{ name }}")
 
     def get_context_data(self, **kwargs):
         context = super(UpdateFirewallView, self).get_context_data(**kwargs)
@@ -318,7 +318,7 @@ class AddPortView(forms.ModalFormView):
             return firewallgroup
         except Exception:
             redirect = self.success_url
-            msg = _('Unable to retrieve firewallgroup details.')
+            msg = _('Unable to retrieve firewall group details.')
             exceptions.handle(self.request, msg, redirect=redirect)
 
     def get_initial(self):
@@ -335,7 +335,7 @@ class RemovePortView(forms.ModalFormView):
     submit_label = _("Save Changes")
     submit_url = "horizon:project:firewalls_v2:removeport"
     success_url = reverse_lazy("horizon:project:firewalls_v2:index")
-    page_title = _("Remove port from FirewallGroup {{ name }}")
+    page_title = _("Remove port from Firewall Group {{ name }}")
 
     def get_context_data(self, **kwargs):
         context = super(RemovePortView, self).get_context_data(**kwargs)
