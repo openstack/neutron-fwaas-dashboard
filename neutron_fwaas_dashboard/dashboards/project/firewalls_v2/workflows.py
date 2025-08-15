@@ -215,7 +215,7 @@ class AddPolicyAction(workflows.Action):
                       "executed. A firewall policy has the following "
                       "attributes:\n\n"
                       "<li>Shared: A firewall policy can be shared across "
-                      "tenants. Thus it can also be made part of an audit "
+                      "projects. Thus it can also be made part of an audit "
                       "workflow wherein the firewall policy can be audited "
                       "by the relevant entity that is authorized.</li>"
                       "<li>Audited: When audited is set to True, it indicates "
@@ -350,7 +350,7 @@ class AddFirewallGroupAction(workflows.Action):
         permissions = ('openstack.services.network',)
         help_text = _("Create a firewall group based on a policy.\n\n"
                       "A firewall group represents a logical firewall "
-                      "resource that a tenant can instantiate and manage. "
+                      "resource that a project can instantiate and manage. "
                       "A firewall group must be associated with one policy, "
                       "all other fields are optional.")
 
