@@ -17,10 +17,6 @@ function configure_neutron_fwaas_dashboard {
         (cd $FWAAS_DASHBOARD_DIR/neutron_fwaas_dashboard; \
          DJANGO_SETTINGS_MODULE=openstack_dashboard.settings $PYTHON ../manage.py compilemessages)
     fi
-    # Add policy file for FWaaS
-    cp $FWAAS_DASHBOARD_DIR/etc/neutron-fwaas-policy.json $OPENSTACK_DASHBOARD_DIR/conf/
-    cp $FWAAS_DASHBOARD_DIR/neutron_fwaas_dashboard/local_settings.d/_7000_neutron_fwaas.py \
-        $OPENSTACK_DASHBOARD_DIR/local/local_settings.d/
 }
 
 # check for service enabled
@@ -58,7 +54,6 @@ if is_service_enabled neutron-fwaas-dashboard; then
     if [[ "$1" == "clean"  ]]; then
         # Remove state and transient data
         # Remember clean.sh first calls unstack.sh
-        rm -f $OPENSTACK_DASHBOARD_DIR/local/local_settings.d/_7000_neutron_fwaas.py*
-        rm -f $OPENSTACK_DASHBOARD_DIR/conf/neutron-fwaas-policy.json
+        :
     fi
 fi

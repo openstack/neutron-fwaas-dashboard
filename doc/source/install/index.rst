@@ -60,24 +60,6 @@ Enable the horizon plugin.
    <https://docs.openstack.org/horizon/latest/configuration/pluggable_panels.html>`__
    in the horizon documentation.
 
-Configure the policy file for Neutron FWaaS dashboard
-in OpenStack Dashboard ``local_settings.py``.
-``<fwaas-dashboard-config-dir>`` is a directory which contains
-configurations for Neutron FWaaS dashboard and the location varies
-across distributions or deployments.
-
-.. code-block:: python
-
-   POLICY_FILES['neutron-fwaas'] = '<fwaas-dashboard-config-dir>/etc/neutron-fwaas-policy.json'
-
-.. note::
-
-   If you do not configure ``POLICY_FILES`` in your ``local_settings.py``,
-   you also need to define the default ``POLICY_FILES`` in
-   ``local_settings.py``. If you use the example ``local_settings.py`` file
-   from horizon, what you need is to uncomment ``POLICY_FILES`` (which contains
-   the default values).
-
 Compile the message catalogs of Neutron FWaaS dashboard.
 
 .. code-block:: console
