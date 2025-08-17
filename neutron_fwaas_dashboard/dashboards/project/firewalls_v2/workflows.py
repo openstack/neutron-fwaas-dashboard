@@ -370,7 +370,7 @@ class AddFirewallGroup(workflows.Workflow):
     slug = "addfirewallgroup"
     name = _("Add Firewall Group")
     finalize_button_name = _("Add")
-    success_message = _('Added Firewall Group"%s".')
+    success_message = _('Added Firewall Group "%s".')
     failure_message = _('Unable to add Firewall Group "%s".')
     success_url = "horizon:project:firewalls_v2:index"
     default_steps = (AddFirewallGroupStep, AddFWGPortsStep)
