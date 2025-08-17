@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: neutron-fwaas-dashboard VERSION\n"
 "Report-Msgid-Bugs-To: https://bugs.launchpad.net/openstack-i18n/\n"
-"POT-Creation-Date: 2019-03-19 10:41+0000\n"
+"POT-Creation-Date: 2025-08-13 06:36+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -105,9 +105,6 @@ msgstr "利用可能なルール"
 
 msgid "Before"
 msgstr "前に挿入"
-
-msgid "Choose port(s) from Available Ports. "
-msgstr "以下の利用可能なポートからポートを選択してください。"
 
 msgid ""
 "Choose rule(s) from Available Rules to Selected Rule by push button or drag "
@@ -271,9 +268,6 @@ msgstr "停止中"
 msgid "Edit Firewall Group"
 msgstr "ファイアウォールグループの編集"
 
-msgid "Edit FirewallGroup {{ name }}"
-msgstr "ファイアウォールグループ {{ name }} の編集"
-
 msgid "Edit Policy"
 msgstr "ポリシーの編集"
 
@@ -354,9 +348,6 @@ msgstr "ファイアウォールルール"
 #, python-format
 msgid "Firewall group %s was successfully updated."
 msgstr "ファイアウォールグループ %s が正常に更新されました。"
-
-msgid "FirewallGroup"
-msgstr "ファイアウォールグループ"
 
 msgid "ICMP"
 msgstr "ICMP"
@@ -450,9 +441,6 @@ msgstr "ルールの削除"
 
 msgid "Remove Rule from Policy"
 msgstr "ポリシーからのルールの削除"
-
-msgid "Remove port from FirewallGroup {{ name }}"
-msgstr "ファイアウォールグループ {{ name }} からのポートの削除"
 
 #, python-format
 msgid "Removed the port(s) from the firewall group %s successfully."
@@ -579,9 +567,6 @@ msgstr "ファイアウォールグループの詳細を取得できません。
 
 msgid "Unable to retrieve firewall group list."
 msgstr "ファイアウォールグループの一覧を取得できません。"
-
-msgid "Unable to retrieve firewallgroup details."
-msgstr "ファイアウォールグループの詳細を取得できません。"
 
 msgid "Unable to retrieve policies list."
 msgstr "ポリシー一覧を取得できません。"

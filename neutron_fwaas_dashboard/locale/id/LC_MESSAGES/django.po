@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: neutron-fwaas-dashboard VERSION\n"
 "Report-Msgid-Bugs-To: https://bugs.launchpad.net/openstack-i18n/\n"
-"POT-Creation-Date: 2019-03-27 14:25+0000\n"
+"POT-Creation-Date: 2025-08-13 06:36+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -109,9 +109,6 @@ msgstr "Available Rules"
 
 msgid "Before"
 msgstr "Before (sebelum)"
-
-msgid "Choose port(s) from Available Ports. "
-msgstr "Pilih port dari Available Ports. "
 
 msgid ""
 "Choose rule(s) from Available Rules to Selected Rule by push button or drag "
@@ -277,9 +274,6 @@ msgstr "Down"
 msgid "Edit Firewall Group"
 msgstr "Edit Firewall Group"
 
-msgid "Edit FirewallGroup {{ name }}"
-msgstr "Edit FirewallGroup {{ name }}"
-
 msgid "Edit Policy"
 msgstr "Ubah Kebijakan"
 
@@ -357,9 +351,6 @@ msgstr " Firewall Rules (aturan firewall)"
 #, python-format
 msgid "Firewall group %s was successfully updated."
 msgstr "Grup firewall %s berhasil diperbarui."
-
-msgid "FirewallGroup"
-msgstr "FirewallGroup"
 
 msgid "ICMP"
 msgstr "ICMP"
@@ -453,9 +444,6 @@ msgstr "Remove Rule (hapus aturan)"
 
 msgid "Remove Rule from Policy"
 msgstr "Buang aturan dari kebijakan"
-
-msgid "Remove port from FirewallGroup {{ name }}"
-msgstr "Hapus port dari FirewallGroup {{ name }}"
 
 #, python-format
 msgid "Removed the port(s) from the firewall group %s successfully."
@@ -582,9 +570,6 @@ msgstr "Tidak dapat mengambil detail grup firewall."
 
 msgid "Unable to retrieve firewall group list."
 msgstr "Tidak dapat mengambil daftar grup firewall."
-
-msgid "Unable to retrieve firewallgroup details."
-msgstr "Tidak dapat mengambil rincian firewallgroup."
 
 msgid "Unable to retrieve policies list."
 msgstr "Tidak dapat mengambil daftar kebijakan."
