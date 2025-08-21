@@ -92,7 +92,13 @@ Run the Django update commands (if you use).
    $ DJANGO_SETTINGS_MODULE=openstack_dashboard.settings python manage.py collectstatic --noinput
    $ DJANGO_SETTINGS_MODULE=openstack_dashboard.settings python manage.py compress --force
 
-Restart Apache:
+Restart Apache (for RHEL/CentOS Stream):
+
+.. code-block:: console
+
+   $ sudo systemctl restart httpd
+
+Restart Apache (for Ubuntu):
 
 .. code-block:: console
 
