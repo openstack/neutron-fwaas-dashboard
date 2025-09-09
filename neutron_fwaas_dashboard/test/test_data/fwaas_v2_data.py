@@ -14,6 +14,9 @@
 
 import copy
 
+from openstack.network.v2 import firewall_group as sdk_fw_group
+from openstack.network.v2 import firewall_policy as sdk_fw_policy
+from openstack.network.v2 import firewall_rule as sdk_fw_rule
 from openstack_dashboard.test.test_data import utils
 
 from neutron_fwaas_dashboard.api import fwaas_v2 as fwaas
@@ -25,10 +28,10 @@ def data(TEST):
     TEST.fw_policies_v2 = utils.TestDataContainer()
     TEST.fw_rules_v2 = utils.TestDataContainer()
 
-    # Data return by neutronclient.
-    TEST.api_firewall_groups_v2 = utils.TestDataContainer()
-    TEST.api_fw_policies_v2 = utils.TestDataContainer()
-    TEST.api_fw_rules_v2 = utils.TestDataContainer()
+    # Data return by openstacksdk.
+    TEST.api_firewall_groups_v2_sdk = list()
+    TEST.api_fw_policies_v2_sdk = list()
+    TEST.api_fw_rules_v2_sdk = list()
 
     # 1st rule (used by 1st policy)
     rule1_dict = {
@@ -46,7 +49,7 @@ def data(TEST):
         'source_port': '80',
         'tenant_id': '1',
     }
-    TEST.api_fw_rules_v2.add(rule1_dict)
+    TEST.api_fw_rules_v2_sdk.append(sdk_fw_rule.FirewallRule(**rule1_dict))
 
     rule1 = fwaas.Rule(copy.deepcopy(rule1_dict))
     TEST.fw_rules_v2.add(rule1)
@@ -67,7 +70,7 @@ def data(TEST):
         'source_port': '80',
         'tenant_id': '1',
     }
-    TEST.api_fw_rules_v2.add(rule2_dict)
+    TEST.api_fw_rules_v2_sdk.append(sdk_fw_rule.FirewallRule(**rule2_dict))
 
     rule2 = fwaas.Rule(copy.deepcopy(rule2_dict))
     TEST.fw_rules_v2.add(rule2)
@@ -88,7 +91,7 @@ def data(TEST):
         'source_port': '80',
         'tenant_id': '1',
     }
-    TEST.api_fw_rules_v2.add(rule3_dict)
+    TEST.api_fw_rules_v2_sdk.append(sdk_fw_rule.FirewallRule(**rule3_dict))
 
     rule3 = fwaas.Rule(copy.deepcopy(rule3_dict))
     TEST.fw_rules_v2.add(rule3)
@@ -103,7 +106,8 @@ def data(TEST):
         'shared': True,
         'tenant_id': '1',
     }
-    TEST.api_fw_policies_v2.add(policy1_dict)
+    TEST.api_fw_policies_v2_sdk.append(
+        sdk_fw_policy.FirewallPolicy(**policy1_dict))
 
     policy1 = fwaas.Policy(copy.deepcopy(policy1_dict))
     policy1._apidict['rules'] = [rule1, rule2]
@@ -119,7 +123,8 @@ def data(TEST):
         'shared': False,
         'tenant_id': '1',
     }
-    TEST.api_fw_policies_v2.add(policy2_dict)
+    TEST.api_fw_policies_v2_sdk.append(
+        sdk_fw_policy.FirewallPolicy(**policy2_dict))
 
     policy2 = fwaas.Policy(copy.deepcopy(policy2_dict))
     policy2._apidict['rules'] = []
@@ -138,7 +143,8 @@ def data(TEST):
         'status': 'PENDING_CREATE',
         'tenant_id': '1',
     }
-    TEST.api_firewall_groups_v2.add(fwg1_dict)
+    TEST.api_firewall_groups_v2_sdk.append(
+        sdk_fw_group.FirewallGroup(**fwg1_dict))
 
     fwg1 = fwaas.FirewallGroup(copy.deepcopy(fwg1_dict))
     fwg1._apidict['ingress_policy'] = policy1
@@ -159,7 +165,8 @@ def data(TEST):
         'status': 'INACTIVE',
         'tenant_id': '1',
     }
-    TEST.api_firewall_groups_v2.add(fwg2_dict)
+    TEST.api_firewall_groups_v2_sdk.append(
+        sdk_fw_group.FirewallGroup(**fwg2_dict))
 
     fwg2 = fwaas.FirewallGroup(copy.deepcopy(fwg2_dict))
     fwg2._apidict['ingress_policy'] = None

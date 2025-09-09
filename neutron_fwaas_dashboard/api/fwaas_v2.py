@@ -17,7 +17,7 @@ import openstack_dashboard.api.nova as nova
 from openstack_dashboard.contrib.developer.profiler import api as profiler
 
 
-neutronclient = neutron.neutronclient
+networkclient = neutron.networkclient
 
 
 class Port(neutron.NeutronAPIDictWrapper):
@@ -52,25 +52,21 @@ def rule_create(request, **kwargs):
     :param enabled: boolean (default true)
     :return: Rule object
     """
-    body = {'firewall_rule': kwargs}
-    rule = neutronclient(request).create_fwaas_firewall_rule(
-        body).get('firewall_rule')
-    return Rule(rule)
+    rule = networkclient(request).create_firewall_rule(**kwargs)
+    return Rule(rule.to_dict())
 
 
 @profiler.trace
 def get_network_names(request):
-    networks = neutronclient(request).list_networks(fields=["name", "id"])\
-        .get('networks', [])
-    mapped = {n['id']: neutron.Network(n) for n in networks}
+    networks = networkclient(request).networks()
+    mapped = {n.id: neutron.Network(n.to_dict()) for n in networks}
     return mapped
 
 
 @profiler.trace
 def get_router_names(request):
-    routers = neutronclient(request).list_routers(fields=["name", "id"])\
-        .get('routers', [])
-    mapped = {r['id']: neutron.Router(r) for r in routers}
+    routers = networkclient(request).routers()
+    mapped = {r.id: neutron.Router(r.to_dict()) for r in routers}
     return mapped
 
 
@@ -89,39 +85,37 @@ def rule_list(request, **kwargs):
 @profiler.trace
 def port_list(request, tenant_id, **kwargs):
     kwargs['tenant_id'] = tenant_id
-    ports = neutronclient(request).list_ports(**kwargs).get('ports')
+    ports = networkclient(request).ports(**kwargs)
 
     return {
-        p['id']: Port(p) for p in ports if _is_target(p)
+        p.id: Port(p.to_dict()) for p in ports if _is_target(p.to_dict())
     }
 
 
 # Gets ids of all ports assigned to firewall groups
 @profiler.trace
 def fwg_port_list(request, **kwargs):
-    fwgs = neutronclient(request).list_fwaas_firewall_groups(
-        **kwargs).get('firewall_groups')
+    fwgs = networkclient(request).firewall_groups(**kwargs)
     ports = set()
     for fwg in fwgs:
-        if fwg['ports']:
-            ports.update(fwg['ports'])
+        if fwg.ports:
+            ports.update(fwg.ports)
     return ports
 
 
 @profiler.trace
 def fwg_port_list_for_tenant(request, tenant_id, **kwargs):
     kwargs['tenant_id'] = tenant_id
-    ports = neutronclient(request).list_ports(**kwargs).get('ports')
+    ports = networkclient(request).ports(**kwargs)
     # TODO(SarathMekala): Remove ports which are already associated with a FWG
-    fwgs = neutronclient(request).list_fwaas_firewall_groups(
-        **kwargs).get('firewall_groups')
+    fwgs = networkclient(request).firewall_groups(**kwargs)
     fwg_ports = []
     for fwg in fwgs:
-        if not fwg['ports']:
+        if not fwg.ports:
             continue
-        fwg_ports += fwg['ports']
-    return [Port(p) for p in ports
-            if _is_target(p) and p['id'] not in fwg_ports]
+        fwg_ports += fwg.ports
+    return [Port(p.to_dict()) for p in ports
+            if _is_target(p.to_dict()) and p.id not in fwg_ports]
 
 
 def _is_target(port):
@@ -145,9 +139,8 @@ def rule_list_for_tenant(request, tenant_id, **kwargs):
 
 
 def _rule_list(request, **kwargs):
-    rules = neutronclient(request).list_fwaas_firewall_rules(
-        **kwargs).get('firewall_rules')
-    return [Rule(r) for r in rules]
+    rules = networkclient(request).firewall_rules(**kwargs)
+    return [Rule(r.to_dict()) for r in rules]
 
 
 @profiler.trace
@@ -156,22 +149,20 @@ def rule_get(request, rule_id):
 
 
 def _rule_get(request, rule_id):
-    rule = neutronclient(request).show_fwaas_firewall_rule(
-        rule_id).get('firewall_rule')
-    return Rule(rule)
+    rule = networkclient(request).get_firewall_rule(rule_id)
+    return Rule(rule.to_dict())
 
 
 @profiler.trace
 def rule_delete(request, rule_id):
-    neutronclient(request).delete_fwaas_firewall_rule(rule_id)
+    networkclient(request).delete_firewall_rule(rule_id)
 
 
 @profiler.trace
 def rule_update(request, rule_id, **kwargs):
-    body = {'firewall_rule': kwargs}
-    rule = neutronclient(request).update_fwaas_firewall_rule(
-        rule_id, body).get('firewall_rule')
-    return Rule(rule)
+    rule = networkclient(request).update_firewall_rule(
+        rule_id, **kwargs)
+    return Rule(rule.to_dict())
 
 
 @profiler.trace
@@ -186,10 +177,8 @@ def policy_create(request, **kwargs):
     :param audited: boolean (default false)
     :return: Policy object
     """
-    body = {'firewall_policy': kwargs}
-    policy = neutronclient(request).create_fwaas_firewall_policy(
-        body).get('firewall_policy')
-    return Policy(policy)
+    policy = networkclient(request).create_firewall_policy(**kwargs)
+    return Policy(policy.to_dict())
 
 
 @profiler.trace
@@ -212,8 +201,8 @@ def policy_list_for_tenant(request, tenant_id, **kwargs):
 
 
 def _policy_list(request, expand_rule, **kwargs):
-    policies = neutronclient(request).list_fwaas_firewall_policies(
-        **kwargs).get('firewall_policies')
+    policies = [p.to_dict() for p in
+                networkclient(request).firewall_policies(**kwargs)]
     if expand_rule and policies:
         rules = _rule_list(request)
         rule_dict = collections.OrderedDict((rule.id, rule) for rule in rules)
@@ -228,8 +217,7 @@ def policy_get(request, policy_id):
 
 
 def _policy_get(request, policy_id, expand_rule):
-    policy = neutronclient(request).show_fwaas_firewall_policy(
-        policy_id).get('firewall_policy')
+    policy = networkclient(request).get_firewall_policy(policy_id).to_dict()
     if expand_rule:
         policy_rules = policy['firewall_rules']
         if policy_rules:
@@ -244,29 +232,28 @@ def _policy_get(request, policy_id, expand_rule):
 
 @profiler.trace
 def policy_delete(request, policy_id):
-    neutronclient(request).delete_fwaas_firewall_policy(policy_id)
+    networkclient(request).delete_firewall_policy(policy_id)
 
 
 @profiler.trace
 def policy_update(request, policy_id, **kwargs):
-    body = {'firewall_policy': kwargs}
-    policy = neutronclient(request).update_fwaas_firewall_policy(
-        policy_id, body).get('firewall_policy')
-    return Policy(policy)
+    policy = networkclient(request).update_firewall_policy(
+        policy_id, **kwargs)
+    return Policy(policy.to_dict())
 
 
 @profiler.trace
 def policy_insert_rule(request, policy_id, **kwargs):
-    policy = neutronclient(request).insert_rule_fwaas_firewall_policy(
-        policy_id, kwargs)
-    return Policy(policy)
+    policy = networkclient(request).insert_rule_into_policy(
+        policy_id, **kwargs)
+    return Policy(policy.to_dict())
 
 
 @profiler.trace
 def policy_remove_rule(request, policy_id, **kwargs):
-    policy = neutronclient(request).remove_rule_fwaas_firewall_policy(
-        policy_id, kwargs)
-    return Policy(policy)
+    policy = networkclient(request).remove_rule_from_policy(
+        policy_id, **kwargs)
+    return Policy(policy.to_dict())
 
 
 @profiler.trace
@@ -281,9 +268,8 @@ def firewall_group_create(request, **kwargs):
     :param admin_state_up: boolean (default true)
     :return: Firewall group object
     """
-    body = {'firewall_group': kwargs}
-    firewall_group = neutronclient(request).create_fwaas_firewall_group(body)
-    return FirewallGroup(firewall_group['firewall_group'])
+    firewall_group = networkclient(request).create_firewall_group(**kwargs)
+    return FirewallGroup(firewall_group.to_dict())
 
 
 @profiler.trace
@@ -307,9 +293,8 @@ def firewall_group_list_for_tenant(request, tenant_id, **kwargs):
 
 # TODO(SarathMekala): Support expand_policy for _firewall_group_list
 def _firewall_group_list(request, **kwargs):
-    firewall_groups = neutronclient(request).list_fwaas_firewall_groups(
-        **kwargs).get('firewall_groups')
-    return [FirewallGroup(f) for f in firewall_groups]
+    firewall_groups = networkclient(request).firewall_groups(**kwargs)
+    return [FirewallGroup(f.to_dict()) for f in firewall_groups]
 
 
 @profiler.trace
@@ -318,8 +303,8 @@ def firewall_group_get(request, firewallgroup_id):
 
 
 def _firewall_group_get(request, firewallgroup_id, expand_policy):
-    firewall_group = neutronclient(request).show_fwaas_firewall_group(
-        firewallgroup_id).get('firewall_group')
+    firewall_group = networkclient(request).get_firewall_group(
+        firewallgroup_id).to_dict()
     if expand_policy:
         ingress_policy_id = firewall_group['ingress_firewall_policy_id']
         if ingress_policy_id:
@@ -339,12 +324,11 @@ def _firewall_group_get(request, firewallgroup_id, expand_policy):
 
 @profiler.trace
 def firewall_group_delete(request, firewallgroup_id):
-    neutronclient(request).delete_fwaas_firewall_group(firewallgroup_id)
+    networkclient(request).delete_firewall_group(firewallgroup_id)
 
 
 @profiler.trace
 def firewall_group_update(request, firewallgroup_id, **kwargs):
-    body = {'firewall_group': kwargs}
-    firewall_group = neutronclient(request).update_fwaas_firewall_group(
-        firewallgroup_id, body).get('firewall_group')
-    return FirewallGroup(firewall_group)
+    firewall_group = networkclient(request).update_firewall_group(
+        firewallgroup_id, **kwargs)
+    return FirewallGroup(firewall_group.to_dict())
