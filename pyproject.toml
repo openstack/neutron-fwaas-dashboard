@@ -29,8 +29,9 @@ classifiers = [
 ]
 
 [project.urls]
-Homepage = "https://docs.openstack.org/neutron-fwaas-dashboard/latest/"
-Repository = "https://opendev.org/openstack/neutron-fwaas-dashboard"
+"Bug Tracker" = "https://bugs.launchpad.net/neutron-fwaas-dashboard"
+"Documentation" = "https://docs.openstack.org/neutron-fwaas-dashboard/latest/"
+"Source Code" = "https://opendev.org/openstack/neutron-fwaas-dashboard"
 
 [tool.setuptools]
 packages = [
