@@ -391,7 +391,11 @@ class FwaasV2ApiTests(test.APITestCase):
 
         new_rule_id = 'h0881d38-c3eb-4fee-9763-12de3338041d'
         policy.firewall_rules.append(new_rule_id)
-        policy_dict['firewall_rules'].append(new_rule_id)
+        policy_dict['firewall_rules'] = [
+            policy.firewall_rules[0],
+            new_rule_id,
+            policy.firewall_rules[1],
+        ]
 
         body = {'firewall_rule_id': new_rule_id,
                 'insert_before': policy.firewall_rules[1],
@@ -412,7 +416,10 @@ class FwaasV2ApiTests(test.APITestCase):
         policy_dict = self.api_fw_policies_v2_sdk[0]
 
         remove_rule_id = policy.firewall_rules[0]
-        policy_dict['firewall_rules'].remove(remove_rule_id)
+        policy_dict['firewall_rules'] = [
+            rule for rule in policy.firewall_rules
+            if rule != remove_rule_id
+        ]
 
         body = {'firewall_rule_id': remove_rule_id}
 
