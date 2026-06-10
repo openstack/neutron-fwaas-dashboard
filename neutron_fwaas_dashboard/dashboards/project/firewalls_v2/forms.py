@@ -269,10 +269,21 @@ class PortSelectionForm(forms.SelfHandlingForm):
 class AddPort(PortSelectionForm):
     failure_url = 'horizon:project:firewalls_v2:index'
 
+    @staticmethod
+    def _is_router_port(port):
+        return (
+            port.device_owner.startswith('network:router_interface') or
+            port.device_owner.startswith(
+                'network:ha_router_replicated_interface')
+        )
+
     def get_ports(self, request):
         used_ports = api_fwaas_v2.fwg_port_list(request)
         ports = self.ports.values()
-        return [(p.id, p.id) for p in ports if p.id not in used_ports]
+        return [
+            (p.id, p.id) for p in ports
+            if self._is_router_port(p) and p.id not in used_ports
+        ]
 
     def handle(self, request, context):
         firewallgroup_id = self.initial['id']

@@ -695,6 +695,73 @@ class FirewallTests(test.TestCase):
         self.mock_firewall_group_update.assert_called_once_with(
             helpers.IsHttpRequest(), fwg.id, **expected_put_data)
 
+    @helpers.create_mocks({api_fwaas_v2: ('firewall_group_get',
+                                          'port_list',
+                                          'fwg_port_list',
+                                          'get_network_names',
+                                          'get_router_names',
+                                          'get_servers')})
+    def test_add_port_get_only_router_ports_listed(self):
+        firewall_group = self.firewall_groups_v2.first()
+        tenant_id = self.tenant.id
+
+        router_port = api_fwaas_v2.Port({
+            'id': 'router-port-id',
+            'name': 'router-port',
+            'network_id': 'network-1',
+            'device_id': 'router-1',
+            'device_owner': 'network:router_interface',
+        })
+        ha_router_port = api_fwaas_v2.Port({
+            'id': 'ha-router-port-id',
+            'name': 'ha-router-port',
+            'network_id': 'network-1',
+            'device_id': 'router-2',
+            'device_owner': 'network:ha_router_replicated_interface',
+        })
+        vm_port = api_fwaas_v2.Port({
+            'id': 'vm-port-id',
+            'name': 'vm-port',
+            'network_id': 'network-1',
+            'device_id': 'server-1',
+            'device_owner': 'compute:nova',
+        })
+
+        self.mock_firewall_group_get.return_value = firewall_group
+        self.mock_port_list.return_value = {
+            router_port.id: router_port,
+            ha_router_port.id: ha_router_port,
+            vm_port.id: vm_port,
+        }
+        self.mock_fwg_port_list.return_value = {ha_router_port.id}
+        self.mock_get_network_names.return_value = {}
+        self.mock_get_router_names.return_value = {}
+        self.mock_get_servers.return_value = {}
+
+        res = self.client.get(reverse(self.ADDPORT_PATH,
+                                      args=(firewall_group.id,)))
+
+        self.assertTemplateUsed(res, 'project/firewalls_v2/addport.html')
+        self.assertEqual(
+            [(router_port.id, router_port.id)],
+            list(res.context['form'].fields['port_id'].choices))
+
+        self.mock_firewall_group_get.assert_called_once_with(
+            helpers.IsHttpRequest(), firewall_group.id)
+        self.mock_port_list.assert_called_once()
+        port_list_args, port_list_kwargs = self.mock_port_list.call_args
+        self.assertEqual(tenant_id, port_list_args[1])
+        self.assertEqual(firewall_group.id, port_list_kwargs['initial']['id'])
+        self.assertIn('prefix', port_list_kwargs)
+        self.mock_fwg_port_list.assert_called_once_with(
+            helpers.IsHttpRequest())
+        self.mock_get_network_names.assert_called_once_with(
+            helpers.IsHttpRequest())
+        self.mock_get_router_names.assert_called_once_with(
+            helpers.IsHttpRequest())
+        self.mock_get_servers.assert_called_once_with(
+            helpers.IsHttpRequest())
+
     @helpers.create_mocks({api_fwaas_v2: ('policy_get', 'policy_insert_rule',
                                           'rule_list_for_tenant', 'rule_get')})
     def test_policy_insert_rule(self):
