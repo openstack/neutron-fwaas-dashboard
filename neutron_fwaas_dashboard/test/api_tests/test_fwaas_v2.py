@@ -17,6 +17,7 @@ from unittest import mock
 from openstack.network.v2._proxy import Proxy as networkclient
 from openstack.network.v2 import firewall_group as sdk_fw_group
 from openstack.network.v2 import firewall_policy as sdk_fw_policy
+from openstack.network.v2 import firewall_rule as sdk_fw_rule
 from openstack.network.v2 import network as sdk_net
 from openstack.network.v2 import port as sdk_port
 from openstack.network.v2 import router as sdk_router
@@ -176,21 +177,38 @@ class FwaasV2ApiTests(test.APITestCase):
     def test_rule_list_for_tenant(self):
         tenant_id = self.request.user.project_id
         exp_rules = self.fw_rules_v2.list()
-        api_rules = self.api_fw_rules_v2_sdk
+        tenant_rules = self.api_fw_rules_v2_sdk
+        shared_rule = sdk_fw_rule.FirewallRule(**{
+            'action': 'allow',
+            'description': 'shared rule',
+            'destination_ip_address': None,
+            'destination_port': None,
+            'enabled': True,
+            'id': 'shared-firewall-rule-id',
+            'ip_version': '4',
+            'name': 'shared-rule',
+            'protocol': 'tcp',
+            'shared': True,
+            'source_ip_address': None,
+            'source_port': None,
+            'tenant_id': 'another-tenant',
+        })
+        api_rules = tenant_rules + [shared_rule]
 
         self.mock_firewall_rules.side_effect = [
-            [],
+            tenant_rules,
             api_rules,
         ]
 
         ret_val = api_fwaas_v2.rule_list_for_tenant(self.request, tenant_id)
         for (v, d) in zip(ret_val, exp_rules):
             self._assert_rule_return_value(v, d)
+        self.assertEqual(shared_rule.id, ret_val[-1].id)
 
         self.assertEqual(2, self.mock_firewall_rules.call_count)
         self.mock_firewall_rules.assert_has_calls([
-            mock.call(tenant_id=tenant_id, shared=False),
-            mock.call(shared=True),
+            mock.call(tenant_id=tenant_id),
+            mock.call(),
         ])
 
     @helpers.create_mocks({networkclient: ('get_firewall_rule',)})
@@ -244,7 +262,6 @@ class FwaasV2ApiTests(test.APITestCase):
     def test_policy_create(self):
         policy1 = self.fw_policies_v2.first()
         policy1_dict = self.api_fw_policies_v2_sdk[0]
-        print(policy1_dict)
 
         form_data = {'name': policy1.name,
                      'description': policy1.description,
@@ -294,11 +311,21 @@ class FwaasV2ApiTests(test.APITestCase):
     def test_policy_list_for_tenant(self):
         tenant_id = self.request.user.project_id
         exp_policies = self.fw_policies_v2.list()
-        policies_dict = self.api_fw_policies_v2_sdk
+        tenant_policies = self.api_fw_policies_v2_sdk
+        shared_policy = sdk_fw_policy.FirewallPolicy(**{
+            'audited': False,
+            'description': 'shared policy',
+            'firewall_rules': [],
+            'id': 'shared-firewall-policy-id',
+            'name': 'shared-policy',
+            'shared': True,
+            'tenant_id': 'another-tenant',
+        })
+        policies_dict = tenant_policies + [shared_policy]
         rules_dict = self.api_fw_rules_v2_sdk
 
         self.mock_firewall_policies.side_effect = [
-            [],
+            tenant_policies,
             policies_dict,
         ]
         self.mock_firewall_rules.return_value = rules_dict
@@ -306,13 +333,18 @@ class FwaasV2ApiTests(test.APITestCase):
         ret_val = api_fwaas_v2.policy_list_for_tenant(self.request, tenant_id)
         for (v, d) in zip(ret_val, exp_policies):
             self._assert_policy_return_value(v, d)
+        self.assertEqual(shared_policy.id, ret_val[-1].id)
 
         self.assertEqual(2, self.mock_firewall_policies.call_count)
         self.mock_firewall_policies.assert_has_calls([
-            mock.call(tenant_id=tenant_id, shared=False),
-            mock.call(shared=True),
+            mock.call(tenant_id=tenant_id),
+            mock.call(),
         ])
-        self.mock_firewall_rules.assert_called_once_with()
+        self.assertEqual(2, self.mock_firewall_rules.call_count)
+        self.mock_firewall_rules.assert_has_calls([
+            mock.call(),
+            mock.call(),
+        ])
 
     @helpers.create_mocks({networkclient: ('get_firewall_policy',
                                            'firewall_rules')})
@@ -391,7 +423,11 @@ class FwaasV2ApiTests(test.APITestCase):
 
         new_rule_id = 'h0881d38-c3eb-4fee-9763-12de3338041d'
         policy.firewall_rules.append(new_rule_id)
-        policy_dict['firewall_rules'].append(new_rule_id)
+        policy_dict['firewall_rules'] = [
+            policy.firewall_rules[0],
+            new_rule_id,
+            policy.firewall_rules[1],
+        ]
 
         body = {'firewall_rule_id': new_rule_id,
                 'insert_before': policy.firewall_rules[1],
@@ -412,7 +448,10 @@ class FwaasV2ApiTests(test.APITestCase):
         policy_dict = self.api_fw_policies_v2_sdk[0]
 
         remove_rule_id = policy.firewall_rules[0]
-        policy_dict['firewall_rules'].remove(remove_rule_id)
+        policy_dict['firewall_rules'] = [
+            rule for rule in policy.firewall_rules
+            if rule != remove_rule_id
+        ]
 
         body = {'firewall_rule_id': remove_rule_id}
 
@@ -491,10 +530,23 @@ class FwaasV2ApiTests(test.APITestCase):
     def test_firewall_group_list_for_tenant(self):
         tenant_id = self.request.user.project_id
         exp_firewalls = self.firewall_groups_v2.list()
-        firewalls_dict = self.api_firewall_groups_v2_sdk
+        tenant_firewalls_dict = self.api_firewall_groups_v2_sdk
+        shared_firewall = sdk_fw_group.FirewallGroup(**{
+            'admin_state_up': True,
+            'description': 'shared firewall',
+            'egress_firewall_policy_id': None,
+            'id': 'shared-firewall-group-id',
+            'ingress_firewall_policy_id': None,
+            'name': 'shared-firewall-group',
+            'ports': [],
+            'shared': True,
+            'status': 'ACTIVE',
+            'tenant_id': 'another-tenant',
+        })
+        firewalls_dict = tenant_firewalls_dict + [shared_firewall]
 
         self.mock_firewall_groups.side_effect = [
-            firewalls_dict,
+            tenant_firewalls_dict,
             firewalls_dict,
         ]
 
@@ -502,11 +554,12 @@ class FwaasV2ApiTests(test.APITestCase):
             self.request, tenant_id)
         for (v, d) in zip(ret_val, exp_firewalls):
             self._assert_firewall_return_value(v, d, expand_policy=False)
+        self.assertEqual(shared_firewall.id, ret_val[-1].id)
 
         self.assertEqual(2, self.mock_firewall_groups.call_count)
         self.mock_firewall_groups.assert_has_calls([
-            mock.call(shared=False, tenant_id=tenant_id),
-            mock.call(shared=True),
+            mock.call(tenant_id=tenant_id),
+            mock.call(),
         ])
 
     @helpers.create_mocks({networkclient: ('firewall_groups', )})

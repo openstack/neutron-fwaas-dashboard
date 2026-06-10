@@ -1,0 +1,9 @@
+---
+fixes:
+  - |
+    FWaaS v2 dashboard list views no longer send the unsupported ``shared``
+    filter to the firewall rule, firewall policy, and firewall group APIs.
+    The dashboard now fetches tenant-owned resources by ``tenant_id`` and
+    filters shared resources client-side, which avoids 400 errors when opening
+    the FWaaS panel against Neutron deployments that do not accept ``shared``
+    as a query parameter.
