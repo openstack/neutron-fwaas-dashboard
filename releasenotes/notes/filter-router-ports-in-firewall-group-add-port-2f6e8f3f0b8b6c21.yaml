@@ -1,0 +1,7 @@
+---
+fixes:
+  - |
+    The "Add Port to Firewall Group" dialog now lists only router interface
+    ports and HA router replicated interface ports that are eligible to be
+    attached to a firewall group. VM ports are no longer shown as selectable
+    options in this dialog.
