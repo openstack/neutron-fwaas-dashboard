@@ -36,6 +36,27 @@ class FirewallGroup(neutron.NeutronAPIDictWrapper):
     """Wrapper for neutron firewall group."""
 
 
+def _resource_dict(resource):
+    return resource._apidict if hasattr(resource, '_apidict') else resource
+
+
+def _resource_is_shared(resource):
+    return _resource_dict(resource).get('shared', False)
+
+
+def _get_resource_owner_id(resource):
+    resource = _resource_dict(resource)
+    return resource.get('project_id') or resource.get('tenant_id')
+
+
+def _list_shared_resources(list_func, request, tenant_id, **kwargs):
+    return [
+        resource for resource in list_func(request, **kwargs)
+        if _resource_is_shared(resource) and
+        _get_resource_owner_id(resource) != tenant_id
+    ]
+
+
 def rule_create(request, **kwargs):
     """Create a firewall rule
 
@@ -133,8 +154,9 @@ def rule_list_for_tenant(request, tenant_id, **kwargs):
     This is required because Neutron returns all resources including
     all tenants if a user has admin role.
     """
-    rules = rule_list(request, tenant_id=tenant_id, shared=False, **kwargs)
-    shared_rules = rule_list(request, shared=True, **kwargs)
+    rules = rule_list(request, tenant_id=tenant_id, **kwargs)
+    shared_rules = _list_shared_resources(
+        rule_list, request, tenant_id, **kwargs)
     return rules + shared_rules
 
 
@@ -194,9 +216,9 @@ def policy_list_for_tenant(request, tenant_id, **kwargs):
     This is required because Neutron returns all resources including
     all tenants if a user has admin role.
     """
-    policies = policy_list(request, tenant_id=tenant_id,
-                           shared=False, **kwargs)
-    shared_policies = policy_list(request, shared=True, **kwargs)
+    policies = policy_list(request, tenant_id=tenant_id, **kwargs)
+    shared_policies = _list_shared_resources(
+        policy_list, request, tenant_id, **kwargs)
     return policies + shared_policies
 
 
@@ -285,9 +307,9 @@ def firewall_group_list_for_tenant(request, tenant_id, **kwargs):
     groups. This is required because Neutron returns all resources including
     all tenants if a user has admin role.
     """
-    fwg = firewall_group_list(request, tenant_id=tenant_id,
-                              shared=False, **kwargs)
-    shared_fwg = firewall_group_list(request, shared=True, **kwargs)
+    fwg = firewall_group_list(request, tenant_id=tenant_id, **kwargs)
+    shared_fwg = _list_shared_resources(
+        firewall_group_list, request, tenant_id, **kwargs)
     return fwg + shared_fwg
 
 
